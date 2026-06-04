@@ -12,7 +12,10 @@
   </g>
   <g id="accent-elements"><polygon points="430,1180 1180,1066 1232,1128 482,1242" fill="#C6342E"/></g>
   <g id="title-letterforms">
-    <text x="120" y="1810" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#101010">QUANTUM</text>
-    <text x="120" y="2070" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#C6342E" textLength="1360" lengthAdjust="spacingAndGlyphs">MECHANICS</text>
+    <text x="120" y="1530" font-family="Arial Black, Arial, sans-serif" font-size="176" font-weight="900" letter-spacing="0" fill="#101010" textLength="1030" lengthAdjust="spacingAndGlyphs">QUANTUM</text>
+    <text x="120" y="1710" font-family="Arial Black, Arial, sans-serif" font-size="176" font-weight="900" letter-spacing="0" fill="#101010" textLength="1240" lengthAdjust="spacingAndGlyphs">MECHANICS</text>
+    <text x="120" y="1910" font-family="Arial Black, Arial, sans-serif" font-size="184" font-weight="900" letter-spacing="0" fill="#C6342E">V2</text>
+    <text x="120" y="2076" font-family="Arial Black, Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="0" fill="#101010" textLength="1260" lengthAdjust="spacingAndGlyphs">FORMALISM AND THE</text>
+    <text x="120" y="2212" font-family="Arial Black, Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="0" fill="#101010" textLength="1260" lengthAdjust="spacingAndGlyphs">THREE-DIMENSIONAL ATOM</text>
   </g>
 </svg>
