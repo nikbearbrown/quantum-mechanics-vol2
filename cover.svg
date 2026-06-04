@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2560" width="1600" height="2560" preserveAspectRatio="xMidYMid meet" shape-rendering="geometricPrecision">
+  <g id="background"><rect x="0" y="0" width="1600" height="2560" fill="#F2E7D5"/></g>
+
+  <g id="symbol-fragments" transform="rotate(-5, 800, 880)">
+    <polygon points="760,238 834,214 902,252 914,326 864,382 782,374 730,318" fill="#101010"/>
+    <polygon points="690,430 874,398 936,682 736,742 642,566" fill="#101010"/>
+    <polygon points="506,454 640,410 698,514 622,648 494,608" fill="#101010"/>
+    <polygon points="940,438 1074,492 1088,632 970,696 904,570" fill="#101010"/>
+    <polygon points="700,770 812,744 792,1096 652,1130 616,920" fill="#101010"/>
+    <polygon points="842,750 962,784 1050,1046 950,1160 834,992" fill="#101010"/>
+    <polygon points="610,1168 756,1132 848,1244 746,1376 592,1322" fill="#101010"/>
+  </g>
+  <g id="accent-elements"><polygon points="430,1180 1180,1066 1232,1128 482,1242" fill="#C6342E"/></g>
+  <g id="title-letterforms">
+    <text x="120" y="1810" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#101010">QUANTUM</text>
+    <text x="120" y="2070" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#C6342E" textLength="1360" lengthAdjust="spacingAndGlyphs">MECHANICS</text>
+  </g>
+</svg>
