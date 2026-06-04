@@ -1,0 +1,12 @@
+date,book,chapter_slug,word_count,sources_count,verify_flag_count,pantry_notes_found,thin_pantry,contested_claims_flagged
+2026-06-03,quantum-mechanics-vol2,02-the-formalism,4147,,8,yes,no,0
+2026-06-03,quantum-mechanics-vol2,03-observables-and-the-spectral-theorem,4692,,8,yes,no,0
+2026-06-03,quantum-mechanics-vol2,04-commutators-and-uncertainty,4019,,6,yes,no,0
+2026-06-03,quantum-mechanics-vol2,05-quantum-dynamics-and-the-pictures,4847,,3,yes,no,0
+2026-06-03,quantum-mechanics-vol2,06-quantum-mechanics-in-three-dimensions,5231,,9,yes,no,0
+2026-06-03,quantum-mechanics-vol2,07-angular-momentum,5124,,5,yes,no,0
+2026-06-03,quantum-mechanics-vol2,08-spin-and-the-bloch-sphere,4764,,6,yes,no,0
+2026-06-03,quantum-mechanics-vol2,09-addition-of-angular-momenta,4358,,4,yes,no,0
+2026-06-03,quantum-mechanics-vol2,10-the-hydrogen-atom,5971,,10,yes,no,0
+2026-06-03,quantum-mechanics-vol2,11-identical-particles,5544,,10,yes,no,0
+2026-06-03,quantum-mechanics-vol2,12-capstone-the-atom,7133,,5,yes,no,3
