@@ -43,6 +43,9 @@ $$\boxed{[\hat{L}^2, \hat{L}_i] = 0 \quad \text{for } i = x, y, z.}$$
 
 <!-- → [DIAGRAM: three-level hierarchy showing: (1) canonical commutation relations [r_i, p_j]=iℏδ_ij at the top, (2) angular momentum commutation relations [L_i,L_j]=iℏε_ijk L_k in the middle, (3) the derived results [L²,L_i]=0 and the spectrum at the bottom — arrows showing what implies what] -->
 
+![three-level hierarchy showing: (1) canonical commutation relations (r_i, p_j)=iℏδ_ij at the top, (2) angular momentum commutation relations…](../images/06-angular-momentum-fig-01.png)
+*Figure 6.1 — three-level hierarchy showing: (1) canonical commutation relations (r_i, p_j)=iℏδ_ij at the top, (2) angular momentum commutation relations…*
+
 What these two boxes mean: $\hat{L}^2$ and $\hat{L}_z$ can be simultaneously diagonalized — they share a complete eigenbasis. But $\hat{L}_x$, $\hat{L}_y$, $\hat{L}_z$ cannot be simultaneously sharp, because they do not commute with each other. This is not a choice about how to measure; it is a structural consequence of the algebra. We choose to label states by their $\hat{L}^2$ and $\hat{L}_z$ eigenvalues because those operators commute. We could equally well use $\hat{L}^2$ and $\hat{L}_x$, or $\hat{L}^2$ and any linear combination. The $z$-axis is not special — it is convention.
 
 ---
@@ -66,6 +69,9 @@ So $\hat{L}_+|\ell,m\rangle$ is an eigenstate of $\hat{L}_z$ with eigenvalue $\h
 The picture: a ladder of states all sharing the same $\hat{L}^2$ eigenvalue $\lambda$, with $m$ running in integer steps. $\hat{L}_+$ climbs the ladder; $\hat{L}_-$ descends.
 
 <!-- → [FIGURE: vertical ladder diagram for ℓ=2 showing five rungs labeled |2,-2⟩ through |2,2⟩, with upward blue arrows labeled L₊ and downward red arrows labeled L₋, coefficients shown on each arrow, and grayed-out arrows at the top and bottom rungs] -->
+
+![vertical ladder diagram for ℓ=2 showing five rungs labeled |2,-2⟩ through |2,2⟩, with upward blue arrows labeled L₊ and downward red arrows…](../images/06-angular-momentum-fig-02.png)
+*Figure 6.2 — vertical ladder diagram for ℓ=2 showing five rungs labeled |2,-2⟩ through |2,2⟩, with upward blue arrows labeled L₊ and downward red arrows…*
 
 ---
 
@@ -150,6 +156,9 @@ $$\sigma_{L_x}\sigma_{L_y} \geq \frac{\hbar}{2}|\langle\hat{L}_z\rangle| = \frac
 The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\ell\rangle$ is a minimum-uncertainty state for the transverse components. The geometric picture is a cone of half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ — the angular momentum points partly in the $z$-direction, partly in the transverse plane, and the transverse components cannot both be zero. As $\ell \to \infty$, the half-angle approaches zero and the cone narrows: this is the classical limit, where angular momentum can point in a definite direction.
 
 <!-- → [FIGURE: angular momentum cone diagram for ℓ=2, m=2 — showing the cone half-angle arccos(2/√6)≈35.3°, the angular momentum vector precessing on the cone, and the transverse spread σ_{Lx}=σ_{Ly}=ℏ/√2 illustrated as a "smear" around the cone's base] -->
+
+![angular momentum cone diagram for ℓ=2, m=2 — showing the cone half-angle arccos(2/√6)≈35.3°, the angular momentum vector precessing on the…](../images/06-angular-momentum-fig-03.png)
+*Figure 6.3 — angular momentum cone diagram for ℓ=2, m=2 — showing the cone half-angle arccos(2/√6)≈35.3°, the angular momentum vector precessing on the…*
 
 ---
 
@@ -362,3 +371,106 @@ Shankar, R. (1994). *Principles of Quantum Mechanics* (2nd ed.). Springer. Chapt
 Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1977). *Quantum Mechanics*, Vol. I. Wiley. Chapter VI.
 
 Condon, E. U., & Shortley, G. H. (1935). *The Theory of Atomic Spectra*. Cambridge University Press. Original source for the phase convention in the normalization of $Y_\ell^m$ and the matrix elements of $\hat{L}_\pm$.
+
+---
+
+## Running Project — Build the Atom
+
+**This chapter adds:** the orbital angular-momentum labels and subshell capacity — $\ell$ runs $0$ to $n-1$, $m_\ell$ runs $-\ell$ to $\ell$ in integer steps, giving $2\ell+1$ orbitals per subshell, and (with spin, next chapter) the $2(2\ell+1)$ capacity that sets every period length of the table.
+
+The atom-builder fills subshells; this chapter says exactly how many electrons each subshell holds and why. The algebra fixes $m_\ell \in \{-\ell,\dots,\ell\}$ — that is $2\ell+1$ spatial orbitals — and the integer restriction (single-valuedness of $e^{im\phi}$) is what makes $\ell$ an *integer* for orbital motion. This is the angular factor of the orbital: the $Y_\ell^m$ that multiplies the radial $R_{n\ell}$ from Chapter 5. The capacity count $2(2\ell+1)$ is the arithmetic behind the period lengths $2,8,8,18,18,32$.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Building the ladder-operator matrices $\hat L_\pm,\hat L_z,\hat L^2$ for a given $\ell$ from the normalization formula — *Why AI works here:* it is a closed-form transcription; you check $\hat L^2 = \ell(\ell+1)\hbar^2\mathbb 1$ and that the top rung is annihilated.
+- Generating the subshell-capacity table ($s,p,d,f \to 2,6,10,14$ and cumulative period lengths) — *Why AI works here:* it is arithmetic over $2(2\ell+1)$; you verify the periods sum to $2,8,8,18,18,32$.
+
+**The tell:** You are using AI well when you can check against an exact identity — $\hat L^2$ proportional to the identity, and $\sum_\ell 2(2\ell+1)$ matching the known period lengths.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding *which* subshells belong to which period (the $4s$-before-$3d$ Madelung ordering) — *Why AI fails here:* the capacity arithmetic is mechanical, but the *filling order* is the empirical Madelung rule (Chapter 11) with no first-principles derivation; an LLM will often fill $3d$ before $4s$ by naive $n$-ordering and silently get the period structure wrong.
+- Asserting that orbital $\ell$ may be half-integer "by symmetry with spin" — *Why AI fails here:* the algebra *allows* half-integers, but orbital angular momentum is integer-only because of single-valuedness; conflating the two (a real temptation after this chapter) corrupts the capacity count.
+
+**The tell:** If you cannot say why a $d$ subshell holds exactly 10 electrons — $2\times(2\cdot2+1)$ — without the AI, the AI did the counting that should have been yours.
+**Physics-judgment connection:** this trains checking the capacity construction against the exact eigenvalue identity $\hat L^2=\ell(\ell+1)\hbar^2\mathbb 1$ and against the known period lengths, both of which an off-by-one in the $m_\ell$ range would break.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `subshells.py` that enumerates subshell orbitals and capacities and builds the angular-momentum matrices.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I need the angular-momentum layer:
+subshell capacities and the L matrices.
+
+Write a Python module `subshells.py` (numpy only) that:
+
+1. m_values(l) returning the list [-l, ..., l] (2l+1 entries), enforcing integer
+   l >= 0 (raise on non-integer or negative l).
+2. capacity(l) returning 2*(2l+1) (the factor 2 is spin, added here for the
+   filling logic even though spin is formalized next chapter).
+3. ladder_matrices(l) returning Lz, L_plus, L_minus, Lx, Ly, L2 from the exact
+   normalization L_plus|l,m> = hbar*sqrt((l-m)(l+m+1))|l,m+1>, with hbar=1.
+4. period_lengths() returning the cumulative electron counts for the standard
+   Madelung filling order 1s,2s,2p,3s,3p,4s,3d,4p,5s,4d,5p,6s,4f,5d,6p and
+   asserting the period sums are [2,8,8,18,18,32].
+5. __main__: print capacity for s,p,d,f (expect 2,6,10,14); assert L2 ==
+   l(l+1)*I for l=1,2,3; print period_lengths().
+
+Add a comment: the FILLING ORDER (Madelung) is an empirical input, not derived
+here; this module only counts capacities and builds matrices. Orbital l is
+integer-only (single-valuedness) — do not accept half-integers.
+```
+**What this produces:** `subshells.py` — capacities, angular-momentum matrices, and the period-length check.
+**How to adapt:** *Your system:* keep $\hbar=1$. *ChatGPT/Gemini:* same prompt; ask it to also print the cone half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ for the top rung. *Claude Project:* keep with the physics core; the term-symbol module (Chapter 8) reuses these $\hat L$ matrices.
+**Builds on:** Chapter 5's radial orbitals (this supplies their angular labels).  **Next:** Chapter 7 adds the spin factor $m_s=\pm\tfrac12$ that turns $2\ell+1$ into the full $2(2\ell+1)$.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the subshell-capacity module plus tests on capacities and period lengths.
+**Tool:** Claude Code.
+**Skill level:** Beginner–Intermediate
+**Setup — confirm:**
+- [ ] Earlier modules in `build-the-atom/`.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–5 present.
+**The Task:**
+```
+In build-the-atom/, create subshells.py with m_values(l), capacity(l),
+ladder_matrices(l), and period_lengths().
+
+Create test_subshells.py: (a) capacity(0..3) == [2,6,10,14]; (b) m_values(2)
+== [-2,-1,0,1,2]; (c) L2 from ladder_matrices(l) equals l(l+1)*I for l in {1,2,3}
+to 1e-9; (d) period_lengths() yields period sums [2,8,8,18,18,32]; (e)
+m_values(0.5) raises (orbital l must be integer).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `subshells.py`, `test_subshells.py`, passing `pytest`.
+**What to inspect:** confirm $s,p,d,f$ capacities are $2,6,10,14$; confirm the period sums match the table; confirm a half-integer $\ell$ is rejected.
+**If it goes wrong:** the typical bug is `capacity` returning $2\ell+1$ (forgetting the spin factor of 2), giving $1,3,5,7$. Recovery: the $d$ block must hold 10 electrons — check capacity(2) returns 10 before trusting any period length.
+**CLAUDE.md / AGENTS.md note:** add — "Subshell capacity is $2(2\ell+1)$; orbital $\ell$ is integer-only. The Madelung filling order is an empirical table, never derived in code."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the `subshells.py` capacity and angular-momentum module from R3/R4.
+**Validation type:** Code / Structured data
+**Risk level:** Medium — a wrong capacity or period length cascades into every configuration prediction.
+**Setup:** use your R3/R4 artifact.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Angular Momentum
+□ Correctness: are s,p,d,f capacities 2,6,10,14?
+□ Completeness: does m_values include 0 and both extremes, 2l+1 entries total?
+□ Scope: did it derive the Madelung order in code (it must NOT) or just count?
+□ Physics criterion 1: L2 == l(l+1)*I exactly for l=1,2,3?
+□ Physics criterion 2: do the period sums equal [2,8,8,18,18,32]?
+□ Failure-mode check: any of —
+  - fluent but wrong (capacity 2l+1, dropping the spin factor)
+  - off-by-one in m_values (omits 0 or the top rung)
+  - accepts half-integer orbital l
+  - period lengths derived from naive n-ordering (3d before 4s) -> wrong sums
+```
+**What to do with findings:** pass → use it, noting the period-length match is what made it trustworthy; one fail → fix the capacity factor and re-run; multiple fails → recount $2(2\ell+1)$ by hand for $s,p,d,f$ and rebuild.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI built the subshell-capacity counter and the angular-momentum matrices, which I checked against $\hat L^2=\ell(\ell+1)\hbar^2\mathbb 1$.
+> *2:* The AI could not be trusted to order the subshells into periods — the Madelung filling order is empirical, and I supplied it rather than letting the model infer it.
+**Physics-judgment connection:** validating a capacity construction against the exact angular-momentum eigenvalue identity and against the measured period lengths — catching an off-by-one before it misshapes the table.

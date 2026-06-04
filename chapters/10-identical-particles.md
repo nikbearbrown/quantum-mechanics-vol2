@@ -162,11 +162,11 @@ The periodic table is not a catalogue of patterns. It is a theorem about antisym
 
 ## Bosons, Briefly
 
-Bosons have symmetric wave functions. Nothing prevents any number of them from occupying the same single-particle state. At low temperature and high density, a macroscopic fraction can pile into the lowest-energy state — Bose-Einstein condensation. Cornell and Wieman achieved the first dilute-gas BEC in $^{87}$Rb at JILA in 1995, cooling the atoms to roughly 170 nK. Nobel Prize 2001. [verify]
+Bosons have symmetric wave functions. Nothing prevents any number of them from occupying the same single-particle state. At low temperature and high density, a macroscopic fraction can pile into the lowest-energy state — Bose-Einstein condensation. Cornell and Wieman achieved the first dilute-gas BEC in $^{87}$Rb at JILA in 1995, cooling the atoms to roughly 170 nK. Nobel Prize 2001.
 
 One misconception worth naming: bosons are not attracted to each other and fermions are not repelled by each other in the sense of forces. There is no term in the Hamiltonian encoding exchange statistics. What exists is a correlation in the joint probability density $|\psi(\vec{r}_1, \vec{r}_2)|^2$ from the symmetrization: fermions have a Pauli node at $\vec{r}_1 = \vec{r}_2$ (the antisymmetric wave function vanishes there); bosons have enhanced probability at $\vec{r}_1 = \vec{r}_2$ (the symmetric wave function peaks on the diagonal). The single-particle marginal density $\int|\psi|^2\,d^3r_2$ is identical for bosons, fermions, and distinguishable particles in the same pair of single-particle states. A single-particle detector cannot distinguish them.
 
-The fermion node also holds up dead stars. Electrons in a white dwarf cannot share single-particle states; as the star contracts, electrons are forced into higher-energy states, generating an outward degeneracy pressure with no thermal origin. Chandrasekhar showed in 1931 that this pressure has a relativistic limit at approximately $1.4\,M_\odot$ — above which no equilibrium exists and gravitational collapse is inevitable. He did this calculation at age 19 on a steamship from India to England. Nobel Prize 1983. [verify]
+The fermion node also holds up dead stars. Electrons in a white dwarf cannot share single-particle states; as the star contracts, electrons are forced into higher-energy states, generating an outward degeneracy pressure with no thermal origin. Chandrasekhar showed in 1931 that this pressure has a relativistic limit at approximately $1.4\,M_\odot$ — above which no equilibrium exists and gravitational collapse is inevitable. He did this calculation at age 19 on a steamship from India to England. Nobel Prize 1983.
 
 ---
 
@@ -250,15 +250,125 @@ VERIFY.
 
 ## References
 
-- Pauli, W. (1925). "Über den Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der Komplexstruktur der Spektren." *Zeitschrift für Physik*, 31, 765–783. [verify]
-- Slater, J.C. (1929). "The Theory of Complex Spectra." *Physical Review*, 34, 1293–1322. [verify]
-- Heisenberg, W. (1926). "Mehrköperproblem und Resonanz in der Quantenmechanik." *Zeitschrift für Physik*, 38, 411–426. [verify]
-- Pauli, W. (1940). "The Connection Between Spin and Statistics." *Physical Review*, 58, 716–722. [verify]
-- Chandrasekhar, S. (1931). "The Maximum Mass of Ideal White Dwarfs." *Astrophysical Journal*, 74, 81–82. [verify]
-- Anderson, M.H. et al. (1995). "Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor." *Science*, 269, 198–201. [verify]
-- Griffiths, D.J. (2018). *Introduction to Quantum Mechanics*, 3rd ed. Cambridge University Press. Chapter 5. [verify]
-- Townsend, J.S. (2012). *A Modern Approach to Quantum Mechanics*, 2nd ed. University Science Books. Chapter 11. [verify]
-- Sakurai, J.J. and Napolitano, J. (2021). *Modern Quantum Mechanics*, 3rd ed. Cambridge University Press. Chapter 7. [verify]
+- Pauli, W. (1925). "Über den Zusammenhang des Abschlusses der Elektronengruppen im Atom mit der Komplexstruktur der Spektren." *Zeitschrift für Physik*, 31, 765–783.
+- Slater, J.C. (1929). "The Theory of Complex Spectra." *Physical Review*, 34, 1293–1322.
+- Heisenberg, W. (1926). "Mehrköperproblem und Resonanz in der Quantenmechanik." *Zeitschrift für Physik*, 38, 411–426.
+- Pauli, W. (1940). "The Connection Between Spin and Statistics." *Physical Review*, 58, 716–722.
+- Chandrasekhar, S. (1931). "The Maximum Mass of Ideal White Dwarfs." *Astrophysical Journal*, 74, 81–82.
+- Anderson, M.H. et al. (1995). "Observation of Bose-Einstein Condensation in a Dilute Atomic Vapor." *Science*, 269, 198–201.
+- Griffiths, D.J. (2018). *Introduction to Quantum Mechanics*, 3rd ed. Cambridge University Press. Chapter 5.
+- Townsend, J.S. (2012). *A Modern Approach to Quantum Mechanics*, 2nd ed. University Science Books. Chapter 11.
+- Sakurai, J.J. and Napolitano, J. (2021). *Modern Quantum Mechanics*, 3rd ed. Cambridge University Press. Chapter 7.
+
+---
+
+## Running Project — Build the Atom
+
+**This chapter adds:** antisymmetry and exclusion — the Slater determinant of one-electron spin-orbitals as the many-electron state, Pauli exclusion as the theorem that no two electrons share a spin-orbital, and the exchange integral $K>0$ that is the mechanism behind Hund's first rule (maximize $S$) and the Cr/Cu anomalies.
+
+The atom-builder fills orbitals one at a time, but the *state* is a single antisymmetric object: a Slater determinant. This chapter makes that exact — the determinant vanishes if two columns (spin-orbitals) coincide, which *is* Pauli exclusion, the rule that limits each spin-orbital to one electron. And the exchange integral $K$ that drops out of antisymmetrization is precisely why parallel spins lower the energy — Hund's Rule 1 — and why $\text{Cr}=[\text{Ar}]3d^54s^1$ beats the Madelung prediction. This is the piece that turns a filling list into a physical, exclusion-respecting configuration.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Coding a Slater-determinant builder from a list of $N$ spin-orbital functions (an $N\times N$ matrix evaluated at $N$ coordinates, then `numpy.linalg.det`) — *Why AI works here:* it is matrix construction; you check that swapping two particles flips the sign and that duplicating a spin-orbital gives exactly zero.
+- Writing the Aufbau filler that places electrons into spin-orbitals in Madelung order, two per spatial orbital, enforcing exclusion — *Why AI works here:* it is bookkeeping over the capacity table; you verify against known configurations (carbon $1s^22s^22p^2$).
+
+**The tell:** You are using AI well when you have an exact check — a determinant with a repeated column is identically zero, and total electron count must equal $Z$.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding which configuration wins when exchange stabilization competes with orbital energy (Cr, Cu) — *Why AI fails here:* this is a quantitative energy comparison (exchange gain vs. the small $3d$–$4s$ gap); an LLM will often "fix" chromium by recall rather than by comparing $K$-weighted parallel-pair counts, and gets adjacent elements wrong.
+- Asserting that Hund's Rule 1 comes from a spin–spin force — *Why AI fails here:* the mechanism is purely the exchange integral and spatial antisymmetry (no spin-dependent force in the Hamiltonian); an LLM that narrates a magnetic spin interaction encodes the wrong physics into your explanation.
+
+**The tell:** If you cannot explain why parallel spins lower the energy — antisymmetric spatial wavefunction, electrons farther apart, less repulsion — without the AI, the AI did the physics that should have been yours.
+**Physics-judgment connection:** this trains checking an antisymmetry construction against its exact zeros (repeated spin-orbital → null state) and grounding every energy-ordering claim in the exchange integral rather than an invented force.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `slater.py` that builds Slater determinants, enforces Pauli exclusion, and fills configurations by Aufbau.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I need the many-electron layer:
+Slater determinants, Pauli exclusion, and Aufbau filling.
+
+Write a Python module `slater.py` (numpy only) that:
+
+1. slater_determinant(orbitals, coords): given N single-particle orbital
+   callables and N coordinate points, build the NxN matrix M[i][j] =
+   orbital_i(coord_j) and return det(M)/sqrt(N!). Demonstrate that swapping two
+   coords flips the sign and that two identical orbitals give exactly 0.
+2. fill_configuration(Z, madelung_order): place Z electrons into spin-orbitals
+   in the given Madelung subshell order, max 2(2l+1) per subshell, returning the
+   configuration string (e.g. '1s2 2s2 2p2' for Z=6) and the list of occupied
+   (n,l,m_l,m_s) spin-orbitals. Enforce exclusion (no spin-orbital twice).
+3. parallel_pairs(occupied): count pairs of electrons in the SAME subshell with
+   the SAME spin (the exchange-stabilization proxy).
+4. __main__: fill Z=6 (expect 1s2 2s2 2p2) and Z=10 (expect 1s2 2s2 2p6);
+   assert a determinant with a duplicated spin-orbital is 0; print parallel_pairs
+   for a half-filled p^3 (expect 3 parallel pairs among the three unpaired up
+   spins).
+
+Do NOT resolve the Cr/Cu anomalies here (that needs an exchange-energy
+comparison in the capstone). Use the plain Madelung order. Comment that Pauli
+exclusion is a THEOREM about determinants, not a separate postulate.
+```
+**What this produces:** `slater.py` — antisymmetric state construction, exclusion-respecting filling, and the parallel-pair count feeding Hund's Rule 1.
+**How to adapt:** *Your system:* the determinant demo can use toy 1D orbitals; the filling logic is what the simulator actually uses. *ChatGPT/Gemini:* same prompt; ask for the oxygen $2p^4$ unpaired-electron count (expect 2). *Claude Project:* keep with the physics core — the capstone adds the Cr/Cu exchange comparison.
+**Builds on:** Chapter 9's hydrogenic spin-orbitals (the determinant's columns).  **Next:** Chapter 11 assembles all modules into the full atom-builder and validates against NIST.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the Slater/Aufbau module plus tests on exclusion, configurations, and parallel pairs.
+**Tool:** Claude Code.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `subshells.py`, `spin.py`, `hydrogenic.py` present.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–9 present.
+**The Task:**
+```
+In build-the-atom/, create slater.py with slater_determinant(orbitals, coords),
+fill_configuration(Z, madelung_order), and parallel_pairs(occupied).
+
+Create test_slater.py: (a) a determinant with two identical spin-orbitals is 0
+to 1e-12; (b) swapping two coordinates flips the determinant's sign; (c)
+fill_configuration(6) == '1s2 2s2 2p2' and total electrons == 6; (d)
+fill_configuration(18) == '1s2 2s2 2p6 3s2 3p6'; (e) parallel_pairs for a
+half-filled p^3 (3 unpaired parallel spins) == 3.
+
+Run `pytest -q` and show output. Use plain Madelung order; do NOT special-case
+Cr or Cu. Modify no other module.
+```
+**Expected output:** `slater.py`, `test_slater.py`, passing `pytest`.
+**What to inspect:** confirm the repeated-orbital determinant is exactly zero (Pauli as a theorem); confirm the sign flip on particle swap; confirm carbon and argon configurations; confirm the parallel-pair count for $p^3$.
+**If it goes wrong:** if `fill_configuration` overfills a subshell (e.g. 3 electrons in an $s$ orbital), the capacity guard is missing. Recovery: assert each subshell occupancy $\le 2(2\ell+1)$ and total $=Z$ before returning.
+**CLAUDE.md / AGENTS.md note:** add — "The many-electron state is a single Slater determinant; Pauli exclusion is enforced structurally (no spin-orbital occupied twice). Cr/Cu anomalies are handled only in the capstone via exchange-energy comparison."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the `slater.py` antisymmetry/filling module from R3/R4.
+**Validation type:** Code
+**Risk level:** Medium–High — this enforces exclusion and produces the configurations the whole project predicts; a filling bug invalidates every result.
+**Setup:** use your R3/R4 artifact.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Identical Particles
+□ Correctness: is a determinant with a repeated spin-orbital exactly 0?
+□ Completeness: does particle exchange flip the determinant's sign?
+□ Scope: did it avoid special-casing Cr/Cu (capstone territory)?
+□ Physics criterion 1: does fill_configuration give 1s2 2s2 2p2 for Z=6 and the
+  argon configuration for Z=18, with total electrons == Z?
+□ Physics criterion 2: does parallel_pairs correctly count same-subshell
+  same-spin pairs (the exchange-stabilization proxy)?
+□ Failure-mode check: any of —
+  - fluent but wrong (exclusion not enforced; subshell overfilled)
+  - determinant sign convention dropped (no antisymmetry)
+  - Hund Rule 1 explained via a (nonexistent) spin-spin force
+  - Cr/Cu hard-coded here instead of derived later
+```
+**What to do with findings:** pass → use it, noting the repeated-column-zero test is what made it trustworthy; one fail → add the capacity guard and re-run; multiple fails → rebuild the filler against hand-checked carbon/argon configurations.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI built the Slater-determinant constructor and the Aufbau filler, which I checked against the exact repeated-column zero and known configurations.
+> *2:* The AI could not be trusted to resolve the Cr/Cu anomalies or to ground Hund's Rule 1 in the exchange integral rather than a spin force — both required my physical judgment.
+**Physics-judgment connection:** validating an antisymmetry construction against its exact zeros and electron-count conservation, and insisting every energy-ordering claim trace to the exchange integral.
 
 ---
 

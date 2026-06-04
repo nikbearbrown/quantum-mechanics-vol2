@@ -27,6 +27,9 @@ The physical consequence is direct: in a state $|a, b\rangle$ that is simultaneo
 
 <!-- → [DIAGRAM: three-column visual — left column shows two commuting operators A, B with a shared eigenbasis |a,b⟩; middle column shows non-commuting operators with separate eigenbases that cannot coincide; right column shows the hydrogen CSCO {H, L², Lz} with the label triple (n,ℓ,m)] -->
 
+![three-column visual — left column shows two commuting operators A, B with a shared eigenbasis |a,b⟩](../images/03-commutators-and-uncertainty-fig-01.png)
+*Figure 3.1 — three-column visual — left column shows two commuting operators A, B with a shared eigenbasis |a,b⟩*
+
 Conversely: if $[\hat{A}, \hat{B}] \neq 0$, no state is simultaneously an eigenstate of both. Any state sharp in $A$ (meaning $\sigma_A = 0$, i.e., an eigenstate of $\hat{A}$) necessarily has $\sigma_B > 0$. Robertson's theorem makes this quantitative.
 
 ---
@@ -64,6 +67,9 @@ Since this holds for every $\psi$:
 $$\boxed{[\hat{x}, \hat{p}] = i\hbar.}$$
 
 <!-- → [DIAGRAM: side-by-side calculation showing the two orderings x̂p̂ψ and p̂(x̂ψ) with the product rule term highlighted in a different color, and the cancellation that leaves iℏψ] -->
+
+![side-by-side calculation showing the two orderings x̂p̂ψ and p̂(x̂ψ) with the product rule term highlighted in a different color, and the…](../images/03-commutators-and-uncertainty-fig-02.png)
+*Figure 3.2 — side-by-side calculation showing the two orderings x̂p̂ψ and p̂(x̂ψ) with the product rule term highlighted in a different color, and the…*
 
 This is the **canonical commutation relation**. It is a theorem, not a postulate: it follows directly from the operator representations $\hat{x} = $ multiplication by $x$ and $\hat{p} = -i\hbar\partial_x$, which themselves follow from requiring that $\hat{p}$ generates translations and has real eigenvalues. Every statement about position-momentum incompatibility — including the uncertainty principle — is downstream of this three-line derivation.
 
@@ -118,6 +124,9 @@ At the north pole of the Bloch sphere — the state $|\!\uparrow\rangle$, an eig
 A zero Robertson bound does not mean both observables can be simultaneously sharp — it means the inequality is not binding for that state. One observable might still be fully spread out. The state $(|+y\rangle + |-y\rangle)/\sqrt{2}$ has $\langle\hat{S}_y\rangle = 0$, giving a zero bound for $\hat{S}_x$ and $\hat{S}_z$; yet both $\sigma_{S_x}$ and $\sigma_{S_z}$ are nonzero. A zero bound is a silence from the theorem, not a guarantee.
 
 <!-- → [CHART: Bloch sphere with color map showing the Robertson bound (ℏ/2)|⟨S_y⟩| as a function of position on the sphere — blue (zero) at the north/south poles and the x-eigenstates, red (maximum = ℏ²/4) at the y-eigenstates; shows the state-dependence of the bound visually] -->
+
+![Bloch sphere with color map showing the Robertson bound (ℏ/2)|⟨S_y⟩| as a function of position on the sphere — blue (zero) at the…](../images/03-commutators-and-uncertainty-fig-03.png)
+*Figure 3.3 — Bloch sphere with color map showing the Robertson bound (ℏ/2)|⟨S_y⟩| as a function of position on the sphere — blue (zero) at the…*
 
 ---
 
@@ -320,3 +329,105 @@ Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). Univ
 Sakurai, J. J., & Napolitano, J. (2021). *Modern Quantum Mechanics* (3rd ed.). Cambridge University Press. §1.4.
 
 Griffiths, D. J., & Schroeter, D. F. (2018). *Introduction to Quantum Mechanics* (3rd ed.). Cambridge University Press. §3.5.
+
+---
+
+## Running Project — Build the Atom
+
+**This chapter adds:** the quantum-number labeling rule — the orbitals are labeled by the joint eigenvalues of a complete set of commuting observables $\{\hat{H}_\text{eff}, \hat{L}^2, \hat{L}_z, \hat{S}_z\}$, which is *why* $(n, \ell, m_\ell, m_s)$ is a legitimate four-number label and not an arbitrary tag.
+
+In Chapter 2 the diagonalizer warned that eigenvectors in a degenerate subspace are ambiguous. This chapter resolves the ambiguity: because $[\hat{H}_\text{eff}, \hat{L}^2] = [\hat{H}_\text{eff}, \hat{L}_z] = [\hat{L}^2, \hat{L}_z] = 0$ for a central field, the orbitals can be chosen as simultaneous eigenstates of all of them. The simulator's `Orbital(n, l, m_l, m_s)` is well-defined precisely because these operators commute. This chapter adds the CSCO-validation guard that confirms the labeling is consistent.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Writing a routine that computes a matrix commutator $[\hat A, \hat B] = AB - BA$ and tests it against zero to tolerance — *Why AI works here:* it is one line of `numpy` plus a norm check; you verify it on $[\hat{L}^2, \hat{L}_z]$ (should be zero) and $[\hat{L}_x, \hat{L}_y]$ (should not).
+- Generating a table that, for each orbital in the basis, records its $(\ell(\ell+1), m_\ell)$ eigenvalue pair under $\hat{L}^2$ and $\hat{L}_z$ — *Why AI works here:* it is reformatting already-computed eigenvalues into a label table.
+
+**The tell:** You are using AI well when you can check the output against a known commutator — $[\hat{L}^2, \hat{L}_z] = 0$ must come back zero; $[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z$ must not.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding which operators form a *complete* set — enough to uniquely label every orbital — *Why AI fails here:* completeness is a physics judgment about whether any degeneracy remains unbroken; an LLM may declare a set complete when, say, $m_s$ is still needed to distinguish two states, and the code will run with silently duplicated labels.
+- Asserting that two orbitals with the same $(n, \ell)$ but different $m_\ell$ are genuinely distinct physical states rather than a basis artifact — *Why AI fails here:* this is the same degenerate-subspace trap from Chapter 2, now dressed as a labeling question; the algebra ($[\hat L^2,\hat L_z]=0$) is what licenses the distinction, not the solver's output.
+
+**The tell:** If you cannot say why $(n,\ell,m_\ell,m_s)$ uniquely names a state without the AI, the AI supplied a justification that should have been yours.
+**Physics-judgment connection:** this trains checking a proposed label set against the commutator algebra — a label is only good if its operator commutes with the others, so the joint eigenbasis exists.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `csco.py` that verifies the orbital labels correspond to a commuting set, using the $\ell = 1$ and $\ell = 2$ angular-momentum matrices.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator and need to justify that my orbital
+labels (n, l, m_l, m_s) come from a complete set of commuting observables.
+
+Write a Python module `csco.py` (numpy only) that:
+
+1. Builds the (2l+1)x(2l+1) matrices L2, Lz, Lx, Ly for a given l, using the
+   ladder formulas: Lz diagonal with entries m (units hbar); L_plus with entries
+   hbar*sqrt((l-m)(l+m+1)) on the appropriate off-diagonal; Lx=(L+ + L-)/2,
+   Ly=(L+ - L-)/(2i); L2 = Lx@Lx + Ly@Ly + Lz@Lz.
+2. Provides commutator(A, B) = A@B - B@A and is_zero(M, tol=1e-9).
+3. Provides verify_csco(l) that checks [L2, Lz] == 0 and L2 == l(l+1)*I, and
+   confirms [Lx, Ly] != 0 (so Lz is a *needed* label, not redundant). Returns a
+   dict of booleans.
+4. __main__: run verify_csco for l=1 and l=2, print the results, and assert
+   [L2, Lz] is zero while [Lx, Ly] is nonzero in both cases.
+
+Explain in a comment why [L2, Lz] = 0 is exactly what makes (l, m_l) a valid
+simultaneous label, and why [Lx, Ly] != 0 means we cannot also label by m_x.
+Do not touch energy ordering or screening.
+```
+**What this produces:** `csco.py` — a guard confirming the angular-momentum labels are simultaneously diagonalizable.
+**How to adapt:** *Your system:* set $\hbar = 1$ to keep numbers clean. *ChatGPT/Gemini:* same prompt; ask for a check that $\hat{L}^2 = \ell(\ell+1)\mathbb{1}$ exactly. *Claude Project:* keep next to `orbitals.py`; later chapters reuse these angular-momentum matrices for term symbols.
+**Builds on:** Chapter 2's diagonalizer (which produced the eigenvectors these labels disambiguate).  **Next:** Chapter 4 confirms the labeled ground configuration is a genuine *stationary* state.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the CSCO verifier plus tests that the commuting/non-commuting structure is correct.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `orbitals.py` and `oneelectron.py` in `build-the-atom/`.
+- [ ] `numpy`, `pytest` available.
+- [ ] CLAUDE.md rules from Chapters 1–2 present.
+**The Task:**
+```
+In build-the-atom/, create csco.py building L2, Lz, Lx, Ly from the ladder
+formulas for a given l, plus commutator(A,B), is_zero(M,tol), and verify_csco(l).
+
+Create test_csco.py: for l in {1, 2}, assert (a) [L2, Lz] is the zero matrix to
+1e-9; (b) L2 == l(l+1)*I to 1e-9; (c) [Lx, Ly] is NOT the zero matrix; (d) for
+l=1, Lz == hbar*diag(-1,0,1) with hbar=1.
+
+Run `pytest -q` and show output. Do not modify orbitals.py or oneelectron.py.
+```
+**Expected output:** `csco.py`, `test_csco.py`, passing `pytest` (tests across $\ell=1,2$).
+**What to inspect:** confirm $[\hat{L}^2,\hat{L}_z]$ is zero to machine precision; confirm $\hat{L}^2 = 2\hbar^2\mathbb{1}$ for $\ell=1$ and $6\hbar^2\mathbb{1}$ for $\ell=2$; confirm $[\hat{L}_x,\hat{L}_y]$ is *not* zero (so $m_\ell$ from $\hat{L}_z$ is a real, non-redundant label).
+**If it goes wrong:** the classic error is an off-by-one in the ladder coefficient $\sqrt{(\ell-m)(\ell+m+1)}$, which makes $\hat{L}^2$ come out non-diagonal. Recovery: print $\hat{L}_+$ and check the top rung is annihilated ($\hat{L}_+|\ell,\ell\rangle = 0$) before trusting $\hat{L}^2$.
+**CLAUDE.md / AGENTS.md note:** add — "Orbital labels $(n,\ell,m_\ell,m_s)$ are valid only because $\{\hat H_\text{eff},\hat L^2,\hat L_z,\hat S_z\}$ mutually commute; never introduce a label whose operator does not commute with the rest."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the `csco.py` commutator/labeling guard from R3/R4.
+**Validation type:** Code / Reasoning chain
+**Risk level:** Medium — if the labeling is not actually a commuting set, every later orbital reference is built on a false premise.
+**Setup:** use your R3/R4 artifact.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Commutators & Compatibility
+□ Correctness: is [L2, Lz] zero to tolerance for l=1 and l=2?
+□ Completeness: does it confirm [Lx, Ly] is NONZERO (so Lz is a needed label)?
+□ Scope: did it avoid touching energy ordering / screening?
+□ Physics criterion 1: L2 == l(l+1)*I exactly (diagonal, correct eigenvalue)?
+□ Physics criterion 2: does the explanation correctly state that commuting
+  operators share an eigenbasis, which is what licenses (l, m_l) as a joint label?
+□ Failure-mode check: any of —
+  - fluent but wrong (claims a set is complete when m_s is still needed)
+  - off-by-one in ladder coefficient (L2 not proportional to I)
+  - sign error in Ly (commutators come out wrong)
+  - reasoning reversed (says non-commuting operators share a basis)
+```
+**What to do with findings:** pass → trust the labeling, noting that $[\hat L^2,\hat L_z]=0$ verified numerically is what made it trustworthy; one fail → fix the ladder coefficient and re-run; multiple fails / cannot-determine → rebuild the angular-momentum matrices by hand from the chapter's $\ell=1$ example.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI built the angular-momentum matrices and the commutator checks that confirm $(\ell, m_\ell)$ is a simultaneous-eigenvalue label.
+> *2:* The AI could not judge whether my label set is *complete* — that $\{\hat H_\text{eff},\hat L^2,\hat L_z,\hat S_z\}$ leaves no orbital ambiguous — which I confirmed against the algebra myself.
+**Physics-judgment connection:** verifying a proposed labeling against the commutator algebra — a quantum number is legitimate only when its operator commutes with the others, so the joint eigenbasis genuinely exists.

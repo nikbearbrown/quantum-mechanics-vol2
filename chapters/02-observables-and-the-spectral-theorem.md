@@ -105,6 +105,9 @@ For a degenerate eigenvalue $a_n$ with multiplicity $d > 1$, the projector is $\
 
 <!-- → [FIGURE: geometric diagram in a 2D Hilbert space — showing a state vector |ψ⟩, the two eigenstates |a₁⟩ and |a₂⟩ as an orthonormal basis, and the projections P̂₁|ψ⟩ and P̂₂|ψ⟩ as components; the goal is to make the Born rule visually obvious as "squared length of the projection"] -->
 
+![geometric diagram in a 2D Hilbert space — showing a state vector |ψ⟩, the two eigenstates |a₁⟩ and |a₂⟩ as an orthonormal basis, and the…](../images/02-observables-and-the-spectral-theorem-fig-01.png)
+*Figure 2.1 — geometric diagram in a 2D Hilbert space — showing a state vector |ψ⟩, the two eigenstates |a₁⟩ and |a₂⟩ as an orthonormal basis, and the…*
+
 Once you have the spectral decomposition, you can define functions of operators directly:
 
 $$f(\hat{A}) = \sum_n f(a_n)\,|a_n\rangle\langle a_n|.$$
@@ -272,3 +275,110 @@ Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1977). *Quantum Mechanics*, Vol. I. 
 Reed, M., & Simon, B. (1972). *Methods of Modern Mathematical Physics*, Vol. I. Academic Press. (Rigorous treatment of self-adjoint operators and the spectral theorem in infinite dimensions.)
 
 Marshman, E., & Singh, C. (2017). Investigating and improving student understanding of the probability distributions for measuring physical observables in quantum mechanics. *European Journal of Physics*, 38, 025705.
+
+---
+
+## Running Project — Build the Atom
+
+**This chapter adds:** the diagonalization step — represent a one-electron effective Hamiltonian as a Hermitian matrix and extract its orbital energies as the real eigenvalues, so the simulator can *order* the orbitals rather than just label them.
+
+The central-field approximation (Chapter 11) replaces the intractable many-electron Hamiltonian with a sum of one-electron problems $\hat{h} = \hat{p}^2/2m_e + V_\text{eff}(r)$. Each one-electron $\hat{h}$ is Hermitian; the spectral theorem guarantees real eigenvalues (the orbital energies) and an orthonormal eigenbasis (the orbitals). This chapter builds the routine that takes a Hermitian one-electron Hamiltonian matrix and returns its sorted real spectrum — the energies you will fill electrons into by the Aufbau rule.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Wrapping a numerical eigensolver (`numpy.linalg.eigh`) and returning eigenvalues sorted ascending with their eigenvectors — *Why AI works here:* it is standard library plumbing; you can verify it on a $2\times2$ matrix whose eigenvalues you compute by hand from $\lambda^2 - \text{Tr}\,\lambda + \det = 0$.
+- Writing a Hermiticity guard that raises if the input matrix fails $A_{mn} = A_{nm}^*$ to tolerance — *Why AI works here:* this is a mechanical check with a clear pass/fail, and it protects every later step.
+
+**The tell:** You are using AI well when you have an independent check — the trace equals the sum of eigenvalues, the determinant equals their product.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether a near-degeneracy in the computed spectrum (e.g. $3d$ and $4s$ almost equal) is physical or a numerical artifact — *Why AI fails here:* this is exactly the central-field subtlety the capstone is honest about; an LLM will resolve a degeneracy by whatever its training prior suggests, with no way to tell a real level crossing from round-off.
+- Trusting eigenvectors in a degenerate subspace — *Why AI fails here:* eigensolvers return an arbitrary basis within a degenerate eigenspace (Gram-Schmidt freedom), and an LLM presenting one such basis as "the" orbitals is silently making a choice that needs a second commuting observable to fix.
+
+**The tell:** If you could not explain why two orbitals are ordered the way they are without the AI, the AI did physics that should have been yours.
+**Physics-judgment connection:** this demands you check the computed spectrum against invariants — $\sum_n \lambda_n = \text{Tr}(H)$ and $\prod_n \lambda_n = \det(H)$ — before believing the energy ordering it produced.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `oneelectron.py` that diagonalizes a one-electron Hamiltonian matrix and returns sorted orbital energies and orbitals.
+**Tool:** Claude chat (single module, no persistent context required).
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I already have orbitals.py (an orbital
+basis and a matrix_of helper). Now I need the diagonalization layer.
+
+Write a Python module `oneelectron.py` (numpy only) that:
+
+1. Provides assert_hermitian(H, tol=1e-9) raising ValueError if H != H.conj().T
+   to tolerance.
+2. Provides solve_one_electron(H) that asserts Hermiticity, then returns
+   (energies, orbitals) where energies is a 1D array sorted ascending and
+   orbitals is the matrix of eigenvectors in the same order (columns).
+3. Provides spectral_checks(H) returning a dict comparing sum(eigenvalues) to
+   trace(H) and prod(eigenvalues) to det(H), with booleans for whether each
+   matches to 1e-6 relative tolerance.
+4. Includes a __main__ block that builds the 2x2 matrix [[2, 1+1j],[1-1j, 0]],
+   diagonalizes it, prints the eigenvalues, and asserts they are real and equal
+   1 +/- sqrt(3) to 1e-9 (this is the worked example from the chapter).
+
+Do NOT build the physical V_eff or assign electrons — only the linear algebra
+and the spectral consistency checks. Note in a docstring that real eigenvalues
+are guaranteed because the Hamiltonian is Hermitian (the spectral theorem).
+```
+**What this produces:** `oneelectron.py` — the spectral engine that turns a one-electron Hamiltonian into an ordered list of orbital energies.
+**How to adapt:** *Your system:* if you prefer SciPy, swap `numpy.linalg.eigh` for `scipy.linalg.eigh`. *ChatGPT/Gemini:* same prompt; ask additionally for a test that a non-Hermitian input raises. *Claude Project:* add alongside `orbitals.py` so the two modules form the project's linear-algebra core.
+**Builds on:** Chapter 1's orbital basis and `matrix_of`.  **Next:** Chapter 3 supplies the quantum-number *labels* (CSCO) that disambiguate degenerate eigenvectors this chapter warns about.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the diagonalizer plus a test verifying the spectral consistency checks on a known matrix.
+**Tool:** Claude Code.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `orbitals.py` from Chapter 1 is in `build-the-atom/`.
+- [ ] `numpy` installed; `pytest` available.
+- [ ] CLAUDE.md rule from Chapter 1 present.
+**The Task:**
+```
+In build-the-atom/, create oneelectron.py with assert_hermitian(H, tol),
+solve_one_electron(H) returning ascending-sorted (energies, orbitals), and
+spectral_checks(H) comparing sum/prod of eigenvalues to trace/det.
+
+Create test_oneelectron.py with pytest tests: (a) the matrix
+[[2, 1+1j],[1-1j, 0]] has eigenvalues 1 +/- sqrt(3), both real to 1e-9;
+(b) spectral_checks reports trace and det matches True for that matrix;
+(c) a non-Hermitian matrix [[0,1j],[1j,0]] raises ValueError from
+assert_hermitian.
+
+Run `pytest -q` and show output. Do not modify orbitals.py.
+```
+**Expected output:** `oneelectron.py`, `test_oneelectron.py`, passing `pytest` (3 tests).
+**What to inspect:** confirm the eigenvalues print as real (zero imaginary part to tolerance); confirm $\lambda_+ + \lambda_- = 2 = \text{Tr}$ and $\lambda_+\lambda_- = -2 = \det$.
+**If it goes wrong:** most likely it uses `numpy.linalg.eig` (general, returns complex eigenvalues with tiny imaginary parts) instead of `eigh` (Hermitian, real). Recovery: switch to `eigh`, which both guarantees real output and exploits Hermiticity.
+**CLAUDE.md / AGENTS.md note:** add — "Always diagonalize one-electron Hamiltonians with a Hermitian solver (`eigh`); run `spectral_checks` and refuse results where trace/det do not match."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the `oneelectron.py` diagonalizer from R3/R4.
+**Validation type:** Code / Numerical result
+**Risk level:** Medium — a wrong eigensolver or unsorted output silently corrupts the orbital ordering that the entire Aufbau filling depends on.
+**Setup:** use your R3/R4 artifact.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Observables & the Spectral Theorem
+□ Correctness: are the returned eigenvalues sorted ascending and real?
+□ Completeness: does it reject non-Hermitian input rather than silently
+  returning complex eigenvalues?
+□ Scope: did it stay out of physics (no V_eff, no electron assignment)?
+□ Physics criterion 1: sum(eigenvalues) == trace(H) to 1e-6?
+□ Physics criterion 2: prod(eigenvalues) == det(H) to 1e-6?
+□ Failure-mode check: any of —
+  - fluent but wrong (used eig instead of eigh; eigenvalues carry spurious
+    imaginary parts)
+  - eigenvectors in a degenerate subspace presented as unique
+  - eigenvalues returned unsorted, breaking later Aufbau filling
+  - missing ground truth (no trace/det cross-check)
+```
+**What to do with findings:** pass → adopt it, noting the trace/det agreement is what made it trustworthy; one fail (e.g. unsorted) → add the sort, re-run; multiple fails → this is a "do it yourself" moment, `eigh` plus a sort is three lines.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI wrote the Hermitian-diagonalization wrapper and the trace/determinant consistency checks.
+> *2:* The AI could not tell me whether a near-degeneracy between two orbital energies is physical or numerical — that judgment, central to the central-field approximation's honesty, was mine.
+**Physics-judgment connection:** checking a numerical spectrum against the analytic invariants (trace = sum, det = product) before trusting it — the discipline that catches a wrong solver before it poisons downstream physics.

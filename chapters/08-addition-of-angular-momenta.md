@@ -11,6 +11,9 @@ This chapter is about how to construct those states, what they mean, and why the
 
 <!-- → [FIGURE: diagram of the hydrogen hyperfine structure — showing the two energy levels (triplet F=1 and singlet F=0) with the 21-cm photon emitted in the transition; the triplet should be labeled with the three M_F states and their spin configurations; include the frequency 1420.405 MHz and wavelength 21.1 cm] -->
 
+![diagram of the hydrogen hyperfine structure — showing the two energy levels (triplet F=1 and singlet F=0) with the 21-cm photon emitted in…](../images/08-addition-of-angular-momenta-fig-01.png)
+*Figure 8.1 — diagram of the hydrogen hyperfine structure — showing the two energy levels (triplet F=1 and singlet F=0) with the 21-cm photon emitted in…*
+
 ---
 
 ## Two Bases for the Same Space
@@ -266,3 +269,107 @@ Cohen-Tannoudji, C., Diu, B., & Laloë, F. (1977). *Quantum Mechanics*, Vol. II.
 Condon, E. U., & Shortley, G. H. (1935). *The Theory of Atomic Spectra*. Cambridge University Press. (Original source of the phase convention.)
 
 Ewen, H. I., & Purcell, E. M. (1951). Observation of a line in the galactic radio spectrum. *Nature*, 168, 356. (First detection of the 21-cm line.)
+
+---
+
+## Running Project — Build the Atom
+
+**This chapter adds:** the angular-momentum coupling that produces term symbols — couple the open-subshell electrons' orbital and spin angular momenta into total $L$, $S$, and then $J$, the $^{2S+1}L_J$ label and specifically the $J = |L-S| \dots L+S$ that Hund's third rule selects.
+
+A configuration like $[\text{Ar}]3d^6 4s^2$ is not the end of the prediction — the atom-builder must say *which term* is the ground state: iron's $^5D_4$. That requires combining the open $3d^6$ electrons' angular momenta. This chapter supplies the coupling machinery: the triangle rule for allowed $J$, the $M = m_1 + m_2$ selection, and the $\hat J^2 = \hat L^2 + \hat S^2 + 2\hat L\cdot\hat S$ identity that makes $J$ a good quantum number. Chapter 11's Hund Rule 3 then picks $J = |L-S|$ (less than half-filled) or $L+S$ (more than half-filled).
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Coding the triangle rule and the state-count check $\sum_J(2J+1) = (2j_1+1)(2j_2+1)$ — *Why AI works here:* it is a bounded enumeration with an exact arithmetic check you can confirm by hand for $\tfrac12\otimes\tfrac12$.
+- Building a microstate enumerator: all $(m_\ell, m_s)$ assignments of $k$ electrons in a subshell respecting Pauli, tracking $M_L=\sum m_\ell$ and $M_S=\sum m_s$ — *Why AI works here:* it is combinatorial bookkeeping; you verify the microstate count is $\binom{2(2\ell+1)}{k}$.
+
+**The tell:** You are using AI well when you have an exact count to check — the dimension identity and the binomial microstate count are both verifiable without the AI.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Selecting the *ground* term from the list of allowed terms — *Why AI fails here:* that is Hund's rules (max $S$, then max $L$, then the half-filling $J$ rule), which Chapter 11 establishes; an LLM asked to "pick the ground term" may apply a half-remembered rule and return, say, the wrong $J$ for a more-than-half-filled shell.
+- Trusting an LLM's recalled term symbol for a specific element — *Why AI fails here:* term symbols are exactly the kind of fact LLMs hallucinate fluently (right format, wrong $J$); iron's $^5D_4$ must be *derived* and checked against NIST, not recalled.
+
+**The tell:** If you cannot derive $J$ from the filling fraction without the AI, the AI did the physics that should have been yours.
+**Physics-judgment connection:** this trains checking a coupling result against the state-count identity and against a cited spectroscopic value — never accepting a recalled term symbol as ground truth.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `coupling.py` that enumerates microstates of an open subshell and extracts the allowed terms (the raw material for Hund's rules).
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. Given an open subshell (l, number
+of electrons k), I need to enumerate microstates and find the allowed
+term symbols (2S+1)L_J — but NOT yet pick the ground term.
+
+Write a Python module `coupling.py` (numpy + itertools) that:
+
+1. triangle(j1, j2) returning the list of allowed J = |j1-j2|..j1+j2 (integer
+   or half-integer steps), and assert sum(2J+1) == (2j1+1)(2j2+1).
+2. microstates(l, k): enumerate all ways to place k electrons in the 2(2l+1)
+   spin-orbitals of subshell l (each spin-orbital occupied 0 or 1 times, Pauli),
+   returning for each microstate (M_L = sum m_l, M_S = sum m_s).
+3. allowed_terms(l, k): from the microstate (M_L, M_S) table, extract the set of
+   (S, L) terms present (the standard "subtract the box of microstates" method),
+   and for each (S, L) list the J values from triangle(L, S).
+4. __main__: for p^2 (l=1, k=2) print the allowed terms and assert the set is
+   {1S, 3P, 1D}; for d^6 (l=2, k=6) print the allowed terms and confirm 5D is
+   among them (this is iron's open shell).
+
+IMPORTANT: do NOT apply Hund's rules or select a ground term — only enumerate
+what terms are ALLOWED. The microstate count must equal C(2(2l+1), k).
+```
+**What this produces:** `coupling.py` — the term-enumeration engine feeding Hund's rules.
+**How to adapt:** *Your system:* for large shells the microstate table grows; $d^6$ has $\binom{10}{6}=210$ microstates, still trivial. *ChatGPT/Gemini:* same prompt; ask it to print the $(M_L,M_S)$ table for $p^2$ to inspect. *Claude Project:* keep with the physics core — Chapter 11 layers Hund's rules on top.
+**Builds on:** Chapters 6–7's orbital and spin labels (the microstates are assignments of these).  **Next:** Chapter 9 gives the hydrogenic $R_{n\ell}$ with $Z_\text{eff}$ that sets the actual energies these terms attach to.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the coupling/term-enumeration module plus tests on $p^2$ and $d^6$.
+**Tool:** Claude Code.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `subshells.py`, `spin.py` present.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–7 present.
+**The Task:**
+```
+In build-the-atom/, create coupling.py with triangle(j1, j2), microstates(l, k),
+and allowed_terms(l, k).
+
+Create test_coupling.py: (a) triangle(0.5, 0.5) == [0, 1] and the dimension
+check passes; (b) the number of p^2 microstates equals C(6, 2) = 15; (c)
+allowed_terms(1, 2) yields exactly {1S, 3P, 1D}; (d) allowed_terms(2, 6) (iron's
+3d^6) includes the 5D term; (e) the number of d^6 microstates equals C(10,6)=210.
+
+Run `pytest -q` and show output. Do NOT add Hund's-rule selection. Modify no
+other module.
+```
+**Expected output:** `coupling.py`, `test_coupling.py`, passing `pytest`.
+**What to inspect:** confirm $p^2 \to \{^1S, ^3P, ^1D\}$ (the textbook result); confirm the microstate counts match the binomials; confirm $^5D$ appears for $d^6$ — this is the term Hund's rules will select for iron.
+**If it goes wrong:** the common failure is double-counting microstates (treating electrons as distinguishable), giving $k!$-times too many. Recovery: the microstate count must equal $\binom{2(2\ell+1)}{k}$ — assert it before extracting terms.
+**CLAUDE.md / AGENTS.md note:** add — "Term *enumeration* (this module) is separate from ground-term *selection* (Hund's rules, Chapter 11). Never let the enumerator pick a ground state."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the `coupling.py` term-enumeration module from R3/R4.
+**Validation type:** Code / Structured data
+**Risk level:** Medium–High — term enumeration is where LLMs most readily hallucinate; a wrong term set silently breaks the final $^5D_4$ prediction.
+**Setup:** use your R3/R4 artifact.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Addition of Angular Momenta
+□ Correctness: for p^2, are the allowed terms exactly {1S, 3P, 1D}?
+□ Completeness: does the d^6 term set include 5D (iron's eventual ground term)?
+□ Scope: did it stay OUT of Hund's-rule selection (enumerate only)?
+□ Physics criterion 1: does sum(2J+1) == (2j1+1)(2j2+1) for the triangle rule?
+□ Physics criterion 2: does the microstate count equal C(2(2l+1), k)?
+□ Failure-mode check: any of —
+  - fluent but wrong (recalls a term set instead of deriving it)
+  - electrons treated as distinguishable (microstate count too high by k!)
+  - M = m1 + m2 selection rule violated
+  - half-integer/integer confusion in triangle() for odd electron counts
+```
+**What to do with findings:** pass → use it, noting the $p^2\to\{^1S,^3P,^1D\}$ match is what made it trustworthy; one fail → fix the Pauli/distinguishability handling and re-run; multiple fails / cannot-determine → derive the $p^2$ terms by hand and rebuild the enumerator against that anchor.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI built the microstate enumerator and term extractor, which I checked against the known $p^2 \to \{^1S,^3P,^1D\}$ result.
+> *2:* The AI could not be trusted to *select* the ground term — that is Hund's rules — and I kept that logic out of its hands and out of this module.
+**Physics-judgment connection:** validating a coupling enumeration against the exact dimension and microstate-count identities, and refusing recalled term symbols in favor of derived-and-cited ones.

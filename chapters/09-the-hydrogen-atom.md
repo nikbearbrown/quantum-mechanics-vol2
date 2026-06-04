@@ -51,6 +51,9 @@ The effective potential $V_\text{eff}(r)$ has two competing pieces. The Coulomb 
 
 <!-- → [FIGURE: V_eff(r) for ℓ=0, 1, 2 — showing the pure Coulomb well for ℓ=0, the centrifugal barrier modifying the potential for ℓ=1 and ℓ=2, with a minimum at finite r for ℓ≥1; each curve labeled] -->
 
+![V_eff(r) for ℓ=0, 1, 2 — showing the pure Coulomb well for ℓ=0, the centrifugal barrier modifying the potential for ℓ=1 and ℓ=2, with a…](../images/09-the-hydrogen-atom-fig-01.png)
+*Figure 9.1 — V_eff(r) for ℓ=0, 1, 2 — showing the pure Coulomb well for ℓ=0, the centrifugal barrier modifying the potential for ℓ=1 and ℓ=2, with a…*
+
 The boundary conditions: $u(0) = 0$ so that $R = u/r$ stays finite at the origin; $u(r) \to 0$ as $r \to \infty$ so the wave function is normalizable. These two requirements quantize the energy.
 
 ---
@@ -96,6 +99,9 @@ $$P(r) = r^2|R_{10}(r)|^2 = \frac{4}{a_0^3}\,r^2 e^{-2r/a_0}.$$
 The factor $r^2$ is not optional: it comes from the spherical volume element $4\pi r^2\,dr$. A thin shell at radius $r$ has volume proportional to $r^2$. Even though $|\psi|^2$ is largest at $r = 0$, the shell at small $r$ is vanishingly thin, and the probability of finding the electron near the nucleus nearly vanishes. You cannot plot $|R_{10}|^2$ and claim it answers the radial question; the $r^2$ is the Jacobian, and dropping it is the single most common error in hydrogen atom calculations.
 
 <!-- → [FIGURE: P(r) = (4/a₀³)r²e^{−2r/a₀} for the 1s state, with r_mp=a₀ and ⟨r⟩=3a₀/2 marked as vertical lines, the right-skewed tail visible, and a caption noting the shaded area beyond r_mp exceeds 50%] -->
+
+![P(r) = (4/a₀³)r²e^{−2r/a₀} for the 1s state, with r_mp=a₀ and ⟨r⟩=3a₀/2 marked as vertical lines, the right-skewed tail visible, and a…](../images/09-the-hydrogen-atom-fig-02.png)
+*Figure 9.2 — P(r) = (4/a₀³)r²e^{−2r/a₀} for the 1s state, with r_mp=a₀ and ⟨r⟩=3a₀/2 marked as vertical lines, the right-skewed tail visible, and a…*
 
 **The most-probable radius.** Differentiate $P(r)$ and set to zero:
 
@@ -177,6 +183,9 @@ The moment the potential departs from $1/r$, the $\mathfrak{so}(4)$ symmetry bre
 
 <!-- → [FIGURE: energy level diagram comparing hydrogen (all ℓ degenerate at each n) vs. sodium (levels split by ℓ at n=3), illustrating the $\ell$-degeneracy breaking; sodium D line marked] -->
 
+![energy level diagram comparing hydrogen (all ℓ degenerate at each n) vs. sodium (levels split by ℓ at n=3), illustrating the…](../images/09-the-hydrogen-atom-fig-03.png)
+*Figure 9.3 — energy level diagram comparing hydrogen (all ℓ degenerate at each n) vs. sodium (levels split by ℓ at n=3), illustrating the…*
+
 ---
 
 ## Transitions and Selection Rules
@@ -194,6 +203,9 @@ $$\Delta\ell = \pm 1, \qquad \Delta m = 0, \pm 1.$$
 The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden. It occurs via two-photon emission with lifetime $\approx 0.12$ s — eight orders of magnitude slower than allowed transitions. This is not a curiosity; it is what makes the 2s state metastable enough to interrogate with exquisite precision. The $1S$-$2S$ two-photon transition in hydrogen has been measured to fifteen significant figures using optical frequency combs. The ALPHA collaboration at CERN has measured the same transition in antihydrogen and found agreement with ordinary hydrogen at parts-per-trillion precision — a direct test of CPT symmetry.
 
 <!-- → [FIGURE: hydrogen energy level diagram for n=1 through 5, with allowed electric-dipole transitions (Δℓ=±1) as solid arrows grouped into Lyman, Balmer, Paschen series, and the forbidden 2s→1s as a dashed arrow labeled "two-photon, τ≈0.12s"] -->
+
+![hydrogen energy level diagram for n=1 through 5, with allowed electric-dipole transitions (Δℓ=±1) as solid arrows grouped into Lyman,…](../images/09-the-hydrogen-atom-fig-04.png)
+*Figure 9.4 — hydrogen energy level diagram for n=1 through 5, with allowed electric-dipole transitions (Δℓ=±1) as solid arrows grouped into Lyman,…*
 
 ---
 
@@ -380,3 +392,103 @@ ALPHA Collaboration (2017). Measurement of the 1S–2S transition frequency in a
 Griffiths, D. J., & Schroeter, D. F. (2018). *Introduction to Quantum Mechanics* (3rd ed.). Cambridge University Press. Chapter 4.
 
 Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). University Science Books. Chapter 10.
+
+---
+
+## Running Project — Build the Atom
+
+**This chapter adds:** the hydrogenic orbital with an effective charge — the radial functions $R_{n\ell}(r)$ built from associated Laguerre polynomials, scaled by $Z_\text{eff}$, with the $a_0/Z_\text{eff}$ size scaling and the $n-\ell-1$ radial-node structure; these are the concrete orbitals the central-field model assigns to each electron.
+
+The central-field approximation uses *hydrogenic* orbitals shifted by $Z_\text{eff}$ (Chapter 11): replace $Z$ with $Z_\text{eff}$ in the hydrogen radial functions and you get the screened orbital an electron actually occupies. This chapter supplies those $R_{n\ell}$ explicitly — the orbital shapes, their mean radii $\langle r\rangle_{n\ell}=(a_0/2Z_\text{eff})[3n^2-\ell(\ell+1)]$, and the node count $n-\ell-1$. These are the building blocks the Slater-determinant (Chapter 10) antisymmetrizes and the energies the Aufbau order fills.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Coding the hydrogenic $R_{n\ell}(r; Z_\text{eff})$ using `scipy.special.genlaguerre` for $(n,\ell)$ up to $(4,3)$ — *Why AI works here:* it is a formula transcription against a tabulated special function; you check $R_{10}$ against the closed form $2(Z_\text{eff}/a_0)^{3/2}e^{-Z_\text{eff}r/a_0}$.
+- Generating the radial probability $P(r)=r^2|R_{n\ell}|^2$ and a routine to count its nodes — *Why AI works here:* node counting is mechanical (sign changes), and you verify against the rule $n-\ell-1$ radial nodes.
+
+**The tell:** You are using AI well when you have an analytic anchor — $r_\text{mp}=a_0/Z_\text{eff}$ and $\langle r\rangle_{1s}=\tfrac32 a_0/Z_\text{eff}$ for the ground state, and the node-count rule.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Forgetting the $r^2$ Jacobian when reporting "where the electron is" — *Why AI fails here:* this is the single most common hydrogen error; an LLM may plot or integrate $|R|^2$ instead of $r^2|R|^2$, giving a density that peaks at $r=0$, and the mistake is invisible unless you know the physics.
+- Setting the value of $Z_\text{eff}$ for a multi-electron orbital — *Why AI fails here:* $Z_\text{eff}$ comes from Slater's rules (Chapter 11); plugging a guessed charge produces a plausible orbital of the wrong size, and nothing in the output flags it.
+
+**The tell:** If you cannot say why $r_\text{mp}\neq\langle r\rangle$ — the right-skew of $P(r)$ — without the AI, the AI did the physics that should have been yours.
+**Physics-judgment connection:** this trains checking a radial computation against analytic landmarks ($r_\text{mp}$, $\langle r\rangle$, node count) and against the mandatory $r^2$ Jacobian before trusting any orbital it produces.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `hydrogenic.py` that returns screened hydrogenic radial orbitals and their observables.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator using the central-field approximation:
+hydrogenic orbitals shifted by an effective nuclear charge Z_eff.
+
+Write a Python module `hydrogenic.py` (numpy + scipy.special) that:
+
+1. R_nl(r, n, l, Z_eff, a0=1.0) returning the hydrogenic radial function with Z
+   replaced by Z_eff, using genlaguerre for the associated Laguerre polynomial,
+   normalized so integral of r^2 |R|^2 dr = 1.
+2. radial_prob(r, n, l, Z_eff) = r^2 * R_nl(...)^2  (the Jacobian is mandatory).
+3. most_probable_radius and mean_radius for (n, l, Z_eff), computed numerically.
+4. radial_nodes(n, l, Z_eff) counting sign changes of R_nl on a fine grid.
+5. __main__: for the 1s orbital with Z_eff=1, assert r_mp == 1.0 a0 and
+   <r> == 1.5 a0 to 1%; assert radial_nodes(n,l) == n-l-1 for several (n,l);
+   show that increasing Z_eff shrinks the orbital (r_mp scales as a0/Z_eff).
+
+Comment that Z_eff is an INPUT (Slater's rules supply it in a later module).
+Always use r^2|R|^2 for radial probabilities — never |R|^2.
+```
+**What this produces:** `hydrogenic.py` — the screened orbital library with verified radii and node counts.
+**How to adapt:** *Your system:* set $a_0=1$ internally and convert for display. *ChatGPT/Gemini:* same prompt; ask for a plot of $P(r)$ with $r_\text{mp}$ and $\langle r\rangle$ marked. *Claude Project:* keep with the physics core; Chapter 10 antisymmetrizes these into Slater determinants.
+**Builds on:** Chapter 5's central-field radial equation (this gives its Coulomb closed-form solution).  **Next:** Chapter 10 builds the many-electron Slater determinant from these one-electron orbitals.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the hydrogenic-orbital module plus tests on radii, nodes, and the $Z_\text{eff}$ scaling.
+**Tool:** Claude Code.
+**Skill level:** Intermediate–Advanced
+**Setup — confirm:**
+- [ ] Earlier modules in `build-the-atom/`.
+- [ ] `numpy`, `scipy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–8 present.
+**The Task:**
+```
+In build-the-atom/, create hydrogenic.py with R_nl(r, n, l, Z_eff),
+radial_prob, most_probable_radius, mean_radius, and radial_nodes.
+
+Create test_hydrogenic.py: (a) the 1s orbital (Z_eff=1) has r_mp == 1.0 and
+<r> == 1.5 (a0 units) to 1%; (b) radial_nodes(n,l) == n-l-1 for (1,0),(2,0),
+(2,1),(3,1); (c) integral of r^2|R|^2 dr == 1 to 1e-3 for several (n,l);
+(d) doubling Z_eff halves r_mp (a0/Z_eff scaling).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `hydrogenic.py`, `test_hydrogenic.py`, passing `pytest`.
+**What to inspect:** confirm $r_\text{mp}=1.0$ and $\langle r\rangle=1.5$ for 1s (the $r_\text{mp}\neq\langle r\rangle$ headline); confirm node counts; confirm the $a_0/Z_\text{eff}$ shrink.
+**If it goes wrong:** if the most-probable radius comes out at $r=0$, the $r^2$ Jacobian was dropped — the code is maximizing $|R|^2$, not $r^2|R|^2$. Recovery: maximize `radial_prob`, not $R^2$.
+**CLAUDE.md / AGENTS.md note:** add — "Radial probability is always $r^2|R_{n\ell}|^2$. Orbitals are hydrogenic with $Z\to Z_\text{eff}$; $Z_\text{eff}$ is supplied by Slater's rules, never guessed."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the `hydrogenic.py` orbital module from R3/R4.
+**Validation type:** Numerical result / Code
+**Risk level:** Medium — these orbitals are the atoms of the whole model; a Jacobian or normalization slip distorts every radius and density.
+**Setup:** use your R3/R4 artifact.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — The Hydrogen Atom
+□ Correctness: 1s gives r_mp = 1.0 a0/Z_eff and <r> = 1.5 a0/Z_eff?
+□ Completeness: does it include the r^2 Jacobian in every radial probability?
+□ Scope: is Z_eff an input (no Slater's rules baked in here)?
+□ Physics criterion 1: radial_nodes(n,l) == n-l-1 for several states?
+□ Physics criterion 2: integral of r^2|R|^2 dr == 1 (normalized)?
+□ Failure-mode check: any of —
+  - fluent but wrong (peaks density at r=0 — dropped the r^2 Jacobian)
+  - normalization off (integral != 1)
+  - node count wrong (Laguerre degree off by one)
+  - Z_eff scaling absent (orbital size independent of Z_eff)
+```
+**What to do with findings:** pass → adopt the orbitals, noting the $r_\text{mp}/\langle r\rangle$ match is what made them trustworthy; one fail → restore the Jacobian or renormalize and re-run; multiple fails / cannot-determine → hand-check $R_{10}$ against the closed form and rebuild.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI implemented the screened hydrogenic radial orbitals and their radii/node routines, which I checked against the 1s analytic landmarks.
+> *2:* The AI could not supply a physically grounded $Z_\text{eff}$ nor be trusted to keep the $r^2$ Jacobian — both were my responsibility.
+**Physics-judgment connection:** validating a radial computation against analytic landmarks ($r_\text{mp}$, $\langle r\rangle$, node count, normalization) and enforcing the mandatory Jacobian — the discipline that catches the most common hydrogen error.
