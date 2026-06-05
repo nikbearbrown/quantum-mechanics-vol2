@@ -1,25 +1,19 @@
 # Chapter 6 — Angular Momentum
 *How three commutation relations determine an entire spectrum, without solving a single differential equation.*
 
-In Chapter 5 I solved the angular momentum eigenvalue problem the hard way: set up the differential equation for the associated Legendre functions, impose regularity at the poles, extract the recursion relation, and derive the eigenvalues $\hbar^2\ell(\ell+1)$ from the termination of the series. It works. But the derivation hides something important: the eigenvalue structure has nothing to do with the differential equation. It has nothing to do with the sphere, or with spherical coordinates, or with any particular realization of angular momentum in position space.
+## TL;DR
 
-Here is the claim I want to prove in this chapter: the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality, and nothing else. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are not consequences of the Legendre equation. They are consequences of:
-
-$$[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z, \qquad [\hat{L}_y, \hat{L}_z] = i\hbar\hat{L}_x, \qquad [\hat{L}_z, \hat{L}_x] = i\hbar\hat{L}_y.$$
-
-Anyone who writes down any object satisfying these three relations — whether it lives in position space, spin space, or somewhere more abstract — must get the same spectrum.
-
-The payoff is immediate and significant. The algebra allows $\ell$ to be a half-integer. Orbital angular momentum is restricted to integers by an additional physical requirement — the single-valuedness of the wave function $e^{im\phi}$ under $\phi \to \phi + 2\pi$. Spin angular momentum has no wave function in position space. Nothing restricts it. The half-integer case is realized by every electron in the universe, and the algebraic derivation is why.
+- The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ completely determines the spectrum.
+- Eigenvalues: $\hat{L}^2|\ell,m\rangle = \hbar^2\ell(\ell+1)|\ell,m\rangle$, $\hat{L}_z|\ell,m\rangle = \hbar m|\ell,m\rangle$.
+- Allowed values: $\ell = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \ldots$ (algebra); integer $\ell$ only for orbital angular momentum (single-valuedness).
+- Ladder operators: $\hat{L}_\pm|\ell,m\rangle = \hbar\sqrt{(\ell\mp m)(\ell\pm m+1)}\,|\ell,m\pm 1\rangle$.
+- Spin-$\tfrac{1}{2}$ is the $\ell=\tfrac{1}{2}$ case; the Pauli matrices are $\hat{L}_i = (\hbar/2)\sigma_i$.
 
 ---
 
 ## The Commutation Relations from First Principles
 
-The classical angular momentum $\vec{L} = \vec{r}\times\vec{p}$ becomes, in quantum mechanics, $\hat{\vec{L}} = \hat{\vec{r}}\times\hat{\vec{p}}$, with components:
-
-$$\hat{L}_x = \hat{y}\hat{p}_z - \hat{z}\hat{p}_y, \qquad \hat{L}_y = \hat{z}\hat{p}_x - \hat{x}\hat{p}_z, \qquad \hat{L}_z = \hat{x}\hat{p}_y - \hat{y}\hat{p}_x.$$
-
-The canonical commutation relations $[\hat{r}_i, \hat{p}_j] = i\hbar\delta_{ij}$ and $[\hat{r}_i, \hat{r}_j] = [\hat{p}_i, \hat{p}_j] = 0$ are the only inputs. Compute $[\hat{L}_x, \hat{L}_y]$ by expanding into four terms and keeping only those that involve one position and one conjugate momentum of the same coordinate:
+With $\hat{L}_x = \hat{y}\hat{p}_z - \hat{z}\hat{p}_y$, $\hat{L}_y = \hat{z}\hat{p}_x - \hat{x}\hat{p}_z$, $\hat{L}_z = \hat{x}\hat{p}_y - \hat{y}\hat{p}_x$, and the canonical relations $[\hat{r}_i, \hat{p}_j] = i\hbar\delta_{ij}$:
 
 $$[\hat{L}_x, \hat{L}_y] = [\hat{y}\hat{p}_z - \hat{z}\hat{p}_y,\; \hat{z}\hat{p}_x - \hat{x}\hat{p}_z] = \hat{y}\hat{p}_x[\hat{p}_z, \hat{z}] + \hat{p}_y\hat{x}[\hat{z}, \hat{p}_z].$$
 
@@ -31,9 +25,9 @@ The other two relations follow by cyclic permutation $x \to y \to z \to x$. In c
 
 $$\boxed{[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k,}$$
 
-where $\epsilon_{ijk}$ is the Levi-Civita symbol ($\epsilon_{xyz} = 1$, antisymmetric under exchange of any two indices).
+where $\epsilon_{ijk}$ is the Levi-Civita symbol ($\epsilon_{xyz} = 1$, antisymmetric under exchange).
 
-Now form $\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2$ and compute $[\hat{L}^2, \hat{L}_z]$. The $[\hat{L}_z^2, \hat{L}_z]$ term is zero. For the $x$ term, use $[\hat{A}^2, \hat{B}] = \hat{A}[\hat{A},\hat{B}] + [\hat{A},\hat{B}]\hat{A}$:
+Form $\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2$ and compute $[\hat{L}^2, \hat{L}_z]$. The $[\hat{L}_z^2, \hat{L}_z]$ term is zero. For the $x$ and $y$ terms, using $[\hat{A}^2, \hat{B}] = \hat{A}[\hat{A},\hat{B}] + [\hat{A},\hat{B}]\hat{A}$:
 
 $$[\hat{L}_x^2, \hat{L}_z] = -i\hbar(\hat{L}_x\hat{L}_y + \hat{L}_y\hat{L}_x), \qquad [\hat{L}_y^2, \hat{L}_z] = +i\hbar(\hat{L}_x\hat{L}_y + \hat{L}_y\hat{L}_x).$$
 
@@ -46,7 +40,7 @@ $$\boxed{[\hat{L}^2, \hat{L}_i] = 0 \quad \text{for } i = x, y, z.}$$
 ![three-level hierarchy showing: (1) canonical commutation relations (r_i, p_j)=iℏδ_ij at the top, (2) angular momentum commutation relations…](../images/06-angular-momentum-fig-01.png)
 *Figure 6.1 — three-level hierarchy showing: (1) canonical commutation relations (r_i, p_j)=iℏδ_ij at the top, (2) angular momentum commutation relations…*
 
-What these two boxes mean: $\hat{L}^2$ and $\hat{L}_z$ can be simultaneously diagonalized — they share a complete eigenbasis. But $\hat{L}_x$, $\hat{L}_y$, $\hat{L}_z$ cannot be simultaneously sharp, because they do not commute with each other. This is not a choice about how to measure; it is a structural consequence of the algebra. We choose to label states by their $\hat{L}^2$ and $\hat{L}_z$ eigenvalues because those operators commute. We could equally well use $\hat{L}^2$ and $\hat{L}_x$, or $\hat{L}^2$ and any linear combination. The $z$-axis is not special — it is convention.
+$\hat{L}^2$ and $\hat{L}_z$ can be simultaneously diagonalized. The $z$-axis is convention — $\hat{L}^2$ and any single component can be simultaneously diagonalized. The other two components are necessarily uncertain because they do not commute with each other.
 
 ---
 
@@ -56,17 +50,15 @@ Define:
 
 $$\hat{L}_+ = \hat{L}_x + i\hat{L}_y, \qquad \hat{L}_- = \hat{L}_x - i\hat{L}_y = \hat{L}_+^\dagger.$$
 
-Three commutators follow from the fundamental relations:
+Three commutators:
 
 $$[\hat{L}_z, \hat{L}_+] = \hbar\hat{L}_+, \qquad [\hat{L}_z, \hat{L}_-] = -\hbar\hat{L}_-, \qquad [\hat{L}_+, \hat{L}_-] = 2\hbar\hat{L}_z.$$
 
-The first of these is the engine of the derivation. Suppose $|\ell, m\rangle$ is a simultaneous eigenstate of $\hat{L}^2$ and $\hat{L}_z$ with eigenvalues $\lambda$ and $\hbar m$. Ask: what is $\hat{L}_z(\hat{L}_+|\ell, m\rangle)$? Use the commutator $\hat{L}_z\hat{L}_+ = \hat{L}_+\hat{L}_z + \hbar\hat{L}_+$:
+Suppose $|\ell, m\rangle$ is a simultaneous eigenstate of $\hat{L}^2$ and $\hat{L}_z$ with eigenvalues $\lambda$ and $\hbar m$. Apply $\hat{L}_z\hat{L}_+ = \hat{L}_+\hat{L}_z + \hbar\hat{L}_+$:
 
 $$\hat{L}_z(\hat{L}_+|\ell,m\rangle) = (\hat{L}_+\hat{L}_z + \hbar\hat{L}_+)|\ell,m\rangle = \hbar m(\hat{L}_+|\ell,m\rangle) + \hbar(\hat{L}_+|\ell,m\rangle) = \hbar(m+1)(\hat{L}_+|\ell,m\rangle).$$
 
-So $\hat{L}_+|\ell,m\rangle$ is an eigenstate of $\hat{L}_z$ with eigenvalue $\hbar(m+1)$: the raising operator steps $m$ up by one. Since $[\hat{L}^2, \hat{L}_\pm] = 0$, the eigenvalue $\lambda$ of $\hat{L}^2$ does not change. The same argument for $\hat{L}_-$ steps $m$ down by one.
-
-The picture: a ladder of states all sharing the same $\hat{L}^2$ eigenvalue $\lambda$, with $m$ running in integer steps. $\hat{L}_+$ climbs the ladder; $\hat{L}_-$ descends.
+$\hat{L}_+|\ell,m\rangle$ is an eigenstate of $\hat{L}_z$ with eigenvalue $\hbar(m+1)$. Since $[\hat{L}^2, \hat{L}_\pm] = 0$, the eigenvalue $\lambda$ of $\hat{L}^2$ does not change. The ladder raises or lowers $m$ by one step without changing $\ell$.
 
 <!-- → [FIGURE: vertical ladder diagram for ℓ=2 showing five rungs labeled |2,-2⟩ through |2,2⟩, with upward blue arrows labeled L₊ and downward red arrows labeled L₋, coefficients shown on each arrow, and grayed-out arrows at the top and bottom rungs] -->
 
@@ -77,39 +69,39 @@ The picture: a ladder of states all sharing the same $\hat{L}^2$ eigenvalue $\la
 
 ## Deriving the Spectrum
 
-The ladder cannot go on forever. Consider $\hat{L}_x^2 + \hat{L}_y^2 = \hat{L}^2 - \hat{L}_z^2$. As a sum of squares of Hermitian operators, its expectation value in any state is non-negative:
+Consider $\hat{L}_x^2 + \hat{L}_y^2 = \hat{L}^2 - \hat{L}_z^2$. As a sum of squares of Hermitian operators, its expectation value is non-negative:
 
 $$\langle\hat{L}^2 - \hat{L}_z^2\rangle = \lambda - \hbar^2 m^2 \geq 0.$$
 
-So $m^2 \leq \lambda/\hbar^2$: for fixed $\lambda$, there is a maximum value of $m$ (call it $m_\text{max}$) and a minimum (call it $m_\text{min}$). At the maximum, the raising operator must annihilate the state:
+For fixed $\lambda$ there is a maximum $m_\text{max}$ and minimum $m_\text{min}$. At the maximum, the raising operator annihilates the state:
 
 $$\hat{L}_+|\ell, m_\text{max}\rangle = 0.$$
 
-Apply $\hat{L}_-$ to both sides and use $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$ (which follows from $[\hat{L}_+,\hat{L}_-] = 2\hbar\hat{L}_z$):
+Apply $\hat{L}_-$ to both sides and use $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$:
 
-$$\hat{L}^2|\ell, m_\text{max}\rangle = (\hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z)|\ell, m_\text{max}\rangle = (0 + \hbar^2 m_\text{max}^2 + \hbar^2 m_\text{max})|\ell, m_\text{max}\rangle.$$
+$$\hat{L}^2|\ell, m_\text{max}\rangle = (0 + \hbar^2 m_\text{max}^2 + \hbar^2 m_\text{max})|\ell, m_\text{max}\rangle.$$
 
 So $\lambda = \hbar^2 m_\text{max}(m_\text{max}+1)$. Define $\ell \equiv m_\text{max}$. Then:
 
 $$\lambda = \hbar^2\ell(\ell+1).$$
 
-The same argument at $m_\text{min}$ gives $\lambda = \hbar^2 m_\text{min}(m_\text{min}-1)$. Equating the two expressions for $\lambda$ and solving: $m_\text{min} = -\ell$ (the other solution $m_\text{min} = \ell+1$ is rejected since $m_\text{min} \leq m_\text{max}$). So $m$ runs from $-\ell$ to $+\ell$ in integer steps.
+The same argument at $m_\text{min}$ gives $\lambda = \hbar^2 m_\text{min}(m_\text{min}-1)$. Equating and solving: $m_\text{min} = -\ell$ (the other solution $m_\text{min} = \ell+1$ is rejected since $m_\text{min} \leq m_\text{max}$). So $m$ runs from $-\ell$ to $+\ell$ in integer steps.
 
-Starting from $m_\text{min} = -\ell$ and stepping up to $m_\text{max} = \ell$ requires exactly $2\ell$ steps, each of which adds $1$ to $m$. So $2\ell$ must be a non-negative integer: $\ell = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, 2, \ldots$
+Starting from $m_\text{min} = -\ell$ and stepping up to $m_\text{max} = \ell$ requires exactly $2\ell$ steps. So $2\ell$ must be a non-negative integer: $\ell = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, 2, \ldots$
 
 $$\boxed{\hat{L}^2|\ell, m\rangle = \hbar^2\ell(\ell+1)|\ell,m\rangle, \qquad \hat{L}_z|\ell, m\rangle = \hbar m|\ell,m\rangle, \qquad m = -\ell, -\ell+1, \ldots, \ell.}$$
 
-**The integer restriction for orbital angular momentum.** In coordinate space, $\hat{L}_z = -i\hbar\partial_\phi$ and the azimuthal eigenfunction is $e^{im\phi}/\sqrt{2\pi}$. Single-valuedness — $e^{im(\phi+2\pi)} = e^{im\phi}$ — requires $e^{2\pi im} = 1$, so $m$ must be an integer and $\ell$ must be a non-negative integer. For spin angular momentum, there is no wave function in position space and no single-valuedness condition to impose. Nothing prevents $\ell = \tfrac{1}{2}$. The algebra is more general than the orbital case; the sphere has added a constraint that the algebra itself does not require.
+**Integer restriction for orbital angular momentum.** In coordinate space, the azimuthal eigenfunction is $e^{im\phi}/\sqrt{2\pi}$. Single-valuedness requires $m$ to be an integer. For spin angular momentum, there is no wave function in position space and no single-valuedness condition. Nothing prevents $\ell = \tfrac{1}{2}$.
 
 ---
 
 ## Normalization of the Ladder Operators
 
-$\hat{L}_+|\ell, m\rangle$ is proportional to $|\ell, m+1\rangle$, but we need the proportionality constant. Compute the norm by noting that $\hat{L}_-\hat{L}_+ = \hat{L}^2 - \hat{L}_z^2 - \hbar\hat{L}_z$:
+$\hat{L}_+|\ell, m\rangle$ is proportional to $|\ell, m+1\rangle$. Compute the norm using $\hat{L}_-\hat{L}_+ = \hat{L}^2 - \hat{L}_z^2 - \hbar\hat{L}_z$:
 
 $$\|\hat{L}_+|\ell,m\rangle\|^2 = \langle\ell,m|\hat{L}_-\hat{L}_+|\ell,m\rangle = \hbar^2[\ell(\ell+1) - m^2 - m] = \hbar^2(\ell-m)(\ell+m+1).$$
 
-Choosing the phase to be real and positive:
+Choosing the phase real and positive:
 
 $$\hat{L}_+|\ell, m\rangle = \hbar\sqrt{(\ell-m)(\ell+m+1)}\;|\ell, m+1\rangle.$$
 
@@ -117,7 +109,7 @@ Taking the Hermitian conjugate:
 
 $$\hat{L}_-|\ell, m\rangle = \hbar\sqrt{(\ell+m)(\ell-m+1)}\;|\ell, m-1\rangle.$$
 
-Check the termination conditions. At $m = \ell$: the coefficient of $\hat{L}_+|\ell,\ell\rangle$ is $\sqrt{(\ell-\ell)(2\ell+1)} = 0$. The state is annihilated exactly — not "too large to normalize," but the zero vector. At $m = -\ell$: $\hat{L}_-|\ell,-\ell\rangle$ has coefficient $\sqrt{(0)(2\ell+1)} = 0$. Both termination conditions follow automatically from the normalization formula.
+At $m = \ell$: coefficient of $\hat{L}_+|\ell,\ell\rangle$ is $\sqrt{0\cdot(2\ell+1)} = 0$. At $m = -\ell$: $\hat{L}_-|\ell,-\ell\rangle$ has coefficient $\sqrt{0\cdot(2\ell+1)} = 0$. Both termination conditions are exact.
 
 <!-- → [TABLE: normalization coefficients for all states in the ℓ=1 and ℓ=3/2 subspaces — rows: (ℓ, m), coefficient for L₊, coefficient for L₋; highlights the zero entries at top and bottom rungs] -->
 
@@ -125,7 +117,7 @@ Check the termination conditions. At $m = \ell$: the coefficient of $\hat{L}_+|\
 
 ## The $\ell = 1$ Matrices
 
-For $\ell = 1$, order the basis as $|1,-1\rangle$, $|1,0\rangle$, $|1,1\rangle$. The matrices follow directly from the normalization formula. $\hat{L}_z$ is diagonal:
+For $\ell = 1$, order the basis as $|1,-1\rangle$, $|1,0\rangle$, $|1,1\rangle$. $\hat{L}_z$ is diagonal:
 
 $$\hat{L}_z = \hbar\begin{pmatrix}-1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1\end{pmatrix}.$$
 
@@ -133,11 +125,11 @@ For $\hat{L}_+$: the nonzero entries are $\hat{L}_+|1,-1\rangle = \hbar\sqrt{2}|
 
 $$\hat{L}_+ = \hbar\sqrt{2}\begin{pmatrix}0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0\end{pmatrix}, \qquad \hat{L}_- = \hat{L}_+^\dagger = \hbar\sqrt{2}\begin{pmatrix}0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0\end{pmatrix}.$$
 
-From these, recover $\hat{L}_x = (\hat{L}_++\hat{L}_-)/2$ and $\hat{L}_y = (\hat{L}_+-\hat{L}_-)/(2i)$:
+From these, $\hat{L}_x = (\hat{L}_++\hat{L}_-)/2$ and $\hat{L}_y = (\hat{L}_+-\hat{L}_-)/(2i)$:
 
 $$\hat{L}_x = \frac{\hbar}{\sqrt{2}}\begin{pmatrix}0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0\end{pmatrix}, \qquad \hat{L}_y = \frac{\hbar}{\sqrt{2}}\begin{pmatrix}0 & i & 0 \\ -i & 0 & i \\ 0 & -i & 0\end{pmatrix}.$$
 
-Verify $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$. Computing $\hat{L}_-\hat{L}_+$ and adding the diagonal terms:
+Verify $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$:
 
 $$\hat{L}^2 = 2\hbar^2\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} = \hbar^2\ell(\ell+1)\mathbf{I}\Big|_{\ell=1}. \checkmark$$
 
@@ -145,15 +137,15 @@ $$\hat{L}^2 = 2\hbar^2\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} = \hbar^2\
 
 ## Why the Angular Momentum Vector Cannot Fully Align
 
-In the state $|\ell, \ell\rangle$ — the top rung — $\langle\hat{L}_z\rangle = \hbar\ell$ and $\langle\hat{L}^2\rangle = \hbar^2\ell(\ell+1)$. The deficit is $\langle\hat{L}^2\rangle - \langle\hat{L}_z\rangle^2 = \hbar^2\ell$. Since $\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2$, symmetry gives $\langle\hat{L}_x^2\rangle = \langle\hat{L}_y^2\rangle = \hbar^2\ell/2$.
+In the state $|\ell, \ell\rangle$: $\langle\hat{L}_z\rangle = \hbar\ell$ and $\langle\hat{L}^2\rangle = \hbar^2\ell(\ell+1)$. The deficit $\langle\hat{L}^2\rangle - \langle\hat{L}_z\rangle^2 = \hbar^2\ell$ requires $\langle\hat{L}_x^2\rangle = \langle\hat{L}_y^2\rangle = \hbar^2\ell/2$.
 
-Meanwhile $\langle\hat{L}_x\rangle = \langle\hat{L}_y\rangle = 0$ in any eigenstate of $\hat{L}_z$ (the matrix elements of $\hat{L}_x$ and $\hat{L}_y$ connect states with $\Delta m = \pm 1$, so diagonal elements vanish). Therefore $\sigma_{L_x} = \sigma_{L_y} = \hbar\sqrt{\ell/2}$.
+Meanwhile $\langle\hat{L}_x\rangle = \langle\hat{L}_y\rangle = 0$ in any eigenstate of $\hat{L}_z$ (matrix elements of $\hat{L}_x$ and $\hat{L}_y$ connect states with $\Delta m = \pm 1$; diagonal elements vanish). Therefore $\sigma_{L_x} = \sigma_{L_y} = \hbar\sqrt{\ell/2}$.
 
-The Robertson inequality for $\hat{L}_x$ and $\hat{L}_y$:
+The Robertson inequality:
 
 $$\sigma_{L_x}\sigma_{L_y} \geq \frac{\hbar}{2}|\langle\hat{L}_z\rangle| = \frac{\hbar^2\ell}{2}.$$
 
-The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\ell\rangle$ is a minimum-uncertainty state for the transverse components. The geometric picture is a cone of half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ — the angular momentum points partly in the $z$-direction, partly in the transverse plane, and the transverse components cannot both be zero. As $\ell \to \infty$, the half-angle approaches zero and the cone narrows: this is the classical limit, where angular momentum can point in a definite direction.
+The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\ell\rangle$ is a minimum-uncertainty state for the transverse components. The geometric half-angle is $\arccos(\ell/\sqrt{\ell(\ell+1)})$. As $\ell \to \infty$, the half-angle approaches zero — the classical limit where angular momentum can point in a definite direction.
 
 <!-- → [FIGURE: angular momentum cone diagram for ℓ=2, m=2 — showing the cone half-angle arccos(2/√6)≈35.3°, the angular momentum vector precessing on the cone, and the transverse spread σ_{Lx}=σ_{Ly}=ℏ/√2 illustrated as a "smear" around the cone's base] -->
 
@@ -164,9 +156,7 @@ The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\e
 
 ## Connecting Back to the Spherical Harmonics
 
-Chapter 5 derived the spherical harmonics $Y_\ell^m(\theta,\phi)$ as solutions to $\hat{L}^2 Y = \hbar^2\ell(\ell+1)Y$. The algebraic approach of this chapter produces the same eigenvalue structure — and now we can see exactly how the spherical harmonics are generated by the algebra.
-
-In coordinate space, the ladder operators are:
+The algebraic approach produces the same eigenvalue structure as the differential-equation approach. In coordinate space, the ladder operators are:
 
 $$\hat{L}_\pm = \pm\hbar e^{\pm i\phi}\!\left(\frac{\partial}{\partial\theta} \pm i\cot\theta\,\frac{\partial}{\partial\phi}\right).$$
 
@@ -174,29 +164,30 @@ Acting on the highest-weight harmonic $Y_\ell^\ell \propto \sin^\ell\theta\,e^{i
 
 $$\hat{L}_- Y_1^1 = \hbar\sqrt{2}\,Y_1^0 \implies Y_1^0 = \frac{1}{\hbar\sqrt{2}}\hat{L}_-Y_1^1 = \sqrt{\frac{3}{4\pi}}\cos\theta. \checkmark$$
 
-The associated Legendre functions emerge from applying $\hat{L}_-$ to $\sin^\ell\theta\,e^{i\ell\phi}$ a total of $\ell - m$ times. The analytic and algebraic approaches are complementary. The analytic approach gives explicit wave functions. The algebraic approach reveals that the eigenvalue structure is a consequence of the commutation relations alone — independent of the position-space realization. The algebra works for spin-$\tfrac{1}{2}$ because the commutation relations $[\hat{S}_i, \hat{S}_j] = i\hbar\epsilon_{ijk}\hat{S}_k$ are identical to $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$, and the entire derivation applies without modification.
+The algebra works for spin-$\tfrac{1}{2}$ because $[\hat{S}_i, \hat{S}_j] = i\hbar\epsilon_{ijk}\hat{S}_k$ is identical to $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$, and the entire derivation applies without modification.
 
 ---
 
-## A Worked Calculation: The $\ell = 1$ Ladder and Commutator Verification
+## Worked Calculation: The $\ell = 1$ Ladder and Commutator Verification
 
-For the $\ell = 1$ subspace, verify the commutation relation $[\hat{L}_z, \hat{L}_+] = \hbar\hat{L}_+$ by acting on $|1,0\rangle$:
+**Given.** The $\ell = 1$ subspace with basis $\{|1,-1\rangle, |1,0\rangle, |1,1\rangle\}$.
 
+**Find.** Verify $[\hat{L}_z, \hat{L}_+] = \hbar\hat{L}_+$ by direct computation on $|1,0\rangle$, and verify $\hat{L}^2|1,0\rangle = 2\hbar^2|1,0\rangle$.
+
+**Solution.**
+
+*Commutator check:*
 $$\hat{L}_z(\hat{L}_+|1,0\rangle) - \hat{L}_+(\hat{L}_z|1,0\rangle) = \hat{L}_z(\hbar\sqrt{2}|1,1\rangle) - \hat{L}_+(0) = \hbar^2\sqrt{2}|1,1\rangle.$$
 
 And $\hbar\hat{L}_+|1,0\rangle = \hbar\cdot\hbar\sqrt{2}|1,1\rangle = \hbar^2\sqrt{2}|1,1\rangle$. They agree. $\checkmark$
 
-Verify $\hat{L}^2$ on the middle state using $\hat{L}^2 = \hat{L}_+\hat{L}_- + \hat{L}_z^2 - \hbar\hat{L}_z$:
+*$\hat{L}^2$ on the middle state* using $\hat{L}^2 = \hat{L}_+\hat{L}_- + \hat{L}_z^2 - \hbar\hat{L}_z$:
 
 $$\hat{L}^2|1,0\rangle = \hat{L}_+(\hat{L}_-|1,0\rangle) + 0 - 0 = \hat{L}_+(\hbar\sqrt{2}|1,-1\rangle) = \hbar\sqrt{2}\cdot\hbar\sqrt{2}|1,0\rangle = 2\hbar^2|1,0\rangle.$$
 
 $\hbar^2\ell(\ell+1)|_{\ell=1} = 2\hbar^2$. $\checkmark$
 
-The $\ell = \tfrac{1}{2}$ case deserves a moment. The two-state subspace has basis $|{+}\tfrac{1}{2}\rangle$ and $|{-}\tfrac{1}{2}\rangle$. The normalization formula gives:
-
-$$\hat{L}_+|{-\tfrac{1}{2}}\rangle = \hbar\sqrt{1\cdot 1}|{+\tfrac{1}{2}}\rangle = \hbar|{+\tfrac{1}{2}}\rangle, \qquad \hat{L}_-|{+\tfrac{1}{2}}\rangle = \hbar|{-\tfrac{1}{2}}\rangle.$$
-
-In matrix form: $\hat{L}_z = (\hbar/2)\sigma_z$, $\hat{L}_+ = \hbar\sigma_+$, $\hat{L}_- = \hbar\sigma_-$, where $\sigma_\pm = (\sigma_x \pm i\sigma_y)/2$. The $2\times 2$ angular momentum matrices are $\hat{L}_i = (\hbar/2)\sigma_i$ — the Pauli matrices, which we will use throughout Chapter 7. The connection is not a definition; it is the $\ell = \tfrac{1}{2}$ case of the algebra derived here.
+**Check.** For $\ell = \tfrac{1}{2}$: $\hat{L}_+|{-\tfrac{1}{2}}\rangle = \hbar\sqrt{1\cdot 1}|{+\tfrac{1}{2}}\rangle = \hbar|{+\tfrac{1}{2}}\rangle$. In matrix form: $\hat{L}_z = (\hbar/2)\sigma_z$, $\hat{L}_+ = \hbar\sigma_+$, $\hat{L}_- = \hbar\sigma_-$. The $2\times2$ angular momentum matrices are $\hat{L}_i = (\hbar/2)\sigma_i$ — the $\ell=\tfrac{1}{2}$ case of the algebra derived here.
 
 ---
 
@@ -302,7 +293,7 @@ List known failure modes in an HTML comment at the top of the file.
 
 **Task 2: Half-integer $\ell$.** Change $\ell$ to $\tfrac{1}{2}$. The ladder has two rungs: $|\tfrac{1}{2}, -\tfrac{1}{2}\rangle$ and $|\tfrac{1}{2}, +\tfrac{1}{2}\rangle$. Confirm $\hat{L}_z = (\hbar/2)\mathrm{diag}(-1, +1)$ — this is $(\hbar/2)\sigma_z$. The eigenvalue display shows $\hat{L}^2 = \hbar^2(\tfrac{1}{2})(\tfrac{3}{2}) = \tfrac{3}{4}\hbar^2$. The half-integer case is algebra, not position space.
 
-**Task 3: The cone.** Select $\ell = 2$, click $|2,2\rangle$. Read: $L_z = 2\hbar$, $\sqrt{L^2} = \hbar\sqrt{6} \approx 2.45\hbar$, cone half-angle $\approx 35.3°$. Select $|2,0\rangle$: cone half-angle $= 90°$. The angular momentum is perpendicular to $\hat{z}$ in the $m=0$ state, yet $\hat{L}^2 = 6\hbar^2$ — the vector has magnitude but no $z$-component.
+**Task 3: The cone.** Select $\ell = 2$, click $|2,2\rangle$. Read: $L_z = 2\hbar$, $\sqrt{L^2} = \hbar\sqrt{6} \approx 2.45\hbar$, cone half-angle $\approx 35.3°$. Select $|2,0\rangle$: cone half-angle $= 90°$. The angular momentum is perpendicular to $\hat{z}$ in the $m=0$ state, yet $\hat{L}^2 = 6\hbar^2$.
 
 **Task 4: Robertson bound.** For $\ell = 1$, $m = 1$: Robertson bound is $\hbar^2/2$. The actual $\sigma_{L_x}\sigma_{L_y} = \hbar^2/2$. The bound is saturated — the maximally aligned state is a minimum-uncertainty state for the transverse components.
 
@@ -312,9 +303,9 @@ List known failure modes in an HTML comment at the top of the file.
 
 ## Still Puzzling
 
-The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ is the Lie algebra of $\mathrm{SU}(2) \cong \mathrm{SO}(3)$. The irreducible representations are labeled by $\ell$ — exactly the quantum number derived here. The spectrum $\hbar^2\ell(\ell+1)$ is not a coincidence of the particular differential operator; it is the eigenvalue structure of the Casimir element of $\mathfrak{su}(2)$. This is the deeper reason the ladder argument works: it is the representation theory of a compact Lie group, and compact groups always have discrete, bounded representations.
+**The Lie algebra perspective.** The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ is the Lie algebra of $\mathrm{SU}(2) \cong \mathrm{SO}(3)$. The irreducible representations are labeled by $\ell$ — exactly the quantum number derived here. The spectrum $\hbar^2\ell(\ell+1)$ is the eigenvalue structure of the Casimir element of $\mathfrak{su}(2)$. The ladder argument works because it is the representation theory of a compact Lie group; compact groups always have discrete, bounded representations.
 
-What I genuinely cannot explain to my own satisfaction: why does nature attach the spinor representation ($\ell = \tfrac{1}{2}$) to elementary particles? Spin has no classical analog and cannot be imagined as rotation. Dirac's answer: spin-$\tfrac{1}{2}$ falls out of the Lorentz group when you demand a first-order relativistic wave equation. The Lie algebra is $\mathfrak{so}(1,3) \supset \mathfrak{su}(2) \oplus \mathfrak{su}(2)$, and spin is one of the two $\mathfrak{su}(2)$ factors. That organizes the mathematics. Whether it explains — whether knowing the group-theoretic origin of spin tells us anything about why the universe contains spin-$\tfrac{1}{2}$ particles — I genuinely do not know.
+**Why spin-½ for elementary particles.** Spin has no classical analog and cannot be understood as rotation. Dirac's answer: spin-$\tfrac{1}{2}$ falls out of the Lorentz group when requiring a first-order relativistic wave equation. The Lie algebra is $\mathfrak{so}(1,3) \supset \mathfrak{su}(2) \oplus \mathfrak{su}(2)$, and spin is one of the two $\mathfrak{su}(2)$ factors. This organizes the mathematics. Whether knowing the group-theoretic origin explains *why* the universe contains spin-$\tfrac{1}{2}$ particles is a separate question.
 
 ---
 
@@ -390,7 +381,7 @@ The atom-builder fills subshells; this chapter says exactly how many electrons e
 ### Exercise R2 — When NOT to Use AI
 **The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
 - Deciding *which* subshells belong to which period (the $4s$-before-$3d$ Madelung ordering) — *Why AI fails here:* the capacity arithmetic is mechanical, but the *filling order* is the empirical Madelung rule (Chapter 11) with no first-principles derivation; an LLM will often fill $3d$ before $4s$ by naive $n$-ordering and silently get the period structure wrong.
-- Asserting that orbital $\ell$ may be half-integer "by symmetry with spin" — *Why AI fails here:* the algebra *allows* half-integers, but orbital angular momentum is integer-only because of single-valuedness; conflating the two (a real temptation after this chapter) corrupts the capacity count.
+- Asserting that orbital $\ell$ may be half-integer "by symmetry with spin" — *Why AI fails here:* the algebra *allows* half-integers, but orbital angular momentum is integer-only because of single-valuedness; conflating the two corrupts the capacity count.
 
 **The tell:** If you cannot say why a $d$ subshell holds exactly 10 electrons — $2\times(2\cdot2+1)$ — without the AI, the AI did the counting that should have been yours.
 **Physics-judgment connection:** this trains checking the capacity construction against the exact eigenvalue identity $\hat L^2=\ell(\ell+1)\hbar^2\mathbb 1$ and against the known period lengths, both of which an off-by-one in the $m_\ell$ range would break.

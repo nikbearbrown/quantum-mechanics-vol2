@@ -1,9 +1,11 @@
 # Chapter 6 — Angular Momentum
 *How three commutation relations determine an entire spectrum, without solving a single differential equation.*
 
-In Chapter 5 I solved the angular momentum eigenvalue problem the hard way: set up the differential equation for the associated Legendre functions, impose regularity at the poles, extract the recursion relation, and derive the eigenvalues $\hbar^2\ell(\ell+1)$ from the termination of the series. It works. But the derivation hides something important: the eigenvalue structure has nothing to do with the differential equation. It has nothing to do with the sphere, or with spherical coordinates, or with any particular realization of angular momentum in position space.
+In Chapter 5 the angular momentum eigenvalue problem was solved the hard way: set up the differential equation for the associated Legendre functions, impose regularity at the poles, extract the recursion relation, and derive the eigenvalues $\hbar^2\ell(\ell+1)$ from the termination of the series. It works. But the derivation hides something important: the eigenvalue structure has nothing to do with the differential equation. It has nothing to do with the sphere, or with spherical coordinates, or with any particular realization of angular momentum in position space.
 
-Here is the claim I want to prove in this chapter: the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality, and nothing else. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are not consequences of the Legendre equation. They are consequences of:
+Here is a claim to sit with before reading on: the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ — the values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps — follows from three commutation relations and one inequality, and nothing else. Can you guess what those three relations might be? What single inequality could possibly bound the spectrum?
+
+The claim is that the values follow from:
 
 $$[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z, \qquad [\hat{L}_y, \hat{L}_z] = i\hbar\hat{L}_x, \qquad [\hat{L}_z, \hat{L}_x] = i\hbar\hat{L}_y.$$
 
@@ -52,6 +54,8 @@ What these two boxes mean: $\hat{L}^2$ and $\hat{L}_z$ can be simultaneously dia
 
 ## Raising and Lowering Operators
 
+Here is a strategy question before the algebra: if we want to find all eigenvalues of $\hat{L}_z$ without solving a differential equation, what kind of tool would help? We need something that takes one eigenstate and produces another. What would that require?
+
 Define:
 
 $$\hat{L}_+ = \hat{L}_x + i\hat{L}_y, \qquad \hat{L}_- = \hat{L}_x - i\hat{L}_y = \hat{L}_+^\dagger.$$
@@ -77,7 +81,9 @@ The picture: a ladder of states all sharing the same $\hat{L}^2$ eigenvalue $\la
 
 ## Deriving the Spectrum
 
-The ladder cannot go on forever. Consider $\hat{L}_x^2 + \hat{L}_y^2 = \hat{L}^2 - \hat{L}_z^2$. As a sum of squares of Hermitian operators, its expectation value in any state is non-negative:
+The ladder cannot go on forever. Before reading on: what is the physical reason the ladder must terminate? And in which direction — upward, downward, or both?
+
+Consider $\hat{L}_x^2 + \hat{L}_y^2 = \hat{L}^2 - \hat{L}_z^2$. As a sum of squares of Hermitian operators, its expectation value in any state is non-negative:
 
 $$\langle\hat{L}^2 - \hat{L}_z^2\rangle = \lambda - \hbar^2 m^2 \geq 0.$$
 
@@ -312,9 +318,9 @@ List known failure modes in an HTML comment at the top of the file.
 
 ## Still Puzzling
 
-The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ is the Lie algebra of $\mathrm{SU}(2) \cong \mathrm{SO}(3)$. The irreducible representations are labeled by $\ell$ — exactly the quantum number derived here. The spectrum $\hbar^2\ell(\ell+1)$ is not a coincidence of the particular differential operator; it is the eigenvalue structure of the Casimir element of $\mathfrak{su}(2)$. This is the deeper reason the ladder argument works: it is the representation theory of a compact Lie group, and compact groups always have discrete, bounded representations.
+**The Lie group behind the algebra.** The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ is the Lie algebra of $\mathrm{SU}(2) \cong \mathrm{SO}(3)$. The irreducible representations are labeled by $\ell$ — exactly the quantum number derived here. The spectrum $\hbar^2\ell(\ell+1)$ is not a coincidence of the particular differential operator; it is the eigenvalue structure of the Casimir element of $\mathfrak{su}(2)$. This is the deeper reason the ladder argument works: it is the representation theory of a compact Lie group, and compact groups always have discrete, bounded representations.
 
-What I genuinely cannot explain to my own satisfaction: why does nature attach the spinor representation ($\ell = \tfrac{1}{2}$) to elementary particles? Spin has no classical analog and cannot be imagined as rotation. Dirac's answer: spin-$\tfrac{1}{2}$ falls out of the Lorentz group when you demand a first-order relativistic wave equation. The Lie algebra is $\mathfrak{so}(1,3) \supset \mathfrak{su}(2) \oplus \mathfrak{su}(2)$, and spin is one of the two $\mathfrak{su}(2)$ factors. That organizes the mathematics. Whether it explains — whether knowing the group-theoretic origin of spin tells us anything about why the universe contains spin-$\tfrac{1}{2}$ particles — I genuinely do not know.
+**Why spin-½?** What I genuinely cannot explain to my own satisfaction: why does nature attach the spinor representation ($\ell = \tfrac{1}{2}$) to elementary particles? Spin has no classical analog and cannot be imagined as rotation. Dirac's answer: spin-$\tfrac{1}{2}$ falls out of the Lorentz group when you demand a first-order relativistic wave equation. The Lie algebra is $\mathfrak{so}(1,3) \supset \mathfrak{su}(2) \oplus \mathfrak{su}(2)$, and spin is one of the two $\mathfrak{su}(2)$ factors. That organizes the mathematics. Whether it explains — whether knowing the group-theoretic origin of spin tells us anything about why the universe contains spin-$\tfrac{1}{2}$ particles — I genuinely do not know.
 
 ---
 

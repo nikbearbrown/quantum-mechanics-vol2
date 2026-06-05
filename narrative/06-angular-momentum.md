@@ -1,9 +1,9 @@
 # Chapter 6 — Angular Momentum
 *How three commutation relations determine an entire spectrum, without solving a single differential equation.*
 
-In Chapter 5 I solved the angular momentum eigenvalue problem the hard way: set up the differential equation for the associated Legendre functions, impose regularity at the poles, extract the recursion relation, and derive the eigenvalues $\hbar^2\ell(\ell+1)$ from the termination of the series. It works. But the derivation hides something important: the eigenvalue structure has nothing to do with the differential equation. It has nothing to do with the sphere, or with spherical coordinates, or with any particular realization of angular momentum in position space.
+Chapter 5 derived the angular momentum spectrum the hard way: write the associated Legendre equation, demand regularity at the poles, extract the recursion relation, and pull out the eigenvalues $\hbar^2\ell(\ell+1)$ from the condition that the series terminate. The calculation works. But it contains a hidden surprise: the eigenvalue structure has nothing to do with the differential equation, and nothing to do with the sphere.
 
-Here is the claim I want to prove in this chapter: the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality, and nothing else. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are not consequences of the Legendre equation. They are consequences of:
+This was understood clearly only after Dirac reorganized quantum mechanics around abstract operators in 1927, and more fully after the representation theory of Lie groups was absorbed into physics through the work of Hermann Weyl in the late 1920s. The claim is this: the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ — the values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ — follows from three commutation relations and one inequality, and nothing else:
 
 $$[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z, \qquad [\hat{L}_y, \hat{L}_z] = i\hbar\hat{L}_x, \qquad [\hat{L}_z, \hat{L}_x] = i\hbar\hat{L}_y.$$
 

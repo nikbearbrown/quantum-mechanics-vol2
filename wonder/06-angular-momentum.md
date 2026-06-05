@@ -13,6 +13,12 @@ The payoff is immediate and significant. The algebra allows $\ell$ to be a half-
 
 ---
 
+## TL;DR
+
+The complete spectrum of $\hat{L}^2$ and $\hat{L}_z$ — the values $\hbar^2\ell(\ell+1)$ and $m\hbar$ with $m$ from $-\ell$ to $+\ell$ — follows entirely from three commutation relations plus the requirement that norms be non-negative. No differential equations needed. The algebra allows half-integer $\ell$; orbital angular momentum is restricted to integers by single-valuedness of position-space wave functions, but spin has no such restriction. The $\ell = 1/2$ case gives the Pauli matrices.
+
+---
+
 ## The Commutation Relations from First Principles
 
 The classical angular momentum $\vec{L} = \vec{r}\times\vec{p}$ becomes, in quantum mechanics, $\hat{\vec{L}} = \hat{\vec{r}}\times\hat{\vec{p}}$, with components:
@@ -144,6 +150,8 @@ $$\hat{L}^2 = 2\hbar^2\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} = \hbar^2\
 ---
 
 ## Why the Angular Momentum Vector Cannot Fully Align
+
+Here is something strange. In the state with maximum $m$ — the top rung — the angular momentum appears to point as closely along $z$ as it can. But it still cannot point along $z$.
 
 In the state $|\ell, \ell\rangle$ — the top rung — $\langle\hat{L}_z\rangle = \hbar\ell$ and $\langle\hat{L}^2\rangle = \hbar^2\ell(\ell+1)$. The deficit is $\langle\hat{L}^2\rangle - \langle\hat{L}_z\rangle^2 = \hbar^2\ell$. Since $\hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2$, symmetry gives $\langle\hat{L}_x^2\rangle = \langle\hat{L}_y^2\rangle = \hbar^2\ell/2$.
 
