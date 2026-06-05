@@ -1,16 +1,5 @@
 # Chapter 10 — Identical Particles
 
-## TL;DR
-
-- Identical quantum particles cannot be labeled by their trajectories — the wave function labels are unphysical bookkeeping.
-- **Bosons** (integer spin): symmetric wave functions, $\hat{P}_{12}\psi = +\psi$.
-- **Fermions** (half-integer spin): antisymmetric wave functions, $\hat{P}_{12}\psi = -\psi$.
-- The **Slater determinant** automatically enforces antisymmetry for $N$ fermions.
-- **Pauli exclusion principle:** identical columns in the Slater determinant give a zero determinant — a theorem, not a postulate.
-- Exchange integral $K > 0$ lowers the energy of the high-spin (triplet) configuration: the mechanism behind Hund's first rule.
-- The periodic table follows from screening (breaks $\ell$-degeneracy), Pauli exclusion (limits occupancy), and Hund's rule (fills subshells).
-
----
 
 ## What Identical Means
 

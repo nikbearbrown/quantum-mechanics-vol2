@@ -13,11 +13,6 @@ The payoff is immediate and significant. The algebra allows $\ell$ to be a half-
 
 ---
 
-## TL;DR
-
-The complete spectrum of $\hat{L}^2$ and $\hat{L}_z$ — the values $\hbar^2\ell(\ell+1)$ and $m\hbar$ with $m$ from $-\ell$ to $+\ell$ — follows entirely from three commutation relations plus the requirement that norms be non-negative. No differential equations needed. The algebra allows half-integer $\ell$; orbital angular momentum is restricted to integers by single-valuedness of position-space wave functions, but spin has no such restriction. The $\ell = 1/2$ case gives the Pauli matrices.
-
----
 
 ## The Commutation Relations from First Principles
 

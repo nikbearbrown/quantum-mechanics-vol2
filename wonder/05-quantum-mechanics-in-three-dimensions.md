@@ -11,11 +11,6 @@ That is the payoff at the end of this chapter. The path begins with a fortunate 
 
 ---
 
-## TL;DR
-
-For any potential that depends only on distance — a central potential — the Schrödinger equation separates into a universal angular part and a potential-specific radial part. The angular part is solved by spherical harmonics $Y_\ell^m$; they are the same for every central potential. The angular quantum numbers $\ell$ and $m$ are forced by the requirement that wave functions stay single-valued and finite on the sphere — not imposed by hand. Chemistry's $p_x$, $p_y$ orbitals are real combinations of angular momentum eigenstates, not eigenstates of $\hat{L}_z$ themselves.
-
----
 
 ## The Accident: Central Potentials
 

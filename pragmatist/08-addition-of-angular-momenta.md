@@ -1,16 +1,6 @@
 # Chapter 8 — Addition of Angular Momenta
 *Why the hydrogen atom's most famous spectral line comes down to a single minus sign.*
 
-## TL;DR
-
-- Two angular momenta $j_1$ and $j_2$ combine to give total $J = |j_1-j_2|, |j_1-j_2|+1, \ldots, j_1+j_2$.
-- State count: $\sum_{J}(2J+1) = (2j_1+1)(2j_2+1)$. Check this first.
-- Clebsch–Gordan (CG) coefficients relate the uncoupled basis $|m_1,m_2\rangle$ to the coupled basis $|J,M\rangle$.
-- Selection rule: CG coefficient is zero unless $M = m_1 + m_2$.
-- Use the coupled basis whenever the Hamiltonian contains $\hat{J}_1 \cdot \hat{J}_2$ — e.g., spin-orbit coupling, hyperfine interaction.
-- Triplet: $J=1$, symmetric; singlet: $J=0$, antisymmetric. The sign between them determines the 21-cm line.
-
----
 
 ## Two Bases for the Same Space
 

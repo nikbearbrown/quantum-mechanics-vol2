@@ -1,15 +1,6 @@
 # Chapter 2 — Observables, Hermiticity, and the Spectral Theorem
 *How the requirement that measurements return real numbers forces the entire structure of quantum observables.*
 
-## TL;DR
-
-- An observable is a Hermitian operator: $\hat{A} = \hat{A}^\dagger$, required by the condition that measurement outcomes are real.
-- Hermitian operators have real eigenvalues, orthogonal eigenvectors, and a complete eigenbasis.
-- The spectral decomposition $\hat{A} = \sum_n a_n|a_n\rangle\langle a_n|$ encodes all measurement outcomes, the corresponding states, and the Born rule probabilities.
-- Probability of outcome $a_n$: $P(a_n) = |\langle a_n|\psi\rangle|^2$.
-- Functions of operators: $f(\hat{A}) = \sum_n f(a_n)|a_n\rangle\langle a_n|$.
-
----
 
 ## Why Observables Must Be Hermitian
 

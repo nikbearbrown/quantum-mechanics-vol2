@@ -17,11 +17,6 @@ Schrödinger, at an Alpine resort over Christmas 1925, wrote down the wave equat
 
 ---
 
-## TL;DR
-
-Hydrogen is a proton plus an electron in a Coulomb potential. After separating center-of-mass motion, you solve a one-body radial equation. The energies $E_n = -13.6\,\text{eV}/n^2$ emerge from demanding the power series terminate. The Bohr radius $a_0 \approx 0.529$ Å falls out of the ground-state consistency condition, not put in by hand. The most-probable radius $r_\text{mp} = a_0$ and the mean radius $\langle r\rangle = \tfrac{3}{2}a_0$ are different numbers — that discrepancy is a fingerprint of wave mechanics. The $n^2$ degeneracy of each shell is a hidden SO(4) symmetry of the Coulomb potential.
-
----
 
 ## Reducing Two Bodies to One
 

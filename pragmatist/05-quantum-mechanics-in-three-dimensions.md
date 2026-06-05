@@ -1,16 +1,6 @@
 # Chapter 5 — Quantum Mechanics in Three Dimensions
 *How the requirement that the wave function stay finite at the poles of a sphere forces angular momentum to be quantized.*
 
-## TL;DR
-
-- Central potentials $V(r)$ allow separation: $\psi = R(r)Y_\ell^m(\theta,\phi)$.
-- The angular equation is universal — solved once for all central potentials; radial equation is potential-specific.
-- Spherical harmonics $Y_\ell^m$: eigenfunctions of $\hat{L}^2$ (eigenvalue $\hbar^2\ell(\ell+1)$) and $\hat{L}_z$ (eigenvalue $m\hbar$).
-- Quantization of $\ell$ and $m$ follows from boundary conditions on the sphere, not from imposed rules.
-- Substitution $u(r) = rR(r)$ reduces the 3D radial equation to a 1D problem with effective potential $V_\text{eff} = V(r) + \hbar^2\ell(\ell+1)/2mr^2$.
-- The centrifugal term $\hbar^2\ell(\ell+1)/2mr^2$ is kinetic energy, not a force.
-
----
 
 ## The Accident: Central Potentials
 

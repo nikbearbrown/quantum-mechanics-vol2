@@ -1,15 +1,6 @@
 # Chapter 6 — Angular Momentum
 *How three commutation relations determine an entire spectrum, without solving a single differential equation.*
 
-## TL;DR
-
-- The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ completely determines the spectrum.
-- Eigenvalues: $\hat{L}^2|\ell,m\rangle = \hbar^2\ell(\ell+1)|\ell,m\rangle$, $\hat{L}_z|\ell,m\rangle = \hbar m|\ell,m\rangle$.
-- Allowed values: $\ell = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \ldots$ (algebra); integer $\ell$ only for orbital angular momentum (single-valuedness).
-- Ladder operators: $\hat{L}_\pm|\ell,m\rangle = \hbar\sqrt{(\ell\mp m)(\ell\pm m+1)}\,|\ell,m\pm 1\rangle$.
-- Spin-$\tfrac{1}{2}$ is the $\ell=\tfrac{1}{2}$ case; the Pauli matrices are $\hat{L}_i = (\hbar/2)\sigma_i$.
-
----
 
 ## The Commutation Relations from First Principles
 

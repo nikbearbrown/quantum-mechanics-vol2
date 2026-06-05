@@ -8,11 +8,6 @@ Werner Heisenberg resolved this in 1926. The resolution did not require a new fo
 
 ---
 
-## TL;DR
-
-Identical quantum particles cannot be tracked individually — the labels "1" and "2" in the wave function are bookkeeping, not physics. The exchange operator has eigenvalues $\pm 1$; nature assigns $+1$ to bosons and $-1$ to fermions. The Pauli exclusion principle is not a postulate: it is the theorem that a determinant with two identical columns is zero. The helium spectrum splits into two families because antisymmetry, not a spin-spin force, determines whether electrons can share a spatial region.
-
----
 
 ## What Identical Means
 

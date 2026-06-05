@@ -9,11 +9,6 @@ The microscope story says: the photon used to locate the electron kicks it, scra
 
 ---
 
-## TL;DR
-
-Two operators commute when their product does not depend on order. When they do, both observables can take definite values in the same state — they share an eigenbasis. When they do not, sharpening one broadens the other. The canonical commutation relation $[\hat{x}, \hat{p}] = i\hbar$ is not a postulate but a three-line theorem, and from it Robertson derived the uncertainty principle in 1929. The right-hand side of his inequality can depend on the state, which is where the physics gets interesting.
-
----
 
 ## What a Commutator Measures
 

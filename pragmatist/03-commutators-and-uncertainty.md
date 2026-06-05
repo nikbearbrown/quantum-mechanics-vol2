@@ -1,15 +1,6 @@
 # Chapter 3 — Commutators, Compatibility, and the Generalized Uncertainty Principle
 *Why the order you apply operators to a state is not, in general, something you can ignore.*
 
-## TL;DR
-
-- The commutator $[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$ measures operator non-commutativity.
-- Compatible operators ($[\hat{A},\hat{B}]=0$) share a complete eigenbasis; simultaneous sharp values are possible.
-- The Robertson uncertainty principle: $\sigma_A\sigma_B \geq \tfrac{1}{2}|\langle[\hat{A},\hat{B}]\rangle|$.
-- Canonical commutation relation: $[\hat{x},\hat{p}] = i\hbar$, giving $\sigma_x\sigma_p \geq \hbar/2$ state-independently.
-- When the commutator is an operator (not a c-number), the right-hand side depends on the state.
-
----
 
 ## What a Commutator Measures
 

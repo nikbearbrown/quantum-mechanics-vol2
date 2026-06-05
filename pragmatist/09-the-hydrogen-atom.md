@@ -1,17 +1,6 @@
 # Chapter 9 — The Hydrogen Atom
 *One formula Balmer had no explanation for. One calculation Schrödinger did over Christmas break. The same number — and only one of them describes what you would see in the lab.*
 
-## TL;DR
-
-- Reduced-mass problem: $\hat{H}_\text{rel}$ has a single particle of mass $\mu = m_pm_e/(m_p+m_e)$ in a Coulomb potential.
-- Separation: $\psi_{n\ell m} = R_{n\ell}(r)\,Y_\ell^m(\theta,\phi)$; radial equation uses $u(r) = rR(r)$.
-- Energy levels: $E_n = -13.6\,\text{eV}/n^2$; Bohr radius $a_0 \approx 0.529\,\text{Å}$.
-- Three quantum number constraints: $n \geq 1$ (Frobenius termination), $\ell \leq n-1$ (Laguerre degree), $|m| \leq \ell$ (angular momentum algebra).
-- Degeneracy: $n^2$ orbital states per shell; $2n^2$ with spin.
-- Critical distinction: the radial probability density is $P(r) = r^2|R_{n\ell}|^2$, not $|R_{n\ell}|^2$. Dropping the $r^2$ Jacobian is the most common error.
-- Electric-dipole selection rules: $\Delta\ell = \pm1$, $\Delta m = 0, \pm1$.
-
----
 
 ## Reducing Two Bodies to One
 

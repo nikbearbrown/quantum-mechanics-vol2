@@ -1,16 +1,6 @@
 # Chapter 11 — Capstone: The Atom, Built from Simulations
 *How a spectroscopist in 1927 knew the ground state of iron before anyone could explain why.*
 
-## TL;DR
-
-- The central-field approximation: each electron moves in a spherically symmetric effective potential $V_\text{eff}(r)$; the $N$-electron state is a Slater determinant of one-electron orbitals.
-- Screening breaks hydrogen's $\ell$-degeneracy: $E(ns) < E(np) < E(nd)$ for multi-electron atoms.
-- Slater's rules give $Z_\text{eff} = Z - \sigma$ for any electron; values match Hartree-Fock to $\sim10\%$.
-- Madelung filling order (empirical, not derived): $1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, \ldots$ Approximately 20 exceptions.
-- Hund's three rules select the ground-state term from among all allowed terms.
-- Golden test: iron's ground state is $[\text{Ar}]3d^6 4s^2$, $^5D_4$ — derived via max-$S$, max-$L$, more-than-half-filled $J = L+S$, confirmed against NIST.
-
----
 
 ## Why Hydrogen Is Not Enough
 
