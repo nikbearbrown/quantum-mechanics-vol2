@@ -219,13 +219,6 @@ $|\psi|^2$ is not a smeared charge distribution sitting continuously in space. I
 
 ---
 
-## LLM Exercises
-
-### Part 1 — CLAUDE.md extension
-
-Append this block to your project's `CLAUDE.md`:
-
-```
 ## Chapter 9 — Hydrogen Orbital Visualizer Rules
 
 - Single HTML file, single SVG canvas. No three.js, no WebGL.
@@ -321,16 +314,6 @@ The probability density should oscillate between the 1s blob and the
 
 ---
 
-## Still Puzzling
-
-There is one thing that resists making fully intuitive, and it is worth saying so honestly.
-
-The Laplace–Runge–Lenz vector is conserved classically because $1/r$ orbits do not precess, and Bertrand's theorem tells you that only $1/r$ and $r^2$ potentials have all bound orbits closed. The quantum $\mathfrak{so}(4)$ degeneracy and the classical closed-orbit property must be the same fact in two languages. The algebra is settled; the commutators are well-defined; the derivation is correct. But making the connection feel obvious in the sense of "of course it had to be this way" is genuinely difficult. This remains an open invitation.
-
-A separate observation: the hydrogen atom has exact analytic solutions only because the Coulomb potential is exactly $1/r$ and there is only one electron. Helium has two electrons and no exact solution. The electron-electron interaction breaks the $\mathfrak{so}(4)$ symmetry and makes the problem analytically intractable. Everything from Chapter 10 onward is either an approximation scheme or a numerical method. Chapter 9 is the last time exact solutions exist.
-
----
-
 ## Exercises
 
 **Warm-up**
@@ -391,102 +374,3 @@ Griffiths, D. J., & Schroeter, D. F. (2018). *Introduction to Quantum Mechanics*
 
 Townsend, J. S. (2012). *A Modern Approach to Quantum Mechanics* (2nd ed.). University Science Books. Chapter 10.
 
----
-
-## Running Project — Build the Atom
-
-**This chapter adds:** the hydrogenic orbital with an effective charge — the radial functions $R_{n\ell}(r)$ built from associated Laguerre polynomials, scaled by $Z_\text{eff}$, with the $a_0/Z_\text{eff}$ size scaling and the $n-\ell-1$ radial-node structure; these are the concrete orbitals the central-field model assigns to each electron.
-
-The central-field approximation uses *hydrogenic* orbitals shifted by $Z_\text{eff}$ (Chapter 11): replace $Z$ with $Z_\text{eff}$ in the hydrogen radial functions and you get the screened orbital an electron actually occupies. This chapter supplies those $R_{n\ell}$ explicitly — the orbital shapes, their mean radii $\langle r\rangle_{n\ell}=(a_0/2Z_\text{eff})[3n^2-\ell(\ell+1)]$, and the node count $n-\ell-1$. These are the building blocks the Slater-determinant (Chapter 10) antisymmetrizes and the energies the Aufbau order fills.
-
-### Exercise R1 — When to Use AI
-**The judgment:** In this chapter's project work, AI assistance is appropriate for:
-- Coding the hydrogenic $R_{n\ell}(r; Z_\text{eff})$ using `scipy.special.genlaguerre` for $(n,\ell)$ up to $(4,3)$ — *Why AI works here:* it is a formula transcription against a tabulated special function; you check $R_{10}$ against the closed form $2(Z_\text{eff}/a_0)^{3/2}e^{-Z_\text{eff}r/a_0}$.
-- Generating the radial probability $P(r)=r^2|R_{n\ell}|^2$ and a routine to count its nodes — *Why AI works here:* node counting is mechanical (sign changes), and you verify against the rule $n-\ell-1$ radial nodes.
-
-**The tell:** You are using AI well when you have an analytic anchor — $r_\text{mp}=a_0/Z_\text{eff}$ and $\langle r\rangle_{1s}=\tfrac32 a_0/Z_\text{eff}$ for the ground state, and the node-count rule.
-
-### Exercise R2 — When NOT to Use AI
-**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
-- Forgetting the $r^2$ Jacobian when reporting "where the electron is" — *Why AI fails here:* this is the single most common hydrogen error; an LLM may plot or integrate $|R|^2$ instead of $r^2|R|^2$, giving a density that peaks at $r=0$, and the mistake is invisible unless you know the physics.
-- Setting the value of $Z_\text{eff}$ for a multi-electron orbital — *Why AI fails here:* $Z_\text{eff}$ comes from Slater's rules (Chapter 11); plugging a guessed charge produces a plausible orbital of the wrong size, and nothing in the output flags it.
-
-**The tell:** If you cannot say why $r_\text{mp}\neq\langle r\rangle$ — the right-skew of $P(r)$ — without the AI, the AI did the physics that should have been yours.
-**Physics-judgment connection:** this trains checking a radial computation against analytic landmarks ($r_\text{mp}$, $\langle r\rangle$, node count) and against the mandatory $r^2$ Jacobian before trusting any orbital it produces.
-
-### Exercise R3 — LLM Exercise
-**What you're building this chapter:** a module `hydrogenic.py` that returns screened hydrogenic radial orbitals and their observables.
-**Tool:** Claude chat.
-**The Prompt:**
-```
-I am building an atomic-structure simulator using the central-field approximation:
-hydrogenic orbitals shifted by an effective nuclear charge Z_eff.
-
-Write a Python module `hydrogenic.py` (numpy + scipy.special) that:
-
-1. R_nl(r, n, l, Z_eff, a0=1.0) returning the hydrogenic radial function with Z
-   replaced by Z_eff, using genlaguerre for the associated Laguerre polynomial,
-   normalized so integral of r^2 |R|^2 dr = 1.
-2. radial_prob(r, n, l, Z_eff) = r^2 * R_nl(...)^2  (the Jacobian is mandatory).
-3. most_probable_radius and mean_radius for (n, l, Z_eff), computed numerically.
-4. radial_nodes(n, l, Z_eff) counting sign changes of R_nl on a fine grid.
-5. __main__: for the 1s orbital with Z_eff=1, assert r_mp == 1.0 a0 and
-   <r> == 1.5 a0 to 1%; assert radial_nodes(n,l) == n-l-1 for several (n,l);
-   show that increasing Z_eff shrinks the orbital (r_mp scales as a0/Z_eff).
-
-Comment that Z_eff is an INPUT (Slater's rules supply it in a later module).
-Always use r^2|R|^2 for radial probabilities — never |R|^2.
-```
-**What this produces:** `hydrogenic.py` — the screened orbital library with verified radii and node counts.
-**How to adapt:** *Your system:* set $a_0=1$ internally and convert for display. *ChatGPT/Gemini:* same prompt; ask for a plot of $P(r)$ with $r_\text{mp}$ and $\langle r\rangle$ marked. *Claude Project:* keep with the physics core; Chapter 10 antisymmetrizes these into Slater determinants.
-**Builds on:** Chapter 5's central-field radial equation (this gives its Coulomb closed-form solution).  **Next:** Chapter 10 builds the many-electron Slater determinant from these one-electron orbitals.
-
-### Exercise R4 — CLI Exercise
-**What you're building this chapter:** the hydrogenic-orbital module plus tests on radii, nodes, and the $Z_\text{eff}$ scaling.
-**Tool:** Claude Code.
-**Skill level:** Intermediate–Advanced
-**Setup — confirm:**
-- [ ] Earlier modules in `build-the-atom/`.
-- [ ] `numpy`, `scipy`, `pytest`.
-- [ ] CLAUDE.md rules from Chapters 1–8 present.
-**The Task:**
-```
-In build-the-atom/, create hydrogenic.py with R_nl(r, n, l, Z_eff),
-radial_prob, most_probable_radius, mean_radius, and radial_nodes.
-
-Create test_hydrogenic.py: (a) the 1s orbital (Z_eff=1) has r_mp == 1.0 and
-<r> == 1.5 (a0 units) to 1%; (b) radial_nodes(n,l) == n-l-1 for (1,0),(2,0),
-(2,1),(3,1); (c) integral of r^2|R|^2 dr == 1 to 1e-3 for several (n,l);
-(d) doubling Z_eff halves r_mp (a0/Z_eff scaling).
-
-Run `pytest -q` and show output. Modify no other module.
-```
-**Expected output:** `hydrogenic.py`, `test_hydrogenic.py`, passing `pytest`.
-**What to inspect:** confirm $r_\text{mp}=1.0$ and $\langle r\rangle=1.5$ for 1s (the $r_\text{mp}\neq\langle r\rangle$ headline); confirm node counts; confirm the $a_0/Z_\text{eff}$ shrink.
-**If it goes wrong:** if the most-probable radius comes out at $r=0$, the $r^2$ Jacobian was dropped — the code is maximizing $|R|^2$, not $r^2|R|^2$. Recovery: maximize `radial_prob`, not $R^2$.
-**CLAUDE.md / AGENTS.md note:** add — "Radial probability is always $r^2|R_{n\ell}|^2$. Orbitals are hydrogenic with $Z\to Z_\text{eff}$; $Z_\text{eff}$ is supplied by Slater's rules, never guessed."
-
-### Exercise R5 — AI Validation Exercise
-**What you're validating:** the `hydrogenic.py` orbital module from R3/R4.
-**Validation type:** Numerical result / Code
-**Risk level:** Medium — these orbitals are the atoms of the whole model; a Jacobian or normalization slip distorts every radius and density.
-**Setup:** use your R3/R4 artifact.
-**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
-```
-Validation Checklist — The Hydrogen Atom
-□ Correctness: 1s gives r_mp = 1.0 a0/Z_eff and <r> = 1.5 a0/Z_eff?
-□ Completeness: does it include the r^2 Jacobian in every radial probability?
-□ Scope: is Z_eff an input (no Slater's rules baked in here)?
-□ Physics criterion 1: radial_nodes(n,l) == n-l-1 for several states?
-□ Physics criterion 2: integral of r^2|R|^2 dr == 1 (normalized)?
-□ Failure-mode check: any of —
-  - fluent but wrong (peaks density at r=0 — dropped the r^2 Jacobian)
-  - normalization off (integral != 1)
-  - node count wrong (Laguerre degree off by one)
-  - Z_eff scaling absent (orbital size independent of Z_eff)
-```
-**What to do with findings:** pass → adopt the orbitals, noting the $r_\text{mp}/\langle r\rangle$ match is what made them trustworthy; one fail → restore the Jacobian or renormalize and re-run; multiple fails / cannot-determine → hand-check $R_{10}$ against the closed form and rebuild.
-**AI Use Disclosure (mandatory, two sentences):**
-> *1:* The AI implemented the screened hydrogenic radial orbitals and their radii/node routines, which I checked against the 1s analytic landmarks.
-> *2:* The AI could not supply a physically grounded $Z_\text{eff}$ nor be trusted to keep the $r^2$ Jacobian — both were my responsibility.
-**Physics-judgment connection:** validating a radial computation against analytic landmarks ($r_\text{mp}$, $\langle r\rangle$, node count, normalization) and enforcing the mandatory Jacobian — the discipline that catches the most common hydrogen error.
