@@ -1,8 +1,10 @@
 # Chapter 4 — Quantum Dynamics: Time Evolution and the Pictures
 
-Quantum mechanics can describe time evolution in more than one way. In the Schrödinger picture, the state $|\psi(t)\rangle$ carries all the time dependence while operators remain fixed. In the Heisenberg picture, the state is frozen at its initial value and operators carry the time dependence. Both formulations are related by the unitary operator $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$, and expectation values — the only quantities we can measure — come out the same in either picture.
+In 1925, Werner Heisenberg sat on the island of Helgoland, stripped of his visual intuitions about electron orbits, and decided to work only with things you can actually observe: the frequencies and intensities of spectral lines. He arranged these into arrays that he multiplied in an unfamiliar way — row times column, not number times number. Within months, Born and Jordan recognized that Heisenberg's multiplication tables were matrix algebra, and that the rule $xp - px = i\hbar$ was exactly what made quantum mechanics different from classical mechanics.
 
-This chapter derives the time-evolution operator from two physical requirements (probability conservation and continuity), shows how stationary states and general time evolution follow from the spectral theorem, and develops the Heisenberg equation of motion and Ehrenfest's theorem.
+A few months later Schrödinger derived a wave equation — a partial differential equation for $\psi(x,t)$ that looked nothing like Heisenberg's matrices. The physics community briefly debated which one was right. Schrödinger showed they were equivalent.
+
+The equivalence is more than historical curiosity. The two formulations are two *pictures* of the same physics, related by the unitary operator $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$. In the Schrödinger picture, $\hat{U}(t)$ acts on states. In the Heisenberg picture, it acts on operators. Expectation values — the only observables — come out the same either way.
 
 ---
 
@@ -42,13 +44,13 @@ If $|\psi(0)\rangle = |E_n\rangle$ is an energy eigenstate with $\hat{H}|E_n\ran
 
 $$e^{-i\hat{H}t/\hbar}|E_n\rangle = e^{-iE_n t/\hbar}|E_n\rangle.$$
 
-The state picks up a phase but does not change. Every expectation value is constant. This is a stationary state — the same result we obtained in Chapter 3 by separation of variables, now derived from the operator structure.
+The state picks up a phase but does not change. Every expectation value is constant. This is a stationary state — the same thing we found in Chapter 3 by separation of variables, now derived from the operator structure.
 
 For a general initial state $|\psi(0)\rangle = \sum_n c_n|E_n\rangle$:
 
 $$|\psi(t)\rangle = \sum_n c_n\,e^{-iE_n t/\hbar}|E_n\rangle.$$
 
-The procedure is: expand in energy eigenstates, attach a phase $e^{-iE_n t/\hbar}$ to each component, then reassemble. All dynamics live in the relative phases between energy eigenstates. A single eigenstate has no relative phase — that is why it is stationary. Two or more eigenstates produce a beat frequency $(E_m - E_n)/\hbar$ that drives oscillations in every observable.
+The recipe is: expand in energy eigenstates, attach a phase $e^{-iE_n t/\hbar}$ to each component, reassemble. All dynamics lives in the relative phases between energy eigenstates. A single eigenstate has no relative phase to speak of — that is why it is stationary. Two or more eigenstates create a beat frequency $(E_m - E_n)/\hbar$ that drives oscillation in every observable.
 
 ---
 
@@ -68,7 +70,7 @@ The expectation value of $\hat{S}_z$ oscillates:
 
 $$\langle\hat{S}_z\rangle(t) = \frac{\hbar}{2}\cos(\omega_0 t).$$
 
-The population starts in $|\!\uparrow\rangle$, transfers entirely to $|\!\downarrow\rangle$ at $t = \pi/\omega_0$, and returns. This is Rabi oscillation — the quantum dynamics at the heart of NMR: a spin driven by a resonant pulse oscillates between up and down at the Rabi frequency. The physics follows directly from the beat between two energy eigenstates.
+The population starts in $|\!\uparrow\rangle$, sloshes entirely to $|\!\downarrow\rangle$ at $t = \pi/\omega_0$, and returns. This is Rabi oscillation — the quantum dynamics at the heart of NMR: a spin driven by a resonant pulse oscillates between up and down at the Rabi frequency. The physics is a direct consequence of the beat between two energy eigenstates.
 
 ---
 
@@ -130,7 +132,7 @@ Since $\hat{p}_H$ is constant, integrating directly:
 
 $$\hat{x}_H(t) = \hat{x}(0) + \frac{\hat{p}}{m}\,t.$$
 
-The position operator obeys Newton's first law exactly. The operator equation expresses the same content as $x = x_0 + v_0 t$, with operators taking the place of numbers.
+The position operator obeys Newton's first law exactly. The operator equation says the same thing as $x = x_0 + v_0 t$, with operators in place of numbers.
 
 In the Schrödinger picture, the wavepacket *spreads* — $\sigma_x$ grows with time. The Heisenberg picture says nothing about spreading; it describes the motion of the expectation value. The two pictures are complementary: one tracks where the center goes, the other shows how the distribution disperses.
 
@@ -151,7 +153,7 @@ Solve with initial conditions $\hat{x}_H(0) = \hat{x}$, $\hat{p}_H(0) = \hat{p}$
 $$\hat{x}_H(t) = \hat{x}\cos(\omega t) + \frac{\hat{p}}{m\omega}\sin(\omega t),$$
 $$\hat{p}_H(t) = \hat{p}\cos(\omega t) - m\omega\hat{x}\sin(\omega t).$$
 
-The operators oscillate at frequency $\omega$ — identical to the classical result. The expectation values therefore oscillate classically regardless of the quantum state, which only determines the initial spread. The Heisenberg picture makes this transparent: classical dynamics lives in the operators; quantum mechanics lives in the initial state.
+The operators oscillate at frequency $\omega$ — identical to the classical result. The expectation values therefore oscillate classically regardless of the quantum state, which only determines the initial spread. The Heisenberg picture makes this clean: classical dynamics lives in the operators; quantum mechanics lives in the initial state.
 
 Verify $[\hat{x}_H(t), \hat{p}_H(t)] = i\hbar$ at all $t$: expanding using $[\hat{x},\hat{p}] = i\hbar$ and the trigonometric identity $\cos^2 + \sin^2 = 1$ gives exactly $i\hbar$. The commutation relation is preserved — as unitarity guarantees.
 
@@ -177,7 +179,7 @@ Apply with $\hat{A} = \hat{p}$: since $[V(\hat{x}), \hat{p}] = i\hbar\,\partial 
 
 $$\frac{d\langle\hat{p}\rangle}{dt} = -\left\langle\frac{\partial V}{\partial x}\right\rangle.$$
 
-This resembles Newton's second law, but with an important distinction: the force is evaluated not at the *expectation value of position* but as the *expectation value of the force*. These two quantities are equal only when $\partial V/\partial x$ is linear in $x$ — the harmonic oscillator and the free particle. For a general potential:
+This looks like Newton's second law, but with the force evaluated at the *expectation value of position* replaced by the *expectation value of the force*. They are equal only when $\partial V/\partial x$ is linear in $x$ — the harmonic oscillator and the free particle. For a general potential:
 
 $$-\left\langle\frac{\partial V}{\partial x}\right\rangle \neq -\frac{\partial V}{\partial\langle x\rangle}.$$
 
@@ -189,7 +191,7 @@ For the harmonic oscillator, $V^{(n)} = 0$ for all $n \geq 3$: the potential is 
 
 ## Which Picture to Use
 
-The two pictures are not competing approaches — they are complementary tools suited to different purposes. The Schrödinger picture is natural when you want the wave function itself: bound-state problems, numerical simulation, anything involving $\psi(x,t)$ directly. The Heisenberg picture is natural when you want equations of motion for observables: it produces operator equations that look like classical mechanics, making the classical limit transparent and enabling clean algebraic solutions. Quantum field theory is almost exclusively Heisenberg picture — field operators at each spacetime point satisfy local dynamical equations; Schrödinger-picture wavefunctionals for fields are unwieldy.
+The two pictures are not competing — they are complementary tools. The Schrödinger picture is natural when you want the wave function itself: bound-state problems, numerical simulation, anything involving $\psi(x,t)$ directly. The Heisenberg picture is natural when you want equations of motion for observables: it produces operator equations that look like classical mechanics, making the classical limit transparent and enabling clean algebraic solutions. Quantum field theory is almost exclusively Heisenberg picture — field operators at each spacetime point satisfy local dynamical equations; Schrödinger-picture wavefunctionals for fields are unwieldy.
 
 A third option — the interaction picture — splits the Hamiltonian as $\hat{H} = \hat{H}_0 + \hat{H}_1$: operators evolve under $\hat{H}_0$ (Heisenberg style), states evolve under only $\hat{H}_1$ (Schrödinger style in the rotating frame of $\hat{H}_0$). This is the natural language for time-dependent perturbation theory and Fermi's golden rule, which appear later in this volume.
 

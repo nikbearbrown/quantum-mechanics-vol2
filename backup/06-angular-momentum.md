@@ -1,13 +1,15 @@
 # Chapter 6 — Angular Momentum
 *How three commutation relations determine an entire spectrum, without solving a single differential equation.*
 
-This chapter derives the complete spectrum of angular momentum from algebra alone. The entire set of eigenvalues of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are consequences of:
+In Chapter 5 I solved the angular momentum eigenvalue problem the hard way: set up the differential equation for the associated Legendre functions, impose regularity at the poles, extract the recursion relation, and derive the eigenvalues $\hbar^2\ell(\ell+1)$ from the termination of the series. It works. But the derivation hides something important: the eigenvalue structure has nothing to do with the differential equation. It has nothing to do with the sphere, or with spherical coordinates, or with any particular realization of angular momentum in position space.
+
+Here is the claim I want to prove in this chapter: the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality, and nothing else. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are not consequences of the Legendre equation. They are consequences of:
 
 $$[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z, \qquad [\hat{L}_y, \hat{L}_z] = i\hbar\hat{L}_x, \qquad [\hat{L}_z, \hat{L}_x] = i\hbar\hat{L}_y.$$
 
-Any object satisfying these three relations — whether it lives in position space, spin space, or somewhere more abstract — must have exactly this spectrum.
+Anyone who writes down any object satisfying these three relations — whether it lives in position space, spin space, or somewhere more abstract — must get the same spectrum.
 
-The significance of the algebraic approach is that it allows $\ell$ to be a half-integer. Orbital angular momentum is restricted to integers by an additional physical requirement — the single-valuedness of the wave function $e^{im\phi}$ under $\phi \to \phi + 2\pi$. Spin angular momentum has no wave function in position space and no such restriction. Half-integer $\ell$ is realized by every electron in the universe, and the algebraic derivation tells us why.
+The payoff is immediate and significant. The algebra allows $\ell$ to be a half-integer. Orbital angular momentum is restricted to integers by an additional physical requirement — the single-valuedness of the wave function $e^{im\phi}$ under $\phi \to \phi + 2\pi$. Spin angular momentum has no wave function in position space. Nothing restricts it. The half-integer case is realized by every electron in the universe, and the algebraic derivation is why.
 
 ---
 
@@ -17,7 +19,7 @@ The classical angular momentum $\vec{L} = \vec{r}\times\vec{p}$ becomes, in quan
 
 $$\hat{L}_x = \hat{y}\hat{p}_z - \hat{z}\hat{p}_y, \qquad \hat{L}_y = \hat{z}\hat{p}_x - \hat{x}\hat{p}_z, \qquad \hat{L}_z = \hat{x}\hat{p}_y - \hat{y}\hat{p}_x.$$
 
-The canonical commutation relations $[\hat{r}_i, \hat{p}_j] = i\hbar\delta_{ij}$ and $[\hat{r}_i, \hat{r}_j] = [\hat{p}_i, \hat{p}_j] = 0$ are the only inputs. Computing $[\hat{L}_x, \hat{L}_y]$ by expanding into four terms and keeping only those that involve one position and one conjugate momentum of the same coordinate:
+The canonical commutation relations $[\hat{r}_i, \hat{p}_j] = i\hbar\delta_{ij}$ and $[\hat{r}_i, \hat{r}_j] = [\hat{p}_i, \hat{p}_j] = 0$ are the only inputs. Compute $[\hat{L}_x, \hat{L}_y]$ by expanding into four terms and keeping only those that involve one position and one conjugate momentum of the same coordinate:
 
 $$[\hat{L}_x, \hat{L}_y] = [\hat{y}\hat{p}_z - \hat{z}\hat{p}_y,\; \hat{z}\hat{p}_x - \hat{x}\hat{p}_z] = \hat{y}\hat{p}_x[\hat{p}_z, \hat{z}] + \hat{p}_y\hat{x}[\hat{z}, \hat{p}_z].$$
 
@@ -44,13 +46,13 @@ $$\boxed{[\hat{L}^2, \hat{L}_i] = 0 \quad \text{for } i = x, y, z.}$$
 ![three-level hierarchy showing: (1) canonical commutation relations (r_i, p_j)=iℏδ_ij at the top, (2) angular momentum commutation relations…](../images/06-angular-momentum-fig-01.png)
 *Figure 6.1 — three-level hierarchy showing: (1) canonical commutation relations (r_i, p_j)=iℏδ_ij at the top, (2) angular momentum commutation relations…*
 
-These two boxed results carry a direct physical meaning. $\hat{L}^2$ and $\hat{L}_z$ can be simultaneously diagonalized — they share a complete eigenbasis. But $\hat{L}_x$, $\hat{L}_y$, $\hat{L}_z$ cannot be simultaneously sharp, because they do not commute with each other. This is a structural consequence of the algebra, not a choice about how to measure. We label states by their $\hat{L}^2$ and $\hat{L}_z$ eigenvalues because those operators commute. We could equally well use $\hat{L}^2$ and $\hat{L}_x$, or $\hat{L}^2$ and any linear combination. The $z$-axis is not special — it is convention.
+What these two boxes mean: $\hat{L}^2$ and $\hat{L}_z$ can be simultaneously diagonalized — they share a complete eigenbasis. But $\hat{L}_x$, $\hat{L}_y$, $\hat{L}_z$ cannot be simultaneously sharp, because they do not commute with each other. This is not a choice about how to measure; it is a structural consequence of the algebra. We choose to label states by their $\hat{L}^2$ and $\hat{L}_z$ eigenvalues because those operators commute. We could equally well use $\hat{L}^2$ and $\hat{L}_x$, or $\hat{L}^2$ and any linear combination. The $z$-axis is not special — it is convention.
 
 ---
 
 ## Raising and Lowering Operators
 
-We define:
+Define:
 
 $$\hat{L}_+ = \hat{L}_x + i\hat{L}_y, \qquad \hat{L}_- = \hat{L}_x - i\hat{L}_y = \hat{L}_+^\dagger.$$
 
@@ -58,13 +60,13 @@ Three commutators follow from the fundamental relations:
 
 $$[\hat{L}_z, \hat{L}_+] = \hbar\hat{L}_+, \qquad [\hat{L}_z, \hat{L}_-] = -\hbar\hat{L}_-, \qquad [\hat{L}_+, \hat{L}_-] = 2\hbar\hat{L}_z.$$
 
-The first of these is the engine of the derivation. Suppose $|\ell, m\rangle$ is a simultaneous eigenstate of $\hat{L}^2$ and $\hat{L}_z$ with eigenvalues $\lambda$ and $\hbar m$. We ask: what is $\hat{L}_z(\hat{L}_+|\ell, m\rangle)$? Using the commutator $\hat{L}_z\hat{L}_+ = \hat{L}_+\hat{L}_z + \hbar\hat{L}_+$:
+The first of these is the engine of the derivation. Suppose $|\ell, m\rangle$ is a simultaneous eigenstate of $\hat{L}^2$ and $\hat{L}_z$ with eigenvalues $\lambda$ and $\hbar m$. Ask: what is $\hat{L}_z(\hat{L}_+|\ell, m\rangle)$? Use the commutator $\hat{L}_z\hat{L}_+ = \hat{L}_+\hat{L}_z + \hbar\hat{L}_+$:
 
 $$\hat{L}_z(\hat{L}_+|\ell,m\rangle) = (\hat{L}_+\hat{L}_z + \hbar\hat{L}_+)|\ell,m\rangle = \hbar m(\hat{L}_+|\ell,m\rangle) + \hbar(\hat{L}_+|\ell,m\rangle) = \hbar(m+1)(\hat{L}_+|\ell,m\rangle).$$
 
 So $\hat{L}_+|\ell,m\rangle$ is an eigenstate of $\hat{L}_z$ with eigenvalue $\hbar(m+1)$: the raising operator steps $m$ up by one. Since $[\hat{L}^2, \hat{L}_\pm] = 0$, the eigenvalue $\lambda$ of $\hat{L}^2$ does not change. The same argument for $\hat{L}_-$ steps $m$ down by one.
 
-We can picture this as a ladder of states all sharing the same $\hat{L}^2$ eigenvalue $\lambda$, with $m$ running in integer steps. $\hat{L}_+$ climbs the ladder; $\hat{L}_-$ descends.
+The picture: a ladder of states all sharing the same $\hat{L}^2$ eigenvalue $\lambda$, with $m$ running in integer steps. $\hat{L}_+$ climbs the ladder; $\hat{L}_-$ descends.
 
 <!-- → [FIGURE: vertical ladder diagram for ℓ=2 showing five rungs labeled |2,-2⟩ through |2,2⟩, with upward blue arrows labeled L₊ and downward red arrows labeled L₋, coefficients shown on each arrow, and grayed-out arrows at the top and bottom rungs] -->
 
@@ -151,7 +153,7 @@ The Robertson inequality for $\hat{L}_x$ and $\hat{L}_y$:
 
 $$\sigma_{L_x}\sigma_{L_y} \geq \frac{\hbar}{2}|\langle\hat{L}_z\rangle| = \frac{\hbar^2\ell}{2}.$$
 
-The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\ell\rangle$ is a minimum-uncertainty state for the transverse components. Geometrically, we can picture a cone of half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ — the angular momentum points partly in the $z$-direction, partly in the transverse plane, and the transverse components cannot both be zero. As $\ell \to \infty$, the half-angle approaches zero and the cone narrows: this is the classical limit, where angular momentum can point in a definite direction.
+The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\ell\rangle$ is a minimum-uncertainty state for the transverse components. The geometric picture is a cone of half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ — the angular momentum points partly in the $z$-direction, partly in the transverse plane, and the transverse components cannot both be zero. As $\ell \to \infty$, the half-angle approaches zero and the cone narrows: this is the classical limit, where angular momentum can point in a definite direction.
 
 <!-- → [FIGURE: angular momentum cone diagram for ℓ=2, m=2 — showing the cone half-angle arccos(2/√6)≈35.3°, the angular momentum vector precessing on the cone, and the transverse spread σ_{Lx}=σ_{Ly}=ℏ/√2 illustrated as a "smear" around the cone's base] -->
 
@@ -312,7 +314,7 @@ List known failure modes in an HTML comment at the top of the file.
 
 The angular momentum algebra $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$ is the Lie algebra of $\mathrm{SU}(2) \cong \mathrm{SO}(3)$. The irreducible representations are labeled by $\ell$ — exactly the quantum number derived here. The spectrum $\hbar^2\ell(\ell+1)$ is not a coincidence of the particular differential operator; it is the eigenvalue structure of the Casimir element of $\mathfrak{su}(2)$. This is the deeper reason the ladder argument works: it is the representation theory of a compact Lie group, and compact groups always have discrete, bounded representations.
 
-A genuinely open question: why does nature attach the spinor representation ($\ell = \tfrac{1}{2}$) to elementary particles? Spin has no classical analog and cannot be imagined as rotation. Dirac's answer: spin-$\tfrac{1}{2}$ falls out of the Lorentz group when you demand a first-order relativistic wave equation. The Lie algebra is $\mathfrak{so}(1,3) \supset \mathfrak{su}(2) \oplus \mathfrak{su}(2)$, and spin is one of the two $\mathfrak{su}(2)$ factors. That organizes the mathematics. Whether it explains — whether knowing the group-theoretic origin of spin tells us anything about why the universe contains spin-$\tfrac{1}{2}$ particles — remains an open question.
+What I genuinely cannot explain to my own satisfaction: why does nature attach the spinor representation ($\ell = \tfrac{1}{2}$) to elementary particles? Spin has no classical analog and cannot be imagined as rotation. Dirac's answer: spin-$\tfrac{1}{2}$ falls out of the Lorentz group when you demand a first-order relativistic wave equation. The Lie algebra is $\mathfrak{so}(1,3) \supset \mathfrak{su}(2) \oplus \mathfrak{su}(2)$, and spin is one of the two $\mathfrak{su}(2)$ factors. That organizes the mathematics. Whether it explains — whether knowing the group-theoretic origin of spin tells us anything about why the universe contains spin-$\tfrac{1}{2}$ particles — I genuinely do not know.
 
 ---
 

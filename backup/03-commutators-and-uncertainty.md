@@ -1,8 +1,11 @@
 # Chapter 3 — Commutators, Compatibility, and the Generalized Uncertainty Principle
+*Why the order you apply operators to a state is not, in general, something you can ignore.*
 
-When two observables are measured on a large ensemble of identically prepared systems, the spread in their outcomes is not simply a technical limitation — it is a property of the quantum state itself. If we prepare a million electrons in the same state $|\psi\rangle$, measure position on half of them and momentum on the other half (so no electron is disturbed twice), the standard deviations $\sigma_x$ and $\sigma_p$ computed from the two histograms always satisfy $\sigma_x\sigma_p \geq \hbar/2$.
+Here is the experiment that refutes Heisenberg's microscope story. Prepare a million electrons in exactly the same state $|\psi\rangle$. Measure position on 500,000 of them. Measure momentum on the other 500,000. No electron is measured twice. No photon kicks anything. Compute the standard deviations $\sigma_x$ and $\sigma_p$ from the two histograms. Their product satisfies $\sigma_x\sigma_p \geq \hbar/2$.
 
-This inequality is present before any measuring device turns on. It is built into the algebra of the operators during preparation. The correct statement is: *no quantum state has $\sigma_x = 0$ and $\sigma_p = 0$ simultaneously.* Robertson proved this in 1929 with a two-line application of the Cauchy-Schwarz inequality to the commutator $[\hat{x}, \hat{p}] = i\hbar$. We begin with that commutator and develop its consequences systematically.
+The bound was there before any measuring device turned on. It is a property of the state $|\psi\rangle$, enforced by the algebra of operators during the preparation, not during the measurement.
+
+The microscope story says: the photon used to locate the electron kicks it, scrambling its momentum. The story produces the correct inequality by accident. But the causal chain is backwards. The correct statement is not "you cannot simultaneously measure position and momentum precisely." It is: *no quantum state has $\sigma_x = 0$ and $\sigma_p = 0$ simultaneously.* Robertson proved this in 1929 in a single page, from a two-line application of the Cauchy-Schwarz inequality to the commutator $[\hat{x}, \hat{p}] = i\hbar$. That commutator is where this chapter starts.
 
 ---
 
@@ -12,9 +15,9 @@ The **commutator** of two operators is:
 
 $$[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.$$
 
-When $[\hat{A}, \hat{B}] = 0$, the operators are **compatible**. When it is nonzero, they are **incompatible**. These names carry a precise theorem.
+When $[\hat{A}, \hat{B}] = 0$, the operators are **compatible**. When it is nonzero, they are **incompatible**. The names are not decorative — they carry a precise theorem.
 
-**Compatible operators share a complete orthonormal eigenbasis.** The proof in the non-degenerate case is straightforward. Suppose $[\hat{A}, \hat{B}] = 0$ and $\hat{A}|a\rangle = a|a\rangle$. Apply $\hat{B}$ to the eigenvalue equation:
+**Compatible operators share a complete orthonormal eigenbasis.** The proof in the non-degenerate case is short. Suppose $[\hat{A}, \hat{B}] = 0$ and $\hat{A}|a\rangle = a|a\rangle$. Apply $\hat{B}$ to the eigenvalue equation:
 
 $$\hat{B}(\hat{A}|a\rangle) = a\hat{B}|a\rangle.$$
 
@@ -33,7 +36,7 @@ Conversely: if $[\hat{A}, \hat{B}] \neq 0$, no state is simultaneously an eigens
 
 ## The Canonical Commutation Relation
 
-The single most important commutator in quantum mechanics is $[\hat{x}, \hat{p}]$. We derive it by applying both orderings to a test function $\psi(x)$, keeping every step of the product rule visible.
+The single most important commutator in quantum mechanics is $[\hat{x}, \hat{p}]$. Derive it by applying both orderings to a test function $\psi(x)$, keeping every step of the product rule visible.
 
 $$[\hat{x}, \hat{p}]\,\psi = \hat{x}\bigl(-i\hbar\,\partial_x\psi\bigr) - (-i\hbar\,\partial_x)(x\psi).$$
 
@@ -70,7 +73,7 @@ $$\boxed{[\hat{x}, \hat{p}] = i\hbar.}$$
 
 This is the **canonical commutation relation**. It is a theorem, not a postulate: it follows directly from the operator representations $\hat{x} = $ multiplication by $x$ and $\hat{p} = -i\hbar\partial_x$, which themselves follow from requiring that $\hat{p}$ generates translations and has real eigenvalues. Every statement about position-momentum incompatibility — including the uncertainty principle — is downstream of this three-line derivation.
 
-Two quick extensions worth noting. In three dimensions: $[\hat{x}_i, \hat{p}_j] = i\hbar\delta_{ij}$, while coordinates along different axes commute. And $[\hat{x}^2, \hat{p}] = 2i\hbar\hat{x}$, the quantum version of the classical identity $\{x^2, p\}_\text{Poisson} = 2x$. The general pattern $[\hat{x}^n, \hat{p}] = i\hbar n\hat{x}^{n-1}$ points toward the Dirac quantization rule: replace the classical Poisson bracket $\{f, g\}$ with $[\hat{f}, \hat{g}]/i\hbar$.
+Two quick extensions worth noting. In three dimensions: $[\hat{x}_i, \hat{p}_j] = i\hbar\delta_{ij}$, while coordinates along different axes commute. And $[\hat{x}^2, \hat{p}] = 2i\hbar\hat{x}$, the quantum version of the classical identity $\{x^2, p\}_\text{Poisson} = 2x$. The general pattern $[\hat{x}^n, \hat{p}] = i\hbar n\hat{x}^{n-1}$ hints at the Dirac quantization rule: replace the classical Poisson bracket $\{f, g\}$ with $[\hat{f}, \hat{g}]/i\hbar$.
 
 ---
 
@@ -82,7 +85,7 @@ $$\sigma_A\,\sigma_B \geq \frac{1}{2}\bigl|\langle[\hat{A}, \hat{B}]\rangle\bigr
 
 where $\sigma_A^2 = \langle\hat{A}^2\rangle - \langle\hat{A}\rangle^2$ is the variance of $A$-outcomes across many identically prepared copies.
 
-The proof has four named steps. Working through them once gives a solid grounding in the result.
+The proof has four named steps. Walk through them once and you own the result permanently.
 
 **Step 1 — shift to zero mean.** Define $\hat{A}' = \hat{A} - \langle\hat{A}\rangle$ and $\hat{B}' = \hat{B} - \langle\hat{B}\rangle$. Then $\sigma_A^2 = \|\hat{A}'|\psi\rangle\|^2$ and $\sigma_B^2 = \|\hat{B}'|\psi\rangle\|^2$. Shifting by a constant does not change commutators: $[\hat{A}', \hat{B}'] = [\hat{A}, \hat{B}]$.
 
@@ -110,7 +113,7 @@ This bound is state-independent. It holds for every $|\psi\rangle$ without excep
 
 ## When the Bound Depends on the State
 
-For operators whose commutator is itself an operator, the right-hand side of Robertson depends on the state through $|\langle[\hat{A},\hat{B}]\rangle|$. The standard example is spin.
+For operators whose commutator is itself an operator, the right-hand side of Robertson depends on the state through $|\langle[\hat{A},\hat{B}]\rangle|$. The canonical example is spin.
 
 The Pauli algebra gives $[\hat{S}_x, \hat{S}_z] = -i\hbar\hat{S}_y$, so:
 

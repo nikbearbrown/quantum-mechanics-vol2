@@ -9,7 +9,7 @@
 ## Chapter 00: Quantum Mechanics
 *Source: `chapters/00-frontmatter.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
+> **Section not yet authored.** No `## LLM Exercises` / `### Exercise R3 — LLM Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---
@@ -17,95 +17,480 @@
 ## Chapter 01: Chapter 1 — The Formalism: Hilbert Space, Dirac Notation, and Operators
 *Source: `chapters/01-the-formalism.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a small Python module `orbitals.py` that enumerates the hydrogenic orbital basis and represents diagonal one-electron operators as matrices over it.
+**Tool:** Claude chat (a single self-contained module; no persistent project context needed yet).
+**The Prompt:**
+```
+I am building an atomic-structure simulator over several sessions. This first module
+only sets up the orbital basis and operators — no physics approximations yet.
+
+Write a single Python file `orbitals.py` (standard library + numpy only) that:
+
+1. Defines an Orbital data class with fields n, l, m_l, m_s (m_s in {+1/2, -1/2}),
+   and a __repr__ that prints spectroscopic notation, e.g. "3d (m_l=+2, up)".
+2. Provides enumerate_shell(n) returning all orbitals with that principal quantum
+   number, enforcing l in [0, n-1], m_l in [-l, l], m_s in {+1/2, -1/2}.
+3. Provides a function ordered_basis(n_max) returning a deterministic ordered list
+   of all orbitals up to n_max, which I will use as a fixed basis ordering.
+4. Provides matrix_of(operator_fn, basis) that builds the matrix A_{mn} =
+   <m|A|n> given a callable returning <m|A|n> for two orbitals, so I can later
+   represent L_z (diagonal, eigenvalue m_l*hbar) and an occupation operator.
+5. Includes a __main__ block that builds the basis for n_max=3, prints the count,
+   and asserts it equals sum over n of 2*n^2 (i.e. 2*(1+4+9) = 28).
+
+Do NOT decide the physical energy ordering of orbitals or apply any screening —
+that comes in later modules. Just the basis and the matrix machinery.
+Add a docstring noting the subshell capacity is 2*(2l+1).
+```
+**What this produces:** `orbitals.py` — the basis-and-operators foundation every later module imports.
+**How to adapt:** *Your system:* swap `numpy` for plain lists if you want zero dependencies. *ChatGPT/Gemini:* identical prompt; ask for a `pytest` file checking the $2n^2$ count. *Claude Project:* drop this module into a project as a file so later chapters' prompts can reference it as the established basis.
+**Builds on:** nothing — this is the foundation.  **Next:** Chapter 2 turns the energy operator into something you diagonalize to *order* these orbitals.
 
 ---
 
 ## Chapter 02: Chapter 2 — Observables, Hermiticity, and the Spectral Theorem
 *Source: `chapters/02-observables-and-the-spectral-theorem.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — to probe arguments, generate counterexamples, and test the limits of what the chapter established.
+
+1. Ask an LLM to explain why physical observables must be Hermitian, without invoking the postulate. Does its explanation start from the requirement that measurement outcomes are real? Ask it to make the argument completely explicit — the three-line derivation from $\langle\hat{A}\rangle = \langle\hat{A}\rangle^*$ to $\hat{A} = \hat{A}^\dagger$. Evaluate whether it fills in the polarization-identity step correctly.
+
+2. Ask an LLM to give a $2\times 2$ example of a non-Hermitian operator with a real eigenvalue. (Such operators exist — for instance, any upper-triangular matrix with real diagonal has real eigenvalues but is not Hermitian.) Ask it to identify exactly which step of the real-eigenvalue proof fails for this operator, even though the eigenvalue happens to be real. Evaluate the explanation.
+
+3. The chapter claims: "degeneracy is always the signature of a symmetry." Ask an LLM to give three physical examples of degenerate spectra and identify the symmetry responsible for the degeneracy in each case. For each, ask it to name the operator that commutes with the Hamiltonian and generates the symmetry. Evaluate whether its symmetry identifications are correct.
+
+4. Ask an LLM to prove the five-line orthogonality theorem: eigenstates of a Hermitian operator with distinct eigenvalues are orthogonal. Then ask it: where exactly in the proof is it necessary that $a$ be real (from the previous theorem)? If an operator has real eigenvalues but is not Hermitian, does the orthogonality of its eigenstates follow? Ask for a counterexample.
+
+5. The spectral theorem says $\hat{A} = \sum_n a_n|a_n\rangle\langle a_n|$. Ask an LLM: what is the spectral theorem for operators with a continuous spectrum, like the position operator $\hat{x}$? How does the sum become an integral? What replaces the projectors $|a_n\rangle\langle a_n|$? What replaces the probabilities $|\langle a_n|\psi\rangle|^2$? Ask it to write the continuous version of the Born rule and the spectral decomposition explicitly.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `oneelectron.py` that diagonalizes a one-electron Hamiltonian matrix and returns sorted orbital energies and orbitals.
+**Tool:** Claude chat (single module, no persistent context required).
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I already have orbitals.py (an orbital
+basis and a matrix_of helper). Now I need the diagonalization layer.
+
+Write a Python module `oneelectron.py` (numpy only) that:
+
+1. Provides assert_hermitian(H, tol=1e-9) raising ValueError if H != H.conj().T
+   to tolerance.
+2. Provides solve_one_electron(H) that asserts Hermiticity, then returns
+   (energies, orbitals) where energies is a 1D array sorted ascending and
+   orbitals is the matrix of eigenvectors in the same order (columns).
+3. Provides spectral_checks(H) returning a dict comparing sum(eigenvalues) to
+   trace(H) and prod(eigenvalues) to det(H), with booleans for whether each
+   matches to 1e-6 relative tolerance.
+4. Includes a __main__ block that builds the 2x2 matrix [[2, 1+1j],[1-1j, 0]],
+   diagonalizes it, prints the eigenvalues, and asserts they are real and equal
+   1 +/- sqrt(3) to 1e-9 (this is the worked example from the chapter).
+
+Do NOT build the physical V_eff or assign electrons — only the linear algebra
+and the spectral consistency checks. Note in a docstring that real eigenvalues
+are guaranteed because the Hamiltonian is Hermitian (the spectral theorem).
+```
+**What this produces:** `oneelectron.py` — the spectral engine that turns a one-electron Hamiltonian into an ordered list of orbital energies.
+**How to adapt:** *Your system:* if you prefer SciPy, swap `numpy.linalg.eigh` for `scipy.linalg.eigh`. *ChatGPT/Gemini:* same prompt; ask additionally for a test that a non-Hermitian input raises. *Claude Project:* add alongside `orbitals.py` so the two modules form the project's linear-algebra core.
+**Builds on:** Chapter 1's orbital basis and `matrix_of`.  **Next:** Chapter 3 supplies the quantum-number *labels* (CSCO) that disambiguate degenerate eigenvectors this chapter warns about.
 
 ---
 
 ## Chapter 03: Chapter 3 — Commutators, Compatibility, and the Generalized Uncertainty Principle
 *Source: `chapters/03-commutators-and-uncertainty.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — CLAUDE.md extension
+
+Open your project's CLAUDE.md and append:
+
+```
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `csco.py` that verifies the orbital labels correspond to a commuting set, using the $\ell = 1$ and $\ell = 2$ angular-momentum matrices.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator and need to justify that my orbital
+labels (n, l, m_l, m_s) come from a complete set of commuting observables.
+
+Write a Python module `csco.py` (numpy only) that:
+
+1. Builds the (2l+1)x(2l+1) matrices L2, Lz, Lx, Ly for a given l, using the
+   ladder formulas: Lz diagonal with entries m (units hbar); L_plus with entries
+   hbar*sqrt((l-m)(l+m+1)) on the appropriate off-diagonal; Lx=(L+ + L-)/2,
+   Ly=(L+ - L-)/(2i); L2 = Lx@Lx + Ly@Ly + Lz@Lz.
+2. Provides commutator(A, B) = A@B - B@A and is_zero(M, tol=1e-9).
+3. Provides verify_csco(l) that checks [L2, Lz] == 0 and L2 == l(l+1)*I, and
+   confirms [Lx, Ly] != 0 (so Lz is a *needed* label, not redundant). Returns a
+   dict of booleans.
+4. __main__: run verify_csco for l=1 and l=2, print the results, and assert
+   [L2, Lz] is zero while [Lx, Ly] is nonzero in both cases.
+
+Explain in a comment why [L2, Lz] = 0 is exactly what makes (l, m_l) a valid
+simultaneous label, and why [Lx, Ly] != 0 means we cannot also label by m_x.
+Do not touch energy ordering or screening.
+```
+**What this produces:** `csco.py` — a guard confirming the angular-momentum labels are simultaneously diagonalizable.
+**How to adapt:** *Your system:* set $\hbar = 1$ to keep numbers clean. *ChatGPT/Gemini:* same prompt; ask for a check that $\hat{L}^2 = \ell(\ell+1)\mathbb{1}$ exactly. *Claude Project:* keep next to `orbitals.py`; later chapters reuse these angular-momentum matrices for term symbols.
+**Builds on:** Chapter 2's diagonalizer (which produced the eigenvectors these labels disambiguate).  **Next:** Chapter 4 confirms the labeled ground configuration is a genuine *stationary* state.
 
 ---
 
 ## Chapter 04: Chapter 4 — Quantum Dynamics: Time Evolution and the Pictures
 *Source: `chapters/04-quantum-dynamics-and-the-pictures.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `dynamics_check.py` that confirms a configuration is stationary and that the angular-momentum labels are conserved.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I have a one-electron Hamiltonian
+matrix H (Hermitian) and the angular-momentum matrices L2, Lz from earlier
+modules. I want to verify that a ground configuration is a genuine stationary
+state and that L2, Lz are constants of motion.
+
+Write a Python module `dynamics_check.py` (numpy only) that:
+
+1. Provides U(H, t) = expm(-1j * H * t) using scipy.linalg.expm (or a spectral
+   construction from eigh if you prefer no scipy).
+2. Provides is_stationary(H, psi, times) returning True if, for an eigenvector
+   psi of H, |<psi|U(t)|psi>| == 1 for all t in times (to 1e-9) and the
+   probability distribution |psi_components|^2 is unchanged.
+3. Provides conserved(H, A, tol=1e-9) returning True if [H, A] == 0 (so <A> is
+   time-independent), and a helper expectation_over_time(H, A, psi, times)
+   returning the list of <A>(t) so I can confirm it is flat.
+4. __main__: build a 3x3 diagonal H = diag(-1.0, -0.5, 0.2), take psi = the
+   ground eigenvector, and show is_stationary is True; then build a diagonal A
+   that commutes with H and show expectation_over_time is flat.
+
+Add a comment: stationarity is necessary but NOT sufficient to prove a config is
+the *lowest*-energy one (excited eigenstates are stationary too). Do not assign
+electrons or rank configurations.
+```
+**What this produces:** `dynamics_check.py` — confirms time-independence and identifies conserved labels.
+**How to adapt:** *Your system:* use the spectral form $\hat U = \sum_n e^{-iE_n t/\hbar}|E_n\rangle\langle E_n|$ to avoid SciPy. *ChatGPT/Gemini:* same prompt; ask for a Rabi-style sanity test (a two-level non-eigenstate *does* oscillate). *Claude Project:* keep alongside the spectral engine.
+**Builds on:** Chapter 3's conserved angular-momentum labels.  **Next:** Chapter 5 gives the actual central-field separation that produces the $\hat H_\text{eff}$ whose ground state this chapter certified stationary.
 
 ---
 
 ## Chapter 05: Chapter 5 — Quantum Mechanics in Three Dimensions
 *Source: `chapters/05-quantum-mechanics-in-three-dimensions.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain solutions, but to check reasoning, expose failure modes, and press on the edges of what the chapter established.
+
+1. Ask an LLM to explain why the single-valuedness condition $\Phi(\phi + 2\pi) = \Phi(\phi)$ forces $m$ to be an integer. Then ask: what would happen physically if we relaxed this condition and allowed non-integer $m$? What property of the wave function would be lost, and why would that be a problem for the probability interpretation?
+
+2. Ask an LLM to prove that $|Y_{\ell m}(\theta, \phi)|^2$ is independent of $\phi$ for any $\ell$ and $m$. The proof should take two lines. Then ask: is the same true for $\text{Re}(Y_{\ell m})$? Ask it to give a specific counterexample and identify which $(\ell, m)$ makes the $\phi$-dependence of $\text{Re}(Y_{\ell m})$ most visible.
+
+3. Chemistry textbooks show $p_x$, $p_y$, $p_z$ orbitals as distinct shapes pointing in three perpendicular directions. Ask an LLM: if you rotate the coordinate system by 45° about the $z$-axis, do the $p_x$ and $p_y$ orbitals transform into each other? What does the answer tell you about whether the $\{p_x, p_y, p_z\}$ basis or the $\{Y_1^{-1}, Y_1^0, Y_1^1\}$ basis is "more physical"?
+
+4. Ask an LLM to explain the centrifugal barrier physically — why does a particle with $\ell > 0$ get pushed away from the origin? Ask it specifically whether the centrifugal term is potential energy or kinetic energy, and to justify the answer. If its explanation invokes "centrifugal force," push back and ask for a reformulation that uses only kinetic energy.
+
+5. The chapter claims that the spherical harmonics describe the cosmic microwave background anisotropies with the same index $\ell$ used for atomic orbitals. Ask an LLM to explain what the CMB power spectrum $C_\ell$ measures and why $\ell \approx 220$ corresponds to the first acoustic peak. Then ask: is the $\ell$ in $C_\ell$ literally the same mathematical object as the $\ell$ in $Y_{\ell m}$ for hydrogen? If yes, what is the sphere on which the CMB is expanded?
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `central_field.py` that builds $V_\text{eff}(r)$ and a 1D radial solver, validated on the spherical well.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator under the central-field approximation.
+I need the radial machinery.
+
+Write a Python module `central_field.py` (numpy + scipy) that:
+
+1. v_eff(r, l, Z_eff, kind='coulomb') returning the effective potential in atomic
+   units (hbar = m_e = e^2/4pi eps0 = 1): for 'coulomb', V = -Z_eff/r +
+   l*(l+1)/(2*r^2); for 'well', V = 0 inside radius a and large outside, plus the
+   same centrifugal term.
+2. solve_radial(l, Z_eff, kind, r_max, N) that discretizes u(r)=rR(r) on a grid
+   r in (0, r_max] with u(0)=0, builds the finite-difference Hamiltonian for
+   -1/2 u'' + V_eff u = E u, and returns the lowest few eigenvalues E and u(r).
+3. A validation function check_spherical_well(a, N) that solves l=0 in a well of
+   radius a and asserts the ground energy equals pi^2/(2 a^2) to 1%.
+4. __main__: for a screened Coulomb potential with Z_eff=1, solve l=0,1,2 and
+   print the lowest eigenvalue for each, confirming E(l=0) < E(l=1) < E(l=2)
+   at fixed lowest radial node (the centrifugal-barrier ordering).
+
+Note in a comment that Z_eff is an INPUT representing screening, not something
+this module decides. Do not implement Slater's rules here.
+```
+**What this produces:** `central_field.py` — the radial solver and $V_\text{eff}$, validated against the spherical well.
+**How to adapt:** *Your system:* atomic units keep constants out of the way; convert to eV only for display. *ChatGPT/Gemini:* same prompt; ask for the radial probability $r^2|R|^2$ to be returned too. *Claude Project:* this is a core physics module — keep it with the linear-algebra core.
+**Builds on:** Chapter 4's stationary $\hat H_\text{eff}$ (the radial $\hat H$ here is its concrete form).  **Next:** Chapter 6 supplies the angular factor $Y_\ell^m$ and the $2(2\ell+1)$ counting that, with this radial part, completes the orbital.
 
 ---
 
 ## Chapter 06: Chapter 6 — Angular Momentum
 *Source: `chapters/06-angular-momentum.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — CLAUDE.md Extension
+
+```
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `subshells.py` that enumerates subshell orbitals and capacities and builds the angular-momentum matrices.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I need the angular-momentum layer:
+subshell capacities and the L matrices.
+
+Write a Python module `subshells.py` (numpy only) that:
+
+1. m_values(l) returning the list [-l, ..., l] (2l+1 entries), enforcing integer
+   l >= 0 (raise on non-integer or negative l).
+2. capacity(l) returning 2*(2l+1) (the factor 2 is spin, added here for the
+   filling logic even though spin is formalized next chapter).
+3. ladder_matrices(l) returning Lz, L_plus, L_minus, Lx, Ly, L2 from the exact
+   normalization L_plus|l,m> = hbar*sqrt((l-m)(l+m+1))|l,m+1>, with hbar=1.
+4. period_lengths() returning the cumulative electron counts for the standard
+   Madelung filling order 1s,2s,2p,3s,3p,4s,3d,4p,5s,4d,5p,6s,4f,5d,6p and
+   asserting the period sums are [2,8,8,18,18,32].
+5. __main__: print capacity for s,p,d,f (expect 2,6,10,14); assert L2 ==
+   l(l+1)*I for l=1,2,3; print period_lengths().
+
+Add a comment: the FILLING ORDER (Madelung) is an empirical input, not derived
+here; this module only counts capacities and builds matrices. Orbital l is
+integer-only (single-valuedness) — do not accept half-integers.
+```
+**What this produces:** `subshells.py` — capacities, angular-momentum matrices, and the period-length check.
+**How to adapt:** *Your system:* keep $\hbar=1$. *ChatGPT/Gemini:* same prompt; ask it to also print the cone half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ for the top rung. *Claude Project:* keep with the physics core; the term-symbol module (Chapter 8) reuses these $\hat L$ matrices.
+**Builds on:** Chapter 5's radial orbitals (this supplies their angular labels).  **Next:** Chapter 7 adds the spin factor $m_s=\pm\tfrac12$ that turns $2\ell+1$ into the full $2(2\ell+1)$.
 
 ---
 
 ## Chapter 07: Chapter 7 — Spin and the Bloch Sphere
 *Source: `chapters/07-spin-and-the-bloch-sphere.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `spin.py` that promotes spatial orbitals to spin-orbitals and supplies $\hat S_z$.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. Spatial orbitals (n, l, m_l) now
+need a spin label to become spin-orbitals.
+
+Write a Python module `spin.py` (numpy only) that:
+
+1. spin_orbitals(spatial_orbitals) taking a list of (n, l, m_l) tuples and
+   returning the doubled list of (n, l, m_l, m_s) with m_s in {+1/2, -1/2}.
+2. subshell_spin_orbitals(n, l) returning all 2*(2l+1) spin-orbitals of that
+   subshell.
+3. pauli() returning sigma_x, sigma_y, sigma_z, and Sz() returning (hbar/2)*
+   sigma_z with hbar=1; assert each sigma squares to I and has eigenvalues +/-1.
+4. A note/assert that the number of spin-orbitals in a subshell equals
+   capacity(l) = 2*(2l+1).
+5. __main__: build the p subshell (n arbitrary, l=1), print its 6 spin-orbitals,
+   and assert the count is 6; do the same for d (l=2) expecting 10.
+
+Comment: spin is an INDEPENDENT degree of freedom in C^2 — m_s is not derived
+from m_l, and the two values exist along ANY axis (sigma_n has eigenvalues +/-1
+for every direction n). Do not model spin as physical rotation.
+```
+**What this produces:** `spin.py` — spin-orbital generation plus the spin operators.
+**How to adapt:** *Your system:* store $m_s$ as $\pm\tfrac12$ floats or as `'up'/'down'` strings consistently. *ChatGPT/Gemini:* same prompt; ask it to verify $\hat S_{\hat n}$ has eigenvalues $\pm\hbar/2$ for a random axis. *Claude Project:* keep with `subshells.py`.
+**Builds on:** Chapter 6's $2\ell+1$ spatial orbitals and capacity.  **Next:** Chapter 8 couples these spins (and orbital $\ell$'s) into the total $L,S,J$ of a term symbol.
 
 ---
 
 ## Chapter 08: Chapter 8 — Addition of Angular Momenta
 *Source: `chapters/08-addition-of-angular-momenta.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, test the limits of the chapter's claims, and build physical intuition.
+
+1. Ask an LLM to explain the triangle rule $J = |j_1-j_2|, \ldots, j_1+j_2$ and to verify the state-count identity $\sum_{J}(2J+1) = (2j_1+1)(2j_2+1)$ for the case $j_1=1$, $j_2=\frac{3}{2}$. Then ask it: is the triangle rule a theorem that can be proved from the ladder operator algebra, or an additional postulate? Ask for the key step in the proof.
+
+2. Ask an LLM to explain the Condon–Shortley phase convention in concrete terms. What exactly is being fixed, and why does a phase ambiguity arise in the first place? Then ask: if you use a different sign convention, does the physics change? What quantities are convention-dependent and what quantities are invariant?
+
+3. The chapter claims that spin-orbit coupling $\hat{L}\cdot\hat{S}$ is diagonal in the coupled basis. Ask an LLM to verify this claim for the specific case of the $2p$ hydrogen state by writing out the $6\times6$ matrix of $\hat{L}\cdot\hat{S}$ in the uncoupled basis $|m_\ell, m_s\rangle$ and showing it has off-diagonal elements, then confirming the same matrix is diagonal in the coupled $|J,M\rangle$ basis. Evaluate whether its matrix is correct.
+
+4. Ask an LLM whether the singlet state is entangled. Ask it to define entanglement precisely and to identify whether the singlet satisfies that definition. Then push: is the triplet $|1,1\rangle = |\!\uparrow\uparrow\rangle$ entangled? What about $|1,0\rangle = (|\!\uparrow\downarrow\rangle + |\!\downarrow\uparrow\rangle)/\sqrt{2}$? Ask for a systematic criterion to determine entanglement from the form of the state.
+
+5. Ask an LLM to explain the Wigner–Eckart theorem — the next downstream consequence of CG algebra — in terms of what it says about matrix elements of spherical tensor operators. Ask specifically: how does the Wigner–Eckart theorem generate selection rules for electromagnetic transitions (such as $\Delta\ell = \pm1$)? Evaluate whether the connection between the CG algebra of this chapter and the selection rules is made clearly.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `coupling.py` that enumerates microstates of an open subshell and extracts the allowed terms (the raw material for Hund's rules).
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. Given an open subshell (l, number
+of electrons k), I need to enumerate microstates and find the allowed
+term symbols (2S+1)L_J — but NOT yet pick the ground term.
+
+Write a Python module `coupling.py` (numpy + itertools) that:
+
+1. triangle(j1, j2) returning the list of allowed J = |j1-j2|..j1+j2 (integer
+   or half-integer steps), and assert sum(2J+1) == (2j1+1)(2j2+1).
+2. microstates(l, k): enumerate all ways to place k electrons in the 2(2l+1)
+   spin-orbitals of subshell l (each spin-orbital occupied 0 or 1 times, Pauli),
+   returning for each microstate (M_L = sum m_l, M_S = sum m_s).
+3. allowed_terms(l, k): from the microstate (M_L, M_S) table, extract the set of
+   (S, L) terms present (the standard "subtract the box of microstates" method),
+   and for each (S, L) list the J values from triangle(L, S).
+4. __main__: for p^2 (l=1, k=2) print the allowed terms and assert the set is
+   {1S, 3P, 1D}; for d^6 (l=2, k=6) print the allowed terms and confirm 5D is
+   among them (this is iron's open shell).
+
+IMPORTANT: do NOT apply Hund's rules or select a ground term — only enumerate
+what terms are ALLOWED. The microstate count must equal C(2(2l+1), k).
+```
+**What this produces:** `coupling.py` — the term-enumeration engine feeding Hund's rules.
+**How to adapt:** *Your system:* for large shells the microstate table grows; $d^6$ has $\binom{10}{6}=210$ microstates, still trivial. *ChatGPT/Gemini:* same prompt; ask it to print the $(M_L,M_S)$ table for $p^2$ to inspect. *Claude Project:* keep with the physics core — Chapter 11 layers Hund's rules on top.
+**Builds on:** Chapters 6–7's orbital and spin labels (the microstates are assignments of these).  **Next:** Chapter 9 gives the hydrogenic $R_{n\ell}$ with $Z_\text{eff}$ that sets the actual energies these terms attach to.
 
 ---
 
 ## Chapter 09: Chapter 9 — The Hydrogen Atom
 *Source: `chapters/09-the-hydrogen-atom.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — CLAUDE.md extension
+
+Append this block to your project's `CLAUDE.md`:
+
+```
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `hydrogenic.py` that returns screened hydrogenic radial orbitals and their observables.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator using the central-field approximation:
+hydrogenic orbitals shifted by an effective nuclear charge Z_eff.
+
+Write a Python module `hydrogenic.py` (numpy + scipy.special) that:
+
+1. R_nl(r, n, l, Z_eff, a0=1.0) returning the hydrogenic radial function with Z
+   replaced by Z_eff, using genlaguerre for the associated Laguerre polynomial,
+   normalized so integral of r^2 |R|^2 dr = 1.
+2. radial_prob(r, n, l, Z_eff) = r^2 * R_nl(...)^2  (the Jacobian is mandatory).
+3. most_probable_radius and mean_radius for (n, l, Z_eff), computed numerically.
+4. radial_nodes(n, l, Z_eff) counting sign changes of R_nl on a fine grid.
+5. __main__: for the 1s orbital with Z_eff=1, assert r_mp == 1.0 a0 and
+   <r> == 1.5 a0 to 1%; assert radial_nodes(n,l) == n-l-1 for several (n,l);
+   show that increasing Z_eff shrinks the orbital (r_mp scales as a0/Z_eff).
+
+Comment that Z_eff is an INPUT (Slater's rules supply it in a later module).
+Always use r^2|R|^2 for radial probabilities — never |R|^2.
+```
+**What this produces:** `hydrogenic.py` — the screened orbital library with verified radii and node counts.
+**How to adapt:** *Your system:* set $a_0=1$ internally and convert for display. *ChatGPT/Gemini:* same prompt; ask for a plot of $P(r)$ with $r_\text{mp}$ and $\langle r\rangle$ marked. *Claude Project:* keep with the physics core; Chapter 10 antisymmetrizes these into Slater determinants.
+**Builds on:** Chapter 5's central-field radial equation (this gives its Coulomb closed-form solution).  **Next:** Chapter 10 builds the many-electron Slater determinant from these one-electron orbitals.
 
 ---
 
 ## Chapter 10: Chapter 10 — Identical Particles
 *Source: `chapters/10-identical-particles.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a module `slater.py` that builds Slater determinants, enforces Pauli exclusion, and fills configurations by Aufbau.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am building an atomic-structure simulator. I need the many-electron layer:
+Slater determinants, Pauli exclusion, and Aufbau filling.
+
+Write a Python module `slater.py` (numpy only) that:
+
+1. slater_determinant(orbitals, coords): given N single-particle orbital
+   callables and N coordinate points, build the NxN matrix M[i][j] =
+   orbital_i(coord_j) and return det(M)/sqrt(N!). Demonstrate that swapping two
+   coords flips the sign and that two identical orbitals give exactly 0.
+2. fill_configuration(Z, madelung_order): place Z electrons into spin-orbitals
+   in the given Madelung subshell order, max 2(2l+1) per subshell, returning the
+   configuration string (e.g. '1s2 2s2 2p2' for Z=6) and the list of occupied
+   (n,l,m_l,m_s) spin-orbitals. Enforce exclusion (no spin-orbital twice).
+3. parallel_pairs(occupied): count pairs of electrons in the SAME subshell with
+   the SAME spin (the exchange-stabilization proxy).
+4. __main__: fill Z=6 (expect 1s2 2s2 2p2) and Z=10 (expect 1s2 2s2 2p6);
+   assert a determinant with a duplicated spin-orbital is 0; print parallel_pairs
+   for a half-filled p^3 (expect 3 parallel pairs among the three unpaired up
+   spins).
+
+Do NOT resolve the Cr/Cu anomalies here (that needs an exchange-energy
+comparison in the capstone). Use the plain Madelung order. Comment that Pauli
+exclusion is a THEOREM about determinants, not a separate postulate.
+```
+**What this produces:** `slater.py` — antisymmetric state construction, exclusion-respecting filling, and the parallel-pair count feeding Hund's Rule 1.
+**How to adapt:** *Your system:* the determinant demo can use toy 1D orbitals; the filling logic is what the simulator actually uses. *ChatGPT/Gemini:* same prompt; ask for the oxygen $2p^4$ unpaired-electron count (expect 2). *Claude Project:* keep with the physics core — the capstone adds the Cr/Cu exchange comparison.
+**Builds on:** Chapter 9's hydrogenic spin-orbitals (the determinant's columns).  **Next:** Chapter 11 assembles all modules into the full atom-builder and validates against NIST.
 
 ---
 
 ## Chapter 11: Chapter 11 — Capstone: The Atom, Built from Simulations
 *Source: `chapters/11-capstone-the-atom.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to generate the simulation (write that yourself), but to probe the physics, expose the model's limitations, and test the reasoning.
+
+1. Ask an LLM to derive the $2(2\ell+1)$ formula for subshell capacity starting from the quantum numbers $\ell$, $m_\ell$, and $m_s$. Then ask it: does this formula assume anything beyond the Pauli exclusion principle? Could a particle with spin-1 (three spin states) fill a $p$ subshell with $3(2\ell+1) = 9$ electrons? What would the period structure be for such a particle?
+
+2. Ask an LLM to explain the mechanism of Hund's Rule 1 in terms of the exchange integral. The explanation should use the word "antisymmetry" — ask it to trace the chain: parallel spins → symmetric spin function → antisymmetric spatial function → electrons avoid each other → lower Coulomb repulsion → lower energy. If any step is missing or reversed, identify it and ask for a correction.
+
+3. The Madelung rule has no derivation from first principles. Ask an LLM to sketch the closest thing to a derivation that exists — perhaps a heuristic involving the average radial distance of orbitals as a function of $n+\ell$. Then ask: what would a genuine derivation have to explain? Specifically, what would it need to say about the exceptions in the $d$-block?
+
+4. Ask an LLM to compute $Z_\text{eff}$ by Slater's rules for the $3d$ electron of nickel ($Z = 28$, config $[\text{Ar}]\,3d^8\,4s^2$) and for the $4s$ electron of the same atom. Which is larger? What does this tell you about which electron is more tightly bound? Cross-check by comparing to experimental ionization energies.
+
+5. Ask an LLM to explain why Fe$^{2+}$ is $[\text{Ar}]\,3d^6$ and not $[\text{Ar}]\,3d^4\,4s^2$. The explanation should invoke the self-consistent nature of orbital energies — that removing electrons changes the effective potential and thus the orbital energy ordering. If the LLM's explanation is purely about the Madelung rule without mentioning the self-consistency issue, push back.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the two withheld physics layers (Slater's rules, Hund + Madelung-with-exceptions) and the `build_atom(Z)` integration.
+**Tool:** Claude Project — this is a multi-file assembly where persistent context over all prior modules helps the model wire them correctly.
+**The Prompt:**
+```
+This Claude Project contains my atomic-structure simulator modules: orbitals.py,
+oneelectron.py, csco.py, dynamics_check.py, central_field.py, subshells.py,
+spin.py, coupling.py, hydrogenic.py, slater.py. Now assemble the full builder.
+
+Write two new modules plus an integrator:
+
+1. slater_rules.py: z_eff(Z, n, l) implementing Slater's rules — group orbitals
+   as [1s][2s,2p][3s,3p][3d][4s,4p][4d][4f]..., apply shielding 0.35 (same group;
+   0.30 within 1s), 0.85 (n-1 shell, for s/p electrons), 1.00 (deeper, and ALL
+   inner groups for d/f electrons). Return Z - sigma.
+
+2. hund.py: ground_term(l, k) applying Hund's three rules to an open subshell
+   (max S; then max L; then J = |L-S| if <half-filled, J = L+S if >half-filled,
+   J = S if exactly half-filled). Return the term string (2S+1)L_J.
+   Also madelung_config(Z) returning the configuration, WITH the Cr/Cu exchange
+   exceptions handled by an explicit exchange-vs-gap comparison (count parallel
+   pairs; if a half/full d-shell gain beats the small 3d-4s gap, promote one 4s
+   electron) — NOT by hard-coding the answer.
+
+3. build_atom.py: build_atom(Z) returning a dict {config, z_eff_valence,
+   term_symbol} by calling the modules. Print a clean report.
+
+VALIDATION REQUIRED in __main__:
+  - Assert z_eff for F 2p = 5.20, Na 3s = 2.20, Fe 3d = 6.25 (chapter values).
+  - Assert build_atom(6).term_symbol == '3P0' (carbon).
+  - Assert build_atom(26) gives config [Ar]3d6 4s2 and term '5D4' (iron, golden).
+  - Assert build_atom(8).term_symbol == '3P2' (oxygen).
+
+Do NOT hard-code Cr/Cu or any term symbol — derive everything. Flag, don't hide,
+any element where the central-field model disagrees with NIST.
+```
+**What this produces:** `slater_rules.py`, `hund.py`, `build_atom.py` — the complete simulator with self-validating assertions.
+**How to adapt:** *Your system:* keep a small `nist_reference.csv` (Z, config, term) for ~30 elements as the diff target. *ChatGPT/Gemini:* paste the module sources inline since there is no project memory; the prompt is otherwise identical. *Claude Project:* the system prompt should carry the standing rule "derive, never recall, term symbols; flag model breakdowns" so every session inherits it.
+**Builds on:** all ten prior modules.  **Next:** R5 runs the full periodic-table validation sweep.
 
 ---
 
-## Chapter 99: 99 Back Matter
+## Chapter 99: 99-back-matter.md
 *Source: `chapters/99-back-matter.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
+> **Section not yet authored.** No `## LLM Exercises` / `### Exercise R3 — LLM Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---

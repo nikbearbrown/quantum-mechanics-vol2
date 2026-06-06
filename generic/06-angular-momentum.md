@@ -1,15 +1,13 @@
 # Chapter 6 — Angular Momentum
 *How three commutation relations determine an entire spectrum, without solving a single differential equation.*
 
-In Chapter 5 we solved the angular momentum eigenvalue problem using differential equations: setting up the associated Legendre equation, imposing regularity at the poles, extracting a recursion relation, and deriving the eigenvalues $\hbar^2\ell(\ell+1)$ from series termination. That approach works. But the derivation conceals something important: the eigenvalue structure has nothing to do with the differential equation, the sphere, or any particular realization of angular momentum in position space.
-
-The central claim of this chapter is that the entire spectrum of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality — and nothing else. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are not consequences of the Legendre equation. They are consequences of:
+This chapter derives the complete spectrum of angular momentum from algebra alone. The entire set of eigenvalues of $\hat{L}^2$ and $\hat{L}_z$ follows from three commutation relations and one inequality. The values $\hbar^2\ell(\ell+1)$ and $m\hbar$, with $m$ running from $-\ell$ to $\ell$ in integer steps, are consequences of:
 
 $$[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z, \qquad [\hat{L}_y, \hat{L}_z] = i\hbar\hat{L}_x, \qquad [\hat{L}_z, \hat{L}_x] = i\hbar\hat{L}_y.$$
 
-Anyone who writes down any object satisfying these three relations — whether it lives in position space, spin space, or somewhere more abstract — must get the same spectrum.
+Any object satisfying these three relations — whether it lives in position space, spin space, or somewhere more abstract — must have exactly this spectrum.
 
-The payoff is immediate and significant. The algebra allows $\ell$ to be a half-integer. Orbital angular momentum is restricted to integers by an additional physical requirement — the single-valuedness of the wave function $e^{im\phi}$ under $\phi \to \phi + 2\pi$. Spin angular momentum has no wave function in position space. Nothing restricts it. The half-integer case is realized by every electron in the universe, and the algebraic derivation is why.
+The significance of the algebraic approach is that it allows $\ell$ to be a half-integer. Orbital angular momentum is restricted to integers by an additional physical requirement — the single-valuedness of the wave function $e^{im\phi}$ under $\phi \to \phi + 2\pi$. Spin angular momentum has no wave function in position space and no such restriction. Half-integer $\ell$ is realized by every electron in the universe, and the algebraic derivation tells us why.
 
 ---
 

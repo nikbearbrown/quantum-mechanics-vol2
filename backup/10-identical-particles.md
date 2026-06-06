@@ -1,16 +1,18 @@
 # Chapter 10 — Identical Particles
 
-Spectroscopists in the early 1920s catalogued the helium spectrum in fine detail. They found two distinct families of lines — one called parahelium, one called orthohelium — with different transition rates, different selection rules, different fine-structure patterns. The two families looked like spectra of two different elements.
+Spectroscopists in the early 1920s catalogued the helium spectrum in fine detail. They found two distinct families of lines — one called parahelium, one called orthohelium — with different transition rates, different selection rules, different fine-structure patterns. They looked like spectra of two different elements.
 
-Helium is one element: nuclear charge $+2e$, two electrons, nothing else. Werner Heisenberg resolved this apparent puzzle in 1926, and his resolution required no new force and no new particle. It required asking a question nobody had thought to ask: when you write down a wave function for two electrons, what must it satisfy purely because the electrons are identical?
+Helium is one element: nuclear charge $+2e$, two electrons, nothing else. So why two spectral families?
+
+Werner Heisenberg resolved this in 1926. The resolution did not require a new force or a new particle. It required asking a question nobody had thought to ask: when you write down a wave function for two electrons, what must it satisfy purely because the electrons are identical?
 
 ---
 
 ## What Identical Means
 
-In classical mechanics, two identical billiard balls can always be tracked individually. Even without painting a dot on one, you could in principle follow both through every collision — their trajectories are continuous and you never lose track of which is which.
+In classical mechanics, two identical billiard balls can always be tracked individually. Even without painting a dot on one, you could in principle follow both through every collision — their trajectories are continuous, you never lose track of which is which.
 
-In quantum mechanics this fails completely. The wave function $\psi(\vec{r}_1, \vec{r}_2)$ spreads each electron over a region of space. When those regions overlap and a detector fires at some position, there is no fact in nature — not merely no practical way to determine, but no fact — about which electron triggered it. The labels "1" and "2" we write into the wave function are mathematical bookkeeping. They cannot be verified by any measurement.
+In quantum mechanics this fails completely. The wave function $\psi(\vec{r}_1, \vec{r}_2)$ spreads each electron over a region of space. The regions overlap. When a detector fires at some position, there is no fact in nature — not merely no practical way to determine, but no fact — about which electron triggered it. The labels "1" and "2" we write into the wave function are mathematical bookkeeping. They cannot be cashed out by any measurement.
 
 The Hamiltonian confirms this. For two electrons:
 
@@ -88,11 +90,11 @@ Identically zero. Two electrons in the 1s orbital must have opposite spins — n
 
 ## Helium and the Exchange Integral
 
-Helium's Hamiltonian is
+Return to the opening question. Helium's Hamiltonian is
 
 $$\hat{H} = -\frac{\hbar^2}{2m_e}\nabla_1^2 - \frac{\hbar^2}{2m_e}\nabla_2^2 - \frac{2e^2}{4\pi\epsilon_0 r_1} - \frac{2e^2}{4\pi\epsilon_0 r_2} + \underbrace{\frac{e^2}{4\pi\epsilon_0|\vec{r}_1-\vec{r}_2|}}_{V_{12}}.$$
 
-The electron-electron repulsion $V_{12}$ makes this analytically insoluble. We treat it as a perturbation on the exactly-solved two-electron hydrogenic problem.
+The electron-electron repulsion $V_{12}$ makes this analytically insoluble. Treat it as a perturbation on the exactly-solved two-electron hydrogenic problem.
 
 The total wave function must be antisymmetric. From Chapter 8, two-spin states split into a singlet (antisymmetric, $S = 0$) and a triplet (symmetric, $S = 1$). Pairing with spatial parts:
 
@@ -162,7 +164,7 @@ The periodic table is not a catalogue of patterns. It is a theorem about antisym
 
 Bosons have symmetric wave functions. Nothing prevents any number of them from occupying the same single-particle state. At low temperature and high density, a macroscopic fraction can pile into the lowest-energy state — Bose-Einstein condensation. Cornell and Wieman achieved the first dilute-gas BEC in $^{87}$Rb at JILA in 1995, cooling the atoms to roughly 170 nK. Nobel Prize 2001.
 
-One misconception worth clarifying: bosons are not attracted to each other and fermions are not repelled by each other in the sense of forces. There is no term in the Hamiltonian encoding exchange statistics. What exists is a correlation in the joint probability density $|\psi(\vec{r}_1, \vec{r}_2)|^2$ from the symmetrization: fermions have a Pauli node at $\vec{r}_1 = \vec{r}_2$ (the antisymmetric wave function vanishes there); bosons have enhanced probability at $\vec{r}_1 = \vec{r}_2$ (the symmetric wave function peaks on the diagonal). The single-particle marginal density $\int|\psi|^2\,d^3r_2$ is identical for bosons, fermions, and distinguishable particles in the same pair of single-particle states. A single-particle detector cannot distinguish them.
+One misconception worth naming: bosons are not attracted to each other and fermions are not repelled by each other in the sense of forces. There is no term in the Hamiltonian encoding exchange statistics. What exists is a correlation in the joint probability density $|\psi(\vec{r}_1, \vec{r}_2)|^2$ from the symmetrization: fermions have a Pauli node at $\vec{r}_1 = \vec{r}_2$ (the antisymmetric wave function vanishes there); bosons have enhanced probability at $\vec{r}_1 = \vec{r}_2$ (the symmetric wave function peaks on the diagonal). The single-particle marginal density $\int|\psi|^2\,d^3r_2$ is identical for bosons, fermions, and distinguishable particles in the same pair of single-particle states. A single-particle detector cannot distinguish them.
 
 The fermion node also holds up dead stars. Electrons in a white dwarf cannot share single-particle states; as the star contracts, electrons are forced into higher-energy states, generating an outward degeneracy pressure with no thermal origin. Chandrasekhar showed in 1931 that this pressure has a relativistic limit at approximately $1.4\,M_\odot$ — above which no equilibrium exists and gravitational collapse is inevitable. He did this calculation at age 19 on a steamship from India to England. Nobel Prize 1983.
 

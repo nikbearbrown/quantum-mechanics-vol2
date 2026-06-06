@@ -1,7 +1,7 @@
 # Chapter 9 — The Hydrogen Atom
 *One formula Balmer had no explanation for. One calculation Schrödinger did over Christmas break. The same number — and only one of them describes what you would see in the lab.*
 
-In 1885, Johann Balmer published a four-page note. He had been studying four visible spectral lines of hydrogen — red, blue-green, violet, deep violet — and he had found a pattern:
+In 1885, Johann Balmer published a four-page note. He had been staring at four visible spectral lines of hydrogen — red, blue-green, violet, deep violet — and he had found a pattern:
 
 $$\lambda = B\cdot\frac{n^2}{n^2 - 4}, \qquad n = 3, 4, 5, 6, \quad B \approx 364.5\,\text{nm}.$$
 
@@ -13,13 +13,13 @@ with $R_H \approx 1.097 \times 10^7\,\text{m}^{-1}$. Lyman series in the ultravi
 
 Bohr supplied a partial answer in 1913: assume electrons orbit in circles, but allow only those orbits where angular momentum is a multiple of $\hbar$. This ansatz produced $E_n = -13.6\,\text{eV}/n^2$ and reproduced Rydberg's formula. But why must angular momentum be quantized? Why don't orbiting electrons radiate, as Maxwell's equations demand? Bohr had no answers. The model was a conjecture that happened to produce the right numbers.
 
-Schrödinger, at an Alpine resort over Christmas 1925, wrote down the wave equation for hydrogen and worked it through. The energies fell out again — same $-13.6\,\text{eV}/n^2$, no arbitrary postulates. What also fell out, and what Bohr had absolutely no machinery for, was the complete spatial structure: a probability density $|\psi_{n\ell m}|^2$, a cloud of likelihood distributed through space, not a path. This chapter works through that calculation.
+Schrödinger, at an Alpine resort over Christmas 1925, wrote down the wave equation for hydrogen and worked it through. The energies fell out again — same $-13.6\,\text{eV}/n^2$, no arbitrary postulates. What also fell out, and what Bohr had absolutely no machinery for, was the complete spatial structure: a probability density $|\psi_{n\ell m}|^2$, a cloud of likelihood distributed through space, not a path. This chapter does that calculation.
 
 ---
 
 ## Reducing Two Bodies to One
 
-A hydrogen atom is a proton (mass $m_p$) and an electron (mass $m_e$) interacting via $V = -e^2/(4\pi\epsilon_0|\vec{r}_e - \vec{r}_p|)$. The Hamiltonian has six coordinates. We can always separate a two-body problem into a freely-drifting center of mass and a one-body relative-coordinate problem. Introduce the center-of-mass $\vec{R} = (m_p\vec{r}_p + m_e\vec{r}_e)/(m_p+m_e)$ and the relative coordinate $\vec{r} = \vec{r}_e - \vec{r}_p$. The Hamiltonian separates:
+A hydrogen atom is a proton (mass $m_p$) and an electron (mass $m_e$) interacting via $V = -e^2/(4\pi\epsilon_0|\vec{r}_e - \vec{r}_p|)$. The Hamiltonian has six coordinates. But we can always separate a two-body problem into a freely-drifting center of mass and a one-body relative-coordinate problem. Introduce the center-of-mass $\vec{R} = (m_p\vec{r}_p + m_e\vec{r}_e)/(m_p+m_e)$ and the relative coordinate $\vec{r} = \vec{r}_e - \vec{r}_p$. The Hamiltonian separates:
 
 $$\hat{H} = \frac{\hat{P}^2}{2M} + \underbrace{\frac{\hat{p}^2}{2\mu} - \frac{e^2}{4\pi\epsilon_0 r}}_{\hat{H}_\text{rel}},$$
 
@@ -43,7 +43,7 @@ The potential is spherically symmetric. We know exactly what to do.
 
 Any spherically symmetric Hamiltonian separates in spherical coordinates. Write $\psi(r,\theta,\phi) = R(r)Y_\ell^m(\theta,\phi)$. The angular part is the spherical harmonics from Chapter 6 — that result is universal, independent of what $V(r)$ turns out to be. The spherical harmonics know nothing about Coulomb; they know only the rotation group.
 
-The radial part is where hydrogen lives. Making the substitution $u(r) = rR(r)$ converts the three-dimensional radial equation into a one-dimensional one that looks like a familiar Schrödinger equation in a single variable. After substituting, the radial equation becomes:
+The radial part is where hydrogen lives. Make the substitution $u(r) = rR(r)$: this converts the three-dimensional radial equation into a one-dimensional one that looks like a familiar Schrödinger equation in a single variable. After substituting, the radial equation becomes:
 
 $$-\frac{\hbar^2}{2\mu}\frac{d^2u}{dr^2} + \underbrace{\left[-\frac{e^2}{4\pi\epsilon_0 r} + \frac{\hbar^2\ell(\ell+1)}{2\mu r^2}\right]}_{V_\text{eff}(r)}u(r) = E\,u(r).$$
 
@@ -68,7 +68,7 @@ The simplest function that goes to zero at the origin and decays at infinity is:
 
 $$u(r) = Ar\,e^{-r/a},$$
 
-where $a$ is an unknown length. Differentiating twice, substituting, and collecting terms by powers of $r$:
+where $a$ is an unknown length. Differentiate twice, substitute, and collect terms by powers of $r$:
 
 $$\underbrace{\left(\frac{\hbar^2}{\mu a} - \frac{e^2}{4\pi\epsilon_0}\right)}_{\text{constant term}} + \underbrace{\left(E + \frac{\hbar^2}{2\mu a^2}\right)}_{\text{coefficient of }r}\cdot r = 0.$$
 
@@ -90,11 +90,13 @@ Spherically symmetric. Maximum probability density at the nucleus. Exponential d
 
 ## Two Radii, and Why They Differ
 
-The quantity we want for "where is the electron" is not $|\psi_{100}|^2$, which is just the density at a point. We want the probability of finding the electron between $r$ and $r + dr$, integrated over all angles. This is the **radial probability density**:
+Here is the calculation that matters most, and it is worth going slowly.
+
+The quantity you want for "where is the electron" is not $|\psi_{100}|^2$, which is just the density at a point. You want the probability of finding the electron between $r$ and $r + dr$, integrated over all angles. This is the **radial probability density**:
 
 $$P(r) = r^2|R_{10}(r)|^2 = \frac{4}{a_0^3}\,r^2 e^{-2r/a_0}.$$
 
-The factor $r^2$ is not optional: it comes from the spherical volume element $4\pi r^2\,dr$. A thin shell at radius $r$ has volume proportional to $r^2$. Even though $|\psi|^2$ is largest at $r = 0$, the shell at small $r$ is vanishingly thin, and the probability of finding the electron near the nucleus nearly vanishes. Plotting $|R_{10}|^2$ without the $r^2$ factor and claiming it answers the radial question is the single most common error in hydrogen atom calculations.
+The factor $r^2$ is not optional: it comes from the spherical volume element $4\pi r^2\,dr$. A thin shell at radius $r$ has volume proportional to $r^2$. Even though $|\psi|^2$ is largest at $r = 0$, the shell at small $r$ is vanishingly thin, and the probability of finding the electron near the nucleus nearly vanishes. You cannot plot $|R_{10}|^2$ and claim it answers the radial question; the $r^2$ is the Jacobian, and dropping it is the single most common error in hydrogen atom calculations.
 
 <!-- → [FIGURE: P(r) = (4/a₀³)r²e^{−2r/a₀} for the 1s state, with r_mp=a₀ and ⟨r⟩=3a₀/2 marked as vertical lines, the right-skewed tail visible, and a caption noting the shaded area beyond r_mp exceeds 50%] -->
 
@@ -115,15 +117,15 @@ $$\langle r\rangle = \frac{4}{a_0^3}\int_0^\infty r^3 e^{-2r/a_0}\,dr = \frac{4}
 
 The most-probable radius is $a_0$. The mean radius is $\tfrac{3}{2}a_0$. Two different numbers for the same distribution.
 
-They differ because $P(r)$ is right-skewed — it has a long tail at large $r$ that pulls the mean to the right of the peak. A classical electron on a circular orbit at fixed $r_0$ would give $r_\text{mp} = \langle r\rangle = r_0$: one radius. The fact that $r_\text{mp} \neq \langle r\rangle$ is a signature of wave mechanics built into the ground state of the simplest atom.
+They differ because $P(r)$ is right-skewed — it has a long tail at large $r$ that pulls the mean to the right of the peak. This is not a numerical detail. It is the geometric signature of a probability distribution. A classical electron on a circular orbit at fixed $r_0$ would give $r_\text{mp} = \langle r\rangle = r_0$: one radius. The fact that $r_\text{mp} \neq \langle r\rangle$ is a fingerprint of wave mechanics built into the ground state of the simplest atom.
 
-Bohr placed the electron at radius $a_0$. Schrödinger says the peak of the probability distribution is at $a_0$ — same number, different calculation — but the mean is larger, and the electron is found outside $a_0$ on more than half of all measurements. The agreement on $r_\text{mp}$ is a numerical consequence of a symmetry Bohr did not know about. The disagreement on $\langle r\rangle$ is the substance.
+Bohr placed the electron at radius $a_0$. Schrödinger says the peak of the probability distribution is at $a_0$ — same number, different calculation — but the mean is larger, and the electron is found outside $a_0$ on more than half of all measurements. The agreement on $r_\text{mp}$ is a numerical coincidence derived from a symmetry Bohr did not know about. The disagreement on $\langle r\rangle$ is the substance.
 
 ---
 
 ## The Full Spectrum
 
-The ground state works out cleanly because the Laguerre polynomial at $n=1$ is a constant — the exponential is the complete solution. For general $(n, \ell)$, expand $u(r)$ as a power series, substitute into the radial equation, and demand that the series terminate: if it does not, the wave function diverges at large $r$ and cannot be normalized. Termination forces:
+The ground state worked out cleanly because the Laguerre polynomial at $n=1$ is a constant — the exponential is the complete solution. For general $(n, \ell)$, expand $u(r)$ as a power series, substitute into the radial equation, and demand that the series terminate: if it does not, the wave function diverges at large $r$ and cannot be normalized. Termination forces:
 
 $$E_n = -\frac{13.6\,\text{eV}}{n^2}, \qquad n = 1, 2, 3, \ldots$$
 
@@ -167,7 +169,7 @@ The chemistry textbook $p_x$ and $p_y$ orbitals are real linear combinations:
 
 $$p_x \propto \psi_{21,-1} - \psi_{21,+1} \propto \sin\theta\cos\phi, \qquad p_y \propto i(\psi_{21,-1} + \psi_{21,+1}) \propto \sin\theta\sin\phi.$$
 
-These are the dumbbell shapes pointing along the Cartesian axes — useful for understanding bonding — but they are not eigenstates of $\hat{L}_z$. Both descriptions span the same subspace. Physics prefers the complex eigenstates because they diagonalize $\hat{L}_z$. Chemistry prefers the real combinations because bonding is about directional overlap. Neither is wrong; the choice depends on what you want to make explicit.
+These are the dumbbell shapes pointing along the Cartesian axes — useful for understanding bonding — but they are not eigenstates of $\hat{L}_z$. Both descriptions span the same subspace. Physics prefers the complex eigenstates because they diagonalize $\hat{L}_z$. Chemistry prefers the real combinations because bonding is about directional overlap. Neither is wrong; the choice is a matter of what you want to make obvious.
 
 ---
 
@@ -209,7 +211,7 @@ The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden
 
 ## What the Orbital Is Not
 
-Three points worth being precise about.
+Three pictures to be precise about.
 
 The 90% isosurface images in chemistry textbooks — dumbbells, cloverleaves, lobes — are not containing walls. The electron does not orbit inside the dumbbell. The surface encloses the region where there is 90% probability of finding the electron on a single position measurement; on 10% of measurements the electron is found outside it. The $r_\text{mp} \neq \langle r\rangle$ calculation is the direct evidence: a path has one radius; a probability distribution has a peak and a mean that need not coincide.
 
@@ -323,9 +325,9 @@ The probability density should oscillate between the 1s blob and the
 
 ## Still Puzzling
 
-There is one thing that resists making fully intuitive, and it is worth saying so honestly.
+There is one thing I cannot make feel inevitable, and I want to say so honestly.
 
-The Laplace–Runge–Lenz vector is conserved classically because $1/r$ orbits do not precess, and Bertrand's theorem tells you that only $1/r$ and $r^2$ potentials have all bound orbits closed. The quantum $\mathfrak{so}(4)$ degeneracy and the classical closed-orbit property must be the same fact in two languages. The algebra is settled; the commutators are well-defined; the derivation is correct. But making the connection feel obvious in the sense of "of course it had to be this way" is genuinely difficult. This remains an open invitation.
+The Laplace–Runge–Lenz vector is conserved classically because $1/r$ orbits do not precess, and Bertrand's theorem tells you that only $1/r$ and $r^2$ potentials have all bound orbits closed. The quantum $\mathfrak{so}(4)$ degeneracy and the classical closed-orbit property must be the same fact in two languages. The algebra is settled; the commutators are well-defined; the derivation is correct. But I cannot make the connection feel obvious in the sense of "of course it had to be this way." If it ever becomes clear to you, let me know.
 
 A separate observation: the hydrogen atom has exact analytic solutions only because the Coulomb potential is exactly $1/r$ and there is only one electron. Helium has two electrons and no exact solution. The electron-electron interaction breaks the $\mathfrak{so}(4)$ symmetry and makes the problem analytically intractable. Everything from Chapter 10 onward is either an approximation scheme or a numerical method. Chapter 9 is the last time exact solutions exist.
 

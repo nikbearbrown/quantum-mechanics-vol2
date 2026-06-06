@@ -7,9 +7,9 @@ The page lists hundreds of spectral lines for neutral iron — Fe I — measured
 
 What the spectroscopist cannot fully explain — what nobody in 1927 could fully explain — is why. Why those rules? Why does iron prefer $^5D_4$ over any other configuration? The Schrödinger equation for 26 electrons repelling each other in the field of a 26-proton nucleus is a partial differential equation in 78 spatial dimensions. Nobody is solving that.
 
-What we do instead is build a model. We treat each electron as moving independently in the average field of the nucleus and all the other electrons. We use hydrogenic wave functions, shifted by an effective nuclear charge that accounts for screening. We fill orbitals in the order that minimizes energy, constrained by Pauli exclusion. We apply Hund's three empirical rules. And it works — astonishingly well — for almost every element in the periodic table.
+What you do instead is build a model. You pretend each electron moves independently in the average field of the nucleus and all the other electrons. You use hydrogenic wave functions, shifted by an effective nuclear charge that accounts for screening. You fill orbitals in the order that minimizes energy, constrained by Pauli exclusion. You apply Hund's three empirical rules. And it works — astonishingly well — for almost every element in the periodic table.
 
-This chapter is about that model: its physical content, its approximations, where it breaks, and what it predicts. The synthesis is not just knowing the rules. It is building a simulation that applies them, validating its output against real data, and being able to say precisely what approximations were made and why they hold.
+This chapter is about that model: its physical content, its approximations, where it breaks, and what it predicts. The synthesis is not just knowing the rules. It is building a simulation that applies them, validating its output against real data, and being able to say precisely what approximations you made and why they hold.
 
 Every tool this book has given you is about to be used at once.
 
@@ -113,7 +113,7 @@ The Madelung mnemonic does not capture this because it treats orbital energies a
 
 ## Hund's Three Rules
 
-Once the configuration is established, we need to determine which quantum state the atom occupies. Within a given configuration, multiple **terms** (combinations of total $L$, total $S$, total $J$) are possible. Hund's three rules select the ground-state term.
+Once the configuration is established, you need to determine which quantum state the atom occupies. Within a given configuration, multiple **terms** (combinations of total $L$, total $S$, total $J$) are possible. Hund's three rules select the ground-state term.
 
 **Rule 1 (maximize $S$):** The term with the highest total spin $S$ has the lowest energy.
 
@@ -186,7 +186,7 @@ The independent-electron model with fixed Slater $Z_\text{eff}$ does not fully c
 
 ## The Model's Boundaries
 
-The model built across this chapter and in the simulation carries four identifiable approximations:
+What you have built in this chapter and in the simulation is a model with four identifiable approximations:
 
 **Independent electrons.** Each electron moves in the average field of all others; their instantaneous positions are ignored. The true wave function is not a Slater determinant — it has contributions from many configurations. The correlation energy (the energy difference between the true ground state and the HF minimum) is typically a few percent of the total binding energy but matters for chemistry.
 

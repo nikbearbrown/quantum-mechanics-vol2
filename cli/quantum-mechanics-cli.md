@@ -9,7 +9,7 @@
 ## Chapter 00: Quantum Mechanics
 *Source: `chapters/00-frontmatter.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
+> **Section not yet authored.** No `### Exercise R4 — CLI Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---
@@ -17,95 +17,356 @@
 ## Chapter 01: Chapter 1 — The Formalism: Hilbert Space, Dirac Notation, and Operators
 *Source: `chapters/01-the-formalism.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the same `orbitals.py`, but generated and verified inside your project directory with a test that runs.
+**Tool:** Claude Code (file creation plus running the test in one place).
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] An empty project directory `build-the-atom/` exists.
+- [ ] Python 3 with `numpy` installed.
+- [ ] A `CLAUDE.md` rule to add (below).
+**The Task:**
+```
+In the directory build-the-atom/, create two files:
+
+- orbitals.py: an Orbital data class (n, l, m_l, m_s), enumerate_shell(n),
+  ordered_basis(n_max), and matrix_of(operator_fn, basis). Enforce
+  l in [0, n-1], m_l in [-l, l], m_s in {+1/2, -1/2}. Do not impose any
+  energy ordering or screening.
+- test_orbitals.py: pytest tests asserting (a) shell n has 2*n^2 orbitals;
+  (b) ordered_basis(3) has 28 entries; (c) the L_z matrix built via
+  matrix_of is diagonal with entries m_l (in units of hbar); (d) that
+  matrix equals its own conjugate transpose (Hermitian).
+
+Then run `pytest -q` and show me the output. Do not modify any other files.
+```
+**Expected output:** `orbitals.py`, `test_orbitals.py`, and a passing `pytest` run (4 tests).
+**What to inspect:** confirm the $2n^2$ count by hand for $n=1,2,3$ (2, 8, 18 → 28 total); confirm the $\hat{L}_z$ matrix is diagonal and its diagonal lists the $m_\ell$ values, not the $\ell$ values.
+**If it goes wrong:** the most common failure is enumerating $m_\ell$ from $-\ell+1$ or omitting $m_\ell = 0$, giving the wrong count. Recovery: print the orbitals of one shell and check $2\ell+1$ values of $m_\ell$ per subshell before trusting the total.
+**CLAUDE.md / AGENTS.md note:** add — "The orbital basis ordering produced by `ordered_basis` is fixed; never reorder it in later modules — all matrices are indexed by it."
 
 ---
 
 ## Chapter 02: Chapter 2 — Observables, Hermiticity, and the Spectral Theorem
 *Source: `chapters/02-observables-and-the-spectral-theorem.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the diagonalizer plus a test verifying the spectral consistency checks on a known matrix.
+**Tool:** Claude Code.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `orbitals.py` from Chapter 1 is in `build-the-atom/`.
+- [ ] `numpy` installed; `pytest` available.
+- [ ] CLAUDE.md rule from Chapter 1 present.
+**The Task:**
+```
+In build-the-atom/, create oneelectron.py with assert_hermitian(H, tol),
+solve_one_electron(H) returning ascending-sorted (energies, orbitals), and
+spectral_checks(H) comparing sum/prod of eigenvalues to trace/det.
+
+Create test_oneelectron.py with pytest tests: (a) the matrix
+[[2, 1+1j],[1-1j, 0]] has eigenvalues 1 +/- sqrt(3), both real to 1e-9;
+(b) spectral_checks reports trace and det matches True for that matrix;
+(c) a non-Hermitian matrix [[0,1j],[1j,0]] raises ValueError from
+assert_hermitian.
+
+Run `pytest -q` and show output. Do not modify orbitals.py.
+```
+**Expected output:** `oneelectron.py`, `test_oneelectron.py`, passing `pytest` (3 tests).
+**What to inspect:** confirm the eigenvalues print as real (zero imaginary part to tolerance); confirm $\lambda_+ + \lambda_- = 2 = \text{Tr}$ and $\lambda_+\lambda_- = -2 = \det$.
+**If it goes wrong:** most likely it uses `numpy.linalg.eig` (general, returns complex eigenvalues with tiny imaginary parts) instead of `eigh` (Hermitian, real). Recovery: switch to `eigh`, which both guarantees real output and exploits Hermiticity.
+**CLAUDE.md / AGENTS.md note:** add — "Always diagonalize one-electron Hamiltonians with a Hermitian solver (`eigh`); run `spectral_checks` and refuse results where trace/det do not match."
 
 ---
 
 ## Chapter 03: Chapter 3 — Commutators, Compatibility, and the Generalized Uncertainty Principle
 *Source: `chapters/03-commutators-and-uncertainty.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the CSCO verifier plus tests that the commuting/non-commuting structure is correct.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `orbitals.py` and `oneelectron.py` in `build-the-atom/`.
+- [ ] `numpy`, `pytest` available.
+- [ ] CLAUDE.md rules from Chapters 1–2 present.
+**The Task:**
+```
+In build-the-atom/, create csco.py building L2, Lz, Lx, Ly from the ladder
+formulas for a given l, plus commutator(A,B), is_zero(M,tol), and verify_csco(l).
+
+Create test_csco.py: for l in {1, 2}, assert (a) [L2, Lz] is the zero matrix to
+1e-9; (b) L2 == l(l+1)*I to 1e-9; (c) [Lx, Ly] is NOT the zero matrix; (d) for
+l=1, Lz == hbar*diag(-1,0,1) with hbar=1.
+
+Run `pytest -q` and show output. Do not modify orbitals.py or oneelectron.py.
+```
+**Expected output:** `csco.py`, `test_csco.py`, passing `pytest` (tests across $\ell=1,2$).
+**What to inspect:** confirm $[\hat{L}^2,\hat{L}_z]$ is zero to machine precision; confirm $\hat{L}^2 = 2\hbar^2\mathbb{1}$ for $\ell=1$ and $6\hbar^2\mathbb{1}$ for $\ell=2$; confirm $[\hat{L}_x,\hat{L}_y]$ is *not* zero (so $m_\ell$ from $\hat{L}_z$ is a real, non-redundant label).
+**If it goes wrong:** the classic error is an off-by-one in the ladder coefficient $\sqrt{(\ell-m)(\ell+m+1)}$, which makes $\hat{L}^2$ come out non-diagonal. Recovery: print $\hat{L}_+$ and check the top rung is annihilated ($\hat{L}_+|\ell,\ell\rangle = 0$) before trusting $\hat{L}^2$.
+**CLAUDE.md / AGENTS.md note:** add — "Orbital labels $(n,\ell,m_\ell,m_s)$ are valid only because $\{\hat H_\text{eff},\hat L^2,\hat L_z,\hat S_z\}$ mutually commute; never introduce a label whose operator does not commute with the rest."
 
 ---
 
 ## Chapter 04: Chapter 4 — Quantum Dynamics: Time Evolution and the Pictures
 *Source: `chapters/04-quantum-dynamics-and-the-pictures.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the stationarity/conservation checker plus tests.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `oneelectron.py` and `csco.py` in `build-the-atom/`.
+- [ ] `numpy` (and `scipy` if you use `expm`).
+- [ ] CLAUDE.md rules from Chapters 1–3 present.
+**The Task:**
+```
+In build-the-atom/, create dynamics_check.py with U(H, t), is_stationary(H, psi,
+times), conserved(H, A, tol), and expectation_over_time(H, A, psi, times).
+
+Create test_dynamics.py: (a) an eigenvector of a diagonal H is stationary —
+norm 1 and flat |components|^2 across times [0, 1, 5, 10]; (b) for a diagonal A
+that commutes with diagonal H, <A>(t) is constant to 1e-9; (c) a non-eigenstate
+superposition of two levels is NOT stationary (its |components|^2 change).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `dynamics_check.py`, `test_dynamics.py`, passing `pytest`.
+**What to inspect:** confirm the eigenstate's component magnitudes are flat (only phases rotate); confirm the superposition test genuinely *fails* stationarity (a check that always passes is a useless check); confirm $\langle\hat A\rangle$ is flat for the commuting operator.
+**If it goes wrong:** a common error is comparing complex amplitudes instead of their moduli, so phase rotation falsely reads as "changed." Recovery: compare $|c_n(t)|^2$, not $c_n(t)$ — the global phase is unobservable.
+**CLAUDE.md / AGENTS.md note:** add — "A predicted ground configuration must pass `is_stationary`; remember stationarity is necessary, not sufficient — energy ranking happens separately."
 
 ---
 
 ## Chapter 05: Chapter 5 — Quantum Mechanics in Three Dimensions
 *Source: `chapters/05-quantum-mechanics-in-three-dimensions.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the radial solver plus a validation test against the spherical-well analytic limit.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] Earlier modules present in `build-the-atom/`.
+- [ ] `numpy`, `scipy`, `pytest` installed.
+- [ ] CLAUDE.md rules from Chapters 1–4 present.
+**The Task:**
+```
+In build-the-atom/, create central_field.py with v_eff(r, l, Z_eff, kind),
+solve_radial(l, Z_eff, kind, r_max, N), and check_spherical_well(a, N).
+
+Create test_central_field.py: (a) for the l=0 infinite spherical well of radius
+a=1, the ground-state energy equals pi^2/(2*a^2) to within 1%; (b) the l=1 well
+ground state lies ABOVE the l=0 well ground state (centrifugal barrier);
+(c) v_eff with l=0 has no centrifugal term (equals the bare potential).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `central_field.py`, `test_central_field.py`, passing `pytest`.
+**What to inspect:** confirm the $\ell=0$ well energy matches $\pi^2/2a^2$ (the chapter's 1D-well identity); confirm raising $\ell$ raises the energy; confirm the centrifugal term is absent at $\ell=0$.
+**If it goes wrong:** the usual failure is a too-small `r_max` clipping the wave function, which raises all energies and can corrupt the ordering. Recovery: increase `r_max` until the ground energy stops drifting (convergence test) before reading off any ordering.
+**CLAUDE.md / AGENTS.md note:** add — "$Z_\text{eff}$ is always an explicit input to the radial solver; never let a module guess it. Validate every radial spectrum against the $\ell=0$ spherical-well limit."
 
 ---
 
 ## Chapter 06: Chapter 6 — Angular Momentum
 *Source: `chapters/06-angular-momentum.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the subshell-capacity module plus tests on capacities and period lengths.
+**Tool:** Claude Code.
+**Skill level:** Beginner–Intermediate
+**Setup — confirm:**
+- [ ] Earlier modules in `build-the-atom/`.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–5 present.
+**The Task:**
+```
+In build-the-atom/, create subshells.py with m_values(l), capacity(l),
+ladder_matrices(l), and period_lengths().
+
+Create test_subshells.py: (a) capacity(0..3) == [2,6,10,14]; (b) m_values(2)
+== [-2,-1,0,1,2]; (c) L2 from ladder_matrices(l) equals l(l+1)*I for l in {1,2,3}
+to 1e-9; (d) period_lengths() yields period sums [2,8,8,18,18,32]; (e)
+m_values(0.5) raises (orbital l must be integer).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `subshells.py`, `test_subshells.py`, passing `pytest`.
+**What to inspect:** confirm $s,p,d,f$ capacities are $2,6,10,14$; confirm the period sums match the table; confirm a half-integer $\ell$ is rejected.
+**If it goes wrong:** the typical bug is `capacity` returning $2\ell+1$ (forgetting the spin factor of 2), giving $1,3,5,7$. Recovery: the $d$ block must hold 10 electrons — check capacity(2) returns 10 before trusting any period length.
+**CLAUDE.md / AGENTS.md note:** add — "Subshell capacity is $2(2\ell+1)$; orbital $\ell$ is integer-only. The Madelung filling order is an empirical table, never derived in code."
 
 ---
 
 ## Chapter 07: Chapter 7 — Spin and the Bloch Sphere
 *Source: `chapters/07-spin-and-the-bloch-sphere.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the spin-orbital promoter plus capacity tests.
+**Tool:** Claude Code.
+**Skill level:** Beginner–Intermediate
+**Setup — confirm:**
+- [ ] `subshells.py` present in `build-the-atom/`.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–6 present.
+**The Task:**
+```
+In build-the-atom/, create spin.py with spin_orbitals(spatial),
+subshell_spin_orbitals(n, l), pauli(), and Sz().
+
+Create test_spin.py: (a) subshell_spin_orbitals for l=1 has 6 entries, for l=2
+has 10, matching capacity(l) from subshells.py; (b) each spatial orbital appears
+exactly twice (once per m_s); (c) each Pauli matrix squares to I and has
+eigenvalues +/-1; (d) S_n = (1/2) n.sigma has eigenvalues +/-1/2 for a random
+unit vector n (two values, any axis).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `spin.py`, `test_spin.py`, passing `pytest`.
+**What to inspect:** confirm the spin-orbital count equals `capacity(l)` from Chapter 6; confirm every spatial orbital is doubled exactly once; confirm the "two values, any axis" property numerically.
+**If it goes wrong:** a frequent bug is generating only $m_s=+\tfrac12$ (forgetting the down state) so capacities revert to $2\ell+1$. Recovery: assert the spin-orbital count is exactly twice the spatial count before proceeding.
+**CLAUDE.md / AGENTS.md note:** add — "Spin is independent of orbital motion; $m_s\in\{+\tfrac12,-\tfrac12\}$ along any axis. Each spatial orbital becomes exactly two spin-orbitals."
 
 ---
 
 ## Chapter 08: Chapter 8 — Addition of Angular Momenta
 *Source: `chapters/08-addition-of-angular-momenta.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the coupling/term-enumeration module plus tests on $p^2$ and $d^6$.
+**Tool:** Claude Code.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `subshells.py`, `spin.py` present.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–7 present.
+**The Task:**
+```
+In build-the-atom/, create coupling.py with triangle(j1, j2), microstates(l, k),
+and allowed_terms(l, k).
+
+Create test_coupling.py: (a) triangle(0.5, 0.5) == [0, 1] and the dimension
+check passes; (b) the number of p^2 microstates equals C(6, 2) = 15; (c)
+allowed_terms(1, 2) yields exactly {1S, 3P, 1D}; (d) allowed_terms(2, 6) (iron's
+3d^6) includes the 5D term; (e) the number of d^6 microstates equals C(10,6)=210.
+
+Run `pytest -q` and show output. Do NOT add Hund's-rule selection. Modify no
+other module.
+```
+**Expected output:** `coupling.py`, `test_coupling.py`, passing `pytest`.
+**What to inspect:** confirm $p^2 \to \{^1S, ^3P, ^1D\}$ (the textbook result); confirm the microstate counts match the binomials; confirm $^5D$ appears for $d^6$ — this is the term Hund's rules will select for iron.
+**If it goes wrong:** the common failure is double-counting microstates (treating electrons as distinguishable), giving $k!$-times too many. Recovery: the microstate count must equal $\binom{2(2\ell+1)}{k}$ — assert it before extracting terms.
+**CLAUDE.md / AGENTS.md note:** add — "Term *enumeration* (this module) is separate from ground-term *selection* (Hund's rules, Chapter 11). Never let the enumerator pick a ground state."
 
 ---
 
 ## Chapter 09: Chapter 9 — The Hydrogen Atom
 *Source: `chapters/09-the-hydrogen-atom.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the hydrogenic-orbital module plus tests on radii, nodes, and the $Z_\text{eff}$ scaling.
+**Tool:** Claude Code.
+**Skill level:** Intermediate–Advanced
+**Setup — confirm:**
+- [ ] Earlier modules in `build-the-atom/`.
+- [ ] `numpy`, `scipy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–8 present.
+**The Task:**
+```
+In build-the-atom/, create hydrogenic.py with R_nl(r, n, l, Z_eff),
+radial_prob, most_probable_radius, mean_radius, and radial_nodes.
+
+Create test_hydrogenic.py: (a) the 1s orbital (Z_eff=1) has r_mp == 1.0 and
+<r> == 1.5 (a0 units) to 1%; (b) radial_nodes(n,l) == n-l-1 for (1,0),(2,0),
+(2,1),(3,1); (c) integral of r^2|R|^2 dr == 1 to 1e-3 for several (n,l);
+(d) doubling Z_eff halves r_mp (a0/Z_eff scaling).
+
+Run `pytest -q` and show output. Modify no other module.
+```
+**Expected output:** `hydrogenic.py`, `test_hydrogenic.py`, passing `pytest`.
+**What to inspect:** confirm $r_\text{mp}=1.0$ and $\langle r\rangle=1.5$ for 1s (the $r_\text{mp}\neq\langle r\rangle$ headline); confirm node counts; confirm the $a_0/Z_\text{eff}$ shrink.
+**If it goes wrong:** if the most-probable radius comes out at $r=0$, the $r^2$ Jacobian was dropped — the code is maximizing $|R|^2$, not $r^2|R|^2$. Recovery: maximize `radial_prob`, not $R^2$.
+**CLAUDE.md / AGENTS.md note:** add — "Radial probability is always $r^2|R_{n\ell}|^2$. Orbitals are hydrogenic with $Z\to Z_\text{eff}$; $Z_\text{eff}$ is supplied by Slater's rules, never guessed."
 
 ---
 
 ## Chapter 10: Chapter 10 — Identical Particles
 *Source: `chapters/10-identical-particles.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the Slater/Aufbau module plus tests on exclusion, configurations, and parallel pairs.
+**Tool:** Claude Code.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `subshells.py`, `spin.py`, `hydrogenic.py` present.
+- [ ] `numpy`, `pytest`.
+- [ ] CLAUDE.md rules from Chapters 1–9 present.
+**The Task:**
+```
+In build-the-atom/, create slater.py with slater_determinant(orbitals, coords),
+fill_configuration(Z, madelung_order), and parallel_pairs(occupied).
+
+Create test_slater.py: (a) a determinant with two identical spin-orbitals is 0
+to 1e-12; (b) swapping two coordinates flips the determinant's sign; (c)
+fill_configuration(6) == '1s2 2s2 2p2' and total electrons == 6; (d)
+fill_configuration(18) == '1s2 2s2 2p6 3s2 3p6'; (e) parallel_pairs for a
+half-filled p^3 (3 unpaired parallel spins) == 3.
+
+Run `pytest -q` and show output. Use plain Madelung order; do NOT special-case
+Cr or Cu. Modify no other module.
+```
+**Expected output:** `slater.py`, `test_slater.py`, passing `pytest`.
+**What to inspect:** confirm the repeated-orbital determinant is exactly zero (Pauli as a theorem); confirm the sign flip on particle swap; confirm carbon and argon configurations; confirm the parallel-pair count for $p^3$.
+**If it goes wrong:** if `fill_configuration` overfills a subshell (e.g. 3 electrons in an $s$ orbital), the capacity guard is missing. Recovery: assert each subshell occupancy $\le 2(2\ell+1)$ and total $=Z$ before returning.
+**CLAUDE.md / AGENTS.md note:** add — "The many-electron state is a single Slater determinant; Pauli exclusion is enforced structurally (no spin-orbital occupied twice). Cr/Cu anomalies are handled only in the capstone via exchange-energy comparison."
 
 ---
 
 ## Chapter 11: Chapter 11 — Capstone: The Atom, Built from Simulations
 *Source: `chapters/11-capstone-the-atom.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** the assembled simulator plus a validation sweep across the first transition series, run and diffed against NIST.
+**Tool:** Claude Code (multi-file assembly plus running the validation sweep in the project directory).
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] All ten prior modules present and their tests passing in `build-the-atom/`.
+- [ ] A `nist_reference.csv` with columns Z, config, term for Z = 1–30 (you supply this from NIST).
+- [ ] `numpy`, `scipy`, `pytest`.
+- [ ] CLAUDE.md rules from all prior chapters present.
+**The Task:**
+```
+In build-the-atom/, create slater_rules.py (z_eff via Slater's rules), hund.py
+(ground_term via Hund's three rules; madelung_config with Cr/Cu handled by an
+exchange-vs-gap comparison, NOT hard-coded), and build_atom.py (build_atom(Z)
+returning config, z_eff_valence, term_symbol).
+
+Then create validate.py that, for Z = 1..30, calls build_atom(Z), diffs config
+and term against nist_reference.csv, and prints a table with columns:
+Z, predicted config, NIST config, MATCH?, predicted term, NIST term, MATCH?.
+At the end print: total matches, and an explicit list of mismatches with a
+one-line reason drawn from {Madelung exception (Cr/Cu), fixed-Z_eff limit,
+LS-coupling breakdown}.
+
+Create test_build_atom.py asserting: F 2p z_eff==5.20, Na 3s z_eff==2.20,
+Fe 3d z_eff==6.25 (to 0.01); build_atom(6) term=='3P0'; build_atom(26) config
+is [Ar]3d6 4s2 and term=='5D4'; build_atom(8) term=='3P2'.
+
+Run `pytest -q`, then run `python validate.py`, and show both outputs. Do not
+hard-code term symbols or the Cr/Cu configs.
+```
+**Expected output:** the three new modules, `validate.py`, a passing test suite, and a printed validation table for Z = 1–30 with iron showing config $[\text{Ar}]3d^64s^2$ and term $^5D_4$ both MATCH.
+**What to inspect:** confirm the golden test — iron $^5D_4$ — passes by derivation; confirm Slater $Z_\text{eff}$ for F/Na/Fe match the chapter; inspect the mismatch list: Cr and Cu should appear *only if your exchange comparison failed to promote the $4s$ electron* — if the comparison works, they MATCH and the mismatch list is honest about any remaining LS-coupling cases at higher $Z$.
+**What to inspect (physics):** for iron, trace the derivation: $3d^6 \to S=2$ (quintet), $L=2$ (D), more-than-half-filled $\to J=L+S=4$, giving $^5D_4$. If the code returns $^5D_0$ it applied the less-than-half-filled $J=|L-S|$ branch — the half-filling test is inverted.
+**If it goes wrong:** the most common failure is the $J$ branch (less-vs-more than half-filled) being reversed, which flips iron to $^5D_0$. Recovery: test `ground_term` on both carbon ($p^2$, less than half, $J=0$) and oxygen ($p^4$, more than half, $J=2$) — these bracket the branch and expose the inversion immediately.
+**CLAUDE.md / AGENTS.md note:** add — "Validation is non-negotiable: every `build_atom` prediction is diffed against `nist_reference.csv`. Mismatches are *reported with a physical reason* (Madelung exception, fixed-$Z_\text{eff}$ limit, LS-coupling breakdown), never silently corrected."
 
 ---
 
-## Chapter 99: 99 Back Matter
+## Chapter 99: 99-back-matter.md
 *Source: `chapters/99-back-matter.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
+> **Section not yet authored.** No `### Exercise R4 — CLI Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---

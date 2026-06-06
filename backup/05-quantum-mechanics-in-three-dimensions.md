@@ -1,21 +1,25 @@
 # Chapter 5 — Quantum Mechanics in Three Dimensions
 *How the requirement that the wave function stay finite at the poles of a sphere forces angular momentum to be quantized.*
 
-This chapter extends quantum mechanics from one dimension to three, solving the Schrödinger equation for any spherically symmetric potential. The central result is a separation of variables that splits the problem into a universal angular equation — solved once for all central potentials — and a one-dimensional radial equation whose form depends on the specific potential.
+Open any chemistry textbook to the page on atomic orbitals and you will find beautiful pictures: spheres, dumbbells, four-leaf clovers, a donut. The story told is that electrons "occupy" these shapes. Before you accept this, ask a harder question: what exactly is the picture showing?
 
-The angular solutions are the spherical harmonics $Y_\ell^m(\theta,\phi)$. These appear throughout physics and provide the basis for understanding atomic orbitals. A useful distinction worth keeping in mind: the orbital images common in chemistry textbooks display the angular probability density $|Y_\ell^m|^2$, and the "p-orbitals" shown there are real linear combinations of $Y_1^{\pm 1}$ and $Y_1^0$, chosen for their convenient alignment along the Cartesian axes. The complex spherical harmonics used in physics (eigenstates of $\hat{L}_z$) and the real combinations used in chemistry (not eigenstates of $\hat{L}_z$) span the same subspace but are genuinely different states. We will develop both clearly.
+Is it the wave function $\psi$? The probability density $|\psi|^2$? The angular part only, or the full thing including the radial factor? Is the shape what the electron *is*, or the distribution of where you would *find* it? And are those shapes the eigenstates of angular momentum that physics uses, or something else chosen for visual convenience?
+
+The answers are specific, and they correct something the pictures quietly get wrong. The shapes are the angular probability density $|Y_\ell^m(\theta,\phi)|^2$ — not the full wave function. The "p-orbitals" in chemistry are not the $Y_1^{\pm 1}$ states of physics; they are real linear combinations of $Y_1^{\pm 1}$ and $Y_1^0$, chosen because they point conveniently along the Cartesian axes. The complex spherical harmonics that physics uses (eigenstates of the $z$-component of angular momentum) and the real combinations chemistry uses (not eigenstates of any component of angular momentum) are different states that happen to span the same three-dimensional subspace.
+
+That is the payoff at the end of this chapter. The path begins with a fortunate accident.
 
 ---
 
-## Central Potentials
+## The Accident: Central Potentials
 
 The three-dimensional time-independent Schrödinger equation is
 
 $$-\frac{\hbar^2}{2m}\nabla^2\psi(\vec{r}) + V(\vec{r})\psi(\vec{r}) = E\psi(\vec{r}).$$
 
-In Cartesian coordinates, three variables are tangled together in $\nabla^2 = \partial_x^2 + \partial_y^2 + \partial_z^2$. For a general potential $V(\vec{r})$, we cannot separate them.
+In Cartesian coordinates, three variables are tangled together in $\nabla^2 = \partial_x^2 + \partial_y^2 + \partial_z^2$. For a general potential $V(\vec{r})$, you cannot separate them.
 
-The most physically important potentials depend only on the distance $r = |\vec{r}|$, not on direction. The Coulomb potential $-e^2/(4\pi\epsilon_0 r)$ in the hydrogen atom, the confining well in a nucleus, and the interatomic potential in a diatomic molecule are all **central potentials** — $V(\vec{r}) = V(r)$ — and for any central potential, the angular part of the Schrödinger equation has a universal solution. We derive it once in this chapter. For hydrogen, we then insert $V(r) = -e^2/(4\pi\epsilon_0 r)$ and solve a one-dimensional radial equation. For the nuclear shell model, we insert a different potential and solve a different one-dimensional equation. The angular structure is always the same.
+The accident is this: the most physically important potentials depend only on the distance $r = |\vec{r}|$, not on direction. The Coulomb potential $-e^2/(4\pi\epsilon_0 r)$ in the hydrogen atom. The confining well in a nucleus. The interatomic potential in a diatomic molecule. All of these are **central potentials** — $V(\vec{r}) = V(r)$ — and for any central potential, the angular part of the Schrödinger equation has a universal solution. You solve it once, in this chapter. Then for hydrogen you plug in $V(r) = -e^2/(4\pi\epsilon_0 r)$ and solve a one-dimensional radial equation. For the nuclear shell model, you plug in something else and solve a different one-dimensional radial equation. The angular structure is always the same.
 
 The reason is symmetry. A central potential leaves the Hamiltonian unchanged under any rotation, which means $[\hat{H}, \hat{L}^2] = [\hat{H}, \hat{L}_z] = 0$. Commuting operators share a common set of eigenstates. So the energy eigenstates can simultaneously be eigenstates of $\hat{L}^2$ and $\hat{L}_z$ — and the separation of variables produces exactly those joint eigenstates.
 
@@ -27,7 +31,7 @@ In spherical coordinates, the Laplacian takes the form
 
 $$\nabla^2 = \frac{1}{r^2}\frac{\partial}{\partial r}\!\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}\!\left(\sin\theta\frac{\partial}{\partial\theta}\right) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\phi^2}.$$
 
-The first term is purely radial. The second and third depend only on the angles, and they appear divided by $r^2$. We define the **orbital angular momentum operator**:
+The first term is purely radial. The second and third depend only on the angles, and they appear divided by $r^2$. Define the **orbital angular momentum operator**:
 
 $$\hat{L}^2 \equiv -\hbar^2\!\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\!\left(\sin\theta\frac{\partial}{\partial\theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\phi^2}\right].$$
 
@@ -47,7 +51,7 @@ $$\hat{L}^2 Y(\theta,\phi) = \hbar^2\ell(\ell+1)\,Y(\theta,\phi), \qquad \text{(
 
 $$\frac{1}{R}\frac{d}{dr}\!\left(r^2\frac{dR}{dr}\right) - \frac{2mr^2}{\hbar^2}[V(r)-E] = \ell(\ell+1). \qquad \text{(radial)}$$
 
-The angular equation knows nothing about which central potential we have chosen. It is an eigenvalue equation for $\hat{L}^2$ on the unit sphere. The radial equation carries $V(r)$. That is where the specific physics lives.
+The angular equation knows nothing about which central potential you have chosen. It is an eigenvalue equation for $\hat{L}^2$ on the unit sphere. The radial equation carries $V(r)$. That is where the specific physics lives.
 
 <!-- → [FIGURE: schematic showing the separation into angular and radial equations — depicting the Hamiltonian split into (radial kinetic) + (L²/2mr²) + V(r), with an arrow pointing to "universal angular equation: solved once" and another to "potential-specific radial equation: solved for each V(r)"; this should visually convey why central potentials are so computationally powerful] -->
 
@@ -90,7 +94,7 @@ $$Y_2^0 = \sqrt{\frac{5}{16\pi}}(3\cos^2\theta - 1).$$
 
 This has nodal cones at $\cos\theta = \pm 1/\sqrt{3}$, about $54.7°$ from the $z$-axis — the familiar lobes of the $d_{z^2}$ orbital.
 
-One structural fact to internalize before the pictures mislead us: $|Y_{\ell m}|^2$ is **independent of $\phi$** — always. The $\phi$-dependence of $Y_{\ell m}$ lives entirely in the factor $e^{im\phi}$, whose modulus is exactly 1. The squared modulus kills it. Every spherical harmonic probability density is axially symmetric about the $z$-axis, for every value of $m$.
+One structural fact to internalize before the pictures mislead you: $|Y_{\ell m}|^2$ is **independent of $\phi$** — always. The $\phi$-dependence of $Y_{\ell m}$ lives entirely in the factor $e^{im\phi}$, whose modulus is exactly 1. The squared modulus kills it. Every spherical harmonic probability density is axially symmetric about the $z$-axis, for every value of $m$.
 
 <!-- → [TABLE: the first nine spherical harmonics Y_ℓ^m for ℓ = 0, 1, 2 — showing the explicit formula, the angular quantum number ℓ, the magnetic quantum number m, and the associated orbital label (s, p_z, p±, d_z², d±₁, d±₂); include a note that |Y|² is φ-independent for all entries] -->
 
@@ -124,11 +128,11 @@ and crucially $[\hat{L}^2, \hat{L}_i] = 0$ for $i = x, y, z$. This last relation
 
 Here is the fact that trips up almost everyone the first time. In the state $|\ell, m = \ell\rangle$ — maximum $z$-projection — the $z$-component of angular momentum is $L_z = \ell\hbar$. But the total magnitude is $\sqrt{\langle L^2\rangle} = \hbar\sqrt{\ell(\ell+1)}$, which is strictly *greater* than $\ell\hbar$ for any $\ell > 0$.
 
-This means the angular momentum vector can never be fully aligned with the $z$-axis. Even in the state with maximum $L_z$, the vector has unavoidable transverse components. Geometrically, the angular momentum precesses on a cone. For $\ell = 1$, the cone half-angle is $\arccos(1/\sqrt{2}) = 45°$. For $\ell = 2, m = 2$, it is $\arccos(2/\sqrt{6}) \approx 35°$.
+This means the angular momentum vector can never be fully aligned with the $z$-axis. Even in the state with maximum $L_z$, the vector has unavoidable transverse components. Geometrically: the angular momentum precesses on a cone. For $\ell = 1$, the cone half-angle is $\arccos(1/\sqrt{2}) = 45°$. For $\ell = 2, m = 2$, it is $\arccos(2/\sqrt{6}) \approx 35°$.
 
-We can see why the transverse components cannot vanish: if $L_z = \ell\hbar$ exactly and $L^2 = \hbar^2\ell(\ell+1)$, then $\langle L_x^2\rangle + \langle L_y^2\rangle = \hbar^2\ell(\ell+1) - \ell^2\hbar^2 = \hbar^2\ell$. Their expectation values are zero, but their variances are not. The Robertson inequality enforces minimum spread on $\hat{L}_x$ and $\hat{L}_y$ whenever $\langle\hat{L}_z\rangle \neq 0$.
+Why the transverse components cannot vanish: if $L_z = \ell\hbar$ exactly and $L^2 = \hbar^2\ell(\ell+1)$, then $\langle L_x^2\rangle + \langle L_y^2\rangle = \hbar^2\ell(\ell+1) - \ell^2\hbar^2 = \hbar^2\ell$. Their expectation values are zero, but their variances are not. The Robertson inequality enforces minimum spread on $\hat{L}_x$ and $\hat{L}_y$ whenever $\langle\hat{L}_z\rangle \neq 0$.
 
-This eliminates the Bohr-model picture of an electron orbiting in a definite plane. A definite orbital plane would require a definite direction for $\vec{L}$ — which the algebra forbids. There is no orbital plane. There is a cone.
+This kills the Bohr-model picture of an electron orbiting in a definite plane. A definite orbital plane would require a definite direction for $\vec{L}$ — which the algebra forbids. There is no orbital plane. There is a cone.
 
 <!-- → [FIGURE: angular momentum cone for ℓ = 1, m = 1 — showing the angular momentum vector of magnitude ℏ√2 precessing on a cone at 45° from the z-axis, with the z-component labeled ℏ and the total length labeled ℏ√2; label the transverse uncertainty Δ(Lx), ΔLy); the visual goal is to make viscerally clear that L_z = ℏ and |L| = ℏ√2 are compatible but L cannot point along z] -->
 
@@ -147,13 +151,13 @@ $$p_x \propto \sin\theta\cos\phi \propto -\tfrac{1}{\sqrt{2}}(Y_1^1 - Y_1^{-1}),
 $$p_y \propto \sin\theta\sin\phi \propto \tfrac{i}{\sqrt{2}}(Y_1^1 + Y_1^{-1}),$$
 $$p_z = Y_1^0 \propto \cos\theta.$$
 
-These are real wave functions with the dumbbell shapes pointing along $x$, $y$, $z$. But when we act with $\hat{L}_z = -i\hbar\partial_\phi$ on $p_x \propto \sin\theta\cos\phi$:
+These are real wave functions with the dumbbell shapes pointing along $x$, $y$, $z$. But act with $\hat{L}_z = -i\hbar\partial_\phi$ on $p_x \propto \sin\theta\cos\phi$:
 
 $$\hat{L}_z(\sin\theta\cos\phi) = -i\hbar\frac{\partial}{\partial\phi}\cos\phi = i\hbar\sin\phi \propto ip_y.$$
 
 The result is $ip_y$, not a multiple of $p_x$. The $p_x$ orbital is not an eigenstate of $\hat{L}_z$. It has a definite spatial direction but no definite $z$-component of angular momentum.
 
-Both bases — the complex $\{Y_1^{-1}, Y_1^0, Y_1^1\}$ and the real $\{p_x, p_y, p_z\}$ — span the same three-dimensional subspace of states with $\ell = 1$. They describe the same physics. Chemistry picks the real basis because the pictures are intuitive for bonding. Physics picks the complex basis because $\hat{L}_z$ is diagonal. Neither is more "correct." The distinction to keep in mind is that the chemistry pictures are not the angular momentum eigenstates.
+Both bases — the complex $\{Y_1^{-1}, Y_1^0, Y_1^1\}$ and the real $\{p_x, p_y, p_z\}$ — span the same three-dimensional subspace of states with $\ell = 1$. They describe the same physics. Chemistry picks the real basis because the pictures are beautiful. Physics picks the complex basis because $\hat{L}_z$ is diagonal. Neither is more "correct." The mistake is thinking the chemistry pictures *are* the angular momentum eigenstates. They are not.
 
 ---
 
@@ -212,7 +216,7 @@ The spherical harmonics $Y_{\ell m}(\theta,\phi)$ are the universal basis for fu
 
 The Planck collaboration reports the CMB's temperature anisotropies — the tiny ripples in the temperature of the sky from 380,000 years after the Big Bang — as a power spectrum $C_\ell$, where $\ell$ is the spherical-harmonic index. The first acoustic peak at $\ell \approx 220$ corresponds to the sound horizon of the early universe at recombination. The same $\ell$ that distinguishes $s$, $p$, $d$, $f$ atomic orbitals labels the multipoles of the cosmos. The mathematics is identical; the scale differs by sixty orders of magnitude.
 
-Learning spherical harmonics in this chapter is preparation for any problem that lives on a sphere.
+Learning spherical harmonics here is preparation for anything that lives on a sphere.
 
 ---
 

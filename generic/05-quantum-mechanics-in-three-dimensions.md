@@ -1,15 +1,13 @@
 # Chapter 5 — Quantum Mechanics in Three Dimensions
 *How the requirement that the wave function stay finite at the poles of a sphere forces angular momentum to be quantized.*
 
-Chemistry textbooks include memorable images of atomic orbitals: spheres, dumbbells, four-leaf clovers, a donut. It is worth being precise about what these pictures actually show. Is the image displaying the wave function $\psi$, the probability density $|\psi|^2$, or only the angular part? Is the shape what the electron *is*, or the statistical distribution of where we would *find* it across many measurements?
+This chapter extends quantum mechanics from one dimension to three, solving the Schrödinger equation for any spherically symmetric potential. The central result is a separation of variables that splits the problem into a universal angular equation — solved once for all central potentials — and a one-dimensional radial equation whose form depends on the specific potential.
 
-The answers are specific, and they correct something the pictures quietly get wrong. The shapes show the angular probability density $|Y_\ell^m(\theta,\phi)|^2$ — not the full wave function. The "p-orbitals" in chemistry are not the $Y_1^{\pm 1}$ states of physics; they are real linear combinations of $Y_1^{\pm 1}$ and $Y_1^0$, chosen because they point conveniently along the Cartesian axes. The complex spherical harmonics used in physics (eigenstates of the $z$-component of angular momentum) and the real combinations used in chemistry (not eigenstates of any component of angular momentum) are different states that happen to span the same three-dimensional subspace.
-
-This is the payoff at the end of the chapter. We begin with a fortunate accident.
+The angular solutions are the spherical harmonics $Y_\ell^m(\theta,\phi)$. These appear throughout physics and provide the basis for understanding atomic orbitals. A useful distinction worth keeping in mind: the orbital images common in chemistry textbooks display the angular probability density $|Y_\ell^m|^2$, and the "p-orbitals" shown there are real linear combinations of $Y_1^{\pm 1}$ and $Y_1^0$, chosen for their convenient alignment along the Cartesian axes. The complex spherical harmonics used in physics (eigenstates of $\hat{L}_z$) and the real combinations used in chemistry (not eigenstates of $\hat{L}_z$) span the same subspace but are genuinely different states. We will develop both clearly.
 
 ---
 
-## The Accident: Central Potentials
+## Central Potentials
 
 The three-dimensional time-independent Schrödinger equation is
 
@@ -17,7 +15,7 @@ $$-\frac{\hbar^2}{2m}\nabla^2\psi(\vec{r}) + V(\vec{r})\psi(\vec{r}) = E\psi(\ve
 
 In Cartesian coordinates, three variables are tangled together in $\nabla^2 = \partial_x^2 + \partial_y^2 + \partial_z^2$. For a general potential $V(\vec{r})$, we cannot separate them.
 
-The fortunate accident is this: the most physically important potentials depend only on the distance $r = |\vec{r}|$, not on direction. The Coulomb potential $-e^2/(4\pi\epsilon_0 r)$ in the hydrogen atom, the confining well in a nucleus, and the interatomic potential in a diatomic molecule are all **central potentials** — $V(\vec{r}) = V(r)$ — and for any central potential, the angular part of the Schrödinger equation has a universal solution. We solve it once, in this chapter. Then for hydrogen we insert $V(r) = -e^2/(4\pi\epsilon_0 r)$ and solve a one-dimensional radial equation. For the nuclear shell model, we insert something else and solve a different one-dimensional equation. The angular structure is always the same.
+The most physically important potentials depend only on the distance $r = |\vec{r}|$, not on direction. The Coulomb potential $-e^2/(4\pi\epsilon_0 r)$ in the hydrogen atom, the confining well in a nucleus, and the interatomic potential in a diatomic molecule are all **central potentials** — $V(\vec{r}) = V(r)$ — and for any central potential, the angular part of the Schrödinger equation has a universal solution. We derive it once in this chapter. For hydrogen, we then insert $V(r) = -e^2/(4\pi\epsilon_0 r)$ and solve a one-dimensional radial equation. For the nuclear shell model, we insert a different potential and solve a different one-dimensional equation. The angular structure is always the same.
 
 The reason is symmetry. A central potential leaves the Hamiltonian unchanged under any rotation, which means $[\hat{H}, \hat{L}^2] = [\hat{H}, \hat{L}_z] = 0$. Commuting operators share a common set of eigenstates. So the energy eigenstates can simultaneously be eigenstates of $\hat{L}^2$ and $\hat{L}_z$ — and the separation of variables produces exactly those joint eigenstates.
 

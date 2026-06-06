@@ -7,7 +7,7 @@ The 21-centimeter line comes from a transition between two quantum states of the
 
 The singlet and triplet states are not complicated objects. The triplet is the combination $(|\!\uparrow\downarrow\rangle + |\!\downarrow\uparrow\rangle)/\sqrt{2}$; the singlet is $(|\!\uparrow\downarrow\rangle - |\!\downarrow\uparrow\rangle)/\sqrt{2}$. They differ by a single minus sign. That single sign changes the total angular momentum from $J = 1$ to $J = 0$, changes the symmetry of the state under exchange of the two particles, and — through the hyperfine Hamiltonian — changes the energy by exactly the amount corresponding to a 21-cm photon.
 
-This chapter explains how to construct those states, what they mean, and why the right basis for computing energy splittings is not the one we start with.
+This chapter is about how to construct those states, what they mean, and why the right basis for computing energy splittings is not the one you start with.
 
 <!-- → [FIGURE: diagram of the hydrogen hyperfine structure — showing the two energy levels (triplet F=1 and singlet F=0) with the 21-cm photon emitted in the transition; the triplet should be labeled with the three M_F states and their spin configurations; include the frequency 1420.405 MHz and wavelength 21.1 cm] -->
 
@@ -18,13 +18,13 @@ This chapter explains how to construct those states, what they mean, and why the
 
 ## Two Bases for the Same Space
 
-We begin with the simplest two-spin system: two particles, each with spin-½, sitting at fixed positions so that only their spins matter. The uncoupled description is natural: particle 1 is either up or down, particle 2 is either up or down, giving four basis states
+Start with the simplest two-spin system: two particles, each with spin-½, sitting at fixed positions so that only their spins matter. The uncoupled description is natural: particle 1 is either up or down, particle 2 is either up or down, giving four basis states
 
 $$|\!\uparrow\uparrow\rangle, \quad |\!\uparrow\downarrow\rangle, \quad |\!\downarrow\uparrow\rangle, \quad |\!\downarrow\downarrow\rangle.$$
 
-These four states are eigenstates of $\hat{S}_{1z}$ and $\hat{S}_{2z}$ individually. They form the **uncoupled basis**.
+These four states are eigenstates of $\hat{S}_{1z}$ and $\hat{S}_{2z}$ individually. They are the **uncoupled basis**.
 
-Most of the interesting physics, however, does not care about $\hat{S}_{1z}$ or $\hat{S}_{2z}$ individually. The hyperfine interaction between electron and proton goes as $\hat{S}_e\cdot\hat{S}_p$. Spin-orbit coupling in atoms goes as $\hat{L}\cdot\hat{S}$. These Hamiltonians are rotationally invariant — they commute with the total angular momentum $\hat{J} = \hat{J}_1 + \hat{J}_2$, but not with the individual components. They are diagonal in a different basis.
+But most of the interesting physics does not care about $\hat{S}_{1z}$ or $\hat{S}_{2z}$ individually. The hyperfine interaction between electron and proton goes as $\hat{S}_e\cdot\hat{S}_p$. Spin-orbit coupling in atoms goes as $\hat{L}\cdot\hat{S}$. These Hamiltonians are rotationally invariant — they commute with the total angular momentum $\hat{J} = \hat{J}_1 + \hat{J}_2$, but not with the individual components. They are diagonal in a different basis.
 
 The **coupled basis** $|J, M\rangle$ consists of simultaneous eigenstates of $\hat{J}^2 = (\hat{J}_1 + \hat{J}_2)^2$ and $\hat{J}_z = \hat{J}_{1z} + \hat{J}_{2z}$:
 
@@ -40,13 +40,13 @@ $$|J, M\rangle = \sum_{m_1, m_2}\langle j_1, j_2; m_1, m_2|j_1, j_2; J, M\rangle
 
 ## The Triangle Rule
 
-Which values of $J$ can appear when combining $j_1$ and $j_2$? The answer is the **triangle rule**:
+Which values of $J$ can appear when you combine $j_1$ and $j_2$? The answer is the **triangle rule**:
 
 $$J = |j_1 - j_2|,\; |j_1 - j_2| + 1,\; \ldots,\; j_1 + j_2,$$
 
 in integer steps. Each value appears exactly once.
 
-Before doing any algebra, we can verify the state count:
+Before doing any algebra, verify the state count:
 
 $$\sum_{J=|j_1-j_2|}^{j_1+j_2}(2J+1) = (2j_1+1)(2j_2+1).$$
 
@@ -178,7 +178,7 @@ The $J=\frac{3}{2}$ level sits above $J=\frac{1}{2}$ by $3\lambda\hbar^2/2$. Thi
 
 ## The 21-Centimeter Line
 
-We can now return to where we started. The hydrogen hyperfine Hamiltonian is $\hat{H}_\text{hf} = A\,\hat{S}_e\cdot\hat{S}_p$, where $A$ encodes the magnetic interaction between electron and proton. Using $\hat{F} = \hat{S}_e + \hat{S}_p$ and the same identity:
+Return to where we started. The hydrogen hyperfine Hamiltonian is $\hat{H}_\text{hf} = A\,\hat{S}_e\cdot\hat{S}_p$, where $A$ encodes the magnetic interaction between electron and proton. Using $\hat{F} = \hat{S}_e + \hat{S}_p$ and the same identity:
 
 $$\hat{S}_e\cdot\hat{S}_p = \frac{1}{2}\!\left(\hat{F}^2 - \hat{S}_e^2 - \hat{S}_p^2\right).$$
 

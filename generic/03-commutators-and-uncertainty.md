@@ -1,8 +1,8 @@
 # Chapter 3 — Commutators, Compatibility, and the Generalized Uncertainty Principle
 
-This chapter begins with an important clarification about one of the most famous results in quantum mechanics. Imagine preparing a million electrons in exactly the same state $|\psi\rangle$. We measure position on 500,000 of them and momentum on the other 500,000. No electron is measured twice. We then compute the standard deviations $\sigma_x$ and $\sigma_p$ from the two histograms. Their product satisfies $\sigma_x\sigma_p \geq \hbar/2$.
+When two observables are measured on a large ensemble of identically prepared systems, the spread in their outcomes is not simply a technical limitation — it is a property of the quantum state itself. If we prepare a million electrons in the same state $|\psi\rangle$, measure position on half of them and momentum on the other half (so no electron is disturbed twice), the standard deviations $\sigma_x$ and $\sigma_p$ computed from the two histograms always satisfy $\sigma_x\sigma_p \geq \hbar/2$.
 
-The bound appears before any measuring device turns on. It is a property of the state $|\psi\rangle$ itself, built into the algebra of operators during preparation — not imposed during measurement. The popular story about a photon kicking an electron and scrambling its momentum is not the right explanation. The correct statement is this: *no quantum state has $\sigma_x = 0$ and $\sigma_p = 0$ simultaneously.* Robertson proved this in 1929 with a two-line application of the Cauchy-Schwarz inequality to the commutator $[\hat{x}, \hat{p}] = i\hbar$. We begin with that commutator.
+This inequality is present before any measuring device turns on. It is built into the algebra of the operators during preparation. The correct statement is: *no quantum state has $\sigma_x = 0$ and $\sigma_p = 0$ simultaneously.* Robertson proved this in 1929 with a two-line application of the Cauchy-Schwarz inequality to the commutator $[\hat{x}, \hat{p}] = i\hbar$. We begin with that commutator and develop its consequences systematically.
 
 ---
 

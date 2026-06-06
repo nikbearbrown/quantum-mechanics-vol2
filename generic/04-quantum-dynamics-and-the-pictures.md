@@ -1,10 +1,8 @@
 # Chapter 4 — Quantum Dynamics: Time Evolution and the Pictures
 
-In 1925, Werner Heisenberg developed a formulation of quantum mechanics built entirely around observable quantities: the frequencies and intensities of spectral lines. He organized these into arrays multiplied in an unfamiliar way — row times column, not number times number. Within months, Born and Jordan recognized that Heisenberg's multiplication tables were matrix algebra, and that the rule $xp - px = i\hbar$ was exactly what set quantum mechanics apart from classical mechanics.
+Quantum mechanics can describe time evolution in more than one way. In the Schrödinger picture, the state $|\psi(t)\rangle$ carries all the time dependence while operators remain fixed. In the Heisenberg picture, the state is frozen at its initial value and operators carry the time dependence. Both formulations are related by the unitary operator $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$, and expectation values — the only quantities we can measure — come out the same in either picture.
 
-A few months later, Schrödinger derived a wave equation — a partial differential equation for $\psi(x,t)$ that looked nothing like Heisenberg's matrices. For a time it seemed the two formulations might be in competition. Schrödinger showed they were equivalent.
-
-The equivalence has lasting significance. The two formulations are two *pictures* of the same physics, related by the unitary operator $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$. In the Schrödinger picture, $\hat{U}(t)$ acts on states. In the Heisenberg picture, it acts on operators. Expectation values — the only things we can actually measure — come out the same either way.
+This chapter derives the time-evolution operator from two physical requirements (probability conservation and continuity), shows how stationary states and general time evolution follow from the spectral theorem, and develops the Heisenberg equation of motion and Ehrenfest's theorem.
 
 ---
 
