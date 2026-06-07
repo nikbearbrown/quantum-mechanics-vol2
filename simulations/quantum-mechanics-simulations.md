@@ -132,6 +132,77 @@ Validation Checklist — The Formalism
 > *2:* The AI could not certify that the basis labels form a valid simultaneous-eigenvalue set — that this is the right *physical* labeling is a CSCO judgment I confirmed myself (Chapter 3).
 **Physics-judgment connection:** validating a data structure against a counting invariant ($2n^2$) and an operator invariant (Hermiticity) before building anything on top of it.
 
+## Chapter 1 — Hilbert-Space Explorer Rules
+
+- Single HTML file, D3 v7, no external assets.
+- Three panels: (1) Bloch sphere, (2) basis-component bar chart, (3) change-of-basis matrix display.
+- All physics arithmetic uses the exact formulas below; do not approximate.
+- State parametrized as: |psi> = cos(theta/2)|0> + exp(i*phi)*sin(theta/2)|1>
+  (theta slider 0..pi, phi slider 0..2pi). Verify theta=0 -> (1,0); theta=pi -> (0,1).
+- Bloch vector: r = (sin(theta)*cos(phi), sin(theta)*sin(phi), cos(theta)). |r|^2 = 1 exactly.
+- Operator basis selector: choose from sigma_x, sigma_y, sigma_z, or custom 2x2 Hermitian.
+- Matrix element display: show A_mn = <m|A|n> in the chosen basis as a 2x2 grid.
+- Change-of-basis: given two orthonormal bases, display U = [[<a1|b1>, <a1|b2>],[<a2|b1>, <a2|b2>]]
+  and A' = U†AU as 2x2 matrices with real and imaginary parts labeled.
+- Redraw function: single redraw() called on every slider change.
+- No DOM mutation outside redraw().
+````
+
+### The Prompt
+
+````
+Build me 02-hilbert-space-explorer.html following CLAUDE.md.
+
+SHOW.
+A qubit state |psi> = cos(theta/2)|0> + exp(i*phi)*sin(theta/2)|1>.
+Bloch vector r = (sin(theta)*cos(phi), sin(theta)*sin(phi), cos(theta)).
+Matrix elements A_mn = <m|A|n> for a user-selected operator A.
+Change-of-basis matrix U and transformed matrix A' = U†AU.
+
+SAY.
+Three panels inside one SVG 1200x700:
+(1) Bloch sphere (left, 500x700): isometric circle with labeled x,y,z axes, state
+    arrow from origin to surface, numeric readouts of (theta, phi, Re(alpha), Im(alpha),
+    Re(beta), Im(beta)) below.
+(2) Basis-component chart (top-right, 700x300): four horizontal bars showing
+    Re(c0), Im(c0), Re(c1), Im(c1) where |psi> = c0|0> + c1|1>.
+    Operator selector dropdown: sigma_x, sigma_y, sigma_z.
+    Below the bars: 2x2 grid showing A_mn = <m|A|n> for the selected basis {|0>,|1>}.
+(3) Change-of-basis display (bottom-right, 700x400): second basis selector
+    (sigma_x eigenbasis or sigma_y eigenbasis). Show U matrix and A' = U†AU matrix
+    side by side, each entry displayed as (Re, Im). Verify eigenvalues of A' match A
+    and display them.
+
+CONSTRAIN.
+- D3 v7 from CDN, SVG only, vanilla JS.
+- Hermitian check: at startup, verify each Pauli satisfies M == M.dagger() within 1e-9.
+  Log failures to console.
+- Normalization check: |r|^2 within 1e-6 of 1 at every redraw.
+- U is unitary: display det(U) and verify |det(U)| = 1 within 1e-6.
+- Eigenvalues of A (always ±1 for Paulis): display alongside the matrix.
+
+VERIFY.
+Six checks after building:
+(a) theta=0: state = (1,0), Bloch vector = (0,0,1).
+(b) theta=pi: state = (0,1), Bloch vector = (0,0,-1).
+(c) theta=pi/2, phi=0: state = (1/sqrt(2), 1/sqrt(2)), Bloch vector = (1,0,0).
+(d) sigma_z matrix in {|0>,|1>} basis: [[1,0],[0,-1]].
+(e) sigma_z matrix in sigma_x eigenbasis: [[0,1],[1,0]] = sigma_x.
+(f) Eigenvalues of sigma_z in any basis: always ±1.
+````
+
+### Exploration Tasks
+
+**Task 1 — The state vs. its shadow.** Set $(\theta, \phi) = (\pi/2, 0)$. The state is $(|0\rangle + |1\rangle)/\sqrt{2}$. Read off $c_0 = c_1 = 1/\sqrt{2}$ in the $\{|0\rangle, |1\rangle\}$ basis. Switch to the $\sigma_x$ eigenbasis. The new coefficients: $c_+ = 1$, $c_- = 0$. The state did not move — it is the $\sigma_x$ eigenstate $|+\rangle$. The component list changed; the abstract vector did not. This is the operator-versus-matrix distinction made visual.
+
+**Task 2 — The matrix changes; eigenvalues do not.** Select $\sigma_z$ and display its matrix in the $\{|0\rangle, |1\rangle\}$ basis: diagonal $\bigl(\begin{smallmatrix}1&0\\0&-1\end{smallmatrix}\bigr)$. Switch to the $\sigma_x$ eigenbasis: the matrix becomes $\bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$. Both displays show eigenvalues $\pm 1$. The matrix changed dramatically. The physics did not.
+
+**Task 3 — The Fourier transform as basis change.** Read off the matrix $U$ that converts from the $\sigma_z$ basis to the $\sigma_x$ basis. Note $U_{1j} = 1/\sqrt{2}$ for both $j$; the second row is $1/\sqrt{2}, -1/\sqrt{2}$. This is a $2\times 2$ discrete Fourier matrix. The continuous Fourier transform is the same structure with infinitely many rows and columns.
+
+**Task 4 — Inserting identity.** Set $(\theta, \phi) = (\pi/3, \pi/4)$. The bar chart shows $c_0 = \cos(\pi/6) = \sqrt{3}/2$ and $c_1 = e^{i\pi/4}\sin(\pi/6) = e^{i\pi/4}/2$. Verify $|c_0|^2 + |c_1|^2 = 3/4 + 1/4 = 1$. The completeness relation handles the bookkeeping automatically.
+
+---
+
 ---
 
 *Chapter 2 follows: which operators are the right ones to represent physical measurements? The answer is Hermitian operators, and the reason is that measurement outcomes must be real numbers. From that single requirement the spectral theorem follows: every observable has a complete eigenbasis, and the Born rule can be written in terms of it.*
@@ -351,6 +422,84 @@ Validation Checklist — Commutators & Compatibility
 > *2:* The AI could not judge whether my label set is *complete* — that $\{\hat H_\text{eff},\hat L^2,\hat L_z,\hat S_z\}$ leaves no orbital ambiguous — which I confirmed against the algebra myself.
 **Physics-judgment connection:** verifying a proposed labeling against the commutator algebra — a quantum number is legitimate only when its operator commutes with the others, so the joint eigenbasis genuinely exists.
 
+## Chapter 3 — Commutator Explorer Rules
+
+- Single HTML file, D3 v7 from CDN, SVG canvas only.
+- Two coupled panels side by side:
+  (1) Bloch sphere (left, ~400×400 px): draggable state arrow at (θ, φ).
+      Draw latitude and longitude guide lines. Color the arrow by the
+      value of |⟨S_y⟩| / (ℏ/2), from blue (0) to red (1).
+  (2) Bar chart (right, ~400×300 px): four bars in two groups:
+      Group A: σ_{S_x}, σ_{S_z} (actual standard deviations)
+      Group B: Robertson bound ℏ/2 |⟨S_y⟩|, product σ_{S_x}·σ_{S_z}
+      Always show product ≥ bound numerically with a label "ratio = X.XX".
+      Color the ratio label red when ratio < 1.001 (bound nearly saturated),
+      green otherwise.
+- Numeric readouts: θ (degrees), φ (degrees), ⟨S_x⟩, ⟨S_y⟩, ⟨S_z⟩,
+  σ_{S_x}, σ_{S_z}, product, Robertson bound.
+- Physics must be correct: in ℏ=1 units,
+    ⟨S_y⟩ = sin(θ)sin(φ)
+    σ_{S_x}^2 = 1/4 - sin²(θ)cos²(φ)/4    [since ⟨S_x⟩ = sin θ cos φ / 2]
+    σ_{S_z}^2 = 1/4 - cos²(θ)/4           [since ⟨S_z⟩ = cos θ / 2]
+    Robertson bound = |sin(θ)sin(φ)| / 4
+- All redraws through a single redraw() function.
+```
+
+### Part 2 — The simulation prompt
+
+```
+Build me a D3 v7 Commutator Robertson-Bound Explorer following CLAUDE.md.
+
+SHOW.
+The qubit state is at Bloch angles (θ, φ). For operators Ŝ_x and Ŝ_z:
+  ⟨Ŝ_y⟩ = (ℏ/2) sin θ sin φ
+  Robertson bound = (ℏ/2)|⟨Ŝ_y⟩| = ℏ²/4 · |sin θ sin φ|
+  σ_{S_x}² = (ℏ/2)² (1 - sin²θ cos²φ)
+  σ_{S_z}² = (ℏ/2)² (1 - cos²θ)
+  product σ_{S_x}·σ_{S_z} ≥ Robertson bound at all points on the sphere.
+
+SAY.
+Produce a single file 04-commutator-explorer.html.
+Left panel: Bloch sphere (isometric projection), draggable arrow.
+Right panel: grouped bar chart with four quantities (σ_x, σ_z, product,
+  bound), updating in real time as the user drags.
+  Label: "Ratio = (σ_{S_x}·σ_{S_z}) / Robertson bound". Must be ≥ 1.
+  Color the ratio label red when ratio < 1.001 (bound nearly saturated),
+  green otherwise.
+Bottom strip: numeric table of all expectation values and standard deviations.
+
+CONSTRAIN.
+- D3 v7 from CDN. SVG only. Vanilla JS. No three.js.
+- Use ℏ = 1 throughout; label axes in units of ℏ.
+- All physics computed from (θ, φ) analytically — no numeric integration.
+- Verify at startup: at θ=π/2, φ=π/2 (+y eigenstate),
+    σ_{S_x} = σ_{S_z} = 1/2,
+    Robertson bound = 1/4, ratio = 1.00 (saturated).
+  At θ=0 (north pole),
+    σ_{S_z} = 0, Robertson bound = 0, ratio = undefined (display "N/A").
+
+VERIFY. Give three checks:
+(a) North pole (θ=0): σ_{S_z} = 0, product = 0, bound = 0.
+(b) +y eigenstate (θ=π/2, φ=π/2): ratio = 1.00 (saturated).
+(c) +x eigenstate (θ=π/2, φ=0): σ_{S_x} = 0, product = 0, bound = 0.
+
+List failure modes:
+  - sign error in ⟨S_y⟩ (check (b) catches it)
+  - missing sin factor in Robertson bound
+  - σ² formula incorrect (verify positivity for all θ, φ)
+  - ratio reported as < 1 (impossible — signals a physics error)
+```
+
+### Part 3 — Exploration tasks
+
+**Saturate the bound.** Drag to $\theta = \pi/2$, $\phi = \pi/2$ (the $\hat{S}_y$ eigenstate). Confirm the ratio reads 1.00. Drag along the equator: the bound rises and falls as $|\sin\phi|$, reaching zero at $\phi = 0$ and $\phi = \pi$ (the $\hat{S}_x$ eigenstates).
+
+**Zero bound, nonzero spread.** Drag to $\phi = 0$ (the $\hat{S}_x$ eigenstate). Confirm $\sigma_{S_x} = 0$ and the Robertson bound equals zero. Note that $\sigma_{S_z} = 1/2$ — the bound is zero, but one spread is decidedly nonzero. This is the counterexample to "zero bound means both sharp."
+
+**Drag along a latitude circle.** Fix $\theta = \pi/3$ and rotate $\phi$ from $0$ to $2\pi$. The bound $|\sin\theta\sin\phi|$ oscillates between $0$ and $\sqrt{3}/2$. The product $\sigma_{S_x}\sigma_{S_z}$ follows above it, touching the bound only at $\phi = \pi/2$ and $3\pi/2$.
+
+---
+
 ---
 
 ## Chapter 04: Chapter 4 — Quantum Dynamics: Time Evolution and the Pictures
@@ -467,6 +616,84 @@ Validation Checklist — Quantum Dynamics & the Pictures
 > *1:* The AI implemented the time-evolution operator and the stationarity/conservation tests.
 > *2:* The AI could not determine *which* operators are truly conserved for a real (non-perfectly-spherical) atom, nor that stationarity implies a ground state — both required my physical judgment.
 **Physics-judgment connection:** validating a dynamical result against a conservation law and against unitarity — and refusing the tempting inference that "doesn't change" means "is the ground state."
+
+## Chapter 4 — Two-Picture Dynamics Rules
+
+- Single HTML file, D3 v7 from CDN, SVG canvas only.
+- Two panels side by side:
+  (1) Schrödinger picture (left): Bloch sphere showing the evolving state
+      |ψ(t)⟩ as a moving arrow. The state is computed via exact closed-form
+      U(t) = exp(−iHt/ℏ) for H = ω₀(B_x σ_x + B_y σ_y + B_z σ_z).
+      Use Rodrigues formula: Bloch vector rotates around B̂ at angular
+      velocity ω₀|B|. Display (θ(t), φ(t)) numerically.
+  (2) Heisenberg picture (right): time-series plot of ⟨S_x⟩(t), ⟨S_y⟩(t),
+      ⟨S_z⟩(t) as three colored lines on [0, 4π/ω₀]. Also draw the
+      Heisenberg-picture "operator vector" ⟨S(t)⟩ as a point on a separate
+      small Bloch sphere (same as the Schrödinger sphere — they are identical).
+- Cross-verification label: "Schrödinger ⟨S_z⟩ = Heisenberg ⟨S_z⟩ = X.XXX ℏ"
+  Both values computed independently and compared; display red if |diff| > 1e-4.
+- Controls: sliders for B_x, B_y, B_z (−1 to 1), ω₀ (0.1 to 10), initial
+  (θ₀, φ₀) of the state, and a play/pause/reset button.
+- Time step: use requestAnimationFrame with fixed dt = 0.01/ω₀; update
+  Bloch angles by the Rodrigues formula (exact, no drift).
+````
+
+### Part 2 — The simulation prompt
+
+````
+Build me a D3 v7 Two-Picture Dynamics Explorer following CLAUDE.md.
+
+SHOW.
+A spin-1/2 in H = ω₀(B_x Ŝ_x + B_y Ŝ_y + B_z Ŝ_z) evolves in time.
+Schrödinger picture: |ψ(t)⟩ = U(t)|ψ(0)⟩; the Bloch vector rotates
+  around B̂ at angular velocity ω₀|B|.
+Heisenberg picture: ⟨A⟩(t) = ⟨ψ(0)|A_H(t)|ψ(0)⟩; computed as
+  the same Bloch-vector rotation applied to the initial expectation values.
+Both must give identical ⟨S_x⟩(t), ⟨S_y⟩(t), ⟨S_z⟩(t).
+
+SAY.
+Produce 05-two-pictures.html.
+  Left panel: Bloch sphere (isometric), state arrow precessing. Trail of
+    last 200 frames fades from current color to transparent.
+  Right panel: three time-series lines (S_x: blue, S_y: green, S_z: red)
+    scrolling in a 600×300 plot. A vertical cursor shows "now."
+    Below: ⟨S_z⟩ from Schrödinger vs Heisenberg, must match.
+  Bottom: slider panel for B_x, B_y, B_z, ω₀, θ₀, φ₀.
+
+CONSTRAIN.
+- Use ONLY the Rodrigues rotation formula for time evolution:
+    r(t) = r₀ cos(ωt) + (n̂ × r₀) sin(ωt) + n̂(n̂·r₀)(1−cos(ωt))
+  where n̂ = B/|B|, ω = ω₀|B|, r₀ is the initial Bloch vector.
+  Never accumulate numerical integration errors.
+- For the time-series, store the last 400 time-steps and draw with D3 line.
+- Cross-check: at each frame compute ⟨S_z⟩ two ways:
+    (1) from the Bloch vector z-component (Schrödinger picture)
+    (2) from r₀·ẑ cos(ωt) + (n̂×r₀)·ẑ sin(ωt) + (n̂·ẑ)(n̂·r₀)(1−cos(ωt))
+         (Heisenberg picture, operators evolved, initial state fixed)
+  Label the difference. It must be < 1e-6 at all times.
+
+VERIFY. Give four checks:
+(a) B=(0,0,1), θ₀=π/2, φ₀=0: ⟨S_z⟩=0 constant, ⟨S_x⟩ oscillates at ω₀.
+(b) B=(1,0,0), θ₀=0 (north pole): state stays at north pole (aligned with
+    precession axis), all expectation values constant.
+(c) |Bloch vector|²=1 at every frame (normalization).
+(d) Schrödinger and Heisenberg ⟨S_z⟩ differ by < 1e-6 at every frame.
+
+Failure modes: Rodrigues drift (normalization check catches it),
+  wrong precession axis (check (b) catches it), picture cross-check failure.
+````
+
+### Part 3 — Exploration tasks
+
+**Picture equivalence.** Set $\vec{B} = (0,0,1)$, initial state on the equator ($\theta_0 = \pi/2$, $\phi_0 = 0$). Watch the Schrödinger-picture arrow precess around $\hat{z}$ at $\omega_0$. Read $\langle S_z\rangle$ from both panels — identically zero at every frame. This is picture equivalence made visible.
+
+**Stationary state.** Set $\vec{B} = (0,0,1)$, initial state at the north pole ($\theta_0 = 0$). The arrow does not move; $\langle S_z\rangle = \hbar/2$ is a flat line. The initial state is an energy eigenstate of $\hat{H} = \omega_0\hat{S}_z$, so it is stationary.
+
+**Rabi oscillation.** Set $\vec{B} = (1,0,0)$, initial state at the north pole. The field is along $\hat{x}$, not $\hat{z}$. The Bloch vector precesses around $\hat{x}$: $\langle S_z\rangle(t) = (\hbar/2)\cos(\omega_0 t)$ oscillates between $\pm\hbar/2$. This is the Rabi oscillation derived analytically above.
+
+**Ehrenfest for spin.** For a spin in a magnetic field, the Ehrenfest equations for $\langle\vec{S}\rangle$ are exact: $d\langle\vec{S}\rangle/dt = \gamma\langle\vec{S}\rangle \times \vec{B}$ — classical precession. Verify: the length $|\langle\vec{S}\rangle|$ stays constant throughout. This follows from the linearity of the Hamiltonian in the spin operators, the same reason Ehrenfest is exact for the harmonic oscillator.
+
+---
 
 ---
 
@@ -686,6 +913,111 @@ Validation Checklist — Angular Momentum
 > *2:* The AI could not be trusted to order the subshells into periods — the Madelung filling order is empirical, and I supplied it rather than letting the model infer it.
 **Physics-judgment connection:** validating a capacity construction against the exact angular-momentum eigenvalue identity and against the measured period lengths — catching an off-by-one before it misshapes the table.
 
+## Chapter 6 — Angular Momentum Ladder Simulator Rules
+
+ANGULAR MOMENTUM PHYSICS RULES
+
+1. For ℓ = 0, 1/2, 1, 3/2, 2 (user selects via dropdown):
+   - Basis states: |ℓ, m⟩ for m = -ℓ, -ℓ+1, ..., ℓ. Total 2ℓ+1 states.
+   - L_z eigenvalues: ℏ*m for each state.
+   - L^2 eigenvalue: ℏ^2 * ℓ*(ℓ+1) for all states in the subspace.
+
+2. Ladder operator normalization (exact formula, no approximation):
+     L_+ |ℓ, m⟩ = ℏ * sqrt[(ℓ-m)*(ℓ+m+1)] * |ℓ, m+1⟩
+     L_- |ℓ, m⟩ = ℏ * sqrt[(ℓ+m)*(ℓ-m+1)] * |ℓ, m-1⟩
+   At the top rung (m = ℓ): L_+ gives 0 exactly (coefficient = 0).
+   At the bottom rung (m = -ℓ): L_- gives 0 exactly.
+
+3. Matrix elements:
+     (L_z)_{m'm} = ℏ*m * δ_{m'm}
+     (L_+)_{m'm} = ℏ * sqrt[(ℓ-m)*(ℓ+m+1)] * δ_{m', m+1}
+     (L_-)_{m'm} = ℏ * sqrt[(ℓ+m)*(ℓ-m+1)] * δ_{m', m-1}
+     L_x = (L_+ + L_-)/2,  L_y = (L_+ - L_-)/(2i)
+
+4. All matrices must satisfy:
+     [L_z, L_+] = ℏ L_+     (verify by matrix multiplication at startup)
+     [L_z, L_-] = -ℏ L_-    (verify by matrix multiplication at startup)
+     [L_+, L_-] = 2ℏ L_z    (verify by matrix multiplication at startup)
+     L^2 = L_x^2 + L_y^2 + L_z^2 = ℏ^2 ℓ(ℓ+1) I   (verify)
+
+5. If any verification fails, write an explicit error to the console and
+   highlight the failing matrix element in red in the UI.
+
+KNOWN FAILURE MODES:
+(a) Off-by-one in ladder normalization: check sqrt argument for each m.
+(b) Wrong convention for L_+, L_-: rows vs. columns — L_+ has 1s on the
+    super-diagonal (increasing m), L_- on the sub-diagonal.
+(c) L^2 not proportional to I: matrix construction bug, probably off-by-one.
+(d) Verification at startup skipped: silent bugs in matrix elements.
+```
+
+### Part 2 — The Simulation Prompt
+
+```
+Build 06-angular-momentum.html following CLAUDE.md.
+
+SHOW.
+A vertical ladder diagram (center, ~400 px wide) displaying the 2ℓ+1 rungs
+of the angular momentum ladder for the selected ℓ. Each rung is a horizontal
+bar labeled |ℓ, m⟩ with a numeric readout of the L_z eigenvalue in units of ℏ.
+
+When the user clicks a rung, highlight it and draw animated arrows to the
+adjacent rungs:
+  - L_+ arrow (upward, blue): from the selected rung to m+1. Label the
+    arrow with the coefficient ℏ*sqrt[(ℓ-m)(ℓ+m+1)] rounded to 3 sig figs.
+    If m = ℓ, show the arrow as grayed-out and label "0 (top rung)".
+  - L_- arrow (downward, red): from the selected rung to m-1. Label with
+    the coefficient ℏ*sqrt[(ℓ+m)(ℓ-m+1)]. If m = -ℓ, gray out.
+
+RIGHT PANEL: matrix display. Show the full (2ℓ+1) × (2ℓ+1) matrices for
+L_z, L_+, L_-, L_x, L_y in units of ℏ. When the user has selected a state
+|ℓ, m⟩, highlight the corresponding column of L_+ and the corresponding
+column of L_- in the display.
+
+BOTTOM STRIP: eigenvalue display.
+  ℓ = [value]   m = [value] (of selected rung)
+  L^2 = ℏ^2 * ℓ(ℓ+1) = [value] ℏ^2
+  L_z = m * ℏ = [value] ℏ
+  Cone half-angle = arccos(m / sqrt(ℓ(ℓ+1))) = [value]°   (for m = ℓ)
+  Robertson bound: σ_{Lx} σ_{Ly} ≥ (ℏ/2)|m| ℏ = [value] ℏ^2
+
+TOP: ℓ selector (dropdown: 0, 1/2, 1, 3/2, 2).
+
+SAY.
+Single self-contained HTML file. D3 v7 from CDN. No other dependencies.
+All matrices constructed from the exact ladder formulas — no hard-coded values.
+Verification of all four commutation relations runs at startup for every
+selected ℓ. Console logs: "All commutation relations verified for ℓ = X" on
+success, or the specific failing element on failure.
+
+VERIFY.
+At startup, for each ℓ in {0, 1/2, 1, 3/2, 2}:
+(a) [L_z, L_+] = ℏ L_+: check all matrix elements within 1e-10.
+(b) [L_z, L_-] = -ℏ L_-: same.
+(c) [L_+, L_-] = 2ℏ L_z: same.
+(d) L^2 = ℏ^2 ℓ(ℓ+1) I: check diagonal, off-diagonal = 0.
+(e) For ℓ=1: L_+ applied to |1,1⟩ gives zero vector. L_- applied to
+    |1,-1⟩ gives zero vector.
+(f) For ℓ=1/2: the 2×2 matrices are (ℏ/2) times the Pauli matrices σ_z,
+    σ_+, σ_-.
+
+List known failure modes in an HTML comment at the top of the file.
+```
+
+### Part 3 — Exploration Tasks
+
+**Task 1: The algebra delivers the spectrum.** Select $\ell = 1$. Click the middle rung $|1,0\rangle$. Read the ladder coefficients: $\hat{L}_+$ gives $\hbar\sqrt{2}$, $\hat{L}_-$ gives $\hbar\sqrt{2}$. Click the top rung $|1,1\rangle$: the $\hat{L}_+$ arrow is grayed out with coefficient $0$. This is the termination condition — the ladder has a top rung, and it is annihilated, not merely large.
+
+**Task 2: Half-integer $\ell$.** Change $\ell$ to $\tfrac{1}{2}$. The ladder has two rungs: $|\tfrac{1}{2}, -\tfrac{1}{2}\rangle$ and $|\tfrac{1}{2}, +\tfrac{1}{2}\rangle$. Confirm $\hat{L}_z = (\hbar/2)\mathrm{diag}(-1, +1)$ — this is $(\hbar/2)\sigma_z$. The eigenvalue display shows $\hat{L}^2 = \hbar^2(\tfrac{1}{2})(\tfrac{3}{2}) = \tfrac{3}{4}\hbar^2$. The half-integer case is algebra, not position space.
+
+**Task 3: The cone.** Select $\ell = 2$, click $|2,2\rangle$. Read: $L_z = 2\hbar$, $\sqrt{L^2} = \hbar\sqrt{6} \approx 2.45\hbar$, cone half-angle $\approx 35.3°$. Select $|2,0\rangle$: cone half-angle $= 90°$. The angular momentum is perpendicular to $\hat{z}$ in the $m=0$ state, yet $\hat{L}^2 = 6\hbar^2$ — the vector has magnitude but no $z$-component.
+
+**Task 4: Robertson bound.** For $\ell = 1$, $m = 1$: Robertson bound is $\hbar^2/2$. The actual $\sigma_{L_x}\sigma_{L_y} = \hbar^2/2$. The bound is saturated — the maximally aligned state is a minimum-uncertainty state for the transverse components.
+
+**Task 5: Commutation verification.** Open the browser console. Confirm "All commutation relations verified for ℓ = 1" appears. Change $\ell$ to $\tfrac{3}{2}$ and confirm again. Introduce a deliberate off-by-one in the ladder formula; the console should flag which commutator fails and which element is wrong.
+
+---
+
 ---
 
 ## Chapter 07: Chapter 7 — Spin and the Bloch Sphere
@@ -802,6 +1134,77 @@ Validation Checklist — Spin & the Bloch Sphere
 > *1:* The AI promoted spatial orbitals to spin-orbitals and built the Pauli/$\hat S_z$ operators.
 > *2:* The AI could not be trusted to treat spin as an independent, any-axis degree of freedom rather than a derived rotation — that conceptual call was mine.
 **Physics-judgment connection:** validating the spin-orbital count against the $2(2\ell+1)$ capacity and the "two values, every axis" fact, refusing any model that ties $m_s$ to orbital motion.
+
+## Chapter 7 — Bloch Sphere / Larmor Simulation Rules
+
+- Single HTML file. SVG canvas only. No external assets, no three.js, no WebGL.
+- Two coupled panels:
+  (1) Bloch sphere (left, ~380 × 380 px): isometric lat/lon grid; two draggable
+      arrows — state |ψ⟩ in blue, analyzer n̂ in orange. Numeric readouts of
+      (θ_ψ, φ_ψ), (θ_n, φ_n), γ, P(+), P(−).
+  (2) Larmor panel (right, ~380 × 260 px): B-field slider (0–7 T), particle
+      dropdown (electron / proton), precession-frequency readout in appropriate
+      units (GHz for electron, MHz for proton), animated Bloch vector tracing
+      a latitude circle. Pause/resume button.
+- D3 v7 from CDN. Vanilla JS only.
+- All probability arithmetic: P(+) = cos²(γ/2). Never cos²(γ).
+- Larmor: closed-form phase advance φ(t) = φ₀ + ω_L · t each animation frame.
+  ω_L = γ · B₀, with γ from the dropdown (electron: γ_e/2π = 28.025 GHz/T;
+  proton: γ_p/2π = 42.58 MHz/T).
+- ⟨S_z⟩ readout must be constant during precession (verify numerically).
+- All redraws through a single redraw() function.
+````
+
+### The Build Prompt
+
+````
+Build a D3 v7 Bloch sphere + Larmor precession simulator following CLAUDE.md.
+
+SHOW.
+State |ψ⟩ at Bloch angles (θ_ψ, φ_ψ). Analyzer n̂ at (θ_n, φ_n).
+Born-rule probability: P(+) = cos²(γ/2), where
+  cos γ = cos θ_ψ cos θ_n + sin θ_ψ sin θ_n cos(φ_ψ − φ_n).
+
+Larmor precession: ω_L = γ · B₀ (γ from particle dropdown), phase advance
+  φ_ψ(t) = φ_ψ(0) + ω_L · t. θ_ψ is frozen. ⟨S_z⟩ = (ℏ/2)cos θ_ψ is constant.
+
+SAY.
+Produce 07-bloch-larmor.html with two panels:
+  (1) Bloch sphere: isometric lat/lon grid. Blue draggable arrow = |ψ⟩.
+      Orange draggable arrow = n̂. Live readouts: (θ_ψ, φ_ψ), (θ_n, φ_n),
+      γ, P(+), P(−).
+  (2) Larmor panel: B₀ slider 0–7 T, particle dropdown (electron/proton),
+      f_L readout in GHz or MHz. Animate the blue arrow precessing around ẑ.
+      ⟨S_z⟩ readout constant-checks itself each frame.
+
+CONSTRAIN.
+- D3 v7 from CDN. SVG only. Vanilla JS.
+- Half-angle Born rule: P(+) = cos²(γ/2). Verify at γ = π/2: P(+) = 0.500.
+- Larmor: closed-form φ(t), not numerical integration. θ frozen.
+- Electron gyromagnetic ratio negative: precession direction must flip relative
+  to proton when particle dropdown changes.
+
+VERIFY.
+Six checks:
+(a) State at north pole, analyzer at north pole: P(+) = 1.00.
+(b) Same state, analyzer at south pole: P(+) = 0.00.
+(c) Same state, analyzer at equator (any φ_n): P(+) = 0.50.
+(d) Proton at B₀ = 1.5 T: f_L = 63.87 MHz, period ≈ 15.66 ns.
+(e) During precession, θ_ψ constant, φ_ψ advances linearly with time.
+(f) P(+) + P(−) = 1.000 for every analyzer position.
+````
+
+### Exploration Tasks
+
+**Verify the antipode.** State at north pole, analyzer at north pole: $P(+) = 1.00$. Rotate analyzer to south pole: $P(+) = 0.00$. Set $\theta_n = \pi/3$: predict $P(+) = \cos^2(\pi/6) = 3/4$. Verify.
+
+**Verify the half-angle.** Set state to equator ($\theta_\psi = \pi/2$), analyzer along $\hat{z}$ ($\theta_n = 0$). Confirm $P(+) = 1/2$. If any equatorial state gives $P(+) = 0$ at a perpendicular analyzer, the half-angle formula is missing.
+
+**Larmor period.** Proton, $B_0 = 1.5$ T: confirm $f_L = 63.87$ MHz, period $\approx 15.66$ ns. Switch to $B_0 = 3.0$ T: period halves. Switch to electron at $B_0 = 1$ mT: $f_L \approx 28$ MHz. Confirm precession direction reverses (electron $\gamma < 0$).
+
+**Frozen polar angle.** Start precession from $\theta_0 = \pi/4$. Run for 100 periods. Confirm $\theta_\psi$ has not drifted. Drift means the time-evolution operator has a numerical error.
+
+---
 
 ---
 
@@ -1017,6 +1420,101 @@ Validation Checklist — The Hydrogen Atom
 > *2:* The AI could not supply a physically grounded $Z_\text{eff}$ nor be trusted to keep the $r^2$ Jacobian — both were my responsibility.
 **Physics-judgment connection:** validating a radial computation against analytic landmarks ($r_\text{mp}$, $\langle r\rangle$, node count, normalization) and enforcing the mandatory Jacobian — the discipline that catches the most common hydrogen error.
 
+## Chapter 9 — Hydrogen Orbital Visualizer Rules
+
+- Single HTML file, single SVG canvas. No three.js, no WebGL.
+- Layout: primary heat-map panel (top, ~400 × 400 px), radial probability
+  plot directly below it (~400 × 200 px), energy-level diagram on the right
+  (~200 × 400 px). Numeric readouts at the very bottom.
+- Sliders for (n, ℓ, m) in a left-hand sidebar, plus a dropdown for
+  "complex Y_lm" vs. "real chemistry orbitals: p_x, p_y, p_z, d_z², ...".
+- Color scale: d3.interpolateViridis, sequential. Domain rescaled per state
+  to [0, max(|ψ|²)] on the rendered grid.
+- Grid resolution: 200 × 200 pixels covering ±20 a₀ × ±20 a₀ in the xz-plane.
+- Radial probability plot marks r_mp (peak) and ⟨r⟩ (mean) with vertical
+  lines, labeled.
+- Energy-level diagram: horizontal lines at E_n = −13.6/n² eV for n = 1..5,
+  spectroscopic labels. Currently selected state is highlighted.
+- Numeric readouts (≤ 3 sig figs, monospaced): ⟨r⟩, r_mp, E_n,
+  radial nodes (n − ℓ − 1), angular nodes (ℓ), total nodes (n − 1).
+- Quantum number sliders enforce constraints: ℓ ∈ [0, n−1], m ∈ [−ℓ, +ℓ].
+- No DOM mutation outside the redraw function.
+```
+
+### Part 2 — The simulation prompt
+
+```
+Build me a D3 v7 hydrogen orbital visualizer following CLAUDE.md.
+
+HOOK. Render |ψ_{nℓm}(x, 0, z)|² for the hydrogen atom as a 2D heat map
+in the xz-plane. The user drags sliders for (n, ℓ, m) and the orbital
+reorganizes.
+
+UNFOLD. The hydrogen wave function factorizes:
+  ψ_{nℓm}(r, θ, φ) = R_{nℓ}(r) Y_{ℓm}(θ, φ),
+where R_{nℓ}(r) involves the associated Laguerre polynomial L^{2ℓ+1}_{n−ℓ−1}
+and an exponential e^{−r/(n a₀)}, and Y_{ℓm}(θ, φ) is the spherical harmonic.
+Set a₀ = 1 internally. Code R_{nℓ}(r) explicitly for (n, ℓ) up to (4, 3).
+
+MECHANISM. Three coupled panels.
+  (1) Primary 2D heat map: at each pixel (x, z), compute r = √(x²+z²),
+      θ = atan2(x, z), φ = 0. Evaluate |ψ_{nℓm}(r, θ, 0)|² via Viridis.
+  (2) Radial probability P(r) = r² |R_{nℓ}(r)|² as a line plot from
+      r = 0 to r = 20 a₀. Mark r_mp and ⟨r⟩ with labeled vertical lines.
+  (3) Energy-level diagram: horizontal lines at E_n = −13.6/n² eV for
+      n = 1..5, spectroscopic labels. Current state highlighted.
+
+SYNTHESIZE. Add a "Transition mode" toggle. Two state selectors:
+  |ψ_i⟩ and |ψ_f⟩. Compute ΔE = E_{n_i} − E_{n_f}. Display photon
+  wavelength λ = hc/ΔE in nm. Identify the spectral series (Lyman if
+  n_f = 1, Balmer if 2, Paschen if 3). Check selection rules Δℓ = ±1,
+  Δm = 0, ±1 and flag ALLOWED or FORBIDDEN.
+
+Output a single self-contained HTML file using the D3 v7 CDN.
+```
+
+### Part 3 — Exploration tasks
+
+**Verify the 1s headline numbers.** Set $(n,\ell,m) = (1,0,0)$. Read $r_\text{mp}$ and $\langle r\rangle$ from the radial probability plot. Confirm $r_\text{mp} \approx 1.00\,a_0$ and $\langle r\rangle \approx 1.50\,a_0$. Look at the heat map: a spherical blob. No ring at $a_0$.
+
+**Count nodes.** Set $(2,0,0)$. The radial probability plot shows two peaks separated by a zero at $r = 2a_0$. Set $(3,1,0)$: predict $n-1 = 2$ total nodes, partitioned as 1 radial + 1 angular. Verify on the simulation.
+
+**The $n^2$ degeneracy.** Switch among $(2,0,0)$, $(2,1,0)$, $(2,1,+1)$, $(2,1,-1)$. All four share $E = -3.4$ eV on the energy diagram. Shapes differ dramatically.
+
+**Compute the Balmer $\alpha$ wavelength.** Transition mode. Set $(n_i, \ell_i, m_i) = (3, 1, 0)$ and $(n_f, \ell_f, m_f) = (2, 0, 0)$. Read the wavelength. Confirm $\lambda \approx 656$ nm. Verify ALLOWED.
+
+**A forbidden transition.** Set $(2,0,0) \to (1,0,0)$. The simulation flags FORBIDDEN ($\Delta\ell = 0$). This is the metastable 2s state.
+
+**Real vs. complex orbitals.** Switch to "real chemistry orbitals." Set sub-shell $= p$. Cycle through $p_x, p_y, p_z$ and watch the dumbbells rotate. Switch back to complex and cycle $m = -1, 0, +1$: the $m=0$ case is identical to $p_z$; the $m=\pm 1$ cases are azimuthally symmetric rings.
+
+### Part 4 — Extension: time evolution
+
+```
+Extend the hydrogen visualizer to a "Superposition mode."
+
+The state is (1/√2)[ψ_{100} e^{−i E_1 t/ℏ} + ψ_{210} e^{−i E_2 t/ℏ}].
+Animate |ψ(x, 0, z, t)|² in real time with a slowed-down clock.
+Display "physical time" alongside the simulation frame number.
+The probability density should oscillate between the 1s blob and the
+2p_z dumbbell with period T_{12} = 2π / ((E_2 − E_1)/ℏ) ≈ 0.405 fs.
+```
+
+### Part 5 — Six failure modes to watch for
+
+**Color-scale domain not reset.** If the Viridis domain is fixed at $n=1$, $\text{high-}n$ orbitals appear uniformly dark. Recompute per state change.
+
+**Forgetting the $r^2$ Jacobian.** Plotting $|R_{n\ell}|^2$ instead of $r^2|R_{n\ell}|^2$ makes the 1s density peak at $r=0$. The error is visible and dramatic.
+
+**Energy formula sign error.** $E_n = -13.6/n^2$, negative. Positive values on the energy diagram mean a sign was dropped.
+
+**Selection rule for $\Delta m$ too strict.** The rule is $\Delta m = 0, \pm 1$ — all three are allowed. Not just $\Delta m = 0$.
+
+**Quantum number ranges not enforced.** The combination $(n,\ell,m) = (1,1,0)$ requires a Laguerre polynomial of degree $-1$. Constrain the sliders.
+
+**Heat-map coordinate confusion.** For $x < 0$, $\phi = \pi$, not $\phi = 0$. The sign of $x$ must be handled correctly; otherwise the simulation renders a half-orbital.
+
+---
+
 ---
 
 ## Chapter 10: Chapter 10 — Identical Particles
@@ -1139,6 +1637,75 @@ Validation Checklist — Identical Particles
 > *1:* The AI built the Slater-determinant constructor and the Aufbau filler, which I checked against the exact repeated-column zero and known configurations.
 > *2:* The AI could not be trusted to resolve the Cr/Cu anomalies or to ground Hund's Rule 1 in the exchange integral rather than a spin force — both required my physical judgment.
 **Physics-judgment connection:** validating an antisymmetry construction against its exact zeros and electron-count conservation, and insisting every energy-ordering claim trace to the exchange integral.
+
+## Chapter 10 — Two-Particle Symmetry Explorer Rules
+
+- Single HTML file, single SVG canvas. D3 v7 only.
+- Layout:
+  - Primary 2D heat map of |ψ(x₁, x₂)|² (top, ~400 × 400 px).
+  - Marginal one-particle density ρ(x₁) = ∫|ψ(x₁,x₂)|² dx₂ as a line
+    plot directly below (~400 × 150 px).
+  - Control panel as plain HTML to the right.
+- Color scale: d3.interpolateViridis, sequential. Recompute domain per
+  state change to [0, max(|ψ|²)].
+- Grid: 200 × 200 over (x₁, x₂) ∈ [0, L]² for the infinite well.
+- Diagonal x₁ = x₂ drawn as a thin red overlay line.
+- Controls: radio buttons {boson, fermion, distinguishable}; sliders for
+  n_a ∈ {1,2,3,4,5} and n_b ∈ {1,2,3,4,5}.
+- Status text when ψ = 0 (fermion with n_a = n_b):
+  "ψ₋ = 0: Pauli forbidden — no such state exists."
+- Numeric readouts: ⟨(x₁−x₂)²⟩, max(|ψ|²), P(both in left half).
+- No DOM mutation outside the redraw function.
+````
+
+### The Simulation Prompt
+
+````
+Build me a D3 v7 two-particle symmetry explorer following CLAUDE.md.
+
+SHOW.
+Single-particle eigenstates: φ_n(x) = √(2/L) sin(nπx/L).
+Two-particle wave functions:
+  ψ_boson  = (1/√2)[φ_a(x₁)φ_b(x₂) + φ_b(x₁)φ_a(x₂)]
+  ψ_fermion = (1/√2)[φ_a(x₁)φ_b(x₂) − φ_b(x₁)φ_a(x₂)]
+  ψ_dist   = φ_a(x₁)φ_b(x₂)
+Special case: ψ_fermion = 0 when n_a = n_b. Show status note.
+
+SAY.
+Two coupled panels.
+  (1) 2D heat map of |ψ(x₁, x₂)|² with diagonal overlay.
+  (2) Marginal ρ(x₁) = ∫|ψ(x₁, x₂)|² dx₂ as a line plot. This marginal
+      is identical for boson, fermion, and distinguishable at the same
+      (n_a, n_b) — the key pedagogical point. Label it clearly.
+
+CONSTRAIN.
+- D3 v7 from CDN. SVG only. Vanilla JS.
+- Normalization check: ∫∫|ψ|² dx₁ dx₂ = 1.000 per render.
+- Color domain recomputed per render.
+- Diagonal overlay drawn after (on top of) heat map.
+- Add "Spin extension" toggle: singlet pairs with symmetric spatial;
+  triplet pairs with antisymmetric spatial. Triplet + n_a = n_b
+  shows "Pauli forbidden" status note.
+
+VERIFY.
+(a) Fermion n_a=1, n_b=2: Pauli node visible on diagonal.
+(b) Fermion n_a=n_b=1: status note shown, heat map blank.
+(c) Boson n_a=n_b=1: single peak, diagonal runs through it.
+(d) At any (n_a, n_b): marginal line plot is identical for all three modes.
+(e) ∫∫|ψ|² = 1.000 for all combinations.
+````
+
+### Exploration Tasks
+
+**The Pauli node.** Set fermion, $n_a = 1$, $n_b = 2$. The diagonal is a stripe of zero. Set $n_a = n_b = 1$: the status note appears. Two fermions cannot be in the same orbital — the wave function simply doesn't exist.
+
+**Bosonic clustering.** Switch to boson, $n_a = n_b = 1$. The heat map shows a single peak with the diagonal running through it. Bosons share orbitals without restriction.
+
+**The marginal is exchange-blind.** Set $n_a = 1$, $n_b = 2$. Cycle through boson, fermion, distinguishable and watch the heat map change dramatically while the marginal line plot stays identical. A single-particle detector cannot distinguish the three cases.
+
+**Helium analog with spin extension.** Toggle spin extension. Select singlet, $n_a = n_b = 1$: the symmetric spatial wave function is allowed — parahelium ground state. Select triplet, $n_a = n_b = 1$: Pauli forbidden. For 1s2s ($n_a = 1$, $n_b = 2$): singlet gives symmetric heat map, triplet gives antisymmetric heat map with Pauli node. The energy advantage of orthohelium (electrons farther apart along the off-diagonal) is geometrically visible.
+
+---
 
 ---
 
