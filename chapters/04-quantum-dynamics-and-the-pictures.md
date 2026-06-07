@@ -34,6 +34,9 @@ $$i\hbar\,\frac{d}{dt}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle.$$
 
 It is the statement that $\hat{U}(t)$ satisfies its own differential equation. The entire structure — the Schrödinger equation, stationary states, energy quantization — follows from unitarity plus the generator being Hermitian.
 
+![Three horizontal panels connected by arrows: infinitesimal unitary step (Sky Blue), finite matrix exponential via N-step composition (Bluish Green), and the Schrödinger equation as the derivative (Orange)](../images/04-quantum-dynamics-and-the-pictures-fig-01.png)
+*Figure 4.1 — Deriving the time-evolution operator: unitarity forces a Hermitian generator, N-step composition yields the matrix exponential, and differentiation recovers the Schrödinger equation.*
+
 ---
 
 ## Stationary States and General Time Evolution
@@ -70,6 +73,9 @@ $$\langle\hat{S}_z\rangle(t) = \frac{\hbar}{2}\cos(\omega_0 t).$$
 
 The population starts in $|\!\uparrow\rangle$, transfers entirely to $|\!\downarrow\rangle$ at $t = \pi/\omega_0$, and returns. This is Rabi oscillation — the quantum dynamics at the heart of NMR: a spin driven by a resonant pulse oscillates between up and down at the Rabi frequency. The physics follows directly from the beat between two energy eigenstates.
 
+![Line chart showing two sinusoidal probability curves from t=0 to 2π/ω₀: spin-up starts at 1 and descends while spin-down starts at 0 and rises, crossing at 0.5 at the midpoint](../images/04-quantum-dynamics-and-the-pictures-fig-03.png)
+*Figure 4.3 — Rabi oscillation: the spin-up (Sky Blue) and spin-down (Bluish Green) populations exchange completely over one period, with the two probabilities summing to 1 at all times.*
+
 ---
 
 ## The Heisenberg Picture
@@ -94,6 +100,9 @@ $$[\hat{x}_H(t), \hat{p}_H(t)] = \hat{U}^\dagger[\hat{x}, \hat{p}]\hat{U} = i\hb
 
 The canonical commutation relation holds at every time. Switching pictures cannot change the fundamental algebra.
 
+![Two-column diagram with three horizontal rows: state row (Sky Blue, time-varying in left column; gray, frozen in right), operator row (gray, frozen in left; Bluish Green, time-varying in right), expectation value row (Orange, identical in both columns)](../images/04-quantum-dynamics-and-the-pictures-fig-02.png)
+*Figure 4.2 — Schrödinger picture (left) versus Heisenberg picture (right): one transfers all time dependence to the state, the other to the operators; both produce the same expectation values.*
+
 ---
 
 ## The Heisenberg Equation of Motion
@@ -113,6 +122,9 @@ $$\{f, g\}_\text{classical} \longleftrightarrow \frac{1}{i\hbar}[\hat{f}, \hat{g
 This is Dirac's quantization dictionary, and it works in both directions.
 
 One immediate consequence: if $[\hat{H}, \hat{A}] = 0$, then $\hat{A}$ is a constant of motion. This is the quantum version of Noether's theorem — a symmetry of the Hamiltonian produces a conserved quantity.
+
+![Two-panel comparison: left panel shows classical Poisson bracket structure with two Orange input ellipses and an output; right panel shows quantum commutator structure with two Blue operator boxes and an output; a Reddish Purple arrow connects them labeled with the quantization correspondence](../images/04-quantum-dynamics-and-the-pictures-fig-04.png)
+*Figure 4.4 — Classical Hamilton equations (Poisson bracket, left) and the Heisenberg equation (commutator, right) share identical bilinear structure; replacing $\{\ ,\ \}$ with $[\ ,\ ]/i\hbar$ is Dirac's quantization rule.*
 
 ---
 
@@ -184,6 +196,9 @@ $$-\left\langle\frac{\partial V}{\partial x}\right\rangle \neq -\frac{\partial V
 The difference is of order $(\Delta x)^2 V'''(\langle x\rangle)$. When the wavepacket is narrow relative to the scale on which the force varies, the approximation is good and quantum expectation values follow classical trajectories. When it fails — near a caustic, in a double well, anywhere the potential curves sharply — the quantum system departs from classical behavior.
 
 For the harmonic oscillator, $V^{(n)} = 0$ for all $n \geq 3$: the potential is exactly quadratic. The Ehrenfest equation is exact; the expectation value follows the classical orbit precisely, regardless of the initial wavepacket shape. This is one reason the harmonic oscillator is ubiquitous in quantum mechanics — it is the unique potential where classical and quantum dynamics of expectation values are identical.
+
+![Two-panel diagram of a quartic double-well potential: left panel shows a narrow wavepacket at the central maximum with force and expectation value coinciding; right panel shows a wide wavepacket split into two lobes over the minima while the expectation value marker remains at center](../images/04-quantum-dynamics-and-the-pictures-fig-05.png)
+*Figure 4.5 — Ehrenfest's theorem breaks down in a double well: a narrow wavepacket tracks the classical force (left), but a wide wavepacket bifurcates while its expectation value stays at the center (right).*
 
 ---
 

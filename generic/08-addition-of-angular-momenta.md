@@ -54,6 +54,9 @@ This is always true and always worth checking first. For $\frac{1}{2}\otimes\fra
 
 The representation-theoretic notation for this is $j_1\otimes j_2 = |j_1-j_2|\oplus(|j_1-j_2|+1)\oplus\cdots\oplus(j_1+j_2)$. For two spin-½ particles: $\frac{1}{2}\otimes\frac{1}{2} = 0\oplus 1$ — the four-dimensional product space decomposes into a one-dimensional singlet and a three-dimensional triplet.
 
+![Triangle rule and state counting for three representative combinations](../images/08-addition-of-angular-momenta-fig-02.png)
+*Figure 8.2 — Segmented bars showing how the total dimension $(2j_1+1)(2j_2+1)$ decomposes into multiplets of width $2J+1$ for $\tfrac{1}{2}\otimes\tfrac{1}{2}$, $1\otimes\tfrac{1}{2}$, and $1\otimes 1$.*
+
 <!-- → [TABLE: three standard combinations with triangle rule — rows: ½⊗½, 1⊗½, 1⊗1; columns: combination, allowed J values, dimensions (2J+1), total dimension, state-count check; this is the reference table for the chapter] -->
 
 ---
@@ -77,6 +80,9 @@ The algorithm has four steps, which work for any $(j_1, j_2)$:
 **Step 4.** Apply $\hat{J}_-$ to generate the rest of the $J = j_1 + j_2 - 1$ multiplet, then orthogonalize for the next lower $J$, and repeat.
 
 The **Condon–Shortley phase convention** fixes the remaining sign ambiguity: the CG coefficient with the largest $m_1$ value (specifically $m_1 = j_1$) in each coupled state is taken to be positive. This is almost universally adopted and determines all other signs.
+
+![Ladder operator flowchart for building |1,0⟩ from |1,1⟩](../images/08-addition-of-angular-momenta-fig-03.png)
+*Figure 8.3 — Four-step ladder algorithm: the stretched state $|1,1\rangle = |\!\uparrow\uparrow\rangle$ is lowered by $\hat{J}_-$, which lowers each particle independently, and the two paths are summed and normalized to give $|1,0\rangle = (|\!\uparrow\downarrow\rangle + |\!\downarrow\uparrow\rangle)/\sqrt{2}$.*
 
 ---
 
@@ -173,6 +179,9 @@ For the $2p$ state of hydrogen ($\ell = 1$, $s = \frac{1}{2}$): the triangle rul
 $$\Delta E\!\left(\tfrac{3}{2}\right) - \Delta E\!\left(\tfrac{1}{2}\right) = \frac{\lambda\hbar^2}{2}\!\left[\tfrac{3}{2}\cdot\tfrac{5}{2} - \tfrac{1}{2}\cdot\tfrac{3}{2}\right] = \frac{3\lambda\hbar^2}{2}.$$
 
 The $J=\frac{3}{2}$ level sits above $J=\frac{1}{2}$ by $3\lambda\hbar^2/2$. This is the hydrogen $2p$ fine-structure doublet — the two closely spaced spectral lines you see when hydrogen's Balmer series is examined at high resolution. The value of $\lambda$ requires a relativistic calculation. The splitting structure, the ratio $3:1$ between the spacings of the two groups, comes entirely from the CG algebra of this chapter.
+
+![Spin-orbit energy splitting: coupled basis diagonalizes H_so](../images/08-addition-of-angular-momenta-fig-04.png)
+*Figure 8.4 — Six degenerate uncoupled $2p$ levels (left, with off-diagonal coupling arrows) reorganized into the $J=\tfrac{1}{2}$ doublet and $J=\tfrac{3}{2}$ quartet (right) by changing to the coupled basis; the splitting between them is $3\lambda\hbar^2/2$.*
 
 ---
 

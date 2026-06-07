@@ -6,6 +6,9 @@ Neither representation deserves to be called "the state" in any privileged sense
 
 So far, every calculation in wave mechanics has been carried out in a single basis, usually position. The formalism we develop in this chapter lets us write the physics once, in basis-free language, and then evaluate it in whatever basis happens to be convenient.
 
+![State vector projecting onto three distinct bases: position-space wave function, momentum-space wave function, and energy-basis coefficients](../images/01-the-formalism-fig-01.png)
+*Figure 1.1 — A single abstract state vector projects onto three different bases, yielding three different-looking but informationally equivalent representations.*
+
 ---
 
 ## The Arena
@@ -65,6 +68,9 @@ $$\langle\phi|\psi\rangle = \langle\phi|\hat{I}|\psi\rangle = \sum_n \langle\phi
 
 In the position basis this reads $\int\phi^*(x)\psi(x)\,dx$. So the abstract inner product and the familiar wave-function overlap integral are simply two faces of the same quantity.
 
+![Three-stage diagram: abstract inner product with a gap, the identity operator inserted as a sum of projectors, and the resulting chain of paired inner products](../images/01-the-formalism-fig-02.png)
+*Figure 1.2 — The completeness insertion technique: inserting the identity as a sum of projectors converts an abstract inner product into a concrete sum of overlap amplitudes.*
+
 ---
 
 ## The Fourier Transform Is a Basis Change
@@ -103,6 +109,9 @@ A different basis yields a different matrix, but the operator is the same operat
 
 The position operator $\hat{x}$ makes the point cleanly. In the position basis, $\hat{x}$ acts by multiplication, so its matrix is diagonal. In the energy basis of the harmonic oscillator, the very same operator $\hat{x}$ has tridiagonal matrix elements involving $\sqrt{n}$. One operator, two matrices that look nothing alike. The matrices are byproducts of the basis we chose; the operator is not.
 
+![Central operator object connected by branch arrows to a diagonal matrix (position basis) on the left and a tridiagonal matrix (energy basis) on the right, with a bidirectional arc connecting the two matrices](../images/01-the-formalism-fig-03.png)
+*Figure 1.3 — The same operator yields a diagonal matrix in one basis and a tridiagonal matrix in another; the operator itself is basis-independent.*
+
 The **adjoint** $\hat{A}^\dagger$ is defined by:
 
 $$\langle\phi|\hat{A}\psi\rangle = \langle\hat{A}^\dagger\phi|\psi\rangle \quad \text{for all }|\psi\rangle, |\phi\rangle.$$
@@ -128,6 +137,9 @@ The energy eigenstates are $\psi_n(x) = \sqrt{2/L}\sin(n\pi x/L)$ with eigenvalu
 $$c_n = \frac{4\sqrt{60}}{n^3\pi^3} \quad (n \text{ odd}), \qquad c_n = 0 \quad (n \text{ even}).$$
 
 Check normalization: $\sum_{n\,\text{odd}}|c_n|^2 = 960/\pi^6 \cdot \sum_{n\,\text{odd}}1/n^6$. The sum $\sum_{n\,\text{odd}}1/n^6 = \pi^6/960$, so $\sum|c_n|^2 = 1$.
+
+![Bar chart with bars at odd quantum numbers n = 1, 3, 5, 7, 9; the n=1 bar nearly reaches probability 1 while all others are negligible stubs](../images/01-the-formalism-fig-04.png)
+*Figure 1.4 — Energy-basis probability distribution for the parabolic state: the ground state carries essentially all the probability, with higher odd modes contributing negligibly.*
 
 In the energy basis $\hat{H}$ is diagonal, so:
 

@@ -149,6 +149,9 @@ Each shell $n$ contains $n^2$ orbital states. Including spin ($m_s = \pm\tfrac{1
 
 <!-- → [TABLE: shell structure table — n from 1 to 4, shell label K/L/M/N, n² orbital states, 2n² with spin, corresponding periodic table row lengths] -->
 
+![Shell state counting: 2n² degeneracy and periodic table row lengths](../images/09-the-hydrogen-atom-fig-05.png)
+*Figure 9.5 — Stacked bars for shells $n=1$ to $4$ (K–N) subdivided by subshell type ($s$, $p$, $d$, $f$), with total capacities $2, 8, 18, 32$ matching the $2n^2$ formula and the corresponding periodic-table row lengths.*
+
 A node-counting rule ties the structure together. The total number of nodes in $\psi_{n\ell m}$ is $n-1$, partitioned into $n - \ell - 1$ **radial nodes** and $\ell$ **angular nodes**. The 2s state ($\ell=0$) has one radial node and no angular nodes. The 2p states ($\ell=1$) have no radial nodes and one angular node. Both have total nodes equal to 1 and both sit at $E_2 = -3.4$ eV. Same energy, different spatial organization of the same number of oscillations.
 
 The general mean radius formula for any state is:

@@ -126,6 +126,9 @@ Here is the fact that trips up almost everyone the first time. In the state $|\e
 
 This means the angular momentum vector can never be fully aligned with the $z$-axis. Even in the state with maximum $L_z$, the vector has unavoidable transverse components. Geometrically, the angular momentum precesses on a cone. For $\ell = 1$, the cone half-angle is $\arccos(1/\sqrt{2}) = 45°$. For $\ell = 2, m = 2$, it is $\arccos(2/\sqrt{6}) \approx 35°$.
 
+![Schematic of an angular momentum cone for ℓ=1, m=1: a cone at 45° to the z-axis with a dashed equatorial circle, a Blue vector of length ℏ√2 from the origin to the cone surface, and a Sky Blue vertical z-projection of length ℏ](../images/05-quantum-mechanics-in-three-dimensions-fig-05.png)
+*Figure 5.5 — Angular momentum cone for ℓ=1, m=1: the full vector has magnitude ℏ√2 (Blue) while its z-projection is ℏ (Sky Blue), making a 45° half-angle; the vector can never align with z.*
+
 We can see why the transverse components cannot vanish: if $L_z = \ell\hbar$ exactly and $L^2 = \hbar^2\ell(\ell+1)$, then $\langle L_x^2\rangle + \langle L_y^2\rangle = \hbar^2\ell(\ell+1) - \ell^2\hbar^2 = \hbar^2\ell$. Their expectation values are zero, but their variances are not. The Robertson inequality enforces minimum spread on $\hat{L}_x$ and $\hat{L}_y$ whenever $\langle\hat{L}_z\rangle \neq 0$.
 
 This eliminates the Bohr-model picture of an electron orbiting in a definite plane. A definite orbital plane would require a definite direction for $\vec{L}$ — which the algebra forbids. There is no orbital plane. There is a cone.
@@ -171,6 +174,9 @@ This is a one-dimensional Schrödinger equation on the half-line $r \in [0,\inft
 
 $$V_{\text{eff}}(r) = V(r) + \frac{\hbar^2\ell(\ell+1)}{2mr^2}.$$
 
+![Line chart with three curves: attractive V(r) dipping below zero, positive centrifugal barrier diverging near r=0, and effective V_eff with a repulsive core and a minimum at intermediate r; the minimum is marked with a Vermillion dot and a horizontal dashed line indicates the bound-state energy](../images/05-quantum-mechanics-in-three-dimensions-fig-04.png)
+*Figure 5.4 — The effective potential: the attractive V(r) (Blue), centrifugal barrier (Orange), and their sum V_eff (Bluish Green) for ℓ=1, showing how the barrier pushes the bound-state minimum away from the origin.*
+
 The extra term — positive, diverging at $r = 0$, falling off as $1/r^2$ — is the **centrifugal barrier**. For $\ell > 0$, it pushes probability away from the origin. For $\ell = 0$ (s-states), there is no barrier and the wave function can have finite amplitude at $r = 0$.
 
 The centrifugal term is not a force pushing the electron outward. It is a kinetic energy contribution — specifically, the angular kinetic energy $\hat{L}^2/2mr^2$ evaluated in an eigenstate of $\hat{L}^2$ with eigenvalue $\hbar^2\ell(\ell+1)$. It sits where $V(r)$ sits in the equation, but it is kinetic. The distinction matters when asking where energy comes from in an atomic transition.
@@ -201,6 +207,9 @@ For $\ell = 0$: $j_0(\rho) = \sin\rho/\rho$, with zeros at $\rho = n\pi$. So $E_
 For $\ell = 1$: $j_1(\rho) = \sin\rho/\rho^2 - \cos\rho/\rho$. Its first zero is near $\rho \approx 4.493$. The first $p$-state energy is $E_{1,1} \approx (4.493/\pi)^2 E_{1,0} \approx 2.05\,E_{1,0}$. The centrifugal barrier raised it above the first $s$-state.
 
 The level ordering — 1s, 1p, 1d, 2s, 1f, 2p, ... — is obtained by sorting the zeros of successive Bessel functions. This is the foundation of the nuclear shell model. Maria Goeppert Mayer and J. Hans D. Jensen showed in 1949 that adding a strong spin-orbit coupling to this potential reproduces the observed nuclear magic numbers 2, 8, 20, 28, 50, 82, 126 — the proton and neutron numbers at which nuclei are unusually stable — for which they shared the 1963 Nobel Prize in Physics. The angular machinery of this chapter, applied to a nucleus rather than an atom, predicts which configurations of nucleons are especially bound.
+
+![Vertical energy-level diagram showing 1s, 1p, 1d, 2s, 1f, 2p levels as horizontal bars with degeneracy indicated; Vermillion triangles on the right mark cumulative magic numbers 2, 8, and 20](../images/05-quantum-mechanics-in-three-dimensions-fig-06.png)
+*Figure 5.6 — Nuclear shell model level ordering from the spherical infinite well: s-levels (Blue), p-levels (Sky Blue), d-levels (Bluish Green), and f-levels (Orange) fill in order, reproducing the first three magic numbers at cumulative counts 2, 8, and 20.*
 
 One important distinction: higher $\ell$ does not universally mean higher energy. For the spherical well it does. For hydrogen, energies depend only on the principal quantum number $n$, with no $\ell$-dependence — an "accidental" degeneracy of the $1/r$ Coulomb potential, explained by a hidden SO(4) symmetry. For the 3D harmonic oscillator, energies depend on $2n_r + \ell$. The angular structure is universal; the level ordering is potential-specific.
 

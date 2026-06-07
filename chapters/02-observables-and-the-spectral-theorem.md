@@ -41,6 +41,9 @@ So $\hat{p}^\dagger = \hat{p}$. Suppose instead we had tried $\hat{p}' = \hbar\p
 
 In matrix language, the Hermitian condition $\hat{A} = \hat{A}^\dagger$ reads $A_{mn} = A_{nm}^*$: the matrix equals its own conjugate transpose. The diagonal entries must then be real, since $A_{nn} = A_{nn}^*$, and the off-diagonal entries come in conjugate pairs. A matrix can hold complex entries and still be Hermitian, as long as that pattern is honored. The Pauli matrix $\sigma_y = \bigl(\begin{smallmatrix}0&-i\\i&0\end{smallmatrix}\bigr)$ is the example to keep in mind: its entries are complex, yet $(\sigma_y)_{12} = -i = (i)^* = (\sigma_y)_{21}^*$, so it is Hermitian. The right diagnostic question is never "are the entries real?" but rather "does $A_{mn} = A_{nm}^*$ hold?"
 
+![Two 3×3 matrix grids side by side: diagonal cells in orange, off-diagonal conjugate pairs color-matched across the two grids, with an equals sign indicating the Hermitian condition A = A†](../images/02-observables-and-the-spectral-theorem-fig-03.png)
+*Figure 2.3 — The Hermitian condition in matrix form: diagonal entries are real (self-conjugate) and off-diagonal entries come in conjugate pairs mirrored across the diagonal.*
+
 <!-- → [TABLE: summary of Hermitian vs. anti-Hermitian vs. unitary — showing the defining condition, the constraint on diagonal entries, the constraint on eigenvalues, and a $2\times 2$ example for each; this makes the distinctions among the three operator types visually immediate] -->
 
 ---
@@ -60,6 +63,9 @@ Setting the two equal: $a = a^*$, so $a\in\mathbb{R}$. $\square$
 The proof runs four lines, and its structure is worth committing to memory: evaluate the same sandwich $\langle a|\hat{A}|a\rangle$ once by acting on the ket and once by acting on the bra; Hermiticity makes the bra-side calculation produce the conjugate; equating the two forces the eigenvalue to equal its own conjugate.
 
 It is instructive to see what breaks without Hermiticity. In the second step, the bra of $\hat{A}|a\rangle = a|a\rangle$ would give $\langle a|\hat{A}^\dagger = \bar{a}^*\langle a|$, where $\bar{a}$ is the eigenvalue of $\hat{A}^\dagger$ — in general not equal to $a$. The two computations of the sandwich then disagree, and no conclusion follows. The matrix $\bigl(\begin{smallmatrix}0&i\\i&0\end{smallmatrix}\bigr)$ is not Hermitian (check: $(A)_{12} = i$ but $A_{21}^* = i^* = -i \neq i$), and its eigenvalues are $\pm i$ — purely imaginary, exactly as the theorem predicts they may be once Hermiticity is gone.
+
+![Two panels: left shows three eigenvalue markers on a real number line (Hermitian case); right shows three markers scattered in the complex plane with nonzero imaginary parts (non-Hermitian case)](../images/02-observables-and-the-spectral-theorem-fig-04.png)
+*Figure 2.4 — Hermitian operators have all eigenvalues on the real line (left); non-Hermitian operators can have eigenvalues anywhere in the complex plane (right).*
 
 ---
 
@@ -139,6 +145,9 @@ $$\langle\hat{A}\rangle = \langle\psi|\hat{A}|\psi\rangle = \langle\psi|\left(\s
 The expectation value is the probability-weighted average of the eigenvalues — which is precisely the definition of expected value from ordinary probability theory. The spectral theorem makes that connection exact and derivable rather than merely suggestive.
 
 One distinction deserves to be stated twice. The quantity $\langle a_n|\psi\rangle = c_n$ is a complex amplitude. The probability is $|c_n|^2$, its squared modulus. The two differ by the act of taking the modulus squared, which discards the phase $e^{i\theta_n}$. That phase disappears when we compute a single measurement probability, but it returns in interference terms whenever two amplitudes feed the same outcome. Writing "the probability is $\langle a_n|\psi\rangle$" and ending up with a complex number is the single most common error in quantum mechanics, because it confuses two genuinely different objects: an amplitude (complex, living in the Hilbert space) and a probability (real, non-negative, a frequency of outcomes).
+
+![State vector inside a unit circle, projected onto two orthogonal eigenstate axes with dashed perpendicular lines; probability squares beside each axis are proportional to the squared projection lengths](../images/02-observables-and-the-spectral-theorem-fig-02.png)
+*Figure 2.2 — The Born rule as geometry: the probability of each measurement outcome equals the squared length of the state vector's projection onto the corresponding eigenstate direction.*
 
 <!-- → [INFOGRAPHIC: "amplitude vs. probability" — showing the same state decomposed in two different bases; in each case, the amplitude c_n is a complex vector, the probability |c_n|² is its squared length; the diagram should make clear that the phase θ_n disappears in |c_n|² but survives if you add two amplitudes before squaring] -->
 

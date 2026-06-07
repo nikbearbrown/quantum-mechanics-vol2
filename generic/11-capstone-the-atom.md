@@ -99,6 +99,9 @@ The period structure of the periodic table follows by counting subshell capaciti
 
 The sequence 2, 8, 8, 18, 18, 32 is not numerology. It is the angular momentum algebra $2(2\ell+1)$ combined with the empirical Madelung ordering. The repeating structure of the periodic table is a consequence of the Schrödinger equation's eigenstates together with the antisymmetrization requirement.
 
+![Madelung filling sequence and period length derivation](../images/11-capstone-the-atom-fig-03.png)
+*Figure 11.3 — Diagonal filling arrows through the $(n,\ell)$ grid (left) generate the Madelung subshell order; corresponding horizontal bars (right) show period capacities $2, 8, 8, 18, 18, 32$ built from $2(2\ell+1)$ subshell segments.*
+
 **The exceptions.** The Madelung rule fails for approximately 20 elements. In the first transition series, the most important are chromium ($Z = 24$) and copper ($Z = 29$).
 
 Madelung predicts chromium as $[\text{Ar}]\ 3d^4\ 4s^2$. The actual ground-state configuration (from spectroscopy, verified against NIST) is $[\text{Ar}]\ 3d^5\ 4s^1$. One $4s$ electron has moved into the $3d$ to give a half-filled $3d$ subshell.
@@ -108,6 +111,9 @@ Madelung predicts copper as $[\text{Ar}]\ 3d^9\ 4s^2$. Actual: $[\text{Ar}]\ 3d^
 The mechanism is **exchange-energy stabilization**. By Hund's first rule, a half-filled subshell (all electrons in distinct orbitals with parallel spins) gains extra exchange energy over a nearly-half-filled one with a paired electron. Each pair of electrons with parallel spins lowers the total energy by the exchange integral $K > 0$. A half-filled $3d$ (5 electrons, 10 parallel pairs) or fully filled $3d$ is disproportionately stabilized. When the $3d$–$4s$ gap is small enough — as it is near $Z = 24$ and $Z = 29$ — the exchange-energy gain from filling $3d$ to half or full exceeds the orbital energy cost of demoting one $4s$ electron.
 
 The Madelung mnemonic does not capture this because it treats orbital energies as fixed, whereas the exchange energy depends on the actual occupation pattern.
+
+![Madelung exceptions: Cr and Cu exchange stabilization](../images/11-capstone-the-atom-fig-05.png)
+*Figure 11.5 — Side-by-side comparison for chromium and copper: Madelung-predicted configurations (top rows, gray) versus actual NIST configurations (bottom rows, green); the differing orbital box is highlighted and the exchange-energy gain $\Delta E_\text{exchange}$ is shown for each.*
 
 ---
 
@@ -132,6 +138,9 @@ Electrons orbiting in the same rotational sense tend to stay on opposite sides o
 The mechanism for Rule 3 is spin-orbit coupling — the interaction $\hat{H}_\text{so} \sim \lambda\vec{L}\cdot\vec{S}$ between the electron's orbital motion and its spin magnetic moment. The sign of $\lambda$ reverses at the half-filling point, which is why $J$ is minimized for less-than-half-filled and maximized for more-than-half-filled subshells. The full derivation requires perturbation theory and belongs to Volume 3. Apply Rule 3 mechanically in this chapter — it is correct for all elements through the first transition series — but know that its justification is being deferred.
 
 **When Hund's rules fail:** Hund's rules assume the LS coupling (Russell-Saunders) regime, where electron-electron repulsion is much larger than spin-orbit coupling. For heavy elements ($Z \gtrsim 50$), spin-orbit coupling becomes comparable to the Coulomb term and jj coupling — where individual $j_i = \ell_i + s_i$ combine to give total $J$ — is the appropriate framework. $L$ and $S$ are no longer good quantum numbers, and Hund's rules cannot be applied. Even within the LS regime, Rule 1 is the most reliable, Rule 2 is good for the first transition series, and Rule 3 should always be flagged as a spin-orbit preview.
+
+![Hund's three rules: mechanism and hierarchy](../images/11-capstone-the-atom-fig-04.png)
+*Figure 11.4 — Three-row flowchart: Rule 1 (maximize $S$, most reliable, green) lowers energy via the exchange integral; Rule 2 (maximize $L$, blue) by angular avoidance; Rule 3 (determine $J$ from spin-orbit coupling, orange) is flagged as deferred, with a caution marker on reliability.*
 
 ---
 
@@ -181,6 +190,9 @@ The independent-electron model with fixed Slater $Z_\text{eff}$ does not fully c
 
 ![schematic energy-level diagram showing how the 3d and 4s orbital energies vary across the first transition series — a qualitative plot of…](../images/11-capstone-the-atom-fig-02.png)
 *Figure 11.2 — schematic energy-level diagram showing how the 3d and 4s orbital energies vary across the first transition series — a qualitative plot of…*
+
+![3d and 4s orbital energies crossing as a function of nuclear charge Z](../images/11-capstone-the-atom-fig-06.png)
+*Figure 11.6 — $E(4s)$ (blue) and $E(3d)$ (orange) as functions of $Z$ across the first transition series; the curves cross near $Z=20$, dashed reference lines mark Cr ($Z=24$) and Cu ($Z=29$), and a bracket identifies the transition-series range where the ordering depends on occupation.*
 
 ---
 

@@ -135,6 +135,9 @@ From these, recover $\hat{L}_x = (\hat{L}_++\hat{L}_-)/2$ and $\hat{L}_y = (\hat
 
 $$\hat{L}_x = \frac{\hbar}{\sqrt{2}}\begin{pmatrix}0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0\end{pmatrix}, \qquad \hat{L}_y = \frac{\hbar}{\sqrt{2}}\begin{pmatrix}0 & i & 0 \\ -i & 0 & i \\ 0 & -i & 0\end{pmatrix}.$$
 
+![Three 3×3 matrix grids side by side: L_z with Blue diagonal cells, L₊ with Sky Blue super-diagonal cells, and L₋ with Orange sub-diagonal cells; all other cells are light gray; each matrix has a role schematic below it](../images/06-angular-momentum-fig-04.png)
+*Figure 6.4 — The ℓ=1 matrix representations: L_z is diagonal (Blue), L₊ has nonzero entries on the super-diagonal (Sky Blue), and L₋ on the sub-diagonal (Orange), reflecting their roles as phase-diagonal, raising, and lowering operators.*
+
 Verify $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$. Computing $\hat{L}_-\hat{L}_+$ and adding the diagonal terms:
 
 $$\hat{L}^2 = 2\hbar^2\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} = \hbar^2\ell(\ell+1)\mathbf{I}\Big|_{\ell=1}. \checkmark$$
@@ -152,6 +155,9 @@ The Robertson inequality for $\hat{L}_x$ and $\hat{L}_y$:
 $$\sigma_{L_x}\sigma_{L_y} \geq \frac{\hbar}{2}|\langle\hat{L}_z\rangle| = \frac{\hbar^2\ell}{2}.$$
 
 The actual product is $\hbar^2\ell/2$. The bound is exactly saturated: $|\ell,\ell\rangle$ is a minimum-uncertainty state for the transverse components. Geometrically, we can picture a cone of half-angle $\arccos(\ell/\sqrt{\ell(\ell+1)})$ — the angular momentum points partly in the $z$-direction, partly in the transverse plane, and the transverse components cannot both be zero. As $\ell \to \infty$, the half-angle approaches zero and the cone narrows: this is the classical limit, where angular momentum can point in a definite direction.
+
+![Dot-and-line chart with ℓ on the horizontal axis and the uncertainty product on the vertical axis; Vermillion horizontal dashes show the Robertson lower bound and Bluish Green filled circles (connected by a line) show the actual product — the two coincide at every ℓ value](../images/06-angular-momentum-fig-05.png)
+*Figure 6.5 — Saturation of the Robertson bound for transverse angular momentum: the actual product σ_{Lx}σ_{Ly} (Bluish Green) equals the lower bound ℏ²ℓ/2 (Vermillion) at every ℓ for the maximally aligned state |ℓ,ℓ⟩.*
 
 <!-- → [FIGURE: angular momentum cone diagram for ℓ=2, m=2 — showing the cone half-angle arccos(2/√6)≈35.3°, the angular momentum vector precessing on the cone, and the transverse spread σ_{Lx}=σ_{Ly}=ℏ/√2 illustrated as a "smear" around the cone's base] -->
 

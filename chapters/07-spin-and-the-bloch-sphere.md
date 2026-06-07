@@ -2,6 +2,9 @@
 
 In February 1922, Otto Stern and Walther Gerlach sent a beam of neutral silver atoms through an inhomogeneous magnetic field and collected them on a glass plate. The field gradient exerts a force proportional to the magnetic moment component along the field axis. Classical physics predicts that the moments can point in any direction, so the deposit on the plate should form a continuous smear. Instead, the plate showed two distinct spots with nothing in between.
 
+![Stern-Gerlach two-spot outcome vs. classical smear](../images/07-spin-and-the-bloch-sphere-fig-04.png)
+*Figure 7.4 — Two discrete spots on the detector plate (right) versus the classical continuous smear (left), demonstrating that the magnetic moment component takes only two discrete values.*
+
 The component of the magnetic moment along the field axis takes exactly two values. This result holds for any axis along which the apparatus is oriented: two spots, always. The experiment was clear, and it went unexplained for three years — partly because Stern and Gerlach believed they were confirming the old Bohr-Sommerfeld orbital quantization. Silver's valence electron is in an $s$ orbital, which carries zero orbital angular momentum. The two spots arose from something that had not yet been proposed: the intrinsic spin of the electron, hypothesized by Uhlenbeck and Goudsmit in 1925. Stern and Gerlach had found the right answer before the right question existed.
 
 ---
@@ -62,6 +65,9 @@ Every pure spin-½ state takes this form for some pair $(\theta, \phi)$. To see 
 
 ## The Bloch Sphere
 
+![Bloch sphere with state and analyzer arrows](../images/07-spin-and-the-bloch-sphere-fig-01.png)
+*Figure 7.1 — The Bloch sphere: state Bloch vector (blue) at angles $(\theta, \phi)$ and analyzer direction (orange) with angle $\gamma$ between them; Born-rule probability $P(+) = \cos^2(\gamma/2)$ is encoded in the half-angle.*
+
 The labels $(\theta, \phi)$ send each pure spin-½ state to a point on a unit sphere, which we call the **Bloch sphere**. The north pole ($\theta = 0$) is $|\!\uparrow\rangle$; the south pole ($\theta = \pi$) is $|\!\downarrow\rangle$; the equator ($\theta = \pi/2$) holds the equal superpositions $(|\!\uparrow\rangle + e^{i\phi}|\!\downarrow\rangle)/\sqrt{2}$, with $\phi$ sweeping around it. Every point names a state, and every state names a point.
 
 The Born rule becomes a clean geometric statement on this sphere. Suppose the state's Bloch vector points toward $(\theta_\psi, \phi_\psi)$ and the analyzer points toward $(\theta_n, \phi_n)$. Letting $\gamma$ be the angle between them,
@@ -100,11 +106,17 @@ $$\langle\hat{S}_x\rangle = \tfrac{\hbar}{2}\sin\theta_0\cos(\omega_L t), \qquad
 
 The spin vector circles in the $xy$-plane at $\omega_L$ while its $z$-component stays fixed. We call this Larmor precession. It looks formally identical to the classical precession of a magnetic moment, with one important difference: what precesses here is the probability distribution over measurement outcomes, not a physical needle.
 
+![Larmor precession on the Bloch sphere](../images/07-spin-and-the-bloch-sphere-fig-03.png)
+*Figure 7.3 — Bloch vector at fixed polar angle $\theta_0$ sweeping three equally spaced azimuthal positions; the latitude circle (dashed) is the precession path, and vertical drop-lines show that $\langle \hat{S}_z \rangle$ is constant throughout.*
+
 These numbers show up in everyday medicine. For a proton ($\gamma_p/(2\pi) = 42.58$ MHz/T):
 
 <!-- → [TABLE: Proton Larmor frequencies at standard MRI field strengths — 0.5 T open MRI 21.3 MHz; 1.5 T clinical MRI 63.9 MHz; 3.0 T research MRI 127.7 MHz; 7.0 T ultra-high-field 298.1 MHz] -->
 
 The relation $\omega_L = \gamma B_0$ is the equation that every MRI scanner runs on, applied to millions of patients each year.
+
+![Proton Larmor frequencies at standard MRI field strengths](../images/07-spin-and-the-bloch-sphere-fig-05.png)
+*Figure 7.5 — Proton Larmor frequency at four clinical MRI field strengths (0.5 T through 7.0 T), showing the linear $f_L \propto B_0$ relationship with operating points from 21 MHz to 298 MHz.*
 
 ---
 
@@ -119,6 +131,9 @@ It is tempting to say the $\mathrm{SG}_x$ device jostled the atoms and scrambled
 The operators $\hat{S}_x$ and $\hat{S}_z$ do not commute: $[\hat{S}_x, \hat{S}_z] = -i\hbar\hat{S}_y \neq 0$. No state can be an eigenstate of both at once. Once the $\mathrm{SG}_x$ measurement selects $|\hat{x},+\rangle$, that state simply is not an eigenstate of $\hat{S}_z$ — it carries no definite $z$-component at all, rather than a definite value that the apparatus disturbed. There was nothing to scramble in the first place. The 50/50 split at the third stage is just the Born rule acting on a state that genuinely has no definite $\hat{S}_z$.
 
 Consider the alternative, a naive hidden-variable account in which every atom carries pre-set values $(\mu_x, \mu_z)$ that the apparatuses merely read off. It would predict that selecting $\mu_z = +$ at stage one and then $\mu_x = +$ at stage two leaves $\mu_z$ untouched, so stage three should return $\mu_z = +$ with certainty. Experiment gives 50/50 instead. Pre-existing definite values for observables that do not commute simply cannot match the data, and the algebra makes that unavoidable.
+
+![Three-stage sequential Stern-Gerlach experiment](../images/07-spin-and-the-bloch-sphere-fig-02.png)
+*Figure 7.2 — Three sequential Stern–Gerlach apparatuses: $\mathrm{SG}_z$ selects spin-up, $\mathrm{SG}_x$ (perpendicular) then selects one output, and a second $\mathrm{SG}_z$ produces two equal-intensity beams — demonstrating operator noncommutativity.*
 
 ---
 

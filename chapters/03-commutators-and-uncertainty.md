@@ -165,6 +165,9 @@ $$[\hat{L}_x^2, \hat{L}_z] = -i\hbar(\hat{L}_x\hat{L}_y + \hat{L}_y\hat{L}_x), \
 
 They cancel: $[\hat{L}^2, \hat{L}_z] = 0$. The operators $\hat{L}^2$ and $\hat{L}_z$ are compatible. This algebraic fact is why $\ell$ and $m$ can simultaneously label states — why the spherical harmonics $Y_\ell^m$ are eigenfunctions of both operators at once. The quantum numbers are not a labeling choice; they are forced by commutativity.
 
+![Two side-by-side panels: left shows two operator eigenbasis fans aligned into a single shared set (compatible); right shows two fans at different angles with a conflict marker between them (incompatible)](../images/03-commutators-and-uncertainty-fig-04.png)
+*Figure 3.4 — Compatible observables share a complete simultaneous eigenbasis (left); incompatible observables have eigenbases that cannot coincide (right).*
+
 ---
 
 ## Exercises
