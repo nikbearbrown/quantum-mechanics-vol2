@@ -82,21 +82,21 @@ The **Condon–Shortley phase convention** fixes the remaining sign ambiguity: t
 
 ## The $\frac{1}{2}\otimes\frac{1}{2}$ Case Explicitly
 
-**State 1: $|1, 1\rangle$.** The only uncoupled state with $M = m_1 + m_2 = +1$ is $|\!\uparrow\uparrow\rangle$:
+**State 1:** $|1, 1\rangle$. The only uncoupled state with $M = m_1 + m_2 = +1$ is $|\!\uparrow\uparrow\rangle$:
 
 $$|1, 1\rangle = |\!\uparrow\uparrow\rangle.$$
 
-**State 2: $|1, 0\rangle$.** Apply $\hat{J}_-$ to both sides of the equation above. Left side: $\hat{J}_-|1,1\rangle = \hbar\sqrt{2}\,|1,0\rangle$. Right side: $(\hat{J}_{1-}+\hat{J}_{2-})|\!\uparrow\uparrow\rangle = \hbar|\!\downarrow\uparrow\rangle + \hbar|\!\uparrow\downarrow\rangle$. Equating:
+**State 2:** $|1, 0\rangle$. Apply $\hat{J}_-$ to both sides of the equation above. Left side: $\hat{J}_-|1,1\rangle = \hbar\sqrt{2}\,|1,0\rangle$. Right side: $(\hat{J}_{1-}+\hat{J}_{2-})|\!\uparrow\uparrow\rangle = \hbar|\!\downarrow\uparrow\rangle + \hbar|\!\uparrow\downarrow\rangle$. Equating:
 
 $$|1, 0\rangle = \frac{1}{\sqrt{2}}\!\left(|\!\uparrow\downarrow\rangle + |\!\downarrow\uparrow\rangle\right).$$
 
 Symmetric under exchange of the two particles.
 
-**State 3: $|1, -1\rangle$.** Apply $\hat{J}_-$ to $|1,0\rangle$. Only $\hat{J}_{1-}|\!\uparrow\downarrow\rangle = \hbar|\!\downarrow\downarrow\rangle$ and $\hat{J}_{2-}|\!\downarrow\uparrow\rangle = \hbar|\!\downarrow\downarrow\rangle$ contribute:
+**State 3:** $|1, -1\rangle$. Apply $\hat{J}_-$ to $|1,0\rangle$. Only $\hat{J}_{1-}|\!\uparrow\downarrow\rangle = \hbar|\!\downarrow\downarrow\rangle$ and $\hat{J}_{2-}|\!\downarrow\uparrow\rangle = \hbar|\!\downarrow\downarrow\rangle$ contribute:
 
 $$|1, -1\rangle = |\!\downarrow\downarrow\rangle.$$
 
-**State 4: $|0, 0\rangle$.** Must have $M = 0$, so it is some linear combination $a|\!\uparrow\downarrow\rangle + b|\!\downarrow\uparrow\rangle$. Orthogonality to $|1,0\rangle$ forces $a + b = 0$, so $b = -a$. Normalization gives $a = 1/\sqrt{2}$. The Condon–Shortley convention says the coefficient of $|\!\uparrow\downarrow\rangle$ (which has $m_1 = +\frac{1}{2}$, the larger value) should be positive:
+**State 4:** $|0, 0\rangle$. Must have $M = 0$, so it is some linear combination $a|\!\uparrow\downarrow\rangle + b|\!\downarrow\uparrow\rangle$. Orthogonality to $|1,0\rangle$ forces $a + b = 0$, so $b = -a$. Normalization gives $a = 1/\sqrt{2}$. The Condon–Shortley convention says the coefficient of $|\!\uparrow\downarrow\rangle$ (which has $m_1 = +\frac{1}{2}$, the larger value) should be positive:
 
 $$|0, 0\rangle = \frac{1}{\sqrt{2}}\!\left(|\!\uparrow\downarrow\rangle - |\!\downarrow\uparrow\rangle\right).$$
 
@@ -198,9 +198,9 @@ The transition from triplet to singlet — from $(|\!\uparrow\downarrow\rangle +
    For $j_1 = 1$, $j_2 = \frac{1}{2}$: (a) list all allowed $J$ using the triangle rule; (b) list the dimension $2J+1$ for each; (c) verify the dimensions sum to $(2j_1+1)(2j_2+1)$. Repeat for $j_1 = j_2 = 1$.
    *Tests: ability to apply the triangle rule and verify state counts before any algebra.*
 
-2. *Difficulty: Warm-up — tests $M = m_1 + m_2$ and the uncoupled basis structure.*
+2. *Difficulty: Warm-up — tests* $M = m_1 + m_2$ *and the uncoupled basis structure.*
    Write all four uncoupled states $|m_1, m_2\rangle$ for two spin-½ particles and identify $M = m_1 + m_2$ for each. Which values of $M$ appear, and with what multiplicity? Which of the four states cannot appear in any $|J, M\rangle$ with $J = 0$?
-   *Tests: structure of the uncoupled basis and the $M$-selection rule before CG coefficients are invoked.*
+   *Tests: structure of the uncoupled basis and the* $M$-*selection rule before CG coefficients are invoked.*
 
 3. *Difficulty: Warm-up — tests orthogonality of the four coupled states.*
    Using the coupled-state expressions derived in the chapter: (a) verify $\langle 1,1|1,0\rangle = 0$; (b) verify $\langle 1,-1|0,0\rangle = 0$; (c) verify $\langle 1,0|0,0\rangle = 0$. For each calculation, identify which orthogonality mechanism is responsible (different $J$, different $M$, or $\text{same-}M$ orthogonality by construction).
@@ -208,9 +208,9 @@ The transition from triplet to singlet — from $(|\!\uparrow\downarrow\rangle +
 
 **Application**
 
-4. *Difficulty: Application — verifies $\hat{J}^2|0,0\rangle = 0$ by direct computation.*
+4. *Difficulty: Application — verifies* $\hat{J}^2|0,0\rangle = 0$ *by direct computation.*
    Expand $\hat{J}^2 = \hat{J}_1^2 + \hat{J}_2^2 + 2\hat{J}_{1z}\hat{J}_{2z} + \hat{J}_{1+}\hat{J}_{2-} + \hat{J}_{1-}\hat{J}_{2+}$ and apply each term to $|0,0\rangle = (|\!\uparrow\downarrow\rangle - |\!\downarrow\uparrow\rangle)/\sqrt{2}$. Show all non-zero intermediate results and confirm the cancellations. Then repeat for $|1,0\rangle$ and confirm $\hat{J}^2|1,0\rangle = 2\hbar^2|1,0\rangle$.
-   *Tests: ability to apply $\hat{J}^2$ term by term to a superposition; the cancellations in the singlet are the computational proof that $J = 0$.*
+   *Tests: ability to apply* $\hat{J}^2$ *term by term to a superposition; the cancellations in the singlet are the computational proof that* $J = 0$.
 
 5. *Difficulty: Application — converts an uncoupled state to coupled basis using the CG table.*
    The state $|\Psi\rangle = \frac{1}{2}|\!\uparrow\uparrow\rangle + \frac{1}{\sqrt{2}}|\!\uparrow\downarrow\rangle + \frac{1}{2}|\!\downarrow\downarrow\rangle$. (a) Check normalization. (b) Expand in the coupled basis $\{|1,1\rangle, |1,0\rangle, |1,-1\rangle, |0,0\rangle\}$ by reading the CG table. (c) What is the probability of measuring $J=1$? Of measuring $J=0$? (d) If $J=1$ is measured, what is the post-measurement state?
@@ -218,7 +218,7 @@ The transition from triplet to singlet — from $(|\!\uparrow\downarrow\rangle +
 
 6. *Difficulty: Application — spin-orbit energy splittings.*
    For a $p$-electron coupled to spin-½ ($\ell = 1$, $s = \frac{1}{2}$): (a) apply the triangle rule to find the allowed $J$; (b) compute $\Delta E_\text{so}$ for each $J$ using $\frac{\lambda\hbar^2}{2}[J(J+1) - \ell(\ell+1) - s(s+1)]$; (c) compute the splitting between the two levels in units of $\lambda\hbar^2$; (d) which level is higher in energy for $\lambda > 0$?
-   *Tests: direct application of $\hat{L}\cdot\hat{S}$ in the coupled basis; produces the hydrogen 2p fine-structure result.*
+   *Tests: direct application of* $\hat{L}\cdot\hat{S}$ *in the coupled basis; produces the hydrogen 2p fine-structure result.*
 
 7. *Difficulty: Application — the 21-cm line quantitatively.*
    The hyperfine Hamiltonian is $\hat{H}_\text{hf} = A\,\hat{S}_e\cdot\hat{S}_p$. (a) Use the identity $\hat{S}_e\cdot\hat{S}_p = \frac{1}{2}(\hat{F}^2 - \hat{S}_e^2 - \hat{S}_p^2)$ to find $E_{F=1}$ and $E_{F=0}$ in terms of $A$ and $\hbar$. (b) Show the splitting is $\Delta E = A\hbar^2$. (c) The observed frequency is 1420.405 MHz; compute $A$ in SI units. (d) In the triplet state $|1,0\rangle$, what is $\langle\hat{S}_{ez}\rangle$?
@@ -226,13 +226,13 @@ The transition from triplet to singlet — from $(|\!\uparrow\downarrow\rangle +
 
 **Synthesis**
 
-8. *Difficulty: Synthesis — builds the $1\otimes\frac{1}{2}$ coupled states from scratch.*
+8. *Difficulty: Synthesis — builds the* $1\otimes\frac{1}{2}$ *coupled states from scratch.*
    For $j_1 = 1$, $j_2 = \frac{1}{2}$: (a) identify the stretched state $|J=\frac{3}{2}, M=\frac{3}{2}\rangle$; (b) apply $\hat{J}_-$ twice to generate $|J=\frac{3}{2}, M=\frac{1}{2}\rangle$ and $|J=\frac{3}{2}, M=-\frac{1}{2}\rangle$; (c) in the $M=\frac{1}{2}$ sector, orthogonalize to find $|J=\frac{1}{2}, M=\frac{1}{2}\rangle$; (d) verify by direct calculation that $\hat{J}^2$ gives eigenvalue $\frac{3}{4}\hbar^2$ on this state. This generates all six CG coefficients for $1\otimes\frac{1}{2}$ from the ladder algorithm alone.
    *Tests: end-to-end execution of the four-step ladder algorithm for a case not worked in the chapter; student must handle three-dimensional spin-1 states.*
 
 9. *Difficulty: Synthesis — rotational invariance of the singlet.*
    Define the $x$-basis states $|\!\rightarrow\rangle = (|\!\uparrow\rangle + |\!\downarrow\rangle)/\sqrt{2}$ and $|\!\leftarrow\rangle = (|\!\uparrow\rangle - |\!\downarrow\rangle)/\sqrt{2}$. (a) Express $|\!\uparrow\rangle$ and $|\!\downarrow\rangle$ in terms of $|\!\rightarrow\rangle$ and $|\!\leftarrow\rangle$. (b) Substitute into the singlet $|0,0\rangle = (|\!\uparrow\downarrow\rangle - |\!\downarrow\uparrow\rangle)/\sqrt{2}$ and show that the result is $(|\!\rightarrow\leftarrow\rangle - |\!\leftarrow\rightarrow\rangle)/\sqrt{2}$ — the same form in the $x$-basis. (c) Explain what this implies about the result of measuring $\hat{S}_{1x}$ and $\hat{S}_{2x}$ on the singlet, and how it differs from the triplet $|1,0\rangle$.
-   *Tests: explicit demonstration of rotational invariance; connects the $J=0$ property to correlation structure and anticipates entanglement.*
+   *Tests: explicit demonstration of rotational invariance; connects the* $J=0$ *property to correlation structure and anticipates entanglement.*
 
 **Challenge**
 

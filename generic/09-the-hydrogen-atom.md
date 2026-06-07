@@ -227,7 +227,7 @@ $|\psi|^2$ is not a smeared charge distribution sitting continuously in space. I
 *What this tests: following the reduced-mass calculation through to observable consequences, including the isotope shift and muonic hydrogen.*
 
 2. *[Normalization and the Jacobian]* Verify $\psi_{100}(r) = (\pi a_0^3)^{-1/2}e^{-r/a_0}$ is normalized. Write the radial probability density $P(r) = r^2|R_{10}(r)|^2$ and verify $\int_0^\infty P(r)\,dr = 1$. Confirm $P(0) = 0$ and explain in one sentence why this does not contradict $|\psi_{100}(0)|^2 \neq 0$.
-*What this tests: the Jacobian is compulsory, not optional — and $P(0)=0$ is a geometric fact about shell volume, not a property of the wave function.*
+*What this tests: the Jacobian is compulsory, not optional — and* $P(0)=0$ *is a geometric fact about shell volume, not a property of the wave function.*
 
 3. *[Quantum number counting]* List all allowed $(n,\ell,m)$ combinations for $n=3$. Verify the count gives $n^2 = 9$ orbital states and $2n^2 = 18$ with spin. For each of the three constraints on quantum numbers, write one sentence stating its mathematical origin.
 *What this tests: the three constraints come from three separate sources, and conflating them is a persistent error.*
@@ -235,20 +235,20 @@ $|\psi|^2$ is not a smeared charge distribution sitting continuously in space. I
 **Application**
 
 4. *[The 2s state]* The 2s radial wave function is $R_{20}(r) = (8a_0^3)^{-1/2}(2 - r/a_0)e^{-r/(2a_0)}$. (a) Find the radial node. (b) Find $r_\text{mp}$ by maximizing $P(r) = r^2|R_{20}|^2$. (c) Compute $\langle r\rangle_{2s}$ using $\int_0^\infty r^n e^{-r/b}\,dr = n!\,b^{n+1}$. Do $r_\text{mp}$ and $\langle r\rangle$ still differ?
-*What this tests: the $r_\text{mp} \neq \langle r\rangle$ discrepancy is not a ground-state peculiarity but a general feature of skewed distributions.*
+*What this tests: the* $r_\text{mp} \neq \langle r\rangle$ *discrepancy is not a ground-state peculiarity but a general feature of skewed distributions.*
 
 5. *[Spectral series and the isotope shift]* (a) Compute the Lyman $\alpha$ wavelength ($n=2 \to n=1$) and confirm it is ultraviolet. (b) Compute the Paschen $\alpha$ wavelength ($n=4 \to n=3$) and confirm it is near-infrared. (c) Estimate the isotope shift at Balmer $\alpha$ between hydrogen ($m_p \approx 1836\,m_e$) and deuterium ($m_d \approx 3672\,m_e$), and explain why Urey could detect it in 1932.
 *What this tests: the reduced mass is not a correction but a physical quantity with measurable spectroscopic consequences.*
 
 6. *[Selection rules]* For each transition, state allowed or forbidden and give the reason: (a) $3p \to 1s$; (b) $3d \to 1s$; (c) $3p \to 2p$; (d) $3d \to 2p$; (e) $2s \to 1s$. For each forbidden transition, name one process by which it can still occur.
-*What this tests: $\Delta\ell = \pm 1$ is the electric-dipole selection rule; forbidden transitions do occur, just slowly.*
+*What this tests:* $\Delta\ell = \pm 1$ *is the electric-dipole selection rule; forbidden transitions do occur, just slowly.*
 
 7. *[Mean radius formula]* The general formula is $\langle r\rangle_{n\ell} = (a_0/2)[3n^2 - \ell(\ell+1)]$. (a) Verify for $(1,0)$ and $(2,0)$. (b) For fixed $n$, does increasing $\ell$ increase or decrease $\langle r\rangle$? Use the centrifugal-barrier picture. (c) For $(3,2)$, compute $\langle r\rangle$ and compare to $r_\text{mp} \approx n^2 a_0$.
-*What this tests: the mean-radius formula is derived from the algebra of the Laguerre polynomials, and its dependence on $\ell$ has a physical interpretation.*
+*What this tests: the mean-radius formula is derived from the algebra of the Laguerre polynomials, and its dependence on* $\ell$ *has a physical interpretation.*
 
 **Synthesis**
 
-8. *[Broken $\mathfrak{so}(4)$ symmetry in sodium]* Hydrogen's $\ell$-degeneracy is a signature of the $1/r$ potential. In sodium, the 3s level sits at $-5.14$ eV and 3p at $-3.04$ eV. (a) What observable could distinguish 2s from 2p in hydrogen without measuring energy? (b) Compute the wavelength of the sodium $3p \to 3s$ transition. (c) The sodium D line is a doublet at 589.0 nm and 589.6 nm. What interaction splits the 3p level into two?
+8. [*Broken* $\mathfrak{so}(4)$ *symmetry in sodium]* Hydrogen's $\ell$-degeneracy is a signature of the $1/r$ potential. In sodium, the 3s level sits at $-5.14$ eV and 3p at $-3.04$ eV. (a) What observable could distinguish 2s from 2p in hydrogen without measuring energy? (b) Compute the wavelength of the sodium $3p \to 3s$ transition. (c) The sodium D line is a doublet at 589.0 nm and 589.6 nm. What interaction splits the 3p level into two?
 *What this tests: connecting the abstract symmetry argument to a real spectroscopic observable, and identifying spin-orbit coupling as the source of the fine-structure doublet.*
 
 9. *[Oscillating dipole]* The superposition $\Psi = (1/\sqrt{2})[\psi_{100}e^{-iE_1 t/\hbar} + \psi_{210}e^{-iE_2 t/\hbar}]$. (a) Show $|\Psi|^2$ contains a cross-term oscillating at $\omega_{12} = (E_2-E_1)/\hbar$. Compute $\omega_{12}$ in rad/s and the period in femtoseconds. (b) Compute $\langle z\rangle(t)$ and show it oscillates at $\omega_{12}$. (c) Explain in two sentences why the oscillating dipole represents the atom in the act of emitting a photon, rather than sitting in either stationary state.
@@ -256,8 +256,8 @@ $|\psi|^2$ is not a smeared charge distribution sitting continuously in space. I
 
 **Challenge**
 
-10. *[$n^2$ degeneracy and what makes Coulomb special]* The identity $\sum_{\ell=0}^{n-1}(2\ell+1) = n^2$ underlies the shell structure. Prove it by induction or by pairing terms. Then: in a hypothetical atom where energy depends on $n_r + \ell + 1$ (with $n_r = n - \ell - 1$ radial nodes), how many orbital states share energy level $N = n_r + \ell + 1$? Compare to hydrogen and explain in one sentence why Coulomb degeneracy requires $\mathfrak{so}(4)$ symmetry and not just $\mathfrak{so}(3)$.
-*What this tests: seeing the counting argument from the inside, and understanding that the $n^2$ degeneracy is not a generic feature of central potentials but a special property of the $1/r$ interaction.*
+10. [$n^2$ *degeneracy and what makes Coulomb special]* The identity $\sum_{\ell=0}^{n-1}(2\ell+1) = n^2$ underlies the shell structure. Prove it by induction or by pairing terms. Then: in a hypothetical atom where energy depends on $n_r + \ell + 1$ (with $n_r = n - \ell - 1$ radial nodes), how many orbital states share energy level $N = n_r + \ell + 1$? Compare to hydrogen and explain in one sentence why Coulomb degeneracy requires $\mathfrak{so}(4)$ symmetry and not just $\mathfrak{so}(3)$.
+*What this tests: seeing the counting argument from the inside, and understanding that the* $n^2$ *degeneracy is not a generic feature of central potentials but a special property of the* $1/r$ *interaction.*
 
 ---
 

@@ -200,9 +200,9 @@ The answer hinges on whether the two operators commute. If $[\hat{A}, \hat{B}] =
 
 **Warm-up**
 
-1. *Difficulty: Warm-up — tests the Hermitian condition on $2\times 2$ matrices.*
+1. *Difficulty: Warm-up — tests the Hermitian condition on* $2\times 2$ *matrices.*
    For each matrix below, determine whether it is Hermitian, anti-Hermitian ($\hat{A}^\dagger = -\hat{A}$), or neither. (a) $\bigl(\begin{smallmatrix}1&2i\\-2i&3\end{smallmatrix}\bigr)$, (b) $\bigl(\begin{smallmatrix}0&i\\-i&0\end{smallmatrix}\bigr)$, (c) $\bigl(\begin{smallmatrix}1&1+i\\1-i&-1\end{smallmatrix}\bigr)$. For each Hermitian case, verify that the diagonal entries are real. Correct a common error: explain why checking "symmetric" (i.e., $A_{mn} = A_{nm}$) rather than "conjugate-symmetric" ($A_{mn} = A_{nm}^*$) gives wrong answers for complex matrices.
-   *Tests: ability to apply $A_{mn} = A_{nm}^*$ and distinguish from plain transpose symmetry.*
+   *Tests: ability to apply* $A_{mn} = A_{nm}^*$ *and distinguish from plain transpose symmetry.*
 
 2. *Difficulty: Warm-up — tests the real-eigenvalue proof.*
    Prove in four lines: if $\hat{A}$ is Hermitian and $\hat{A}|a\rangle = a|a\rangle$, then $a\in\mathbb{R}$. Then exhibit a non-Hermitian $2\times 2$ matrix with a purely imaginary eigenvalue and identify exactly which step of the proof fails for it.

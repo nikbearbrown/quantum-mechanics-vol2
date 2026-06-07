@@ -2,7 +2,7 @@
 
 When two observables are measured on a large ensemble of identically prepared systems, the spread in their outcomes is not simply a technical limitation — it is a property of the quantum state itself. If we prepare a million electrons in the same state $|\psi\rangle$, measure position on half of them and momentum on the other half (so no electron is disturbed twice), the standard deviations $\sigma_x$ and $\sigma_p$ computed from the two histograms always satisfy $\sigma_x\sigma_p \geq \hbar/2$.
 
-This inequality is present before any measuring device turns on. It is built into the algebra of the operators during preparation. The correct statement is: *no quantum state has $\sigma_x = 0$ and $\sigma_p = 0$ simultaneously.* Robertson proved this in 1929 with a two-line application of the Cauchy-Schwarz inequality to the commutator $[\hat{x}, \hat{p}] = i\hbar$. We begin with that commutator and develop its consequences systematically.
+This inequality is present before any measuring device turns on. It is built into the algebra of the operators during preparation. The correct statement is: *no quantum state has* $\sigma_x = 0$ *and* $\sigma_p = 0$ *simultaneously.* Robertson proved this in 1929 with a two-line application of the Cauchy-Schwarz inequality to the commutator $[\hat{x}, \hat{p}] = i\hbar$. We begin with that commutator and develop its consequences systematically.
 
 ---
 
@@ -137,7 +137,7 @@ $$[\hat{S}_x, \hat{S}_z] = \frac{\hbar^2}{4}[\sigma_x,\sigma_z] = \frac{\hbar^2}
 
 So the Robertson bound is $\sigma_{S_x}\sigma_{S_z} \geq \tfrac{\hbar}{2}|\langle\hat{S}_y\rangle|$.
 
-**Evaluate $\langle\hat{S}_y\rangle$.** In matrix form, $|\!\uparrow_x\rangle = \tfrac{1}{\sqrt{2}}\bigl(\begin{smallmatrix}1\\1\end{smallmatrix}\bigr)$:
+**Evaluate** $\langle\hat{S}_y\rangle$. In matrix form, $|\!\uparrow_x\rangle = \tfrac{1}{\sqrt{2}}\bigl(\begin{smallmatrix}1\\1\end{smallmatrix}\bigr)$:
 
 $$\langle\hat{S}_y\rangle = \frac{\hbar}{2}\cdot\frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\end{pmatrix}\begin{pmatrix}0 & -i\\ i & 0\end{pmatrix}\frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix} = \frac{\hbar}{4}\begin{pmatrix}1&1\end{pmatrix}\begin{pmatrix}-i\\i\end{pmatrix} = \frac{\hbar}{4}(-i+i) = 0.$$
 
@@ -172,7 +172,7 @@ They cancel: $[\hat{L}^2, \hat{L}_z] = 0$. The operators $\hat{L}^2$ and $\hat{L
 **Warm-up**
 
 1. *[Canonical commutation relation]* Derive $[\hat{x},\hat{p}] = i\hbar$ by applying both operators to a test function $\psi(x)$. Show every step of the product rule explicitly. (a) At which step does $i\hbar$ emerge? (b) What would the commutator be if $\hat{p}$ were defined as $\hbar\partial_x$ (no factor of $-i$), and what would be physically wrong with that definition?
-*What this tests: mechanical fluency with the commutator derivation and understanding why the $-i$ is required.*
+*What this tests: mechanical fluency with the commutator derivation and understanding why the* $-i$ *is required.*
 
 2. *[Matrix commutator for Pauli matrices]* Verify by direct matrix multiplication that $[\sigma_x,\sigma_z] = -2i\sigma_y$. Before computing, verify that your $\sigma_y$ is Hermitian ($\sigma_y^\dagger = \sigma_y$). A wrong sign in $\sigma_y$ is the most common error in this calculation.
 *What this tests: executing a matrix commutator and catching the canonical sign trap.*

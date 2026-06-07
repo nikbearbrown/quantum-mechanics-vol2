@@ -213,11 +213,11 @@ In matrix form: $\hat{L}_z = (\hbar/2)\sigma_z$, $\hat{L}_+ = \hbar\sigma_+$, $\
 
 **Application**
 
-4. *[$\ell=1$ matrix representation]* Write down the $3\times 3$ matrices for $\hat{L}_z$, $\hat{L}_+$, $\hat{L}_-$ in the basis $\{|1,-1\rangle, |1,0\rangle, |1,1\rangle\}$. Construct $\hat{L}_x$ and $\hat{L}_y$. Verify $[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z$ by matrix multiplication.
+4. [$\ell=1$ *matrix representation]* Write down the $3\times 3$ matrices for $\hat{L}_z$, $\hat{L}_+$, $\hat{L}_-$ in the basis $\{|1,-1\rangle, |1,0\rangle, |1,1\rangle\}$. Construct $\hat{L}_x$ and $\hat{L}_y$. Verify $[\hat{L}_x, \hat{L}_y] = i\hbar\hat{L}_z$ by matrix multiplication.
 *What this tests: translating the abstract algebra into explicit matrices and verifying the commutation relation survives the translation.*
 
 5. *[Expectation values in a superposition]* For $|\psi\rangle = \tfrac{1}{\sqrt{2}}|1,-1\rangle + \tfrac{1}{\sqrt{2}}|1,1\rangle$: (a) compute $\langle\hat{L}_z\rangle$; (b) compute $\langle\hat{L}_z^2\rangle$; (c) compute $\sigma_{L_z}$; (d) compute $\langle\hat{L}^2\rangle$ and confirm it equals $2\hbar^2$.
-*What this tests: applying the Born rule in the angular momentum basis and distinguishing $\langle\hat{L}_z\rangle$ from $\sqrt{\langle\hat{L}^2\rangle}$.*
+*What this tests: applying the Born rule in the angular momentum basis and distinguishing* $\langle\hat{L}_z\rangle$ *from* $\sqrt{\langle\hat{L}^2\rangle}$.
 
 6. *[Transverse components and Robertson]* For $|\ell=2, m=1\rangle$: (a) argue from matrix element structure why $\langle\hat{L}_x\rangle = \langle\hat{L}_y\rangle = 0$; (b) compute $\langle\hat{L}_x^2\rangle$ using $\hat{L}_x = (\hat{L}_++\hat{L}_-)/2$; (c) verify the Robertson inequality $\sigma_{L_x}\sigma_{L_y} \geq (\hbar/2)|\langle\hat{L}_z\rangle|$.
 *What this tests: understanding that zero mean does not imply zero variance, and connecting the algebra to the Robertson bound.*
@@ -235,8 +235,8 @@ In matrix form: $\hat{L}_z = (\hbar/2)\sigma_z$, $\hat{L}_+ = \hbar\sigma_+$, $\
 
 **Challenge**
 
-10. *[$\ell=2$ full construction]* The $\ell=2$ subspace has five basis states. (a) Write the $5\times 5$ matrix for $\hat{L}_z$. (b) Construct $\hat{L}_+$ from the normalization formula. (c) Compute $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$ and verify it equals $6\hbar^2 I$. (d) For $|2,2\rangle$: compute the cone half-angle, $\sigma_{L_x}$, $\sigma_{L_y}$, and verify the Robertson bound is saturated.
-*What this tests: full matrix construction at the next level, verifying $\hat{L}^2 \propto I$ from the matrices, and generalizing the saturation argument to $\ell=2$.*
+10. [$\ell=2$ *full construction]* The $\ell=2$ subspace has five basis states. (a) Write the $5\times 5$ matrix for $\hat{L}_z$. (b) Construct $\hat{L}_+$ from the normalization formula. (c) Compute $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$ and verify it equals $6\hbar^2 I$. (d) For $|2,2\rangle$: compute the cone half-angle, $\sigma_{L_x}$, $\sigma_{L_y}$, and verify the Robertson bound is saturated.
+*What this tests: full matrix construction at the next level, verifying* $\hat{L}^2 \propto I$ *from the matrices, and generalizing the saturation argument to* $\ell=2$.
 
 ---
 

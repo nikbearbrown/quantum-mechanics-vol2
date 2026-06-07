@@ -115,15 +115,15 @@ The Madelung mnemonic does not capture this because it treats orbital energies a
 
 Once the configuration is established, we need to determine which quantum state the atom occupies. Within a given configuration, multiple **terms** (combinations of total $L$, total $S$, total $J$) are possible. Hund's three rules select the ground-state term.
 
-**Rule 1 (maximize $S$):** The term with the highest total spin $S$ has the lowest energy.
+**Rule 1 (maximize** $S$): The term with the highest total spin $S$ has the lowest energy.
 
 The mechanism is not a spin-dependent force. It is purely geometric: the $\text{highest-}S$ state has the most symmetric spin wave function, which forces the most antisymmetric spatial wave function (to keep the total wave function antisymmetric under exchange). An antisymmetric spatial wave function has lower amplitude when two electrons coincide — the electrons avoid each other in space. Electrons that avoid each other see less Coulomb repulsion. Less repulsion means lower energy. The operative quantity is the exchange integral, which appeared in the helium variational calculation: electrons with parallel spins gain exchange energy of order $K > 0$ per pair.
 
-**Rule 2 (maximize $L$ given $S$):** Among all terms with the same $S$, the one with highest total orbital angular momentum $L$ has the lowest energy.
+**Rule 2 (maximize** $L$ **given** $S$): Among all terms with the same $S$, the one with highest total orbital angular momentum $L$ has the lowest energy.
 
 Electrons orbiting in the same rotational sense tend to stay on opposite sides of the atom, again reducing Coulomb repulsion. The argument has the same flavor as Rule 1 but is less crisp; Rule 2 is less reliable than Rule 1, particularly for heavy elements.
 
-**Rule 3 (determine $J$):** Among all terms with the same $S$ and $L$:
+**Rule 3 (determine** $J$): Among all terms with the same $S$ and $L$:
 
 - Less-than-half-filled subshell: $J = |L - S|$
 - More-than-half-filled subshell: $J = L + S$
@@ -147,7 +147,7 @@ The ground-state configuration is $1s^2\, 2s^2\, 2p^2$. The filled $1s$ and $2s$
 
 **Rule 3.** Less-than-half-filled (2 electrons in a 6-electron subshell): $J = |L - S| = |1-1| = 0$.
 
-**Term symbol: $^3P_0$.** Verified against NIST: carbon ground level is $2s^2\,2p^2\,^3P_0$. ✓
+**Term symbol:** $^3P_0$. Verified against NIST: carbon ground level is $2s^2\,2p^2\,^3P_0$. ✓
 
 The $^3P$ multiplet has $J = 0, 1, 2$; experimentally these lie at 0, 16.4, and 43.4 $\text{cm}^{-1}$ above the ground state. The splitting comes from spin-orbit coupling — exactly what Rule 3 encodes and what Volume 3 will derive.
 
@@ -161,7 +161,7 @@ The configuration is $[\text{Ar}]\, 3d^6\, 4s^2$. The Ar core and $4s^2$ are ine
 
 **Rule 3.** More-than-half-filled (6 of 10 $3d$ electrons): $J = L + S = 2 + 2 = 4$.
 
-**Term symbol: $^5D_4$.** Verified against NIST: iron ground level is $3d^6\,4s^2\,^5D_4$. ✓
+**Term symbol:** $^5D_4$. Verified against NIST: iron ground level is $3d^6\,4s^2\,^5D_4$. ✓
 
 This is the configuration the 1927 spectroscopist knew before anyone could explain it from first principles. The rules worked. The mechanism — exchange integrals, angular momentum algebra, spin-orbit coupling — took years more to clarify.
 
@@ -214,7 +214,7 @@ The Madelung rule itself has no derivation. Present it as what it is: an empiric
    Compute $Z_\text{eff}$ using Slater's rules for (a) the $2p$ electron of oxygen ($Z = 8$), (b) the $4s$ electron of potassium ($Z = 19$). Show the grouping and each shielding contribution explicitly.
    *Tests: ability to execute Slater's grouping and apply the 0.35/0.85/1.00 constants correctly.*
 
-3. *Difficulty: Warm-up — tests the $2(2\ell+1)$ counting and period structure.*
+3. *Difficulty: Warm-up — tests the* $2(2\ell+1)$ *counting and period structure.*
    The period structure of the periodic table has lengths 2, 8, 8, 18, 18, 32. Derive each from the Madelung filling sequence and the formula $2(2\ell+1)$. State which subshells fill in periods 4 and 6.
    *Tests: connection between the angular momentum counting formula and the macroscopic structure of the periodic table.*
 

@@ -90,7 +90,7 @@ $$Y_2^0 = \sqrt{\frac{5}{16\pi}}(3\cos^2\theta - 1).$$
 
 This has nodal cones at $\cos\theta = \pm 1/\sqrt{3}$, about $54.7°$ from the $z$-axis — the familiar lobes of the $d_{z^2}$ orbital.
 
-One structural fact to internalize before the pictures mislead us: $|Y_{\ell m}|^2$ is **independent of $\phi$** — always. The $\phi$-dependence of $Y_{\ell m}$ lives entirely in the factor $e^{im\phi}$, whose modulus is exactly 1. The squared modulus kills it. Every spherical harmonic probability density is axially symmetric about the $z$-axis, for every value of $m$.
+One structural fact to internalize before the pictures mislead us: $|Y_{\ell m}|^2$ is **independent of** $\phi$ — always. The $\phi$-dependence of $Y_{\ell m}$ lives entirely in the factor $e^{im\phi}$, whose modulus is exactly 1. The squared modulus kills it. Every spherical harmonic probability density is axially symmetric about the $z$-axis, for every value of $m$.
 
 <!-- → [TABLE: the first nine spherical harmonics Y_ℓ^m for ℓ = 0, 1, 2 — showing the explicit formula, the angular quantum number ℓ, the magnetic quantum number m, and the associated orbital label (s, p_z, p±, d_z², d±₁, d±₂); include a note that |Y|² is φ-independent for all entries] -->
 
@@ -228,27 +228,27 @@ Learning spherical harmonics in this chapter is preparation for any problem that
    Verify $\int|Y_0^0|^2\,d\Omega = 1$ and $\int|Y_1^0|^2\,d\Omega = 1$ by explicit integration, using $\int_0^\pi\sin\theta\,d\theta = 2$ and $\int_0^\pi\cos^2\theta\sin\theta\,d\theta = 2/3$.
    *Tests: ability to carry out the solid-angle integration.*
 
-3. *Difficulty: Warm-up — tests the $\phi$-independence of $|Y_{\ell m}|^2$ and the Condon–Shortley phase.*
+3. *Difficulty: Warm-up — tests the* $\phi$-*independence of* $|Y_{\ell m}|^2$ *and the Condon–Shortley phase.*
    (a) Show that $|Y_{\ell m}(\theta,\phi)|^2$ is independent of $\phi$ for any $\ell, m$. (b) Evaluate $Y_1^1$ at $(\theta = \pi/2, \phi = 0)$ and confirm the value is $-\sqrt{3/(8\pi)}$. What goes wrong if you omit the Condon–Shortley phase?
    *Tests: algebraic demonstration of axial symmetry; awareness of the sign convention and its consequences.*
 
 **Application**
 
-4. *Difficulty: Application — tests the $\hat{L}_z$ eigenvalue equation and the physics vs. chemistry basis.*
+4. *Difficulty: Application — tests the* $\hat{L}_z$ *eigenvalue equation and the physics vs. chemistry basis.*
    Verify $\hat{L}_z Y_1^1 = \hbar Y_1^1$ by writing out $Y_1^1 = -\sqrt{3/(8\pi)}\sin\theta\,e^{i\phi}$ and applying $\hat{L}_z = -i\hbar\partial_\phi$. Then compute $\hat{L}_z(p_x)$ where $p_x \propto \sin\theta\cos\phi$ and confirm that $p_x$ is not an eigenstate of $\hat{L}_z$.
-   *Tests: direct application of the differential operator; demonstrates that the chemistry orbital is a superposition of $\hat{L}_z$ eigenstates.*
+   *Tests: direct application of the differential operator; demonstrates that the chemistry orbital is a superposition of* $\hat{L}_z$ *eigenstates.*
 
-5. *Difficulty: Application — tests the $u$-substitution and the centrifugal barrier.*
+5. *Difficulty: Application — tests the* $u$-*substitution and the centrifugal barrier.*
    Starting from the radial equation for $R(r)$, apply $u(r) = rR(r)$ and show explicitly that the result is the 1D Schrödinger equation with $V_\text{eff} = V(r) + \hbar^2\ell(\ell+1)/(2mr^2)$. Identify which step of the derivative computation produces the centrifugal term. In one sentence, explain why the centrifugal term is kinetic, not potential, energy.
    *Tests: algebraic command of the substitution; physical interpretation of the effective potential.*
 
 6. *Difficulty: Application — tests the spherical well spectrum and its connection to 1D well.*
    For the 3D infinite spherical well of radius $a$: (a) show that the 1s ground-state energy equals the 1D infinite-well energy $\pi^2\hbar^2/(2ma^2)$; (b) find the first 1p state energy using $\beta_{1,1} \approx 4.493$ and express it as a multiple of $E_{1,0}$; (c) explain why the $\ell = 0$ and 1D problems are identical but the $\ell = 1$ problem has no 1D analog.
-   *Tests: application of the spherical well formula; connection between the $u$-substitution and the 1D problem.*
+   *Tests: application of the spherical well formula; connection between the* $u$-*substitution and the 1D problem.*
 
 7. *Difficulty: Application — tests the cone geometry of angular momentum.*
    For the state $|\ell = 2, m = 2\rangle$: (a) compute $\sqrt{\langle L^2\rangle}$ and $L_z$; (b) find the half-angle of the angular momentum cone; (c) compute $\sqrt{\langle L_x^2 + L_y^2\rangle}$ in this state; (d) explain why this quantity cannot be zero using the Robertson inequality for $\hat{L}_x$ and $\hat{L}_y$.
-   *Tests: distinguishes $\hbar^2\ell(\ell+1)$ from $\hbar^2\ell^2$; connects the transverse angular momentum to the uncertainty principle.*
+   *Tests: distinguishes* $\hbar^2\ell(\ell+1)$ *from* $\hbar^2\ell^2$; *connects the transverse angular momentum to the uncertainty principle.*
 
 **Synthesis**
 
@@ -264,7 +264,7 @@ Learning spherical harmonics in this chapter is preparation for any problem that
 
 9. *Difficulty: Challenge — ladder operators and the algebraic derivation of the spectrum.*
    Define $\hat{L}_\pm = \hat{L}_x \pm i\hat{L}_y$. (a) Show $[\hat{L}_z, \hat{L}_+] = \hbar\hat{L}_+$ using $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$. (b) Use this to argue that if $|\ell, m\rangle$ is an eigenstate of $\hat{L}_z$ with eigenvalue $m\hbar$, then $\hat{L}_+|\ell, m\rangle$ is an eigenstate with eigenvalue $(m+1)\hbar$. (c) The raising must terminate at some maximum $m$. Apply the termination condition $\hat{L}_+|\ell, m_\text{max}\rangle = 0$, compute $\langle\hat{L}^2\rangle$ using $\hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z^2 + \hbar\hat{L}_z$, and show that the eigenvalue must be $\hbar^2\ell(\ell+1)$ with $\ell = m_\text{max}$ a non-negative integer. This is the algebraic derivation of the spectrum — the one Chapter 6 uses to extend immediately to spin.
-   *Tests: ladder operator commutator algebra; derivation of the $\ell(\ell+1)$ spectrum without the Legendre equation.*
+   *Tests: ladder operator commutator algebra; derivation of the* $\ell(\ell+1)$ *spectrum without the Legendre equation.*
 
 ---
 
