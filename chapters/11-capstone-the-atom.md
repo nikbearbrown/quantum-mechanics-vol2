@@ -30,7 +30,7 @@ $$\hat{H}_\text{He} = \frac{\hat{p}_1^2}{2m_e} + \frac{\hat{p}_2^2}{2m_e} - \fra
 
 The last term — electron-electron Coulomb repulsion — destroys the exact solution and, crucially, destroys the $\ell$-degeneracy. The potential is no longer a pure $1/r$ Coulomb interaction; the SO(4) symmetry is broken. States with the same $n$ but different $\ell$ are no longer degenerate.
 
-The physical mechanism is **orbital penetration and screening**. A $3s$ orbital has its radial probability density peaked closer to the nucleus than a $3d$ orbital with the same $n$. The centrifugal barrier $\ell(\ell+1)\hbar^2/2m_er^2$ pushes high-$\ell$ orbitals outward, keeping $3d$ electrons in the outer reaches of the atom where they are heavily shielded by the inner electrons. The $3s$ electron penetrates to the core and sees more of the bare nuclear charge. More nuclear charge seen means lower energy. The result:
+The physical mechanism is **orbital penetration and screening**. A $3s$ orbital has its radial probability density peaked closer to the nucleus than a $3d$ orbital with the same $n$. The centrifugal barrier $\ell(\ell+1)\hbar^2/2m_er^2$ pushes $\text{high-}\ell$ orbitals outward, keeping $3d$ electrons in the outer reaches of the atom where they are heavily shielded by the inner electrons. The $3s$ electron penetrates to the core and sees more of the bare nuclear charge. More nuclear charge seen means lower energy. The result:
 
 $$E(ns) < E(np) < E(nd) < E(nf) \qquad \text{(multi-electron atoms, any } n\text{).}$$
 
@@ -117,7 +117,7 @@ Once the configuration is established, we need to determine which quantum state 
 
 **Rule 1 (maximize $S$):** The term with the highest total spin $S$ has the lowest energy.
 
-The mechanism is not a spin-dependent force. It is purely geometric: the highest-$S$ state has the most symmetric spin wave function, which forces the most antisymmetric spatial wave function (to keep the total wave function antisymmetric under exchange). An antisymmetric spatial wave function has lower amplitude when two electrons coincide — the electrons avoid each other in space. Electrons that avoid each other see less Coulomb repulsion. Less repulsion means lower energy. The operative quantity is the exchange integral, which appeared in the helium variational calculation: electrons with parallel spins gain exchange energy of order $K > 0$ per pair.
+The mechanism is not a spin-dependent force. It is purely geometric: the $\text{highest-}S$ state has the most symmetric spin wave function, which forces the most antisymmetric spatial wave function (to keep the total wave function antisymmetric under exchange). An antisymmetric spatial wave function has lower amplitude when two electrons coincide — the electrons avoid each other in space. Electrons that avoid each other see less Coulomb repulsion. Less repulsion means lower energy. The operative quantity is the exchange integral, which appeared in the helium variational calculation: electrons with parallel spins gain exchange energy of order $K > 0$ per pair.
 
 **Rule 2 (maximize $L$ given $S$):** Among all terms with the same $S$, the one with highest total orbital angular momentum $L$ has the lowest energy.
 
@@ -149,7 +149,7 @@ The ground-state configuration is $1s^2\, 2s^2\, 2p^2$. The filled $1s$ and $2s$
 
 **Term symbol: $^3P_0$.** Verified against NIST: carbon ground level is $2s^2\,2p^2\,^3P_0$. ✓
 
-The $^3P$ multiplet has $J = 0, 1, 2$; experimentally these lie at 0, 16.4, and 43.4 cm$^{-1}$ above the ground state. The splitting comes from spin-orbit coupling — exactly what Rule 3 encodes and what Volume 3 will derive.
+The $^3P$ multiplet has $J = 0, 1, 2$; experimentally these lie at 0, 16.4, and 43.4 $\text{cm}^{-1}$ above the ground state. The splitting comes from spin-orbit coupling — exactly what Rule 3 encodes and what Volume 3 will derive.
 
 ### Iron (Z = 26): $^5D_4$
 
@@ -169,7 +169,7 @@ This is the configuration the 1927 spectroscopist knew before anyone could expla
 
 ## The 3d/4s Subtlety
 
-Iron's neutral ground state is $[\text{Ar}]\ 3d^6\ 4s^2$. The ion Fe$^{2+}$ is $[\text{Ar}]\ 3d^6$ — not $[\text{Ar}]\ 3d^4\ 4s^2$. When iron is doubly ionized, both $4s$ electrons are removed before any $3d$ electrons.
+Iron's neutral ground state is $[\text{Ar}]\ 3d^6\ 4s^2$. The ion $\text{Fe}^{2+}$ is $[\text{Ar}]\ 3d^6$ — not $[\text{Ar}]\ 3d^4\ 4s^2$. When iron is doubly ionized, both $4s$ electrons are removed before any $3d$ electrons.
 
 This seems paradoxical. If Madelung says $4s$ fills before $3d$, shouldn't $3d$ be removed first?
 
@@ -221,7 +221,7 @@ The Madelung rule itself has no derivation. Present it as what it is: an empiric
 **Application**
 
 4. *Difficulty: Application — tests all three Hund's rules on a more-than-half-filled subshell.*
-   Apply Hund's rules to oxygen ($Z = 8$, config $1s^2\,2s^2\,2p^4$) to find the ground-state term symbol. Show: (a) which rule determines $S$ and its value; (b) which rule determines $L$ and the maximum-$M_L$ microstate; (c) why Rule 3 gives $J = 2$ for a more-than-half-filled subshell; (d) the full term symbol $^{2S+1}L_J$. Verify against NIST.
+   Apply Hund's rules to oxygen ($Z = 8$, config $1s^2\,2s^2\,2p^4$) to find the ground-state term symbol. Show: (a) which rule determines $S$ and its value; (b) which rule determines $L$ and the $\text{maximum-}M_L$ microstate; (c) why Rule 3 gives $J = 2$ for a more-than-half-filled subshell; (d) the full term symbol $^{2S+1}L_J$. Verify against NIST.
    *Tests: full execution of Hund's three rules for the case opposite to carbon.*
 
 5. *Difficulty: Application — tests the Madelung exception mechanism.*
@@ -229,7 +229,7 @@ The Madelung rule itself has no derivation. Present it as what it is: an empiric
    *Tests: ability to apply the exchange-energy mechanism to explain a specific exception; Slater calculation in the exception case.*
 
 6. *Difficulty: Application — tests the 3d/4s subtlety.*
-   Neutral manganese ($Z = 25$) has configuration $[\text{Ar}]\,3d^5\,4s^2$. The ion Mn$^{2+}$ loses two electrons. (a) Identify which electrons are removed and write the Mn$^{2+}$ configuration. (b) Find the ground-state term symbol of Mn$^{2+}$ using Hund's rules. (c) Explain why the order of electron removal (4s before 3d) may seem to contradict the Madelung filling order.
+   Neutral manganese ($Z = 25$) has configuration $[\text{Ar}]\,3d^5\,4s^2$. The ion $\text{Mn}^{2+}$ loses two electrons. (a) Identify which electrons are removed and write the $\text{Mn}^{2+}$ configuration. (b) Find the ground-state term symbol of $\text{Mn}^{2+}$ using Hund's rules. (c) Explain why the order of electron removal (4s before 3d) may seem to contradict the Madelung filling order.
    *Tests: the filling-vs-removal ordering distinction; Hund's rules for a half-filled subshell.*
 
 **Synthesis**

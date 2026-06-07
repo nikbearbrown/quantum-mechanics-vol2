@@ -24,11 +24,11 @@ Since $\hat{H}(1,2) = \hat{H}(2,1)$, we have $[\hat{H}, \hat{P}_{12}] = 0$: the 
 
 The empirical postulate — confirmed universally and explained by the spin-statistics theorem of relativistic quantum field theory — is:
 
-**Bosons** have symmetric wave functions ($\hat{P}_{12}\psi = +\psi$): integer spin. Photons, the Higgs, $^4$He atoms.
+**Bosons** have symmetric wave functions ($\hat{P}_{12}\psi = +\psi$): integer spin. Photons, the Higgs, $^4\text{He}$ atoms.
 
 **Fermions** have antisymmetric wave functions ($\hat{P}_{12}\psi = -\psi$): half-integer spin. Electrons, protons, neutrons.
 
-Composite particles inherit their statistics by counting constituent fermions: an even number makes a boson, an odd number makes a fermion. The consequences are dramatic. $^4$He has 6 constituent fermions (even) and becomes superfluid at 2.17 K. $^3$He has 5 (odd), is a fermion, and becomes superfluid only at 2.5 mK — three orders of magnitude colder, from a single parity count.
+Composite particles inherit their statistics by counting constituent fermions: an even number makes a boson, an odd number makes a fermion. The consequences are dramatic. $^4\text{He}$ has 6 constituent fermions (even) and becomes superfluid at 2.17 K. $^3\text{He}$ has 5 (odd), is a fermion, and becomes superfluid only at 2.5 mK — three orders of magnitude colder, from a single parity count.
 
 <!-- → [TABLE: Statistics of common particles — photon spin-1 boson; electron spin-1/2 fermion; proton spin-1/2 fermion (3 quarks); ⁴He spin-0 boson (6 fermions) superfluid 2.17 K; ³He spin-1/2 fermion (5 fermions) superfluid 2.5 mK; ⁸⁷Rb integer boson first dilute-gas BEC 1995] -->
 
@@ -144,11 +144,11 @@ Oxygen ($1s^2\,2s^2\,2p^4$): the three $2p$ orbitals hold four electrons. Hund's
 
 Three facts combine to produce the structure of the periodic table.
 
-**Screening breaks hydrogenic degeneracy.** In a multi-electron atom, inner electrons partially shield the nuclear charge from outer electrons. Orbitals with low $\ell$ penetrate closer to the nucleus and are less effectively screened; at fixed $n$, low-$\ell$ states lie below high-$\ell$ states. The $n^2$-fold Coulomb degeneracy of hydrogen breaks. The 2s lies below 2p in lithium; the 3d lies above 4s in potassium.
+**Screening breaks hydrogenic degeneracy.** In a multi-electron atom, inner electrons partially shield the nuclear charge from outer electrons. Orbitals with low $\ell$ penetrate closer to the nucleus and are less effectively screened; at fixed $n$, $\text{low-}\ell$ states lie below $\text{high-}\ell$ states. The $n^2$-fold Coulomb degeneracy of hydrogen breaks. The 2s lies below 2p in lithium; the 3d lies above 4s in potassium.
 
 **Pauli exclusion limits occupancy.** Each spin-orbital holds exactly one electron. Each spatial orbital holds at most two — one spin-up, one spin-down — and only with opposite spins. Without this, every electron in every atom would collapse to the 1s orbital. There would be no chemistry.
 
-**Hund's rule fills partially occupied subshells.** Within a subshell, different $m_\ell$ orbitals fill with parallel spins before pairing. The exchange energy stabilizes the high-$S$ configuration.
+**Hund's rule fills partially occupied subshells.** Within a subshell, different $m_\ell$ orbitals fill with parallel spins before pairing. The exchange energy stabilizes the $\text{high-}S$ configuration.
 
 The Aufbau principle combines all three: fill orbitals in order of increasing energy (lowest $n + \ell$ first, ties broken by lowest $n$), two electrons per orbital, parallel spins first within a subshell. The sequence is $1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, \ldots$ Row lengths $2, 8, 8, 18, 18, 32$ follow from $2(2\ell + 1)$ summed over the subshells in each period — twice the orbital degeneracy, the factor of 2 from spin.
 
@@ -160,7 +160,7 @@ The periodic table is not a catalogue of patterns. It is a theorem about antisym
 
 ## Bosons, Briefly
 
-Bosons have symmetric wave functions. Nothing prevents any number of them from occupying the same single-particle state. At low temperature and high density, a macroscopic fraction can pile into the lowest-energy state — Bose-Einstein condensation. Cornell and Wieman achieved the first dilute-gas BEC in $^{87}$Rb at JILA in 1995, cooling the atoms to roughly 170 nK. Nobel Prize 2001.
+Bosons have symmetric wave functions. Nothing prevents any number of them from occupying the same single-particle state. At low temperature and high density, a macroscopic fraction can pile into the lowest-energy state — Bose-Einstein condensation. Cornell and Wieman achieved the first dilute-gas BEC in $^{87}\text{Rb}$ at JILA in 1995, cooling the atoms to roughly 170 nK. Nobel Prize 2001.
 
 One misconception worth clarifying: bosons are not attracted to each other and fermions are not repelled by each other in the sense of forces. There is no term in the Hamiltonian encoding exchange statistics. What exists is a correlation in the joint probability density $|\psi(\vec{r}_1, \vec{r}_2)|^2$ from the symmetrization: fermions have a Pauli node at $\vec{r}_1 = \vec{r}_2$ (the antisymmetric wave function vanishes there); bosons have enhanced probability at $\vec{r}_1 = \vec{r}_2$ (the symmetric wave function peaks on the diagonal). The single-particle marginal density $\int|\psi|^2\,d^3r_2$ is identical for bosons, fermions, and distinguishable particles in the same pair of single-particle states. A single-particle detector cannot distinguish them.
 

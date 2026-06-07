@@ -203,7 +203,7 @@ The transition from triplet to singlet — from $(|\!\uparrow\downarrow\rangle +
    *Tests: structure of the uncoupled basis and the $M$-selection rule before CG coefficients are invoked.*
 
 3. *Difficulty: Warm-up — tests orthogonality of the four coupled states.*
-   Using the coupled-state expressions derived in the chapter: (a) verify $\langle 1,1|1,0\rangle = 0$; (b) verify $\langle 1,-1|0,0\rangle = 0$; (c) verify $\langle 1,0|0,0\rangle = 0$. For each calculation, identify which orthogonality mechanism is responsible (different $J$, different $M$, or same-$M$ orthogonality by construction).
+   Using the coupled-state expressions derived in the chapter: (a) verify $\langle 1,1|1,0\rangle = 0$; (b) verify $\langle 1,-1|0,0\rangle = 0$; (c) verify $\langle 1,0|0,0\rangle = 0$. For each calculation, identify which orthogonality mechanism is responsible (different $J$, different $M$, or $\text{same-}M$ orthogonality by construction).
    *Tests: command of the coupled-state expressions and understanding of what enforces each orthogonality.*
 
 **Application**

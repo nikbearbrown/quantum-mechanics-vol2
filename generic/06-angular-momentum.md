@@ -172,7 +172,7 @@ Acting on the highest-weight harmonic $Y_\ell^\ell \propto \sin^\ell\theta\,e^{i
 
 $$\hat{L}_- Y_1^1 = \hbar\sqrt{2}\,Y_1^0 \implies Y_1^0 = \frac{1}{\hbar\sqrt{2}}\hat{L}_-Y_1^1 = \sqrt{\frac{3}{4\pi}}\cos\theta. \checkmark$$
 
-The associated Legendre functions emerge from applying $\hat{L}_-$ to $\sin^\ell\theta\,e^{i\ell\phi}$ a total of $\ell - m$ times. The analytic and algebraic approaches are complementary. The analytic approach gives explicit wave functions. The algebraic approach reveals that the eigenvalue structure is a consequence of the commutation relations alone — independent of the position-space realization. The algebra works for spin-$\tfrac{1}{2}$ because the commutation relations $[\hat{S}_i, \hat{S}_j] = i\hbar\epsilon_{ijk}\hat{S}_k$ are identical to $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$, and the entire derivation applies without modification.
+The associated Legendre functions emerge from applying $\hat{L}_-$ to $\sin^\ell\theta\,e^{i\ell\phi}$ a total of $\ell - m$ times. The analytic and algebraic approaches are complementary. The analytic approach gives explicit wave functions. The algebraic approach reveals that the eigenvalue structure is a consequence of the commutation relations alone — independent of the position-space realization. The algebra works for $\text{spin-}\tfrac{1}{2}$ because the commutation relations $[\hat{S}_i, \hat{S}_j] = i\hbar\epsilon_{ijk}\hat{S}_k$ are identical to $[\hat{L}_i, \hat{L}_j] = i\hbar\epsilon_{ijk}\hat{L}_k$, and the entire derivation applies without modification.
 
 ---
 

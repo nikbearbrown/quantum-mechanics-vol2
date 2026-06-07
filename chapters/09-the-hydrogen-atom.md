@@ -198,7 +198,7 @@ Not every transition is allowed. A photon carries angular momentum 1, and angula
 
 $$\Delta\ell = \pm 1, \qquad \Delta m = 0, \pm 1.$$
 
-The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden. It occurs via two-photon emission with lifetime $\approx 0.12$ s — eight orders of magnitude slower than allowed transitions. This is not a curiosity; it is what makes the 2s state metastable enough to interrogate with exquisite precision. The $1S$-$2S$ two-photon transition in hydrogen has been measured to fifteen significant figures using optical frequency combs. The ALPHA collaboration at CERN has measured the same transition in antihydrogen and found agreement with ordinary hydrogen at parts-per-trillion precision — a direct test of CPT symmetry.
+The $2s \to 1s$ transition has $\Delta\ell = 0$ and is electric-dipole forbidden. It occurs via two-photon emission with lifetime $\approx 0.12$ s — eight orders of magnitude slower than allowed transitions. This is not a curiosity; it is what makes the 2s state metastable enough to interrogate with exquisite precision. The $1S\text{-}2S$ two-photon transition in hydrogen has been measured to fifteen significant figures using optical frequency combs. The ALPHA collaboration at CERN has measured the same transition in antihydrogen and found agreement with ordinary hydrogen at parts-per-trillion precision — a direct test of CPT symmetry.
 
 <!-- → [FIGURE: hydrogen energy level diagram for n=1 through 5, with allowed electric-dipole transitions (Δℓ=±1) as solid arrows grouped into Lyman, Balmer, Paschen series, and the forbidden 2s→1s as a dashed arrow labeled "two-photon, τ≈0.12s"] -->
 
@@ -300,7 +300,7 @@ The probability density should oscillate between the 1s blob and the
 
 ### Part 5 — Six failure modes to watch for
 
-**Color-scale domain not reset.** If the Viridis domain is fixed at $n=1$, high-$n$ orbitals appear uniformly dark. Recompute per state change.
+**Color-scale domain not reset.** If the Viridis domain is fixed at $n=1$, $\text{high-}n$ orbitals appear uniformly dark. Recompute per state change.
 
 **Forgetting the $r^2$ Jacobian.** Plotting $|R_{n\ell}|^2$ instead of $r^2|R_{n\ell}|^2$ makes the 1s density peak at $r=0$. The error is visible and dramatic.
 
