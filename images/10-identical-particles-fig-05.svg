@@ -1,0 +1,137 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 10-identical-particles
+     Figure  : 05 — Mechanism: Spatial Symmetry → Electron Avoidance → Lower Coulomb Energy
+     Type    : diagram
+     Priority: Important
+     Source  : pantry/10-identical-particles-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Mechanism: Spatial Symmetry → Electron Avoidance → Lower Coulomb Energy</title>
+  <desc>Three-step causal flowchart with two parallel tracks. Top track (parahelium): symmetric ψ₊ → high joint probability at r₁=r₂ → large Coulomb repulsion → higher energy. Bottom track (orthohelium): antisymmetric ψ₋ → near-zero joint probability at r₁=r₂ (Pauli node) → small repulsion → lower energy.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="10-identical-particles"
+      figure-number="05"
+      figure-title="Mechanism: Spatial Symmetry → Electron Avoidance → Lower Coulomb Energy"
+      figure-slug="spatial-symmetry-coulomb-mechanism"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-identical-particles-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Spatial Symmetry → Electron Avoidance → Energy</text>
+
+  <!-- Track labels on left -->
+  <text x="34" y="155" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E" text-anchor="middle" font-weight="600">para-</text>
+  <text x="34" y="167" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">helium</text>
+  <text x="34" y="179" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E" text-anchor="middle">ψ₊</text>
+  <text x="34" y="285" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="middle" font-weight="600">ortho-</text>
+  <text x="34" y="297" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="middle">helium</text>
+  <text x="34" y="309" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#ADADAD" text-anchor="middle">ψ₋</text>
+
+  <!-- Divider between tracks -->
+  <line x1="64" y1="220" x2="636" y2="220" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Step labels at top -->
+  <text x="168" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">1. Spatial wavefunction</text>
+  <text x="374" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">2. Joint probability at r₁=r₂</text>
+  <text x="570" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">3. Energy</text>
+
+  <!-- ===== TOP TRACK: Parahelium ψ₊ ===== -->
+
+  <!-- Panel 1 top: symmetric wavefunction overlap -->
+  <rect x="68" y="60" width="200" height="140" fill="#F5F5F5" stroke="#C8102E" stroke-width="1"/>
+  <!-- Two overlapping circles for probability densities -->
+  <circle cx="148" cy="120" r="38" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="1"/>
+  <circle cx="188" cy="120" r="38" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="1"/>
+  <!-- Overlap region darker -->
+  <ellipse cx="168" cy="120" rx="18" ry="30" fill="#C8102E" fill-opacity="0.30"/>
+  <text x="168" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">symmetric ψ₊</text>
+  <text x="168" y="193" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">|ψ₊(r₁,r₂)|² enhanced at r₁≈r₂</text>
+
+  <!-- Arrow step 1→2 top -->
+  <line x1="272" y1="130" x2="308" y2="130" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Panel 2 top: electrons close together, high repulsion -->
+  <rect x="312" y="60" width="200" height="140" fill="#F5F5F5" stroke="#C8102E" stroke-width="1"/>
+  <!-- Two electron dots close together -->
+  <circle cx="368" cy="115" r="10" fill="#C8102E" fill-opacity="0.8"/>
+  <circle cx="408" cy="115" r="10" fill="#C8102E" fill-opacity="0.8"/>
+  <!-- Thick repulsion line -->
+  <line x1="378" y1="115" x2="398" y2="115" stroke="#C8102E" stroke-width="4"/>
+  <text x="388" y="140" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#C8102E" text-anchor="middle">e⁻  e⁻</text>
+  <text x="388" y="154" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">close together</text>
+  <text x="388" y="176" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">High Coulomb repulsion</text>
+  <text x="388" y="191" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">large ⟨e²/|r₁−r₂|⟩</text>
+
+  <!-- Arrow step 2→3 top -->
+  <line x1="516" y1="130" x2="544" y2="130" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Panel 3 top: energy bar (higher) -->
+  <rect x="548" y="60" width="120" height="140" fill="#F5F5F5" stroke="#C8102E" stroke-width="1"/>
+  <line x1="568" y1="105" x2="648" y2="105" stroke="#C8102E" stroke-width="3"/>
+  <text x="608" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E" text-anchor="middle">E⁽⁰⁾+J+K</text>
+  <text x="608" y="135" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">HIGHER</text>
+  <text x="608" y="188" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">parahelium</text>
+
+  <!-- ===== BOTTOM TRACK: Orthohelium ψ₋ ===== -->
+
+  <!-- Panel 1 bottom: antisymmetric — gap at diagonal -->
+  <rect x="68" y="235" width="200" height="140" fill="#F5F5F5" stroke="#ADADAD" stroke-width="1"/>
+  <circle cx="148" cy="300" r="38" fill="#ADADAD" fill-opacity="0.12" stroke="#ADADAD" stroke-width="1"/>
+  <circle cx="188" cy="300" r="38" fill="#ADADAD" fill-opacity="0.12" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Empty (white) overlap region — Pauli node -->
+  <ellipse cx="168" cy="300" rx="18" ry="30" fill="#FFFFFF" stroke="#ADADAD" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <text x="168" y="350" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="middle">antisymmetric ψ₋</text>
+  <text x="168" y="365" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">|ψ₋(r₁,r₂)|²=0 at r₁=r₂</text>
+
+  <!-- Arrow step 1→2 bottom -->
+  <line x1="272" y1="305" x2="308" y2="305" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Panel 2 bottom: electrons far apart, low repulsion -->
+  <rect x="312" y="235" width="200" height="140" fill="#F5F5F5" stroke="#ADADAD" stroke-width="1"/>
+  <circle cx="342" cy="290" r="10" fill="#ADADAD"/>
+  <circle cx="452" cy="290" r="10" fill="#ADADAD"/>
+  <!-- Thin line = low repulsion -->
+  <line x1="352" y1="290" x2="442" y2="290" stroke="#ADADAD" stroke-width="1"/>
+  <text x="397" y="315" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">e⁻          e⁻</text>
+  <text x="397" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD" text-anchor="middle">far apart (avoided)</text>
+  <text x="397" y="352" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="middle">Low Coulomb repulsion</text>
+  <text x="397" y="367" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">small ⟨e²/|r₁−r₂|⟩</text>
+
+  <!-- Arrow step 2→3 bottom -->
+  <line x1="516" y1="305" x2="544" y2="305" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Panel 3 bottom: energy bar (lower) -->
+  <rect x="548" y="235" width="120" height="140" fill="#F5F5F5" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="568" y1="305" x2="648" y2="305" stroke="#ADADAD" stroke-width="3"/>
+  <text x="608" y="299" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">E⁽⁰⁾+J−K</text>
+  <text x="608" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD" text-anchor="middle">LOWER</text>
+  <text x="608" y="365" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">orthohelium</text>
+
+  <!-- Energy comparison between top and bottom bars in panel 3 -->
+  <line x1="664" y1="108" x2="664" y2="302" stroke="#2a1a0e" stroke-width="0.75"/>
+  <polygon points="660,112 664,103 668,112" fill="#2a1a0e"/>
+  <polygon points="660,298 664,307 668,298" fill="#2a1a0e"/>
+  <text x="680" y="208" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e" text-anchor="middle" transform="rotate(90,680,208)">2K</text>
+
+  <!-- Caption -->
+  <text x="350" y="395" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">No spin-spin magnetic force. The energy difference is entirely from electrostatic Coulomb repulsion, modulated by spatial symmetry.</text>
+</svg>

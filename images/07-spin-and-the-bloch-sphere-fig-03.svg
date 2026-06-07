@@ -1,0 +1,134 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 07-spin-and-the-bloch-sphere
+     Figure  : 03 — Larmor Precession: Bloch Vector Tracing a Latitude Circle
+     Type    : diagram
+     Priority: Important
+     Source  : pantry/07-spin-and-the-bloch-sphere-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Larmor Precession: Bloch Vector Tracing a Latitude Circle</title>
+  <desc>Spin-½ Bloch vector precessing around the ẑ axis in uniform field B₀ẑ. Three equally-spaced azimuthal snapshots trace a latitude circle at fixed polar angle θ₀. Vertical projection to equatorial plane (⟨Ŝ_z⟩ = (ℏ/2)cosθ₀) is constant throughout precession.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="07-spin-and-the-bloch-sphere"
+      figure-number="03"
+      figure-title="Larmor Precession: Bloch Vector Tracing a Latitude Circle"
+      figure-slug="larmor-precession-bloch"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-spin-and-the-bloch-sphere-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-field" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-prec" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ADADAD"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Larmor Precession — Bloch Vector at Latitude θ₀</text>
+
+  <!-- Sphere body centered at (310, 215), radius 148 -->
+  <circle cx="310" cy="215" r="148" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- Equatorial ellipse -->
+  <ellipse cx="310" cy="215" rx="148" ry="46" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Latitude circle for precession at θ₀ ≈ 50° from north -->
+  <!-- Center of latitude ellipse at y=215-(148*cos50°)=215-95=120, rx=148*sin50°=113 -->
+  <ellipse cx="310" cy="120" rx="113" ry="36" fill="none" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Vertical axis -->
+  <line x1="310" y1="50" x2="310" y2="380" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- B₀ field arrow above north pole -->
+  <line x1="310" y1="50" x2="310" y2="22" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow-field)"/>
+  <text x="318" y="20" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">B₀ẑ</text>
+
+  <!-- North pole marker -->
+  <circle cx="310" cy="67" r="5" fill="#D4D4D4" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="320" y="71" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|↑⟩</text>
+
+  <!-- South pole -->
+  <circle cx="310" cy="363" r="5" fill="#D4D4D4" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="320" y="367" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|↓⟩</text>
+
+  <!-- Three Bloch vector snapshots at φ=0, 120°, 240° -->
+  <!-- θ₀=50°, on sphere of r=148
+       Isometric projection: x_screen = cx + r*sinθ*cosφ*cos30° - r*sinθ*sinφ*cos30°... simplified
+       Actually use standard isometric: x = cx + rx*sinθ*cosφ, y = cy - r*cosθ + (small foreshorten)
+       Simplified 3/4 view: tip at (cx + 100*cosφ, cy - 95 + 30*sinφ) for r=148, θ=50°
+       φ=0:   tip=(410, 120)     weight visual check: sin50°*148≈113, project onto screen x+80%
+       φ=120°: tip=(253, 143)
+       φ=240°: tip=(253, 97)     approximate isometric positions
+  -->
+  <!-- Snapshot 1: φ=0°, tip at (408, 118) -->
+  <line x1="310" y1="215" x2="400" y2="118" stroke="#C8102E" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Vertical drop-line 1 -->
+  <line x1="400" y1="118" x2="400" y2="215" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- Foot marker -->
+  <circle cx="400" cy="215" r="3" fill="#D4D4D4"/>
+  <!-- φ=0 label -->
+  <text x="406" y="114" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">φ=0</text>
+
+  <!-- Snapshot 2: φ=120°, tip at (240, 140) -->
+  <line x1="310" y1="215" x2="242" y2="138" stroke="#C8102E" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="242" y1="138" x2="242" y2="215" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <circle cx="242" cy="215" r="3" fill="#D4D4D4"/>
+  <text x="188" y="135" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">φ=2π/3</text>
+
+  <!-- Snapshot 3: φ=240°, tip at (252, 98) -->
+  <line x1="310" y1="215" x2="252" y2="100" stroke="#C8102E" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="252" y1="100" x2="252" y2="215" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <circle cx="252" cy="215" r="3" fill="#D4D4D4"/>
+  <text x="188" y="97" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">φ=4π/3</text>
+
+  <!-- Drop-line label -->
+  <text x="415" y="165" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">⟨Ŝ_z⟩= const</text>
+
+  <!-- Precession direction arrow (curved, near equator) -->
+  <path d="M 390,215 Q 370,190 340,215" fill="none" stroke="#ADADAD" stroke-width="1.5" marker-end="url(#arrow-prec)"/>
+  <text x="380" y="240" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD">ω_L = γB₀</text>
+
+  <!-- θ₀ angle label -->
+  <path d="M 310,180 Q 326,152 336,138" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="338" y="155" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">θ₀</text>
+
+  <!-- Right-side info box -->
+  <rect x="510" y="80" width="166" height="140" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="518" y="97" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" font-weight="600">Larmor precession</text>
+  <text x="518" y="114" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ω_L = γ_e B₀</text>
+  <text x="518" y="131" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">θ₀ frozen (conserved)</text>
+  <text x="518" y="148" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">φ advances uniformly</text>
+  <line x1="518" y1="158" x2="668" y2="158" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="518" y="172" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">⟨Ŝ_z⟩ = (ℏ/2)cosθ₀</text>
+  <text x="518" y="188" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">is a conserved quantity</text>
+  <text x="518" y="204" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">independent of φ(t).</text>
+
+  <!-- Legend -->
+  <line x1="510" y1="245" x2="530" y2="245" stroke="#C8102E" stroke-width="2"/>
+  <text x="535" y="249" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Bloch vector snapshots</text>
+  <line x1="510" y1="263" x2="530" y2="263" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="535" y="267" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Latitude circle (path)</text>
+  <line x1="510" y1="281" x2="530" y2="281" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="535" y="285" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Vertical projection ⟨Ŝ_z⟩</text>
+
+  <!-- Caption -->
+  <text x="350" y="405" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Three snapshots at φ = 0, 2π/3, 4π/3. Drop-lines to equatorial plane all equal length: ⟨Ŝ_z⟩ constant.</text>
+</svg>

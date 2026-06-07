@@ -1,0 +1,145 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 09-the-hydrogen-atom
+     Figure  : 05 — Shell State Counting: 2n² Degeneracy and Periodic Table Row Lengths
+     Type    : chart
+     Priority: Important
+     Source  : pantry/09-the-hydrogen-atom-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Shell State Counting: 2n² Degeneracy and Periodic Table Row Lengths</title>
+  <desc>Horizontal stacked bar chart showing state count per hydrogen shell. Each bar is divided into subshell segments (s=2, p=6, d=10, f=14 states) and the total bar width equals 2n². Shells n=1 (K)=2, n=2 (L)=8, n=3 (M)=18, n=4 (N)=32. Vertical reference lines at x=2 and x=8 connect to periodic-table period lengths.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="09-the-hydrogen-atom"
+      figure-number="05"
+      figure-title="Shell State Counting: 2n² Degeneracy and Periodic Table Row Lengths"
+      figure-slug="shell-state-counting"
+      figure-type="chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/09-the-hydrogen-atom-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Shell State Counting — 2n² Degeneracy</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Each shell n contains 2n² spin-orbital states. Segments: s(2), p(6), d(10), f(14).</text>
+
+  <!-- Chart area: x_left=110, x_right=590, y_top=62, y_bottom=340 -->
+  <!-- X scale: 0..34 maps to 110..590, dx = 480/34 = 14.12 per state -->
+  <!-- 4 bars, bar height=42, gap=22, start y=74 -->
+
+  <!-- X axis gridlines and ticks -->
+  <!-- At 0, 2, 8, 18, 32, 34 -->
+  <!-- x(0)=110; x(2)=138.2; x(8)=223.0; x(18)=364.1; x(32)=562.0 -->
+  <rect x="110" y="62" width="480" height="278" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Vertical reference lines at 2 and 8 (period row length anchors) -->
+  <line x1="138" y1="62" x2="138" y2="340" stroke="#C8860E" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="223" y1="62" x2="223" y2="340" stroke="#C8860E" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Baseline -->
+  <line x1="110" y1="340" x2="590" y2="340" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="110" y1="62" x2="110" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Tick marks on x axis -->
+  <line x1="110" y1="340" x2="110" y2="346" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="138" y1="340" x2="138" y2="346" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="223" y1="340" x2="223" y2="346" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="364" y1="340" x2="364" y2="346" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="562" y1="340" x2="562" y2="346" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="590" y1="340" x2="590" y2="346" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- X axis labels -->
+  <text x="110" y="360" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
+  <text x="138" y="360" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8860E" text-anchor="middle">2</text>
+  <text x="223" y="360" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8860E" text-anchor="middle">8</text>
+  <text x="364" y="360" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">18</text>
+  <text x="562" y="360" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">32</text>
+  <text x="350" y="382" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Number of states (2J+1 per subshell × 2 for spin)</text>
+
+  <!-- Scale: 1 state = 14.118 px -->
+
+  <!-- ===== n=1, K shell: s(2) = 2 total ===== -->
+  <!-- Bar y: 74..116 center=95 -->
+  <text x="102" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=1 (K)</text>
+  <!-- s segment: 2 states, width=28.2 -->
+  <rect x="110" y="74" width="28" height="42" fill="#ADADAD"/>
+  <text x="124" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">s</text>
+  <!-- Total marker -->
+  <circle cx="138" cy="95" r="5" fill="#2a1a0e"/>
+  <text x="148" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=2</text>
+
+  <!-- ===== n=2, L shell: s(2)+p(6) = 8 total ===== -->
+  <text x="102" y="163" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=2 (L)</text>
+  <!-- s: 2, width=28.2 -->
+  <rect x="110" y="142" width="28" height="42" fill="#ADADAD"/>
+  <text x="124" y="167" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">s</text>
+  <!-- p: 6, width=84.7 -->
+  <rect x="138" y="142" width="85" height="42" fill="#787878"/>
+  <text x="181" y="167" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">p</text>
+  <!-- Total -->
+  <circle cx="223" cy="163" r="5" fill="#2a1a0e"/>
+  <text x="233" y="167" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=8</text>
+
+  <!-- ===== n=3, M shell: s(2)+p(6)+d(10) = 18 ===== -->
+  <text x="102" y="231" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=3 (M)</text>
+  <!-- s: 2 -->
+  <rect x="110" y="210" width="28" height="42" fill="#ADADAD"/>
+  <text x="124" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">s</text>
+  <!-- p: 6 -->
+  <rect x="138" y="210" width="85" height="42" fill="#787878"/>
+  <text x="181" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">p</text>
+  <!-- d: 10, width=141.2 -->
+  <rect x="223" y="210" width="141" height="42" fill="#2a1a0e" fill-opacity="0.80"/>
+  <text x="294" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">d</text>
+  <!-- Total -->
+  <circle cx="364" cy="231" r="5" fill="#2a1a0e"/>
+  <text x="374" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=18</text>
+
+  <!-- ===== n=4, N shell: s(2)+p(6)+d(10)+f(14) = 32 ===== -->
+  <text x="102" y="299" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=4 (N)</text>
+  <!-- s: 2 -->
+  <rect x="110" y="278" width="28" height="42" fill="#ADADAD"/>
+  <text x="124" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">s</text>
+  <!-- p: 6 -->
+  <rect x="138" y="278" width="85" height="42" fill="#787878"/>
+  <text x="181" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">p</text>
+  <!-- d: 10 -->
+  <rect x="223" y="278" width="141" height="42" fill="#2a1a0e" fill-opacity="0.80"/>
+  <text x="294" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">d</text>
+  <!-- f: 14, width=197.6 -->
+  <rect x="364" y="278" width="198" height="42" fill="#2a1a0e"/>
+  <text x="463" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">f</text>
+  <!-- Total -->
+  <circle cx="562" cy="299" r="5" fill="#2a1a0e"/>
+  <text x="572" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=32</text>
+
+  <!-- Legend -->
+  <rect x="34" y="250" width="64" height="82" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="40" y="257" width="14" height="10" fill="#ADADAD"/>
+  <text x="58" y="266" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">s (ℓ=0)</text>
+  <rect x="40" y="272" width="14" height="10" fill="#787878"/>
+  <text x="58" y="281" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">p (ℓ=1)</text>
+  <rect x="40" y="287" width="14" height="10" fill="#2a1a0e" fill-opacity="0.80"/>
+  <text x="58" y="296" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">d (ℓ=2)</text>
+  <rect x="40" y="302" width="14" height="10" fill="#2a1a0e"/>
+  <text x="58" y="311" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">f (ℓ=3)</text>
+  <circle cx="47" cy="323" r="4" fill="#2a1a0e"/>
+  <text x="58" y="327" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">total</text>
+
+  <!-- Period annotation at x=2 and x=8 -->
+  <text x="138" y="58" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">Period 1</text>
+  <text x="181" y="58" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">Periods 2,3</text>
+
+  <!-- Caption -->
+  <text x="350" y="406" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Shell capacity 2n²; period lengths 2 and 8 (gold dashes) arise from s and s+p subshells only.</text>
+</svg>

@@ -1,0 +1,166 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 05-quantum-mechanics-in-three-dimensions · figure: 06
+     title: Nuclear Shell Model Level Ordering from Spherical Well
+     type: chart · priority: Supplementary · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-06">
+  <title id="fig-title-06">Nuclear Shell Model Level Ordering from Spherical Infinite Well</title>
+  <desc>Vertical energy-level diagram showing the first six single-particle levels of a 3D infinite spherical well in order of increasing energy: 1s, 1p, 1d, 2s, 1f, 2p. Each level is a horizontal bar colored by angular momentum quantum number ℓ. Degeneracy dots and cumulative particle counts marking the magic numbers 2, 8, and 20 are shown on the right.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="05-quantum-mechanics-in-three-dimensions"
+      figure-number="06"
+      figure-title="Nuclear Shell Model Level Ordering from Spherical Well"
+      figure-slug="nuclear-shell-model-level-ordering"
+      figure-type="chart"
+      priority="Supplementary"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/05-quantum-mechanics-in-three-dimensions-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Nuclear Shell Model Level Ordering — Spherical Infinite Well</text>
+
+  <!-- Energy axis (vertical) -->
+  <line x1="120" y1="380" x2="120" y2="40" stroke="#545454" stroke-width="0.75"/>
+  <!-- Arrow up -->
+  <polygon points="116,42 120,34 124,42" fill="#545454"/>
+  <text x="120" y="30" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">E</text>
+
+  <!-- Energy tick marks at level positions -->
+  <!-- 1s: y=360; 1p: y=296; 1d: y=215; 2s: y=176; 1f: y=118; 2p: y=50 -->
+  <!-- Level bars: centered at x=280, width proportional to degeneracy
+       Each bar width = degen * 8px: 1s=16, 1p=48, 1d=80, 2s=16, 1f=112, 2p=48 -->
+
+  <!-- Color map:
+       s levels (ell=0): ink #2a1a0e
+       p levels (ell=1): #787878 gray
+       d levels (ell=2): #ADADAD light gray
+       f levels (ell=3): #C8860E ochre  -->
+
+  <!-- ~~~~ 1s level: y=360, degen=2, w=70, ell=0 (ink) ~~~~ -->
+  <rect x="200" y="354" width="100" height="12" rx="0" fill="#2a1a0e"/>
+  <!-- tick on energy axis -->
+  <line x1="116" y1="360" x2="124" y2="360" stroke="#545454" stroke-width="0.75"/>
+  <!-- Degeneracy dots: 2 -->
+  <circle cx="316" cy="360" r="4" fill="#2a1a0e"/>
+  <circle cx="326" cy="360" r="4" fill="#2a1a0e"/>
+  <!-- Level label left of bar -->
+  <text x="192" y="364" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="end">1s</text>
+
+  <!-- ~~~~ 1p level: y=296, degen=6, ell=1 (gray) ~~~~ -->
+  <rect x="200" y="290" width="100" height="12" rx="0" fill="#787878"/>
+  <line x1="116" y1="296" x2="124" y2="296" stroke="#545454" stroke-width="0.75"/>
+  <!-- Degeneracy: 6 dots -->
+  <circle cx="316" cy="296" r="4" fill="#787878"/>
+  <circle cx="326" cy="296" r="4" fill="#787878"/>
+  <circle cx="336" cy="296" r="4" fill="#787878"/>
+  <circle cx="346" cy="296" r="4" fill="#787878"/>
+  <circle cx="356" cy="296" r="4" fill="#787878"/>
+  <circle cx="366" cy="296" r="4" fill="#787878"/>
+  <text x="192" y="300" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#787878" text-anchor="end">1p</text>
+
+  <!-- ~~~~ 1d level: y=215, degen=10, ell=2 (light gray) ~~~~ -->
+  <rect x="200" y="209" width="100" height="12" rx="0" fill="#ADADAD"/>
+  <line x1="116" y1="215" x2="124" y2="215" stroke="#545454" stroke-width="0.75"/>
+  <!-- 10 dots -->
+  <circle cx="316" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="326" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="336" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="346" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="356" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="366" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="376" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="386" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="396" cy="215" r="4" fill="#ADADAD"/>
+  <circle cx="406" cy="215" r="4" fill="#ADADAD"/>
+  <text x="192" y="219" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#545454" text-anchor="end">1d</text>
+
+  <!-- ~~~~ 2s level: y=176, degen=2, ell=0 (ink) ~~~~ -->
+  <rect x="200" y="170" width="100" height="12" rx="0" fill="#2a1a0e"/>
+  <line x1="116" y1="176" x2="124" y2="176" stroke="#545454" stroke-width="0.75"/>
+  <circle cx="316" cy="176" r="4" fill="#2a1a0e"/>
+  <circle cx="326" cy="176" r="4" fill="#2a1a0e"/>
+  <text x="192" y="180" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="end">2s</text>
+
+  <!-- ~~~~ 1f level: y=118, degen=14, ell=3 (ochre) ~~~~ -->
+  <rect x="200" y="112" width="100" height="12" rx="0" fill="#C8860E"/>
+  <line x1="116" y1="118" x2="124" y2="118" stroke="#545454" stroke-width="0.75"/>
+  <!-- 14 dots -->
+  <circle cx="316" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="326" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="336" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="346" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="356" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="366" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="376" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="386" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="396" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="406" cy="118" r="4" fill="#C8860E"/>
+  <circle cx="316" cy="128" r="4" fill="#C8860E"/>
+  <circle cx="326" cy="128" r="4" fill="#C8860E"/>
+  <circle cx="336" cy="128" r="4" fill="#C8860E"/>
+  <circle cx="346" cy="128" r="4" fill="#C8860E"/>
+  <text x="192" y="122" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#C8860E" text-anchor="end">1f</text>
+
+  <!-- ~~~~ 2p level: y=50, degen=6, ell=1 (gray) ~~~~ -->
+  <rect x="200" y="44" width="100" height="12" rx="0" fill="#787878"/>
+  <line x1="116" y1="50" x2="124" y2="50" stroke="#545454" stroke-width="0.75"/>
+  <circle cx="316" cy="50" r="4" fill="#787878"/>
+  <circle cx="326" cy="50" r="4" fill="#787878"/>
+  <circle cx="336" cy="50" r="4" fill="#787878"/>
+  <circle cx="346" cy="50" r="4" fill="#787878"/>
+  <circle cx="356" cy="50" r="4" fill="#787878"/>
+  <circle cx="366" cy="50" r="4" fill="#787878"/>
+  <text x="192" y="54" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#787878" text-anchor="end">2p</text>
+
+  <!-- Right side: cumulative counts with magic number markers -->
+  <!-- Right edge of dots ≈ x=416 max. Put cumulative at x=460 -->
+  <text x="460" y="32" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">cumulative</text>
+
+  <!-- After 1s: cumulative=2, y=360 -->
+  <text x="460" y="364" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E" text-anchor="middle">2</text>
+  <polygon points="440,360 446,357 446,363" fill="#C8102E"/>
+
+  <!-- After 1p: cumulative=8, y=296 -->
+  <text x="460" y="300" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E" text-anchor="middle">8</text>
+  <polygon points="440,296 446,293 446,299" fill="#C8102E"/>
+
+  <!-- After 2s (1d+2s): cumulative=20, y=176 -->
+  <!-- Draw a bracket from 1d bottom to 2s top showing they together = 20 -->
+  <text x="460" y="180" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E" text-anchor="middle">20</text>
+  <polygon points="440,176 446,173 446,179" fill="#C8102E"/>
+  <!-- Bracket from y=209 (bottom of 1d) to y=176 -->
+  <line x1="436" y1="221" x2="436" y2="170" stroke="#C8102E" stroke-width="0.75"/>
+  <line x1="432" y1="221" x2="440" y2="221" stroke="#C8102E" stroke-width="0.75"/>
+  <line x1="432" y1="170" x2="440" y2="170" stroke="#C8102E" stroke-width="0.75"/>
+
+  <!-- Magic number labels -->
+  <text x="476" y="362" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">magic</text>
+  <text x="476" y="298" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">magic</text>
+  <text x="476" y="178" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">magic</text>
+
+  <!-- Legend -->
+  <rect x="530" y="200" width="148" height="110" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="604" y="218" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">ℓ type</text>
+  <rect x="544" y="226" width="24" height="10" fill="#2a1a0e"/>
+  <text x="576" y="236" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">ℓ=0 (s)</text>
+  <rect x="544" y="246" width="24" height="10" fill="#787878"/>
+  <text x="576" y="256" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#787878">ℓ=1 (p)</text>
+  <rect x="544" y="266" width="24" height="10" fill="#ADADAD"/>
+  <text x="576" y="276" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">ℓ=2 (d)</text>
+  <rect x="544" y="286" width="24" height="10" fill="#C8860E"/>
+  <text x="576" y="296" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8860E">ℓ=3 (f)</text>
+
+  <!-- Dots legend -->
+  <circle cx="550" cy="312" r="4" fill="#545454"/>
+  <text x="562" y="316" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">= 1 state</text>
+  <polygon points="544,326 550,323 550,329" fill="#C8102E"/>
+  <text x="562" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">magic number</text>
+
+  <!-- Degeneracy annotation -->
+  <text x="350" y="395" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Degeneracy per level = 2(2ℓ+1). Magic numbers 2, 8, 20 appear at shell closures.</text>
+</svg>

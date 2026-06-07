@@ -1,0 +1,104 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 07-spin-and-the-bloch-sphere
+     Figure  : 05 — Larmor Frequency vs. Field Strength: Proton MRI Operating Points
+     Type    : chart
+     Priority: Supplementary
+     Source  : pantry/07-spin-and-the-bloch-sphere-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Larmor Frequency vs. Field Strength: Proton MRI Operating Points</title>
+  <desc>Horizontal bar chart of proton Larmor frequency at four clinical MRI field strengths. f_L = γ_p/(2π) × B₀ with γ_p/(2π) = 42.58 MHz/T. Values: 0.5 T → 21.29 MHz; 1.5 T → 63.87 MHz; 3.0 T → 127.74 MHz; 7.0 T → 298.06 MHz. Relationship is linear.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="07-spin-and-the-bloch-sphere"
+      figure-number="05"
+      figure-title="Larmor Frequency vs. Field Strength: Proton MRI Operating Points"
+      figure-slug="larmor-frequency-mri"
+      figure-type="chart"
+      priority="Supplementary"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-spin-and-the-bloch-sphere-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Proton Larmor Frequency at MRI Field Strengths</text>
+  <text x="350" y="46" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">f_L = (γ_p/2π) × B₀,   γ_p/2π = 42.58 MHz/T</text>
+
+  <!-- Chart area: x=120..660, y=68..348, W=540, H=280 -->
+  <rect x="120" y="68" width="540" height="280" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- X-axis gridlines (at 50, 100, 150, 200, 250, 300 MHz) -->
+  <!-- x_scale: 0..320 MHz maps to 120..660, so dx = 540/320 = 1.6875 per MHz -->
+  <!-- x(50)=120+50*1.6875=204.4; x(100)=288.75; x(150)=373.1; x(200)=457.5; x(250)=541.9; x(300)=626.3 -->
+  <line x1="204" y1="68" x2="204" y2="348" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="289" y1="68" x2="289" y2="348" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="373" y1="68" x2="373" y2="348" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="457" y1="68" x2="457" y2="348" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="542" y1="68" x2="542" y2="348" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="626" y1="68" x2="626" y2="348" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Zero baseline -->
+  <line x1="120" y1="68" x2="120" y2="348" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- X-axis tick labels -->
+  <text x="120" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
+  <text x="204" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">50</text>
+  <text x="289" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">100</text>
+  <text x="373" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">150</text>
+  <text x="457" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">200</text>
+  <text x="542" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">250</text>
+  <text x="626" y="366" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">300</text>
+
+  <!-- X-axis label -->
+  <text x="390" y="390" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#545454" text-anchor="middle">Larmor frequency f_L (MHz)</text>
+
+  <!-- Data bars — 4 rows
+       Y positions: 4 bars in 280px space, bar height=40, gap=30
+       Row centers: 68+35=103, 68+105=173, 68+175=243, 68+245=313
+       Bar y-top: row_center-20
+  -->
+  <!-- f in MHz → bar_width = f * 540/320 px -->
+
+  <!-- Bar 1: B₀=0.5T, f=21.29MHz, width=21.29*540/320=35.9 -->
+  <!-- Lightest shade of ink series: #ADADAD -->
+  <rect x="120" y="83" width="36" height="40" fill="#ADADAD"/>
+  <!-- Tip marker -->
+  <circle cx="156" cy="103" r="4" fill="#C8860E"/>
+  <!-- Y-axis label -->
+  <text x="112" y="107" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">0.5 T</text>
+  <!-- Value label -->
+  <text x="162" y="107" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">21.3 MHz</text>
+
+  <!-- Bar 2: B₀=1.5T, f=63.87MHz, width=63.87*540/320=107.8 -->
+  <rect x="120" y="153" width="108" height="40" fill="#787878"/>
+  <circle cx="228" cy="173" r="4" fill="#C8860E"/>
+  <text x="112" y="177" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">1.5 T</text>
+  <text x="234" y="177" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">63.9 MHz</text>
+
+  <!-- Bar 3: B₀=3.0T, f=127.74MHz, width=127.74*540/320=215.6 -->
+  <rect x="120" y="223" width="216" height="40" fill="#2a1a0e" fill-opacity="0.70"/>
+  <circle cx="336" cy="243" r="4" fill="#C8860E"/>
+  <text x="112" y="247" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">3.0 T</text>
+  <text x="342" y="247" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">127.7 MHz</text>
+
+  <!-- Bar 4: B₀=7.0T, f=298.06MHz, width=298.06*540/320=503.0 -->
+  <rect x="120" y="293" width="503" height="40" fill="#2a1a0e"/>
+  <circle cx="623" cy="313" r="4" fill="#C8860E"/>
+  <text x="112" y="317" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">7.0 T</text>
+  <text x="629" y="317" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">298.1</text>
+
+  <!-- Bottom axis line -->
+  <line x1="120" y1="348" x2="660" y2="348" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Caption -->
+  <text x="350" y="405" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Proton gyromagnetic ratio γ_p/2π = 42.58 MHz/T. Clinical scanners span 0.5–7 T; f_L scales linearly.</text>
+</svg>

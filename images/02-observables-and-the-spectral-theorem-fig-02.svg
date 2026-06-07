@@ -1,0 +1,112 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 02-observables-and-the-spectral-theorem · figure: 02
+     title: Born Rule as Geometric Projection
+     type: diagram · priority: Critical · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Born Rule as Geometric Projection</title>
+  <desc>A 2D unit-circle diagram showing the state vector |ψ⟩ at 35° from the horizontal eigenstate axis. Perpendicular projections drop to each eigenstate, and probability squares adjacent to each axis have areas proportional to the squared projection lengths, illustrating the Born rule geometrically.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="02-observables-and-the-spectral-theorem"
+      figure-number="02"
+      figure-title="Born Rule as Geometric Projection"
+      figure-slug="born-rule-geometric-projection"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-observables-and-the-spectral-theorem-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-sky" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Born Rule as Geometric Projection</text>
+
+  <!-- Center of diagram -->
+  <!-- cx=300, cy=220, radius=150 -->
+
+  <!-- Unit circle -->
+  <circle cx="300" cy="220" r="150" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Eigenstate a1 along horizontal axis (right) -->
+  <!-- |a1⟩ at angle 0°: (300+150, 220) = (450, 220) -->
+  <line x1="300" y1="220" x2="448" y2="220" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
+  <text x="458" y="224" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">|a₁⟩</text>
+
+  <!-- Eigenstate a2 along vertical axis (up) -->
+  <!-- |a2⟩ at angle 90°: (300, 220-150) = (300, 70) -->
+  <line x1="300" y1="220" x2="300" y2="72" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
+  <text x="308" y="66" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">|a₂⟩</text>
+
+  <!-- State vector |ψ⟩ at 35° from horizontal -->
+  <!-- 35° in SVG: x = cos(35°)*130 = 0.819*130=106.5, y = -sin(35°)*130 = -0.574*130=-74.6 -->
+  <!-- tip: (300+106.5, 220-74.6) = (406.5, 145.4) -->
+  <line x1="300" y1="220" x2="405" y2="146" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="412" y="140" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e">|ψ⟩</text>
+
+  <!-- Projection onto a1 (horizontal): foot at (406.5, 220), project down from tip -->
+  <!-- Foot: (405, 220) -->
+  <line x1="405" y1="146" x2="405" y2="218" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Right-angle marker at foot (405, 220) -->
+  <rect x="397" y="212" width="8" height="8" fill="none" stroke="#787878" stroke-width="0.75"/>
+  <!-- Projection length on a1 axis: from origin (300,220) to foot (405,220) = 105px -->
+  <!-- Amplitude = 105/150 = 0.7 → prob = 0.49 -->
+
+  <!-- Projection onto a2 (vertical): foot at (300, 145.4), project left from tip -->
+  <!-- Foot: (300, 146) -->
+  <line x1="405" y1="146" x2="302" y2="146" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Right-angle marker at foot (300, 146) -->
+  <rect x="300" y="138" width="8" height="8" fill="none" stroke="#787878" stroke-width="0.75"/>
+
+  <!-- Probability square for a1: area proportional to (105/150)^2 = 0.49 -->
+  <!-- Place beside a1 axis tip, size 44x44 (representing 0.49) -->
+  <rect x="415" y="220" width="44" height="44" fill="#2a1a0e" fill-opacity="0.35" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="437" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">P₁</text>
+  <text x="437" y="278" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|⟨a₁|ψ⟩|²</text>
+
+  <!-- Probability square for a2: 1-0.49=0.51, size 47x47 -->
+  <rect x="248" y="96" width="47" height="47" fill="#787878" fill-opacity="0.25" stroke="#787878" stroke-width="0.75"/>
+  <text x="271" y="124" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">P₂</text>
+  <text x="220" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|⟨a₂|ψ⟩|²</text>
+
+  <!-- Origin dot -->
+  <circle cx="300" cy="220" r="3" fill="#2a1a0e"/>
+
+  <!-- Complementarity note -->
+  <text x="300" y="385" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">P₁ + P₂ = 1 (areas complement — Pythagorean theorem)</text>
+
+  <!-- Right panel: legend -->
+  <rect x="530" y="140" width="148" height="140" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="604" y="158" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Legend</text>
+  <!-- State arrow -->
+  <line x1="544" y1="172" x2="564" y2="172" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="572" y="176" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">|ψ⟩ state</text>
+  <!-- Eigenstate arrow -->
+  <line x1="544" y1="192" x2="564" y2="192" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
+  <text x="572" y="196" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">eigenstates</text>
+  <!-- Projection line -->
+  <line x1="544" y1="212" x2="564" y2="212" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="572" y="216" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">projection</text>
+  <!-- P squares -->
+  <rect x="544" y="226" width="12" height="12" fill="#2a1a0e" fill-opacity="0.35" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="572" y="236" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">prob. P₁</text>
+  <rect x="544" y="246" width="12" height="12" fill="#787878" fill-opacity="0.25" stroke="#787878" stroke-width="0.75"/>
+  <text x="572" y="256" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">prob. P₂</text>
+
+  <!-- Caption -->
+  <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Probability = squared projection length onto eigenstate axis.</text>
+</svg>

@@ -1,0 +1,117 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 01-the-formalism · figure: 03
+     title: Operator vs. Matrix: Same Operator, Two Bases
+     type: diagram · priority: Important · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Operator vs. Matrix: Same Operator, Two Bases</title>
+  <desc>A single basis-independent operator object at top connects by downward arrows to two matrix representations below: a diagonal matrix in the position basis (left) and a tridiagonal matrix in the energy basis (right). A bidirectional arc at the bottom connects the two matrices, indicating they represent the same operator.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="01-the-formalism"
+      figure-number="03"
+      figure-title="Operator vs. Matrix: Same Operator, Two Bases"
+      figure-slug="operator-vs-matrix-two-bases"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-the-formalism-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-rev" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Operator vs. Matrix — Same Operator, Two Bases</text>
+
+  <!-- Central operator object (top) -->
+  <rect x="270" y="45" width="160" height="60" rx="0" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="72" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#2a1a0e" text-anchor="middle">Â (basis-free)</text>
+  <text x="350" y="92" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">abstract operator</text>
+
+  <!-- Left branch arrow -->
+  <line x1="305" y1="105" x2="200" y2="175" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="225" y="155" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">position</text>
+  <text x="225" y="167" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">basis</text>
+
+  <!-- Right branch arrow -->
+  <line x1="395" y1="105" x2="500" y2="175" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="475" y="155" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">energy</text>
+  <text x="475" y="167" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">basis</text>
+
+  <!-- LEFT MATRIX: diagonal (5x5) -->
+  <!-- Position basis label -->
+  <text x="155" y="178" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">position basis</text>
+
+  <!-- Matrix grid: 5x5, cell size 30x30, top-left at (55,185) -->
+  <g id="matrix-left">
+    <!-- Grid lines -->
+    <rect x="55" y="185" width="200" height="200" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+    <!-- Vertical lines -->
+    <line x1="95" y1="185" x2="95" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="135" y1="185" x2="135" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="175" y1="185" x2="175" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="215" y1="185" x2="215" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <!-- Horizontal lines -->
+    <line x1="55" y1="225" x2="255" y2="225" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="55" y1="265" x2="255" y2="265" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="55" y1="305" x2="255" y2="305" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="55" y1="345" x2="255" y2="345" stroke="#D4D4D4" stroke-width="0.5"/>
+    <!-- Diagonal filled circles (position basis: diagonal only) -->
+    <circle cx="75" cy="205" r="10" fill="#2a1a0e" opacity="0.7"/>
+    <circle cx="115" cy="245" r="10" fill="#2a1a0e" opacity="0.7"/>
+    <circle cx="155" cy="285" r="10" fill="#2a1a0e" opacity="0.7"/>
+    <circle cx="195" cy="325" r="10" fill="#2a1a0e" opacity="0.7"/>
+    <circle cx="235" cy="365" r="10" fill="#2a1a0e" opacity="0.7"/>
+  </g>
+  <text x="155" y="400" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">diagonal</text>
+
+  <!-- RIGHT MATRIX: tridiagonal (5x5) -->
+  <text x="545" y="178" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">energy basis</text>
+
+  <g id="matrix-right">
+    <rect x="445" y="185" width="200" height="200" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+    <line x1="485" y1="185" x2="485" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="525" y1="185" x2="525" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="565" y1="185" x2="565" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="605" y1="185" x2="605" y2="385" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="445" y1="225" x2="645" y2="225" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="445" y1="265" x2="645" y2="265" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="445" y1="305" x2="645" y2="305" stroke="#D4D4D4" stroke-width="0.5"/>
+    <line x1="445" y1="345" x2="645" y2="345" stroke="#D4D4D4" stroke-width="0.5"/>
+    <!-- Tridiagonal: main diagonal + adjacent diagonals -->
+    <!-- Main diagonal -->
+    <circle cx="465" cy="205" r="9" fill="#787878" opacity="0.8"/>
+    <circle cx="505" cy="245" r="9" fill="#787878" opacity="0.8"/>
+    <circle cx="545" cy="285" r="9" fill="#787878" opacity="0.8"/>
+    <circle cx="585" cy="325" r="9" fill="#787878" opacity="0.8"/>
+    <circle cx="625" cy="365" r="9" fill="#787878" opacity="0.8"/>
+    <!-- Superdiagonal -->
+    <circle cx="505" cy="205" r="7" fill="#ADADAD"/>
+    <circle cx="545" cy="245" r="7" fill="#ADADAD"/>
+    <circle cx="585" cy="285" r="7" fill="#ADADAD"/>
+    <circle cx="625" cy="325" r="7" fill="#ADADAD"/>
+    <!-- Subdiagonal -->
+    <circle cx="465" cy="245" r="7" fill="#ADADAD"/>
+    <circle cx="505" cy="285" r="7" fill="#ADADAD"/>
+    <circle cx="545" cy="325" r="7" fill="#ADADAD"/>
+    <circle cx="585" cy="365" r="7" fill="#ADADAD"/>
+  </g>
+  <text x="545" y="400" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">tridiagonal</text>
+
+  <!-- Bottom bidirectional arc between matrices -->
+  <path d="M 255 385 Q 350 420 445 385" fill="none" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-red)" marker-start="url(#arrow-rev)"/>
+  <text x="350" y="418" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">same eigenvalues — same operator</text>
+</svg>

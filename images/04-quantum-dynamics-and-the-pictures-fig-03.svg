@@ -1,0 +1,85 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 04-quantum-dynamics-and-the-pictures · figure: 03
+     title: Rabi Oscillation: Probability vs. Time for a Two-Level System
+     type: chart · priority: Critical · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Rabi Oscillation: Probability vs. Time for a Two-Level System</title>
+  <desc>Line chart showing Rabi oscillations P↑(t) = cos²(ω₀t/2) and P↓(t) = sin²(ω₀t/2) over one full period from 0 to 2π/ω₀. The two probabilities sum to 1 at all times, crossing at P = 0.5 at the half-period point t = π/ω₀.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="04-quantum-dynamics-and-the-pictures"
+      figure-number="03"
+      figure-title="Rabi Oscillation: Probability vs. Time for a Two-Level System"
+      figure-slug="rabi-oscillation-probability-vs-time"
+      figure-type="chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-dynamics-and-the-pictures-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Rabi Oscillation — Probability vs. Time</text>
+
+  <!-- Chart area background -->
+  <rect x="80" y="50" width="540" height="280" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Horizontal reference at P=0.5: y = 50 + (1-0.5)*280 = 50+140 = 190 -->
+  <line x1="80" y1="190" x2="620" y2="190" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Axes -->
+  <line x1="80" y1="330" x2="620" y2="330" stroke="#545454" stroke-width="0.75"/>
+  <line x1="80" y1="330" x2="80" y2="50" stroke="#545454" stroke-width="0.75"/>
+
+  <!-- y-axis ticks and labels -->
+  <!-- y=50 → P=1.0; y=190 → P=0.5; y=330 → P=0 -->
+  <line x1="78" y1="330" x2="82" y2="330" stroke="#545454" stroke-width="0.75"/>
+  <text x="72" y="334" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">0</text>
+  <line x1="78" y1="190" x2="82" y2="190" stroke="#545454" stroke-width="0.75"/>
+  <text x="72" y="194" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">0.5</text>
+  <line x1="78" y1="50" x2="82" y2="50" stroke="#545454" stroke-width="0.75"/>
+  <text x="72" y="54" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">1.0</text>
+
+  <!-- y-axis title -->
+  <text x="24" y="190" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" transform="rotate(-90,24,190)">probability P</text>
+
+  <!-- x-axis ticks -->
+  <!-- t=0: x=80; t=π/ω₀ (half): x=350; t=2π/ω₀: x=620 -->
+  <line x1="80" y1="330" x2="80" y2="334" stroke="#545454" stroke-width="0.75"/>
+  <text x="80" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
+  <line x1="350" y1="330" x2="350" y2="334" stroke="#545454" stroke-width="0.75"/>
+  <text x="350" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">π/ω₀</text>
+  <line x1="620" y1="330" x2="620" y2="334" stroke="#545454" stroke-width="0.75"/>
+  <text x="620" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">2π/ω₀</text>
+
+  <!-- x-axis title -->
+  <text x="350" y="368" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">time t</text>
+
+  <!-- P↑(t) = cos²(ω₀t/2) curve — ink color -->
+  <polyline fill="none" stroke="#2a1a0e" stroke-width="2" stroke-linejoin="round"
+    points="80.0,50.0 85.4,50.3 90.8,51.1 96.2,52.5 101.6,54.4 107.0,56.9 112.4,59.8 117.8,63.3 123.2,67.3 128.6,71.8 134.0,76.7 139.4,82.1 144.8,87.9 150.2,94.2 155.6,100.8 161.0,107.7 166.4,115.0 171.8,122.6 177.2,130.4 182.6,138.5 188.0,146.7 193.4,155.2 198.8,163.8 204.2,172.5 209.6,181.2 215.0,190.0 220.4,198.8 225.8,207.5 231.2,216.2 236.6,224.8 242.0,233.3 247.4,241.5 252.8,249.6 258.2,257.4 263.6,265.0 269.0,272.3 274.4,279.2 279.8,285.8 285.2,292.1 290.6,297.9 296.0,303.3 301.4,308.2 306.8,312.7 312.2,316.7 317.6,320.2 323.0,323.1 328.4,325.6 333.8,327.5 339.2,328.9 344.6,329.7 350.0,330.0 355.4,329.7 360.8,328.9 366.2,327.5 371.6,325.6 377.0,323.1 382.4,320.2 387.8,316.7 393.2,312.7 398.6,308.2 404.0,303.3 409.4,297.9 414.8,292.1 420.2,285.8 425.6,279.2 431.0,272.3 436.4,265.0 441.8,257.4 447.2,249.6 452.6,241.5 458.0,233.3 463.4,224.8 468.8,216.2 474.2,207.5 479.6,198.8 485.0,190.0 490.4,181.2 495.8,172.5 501.2,163.8 506.6,155.2 512.0,146.7 517.4,138.5 522.8,130.4 528.2,122.6 533.6,115.0 539.0,107.7 544.4,100.8 549.8,94.2 555.2,87.9 560.6,82.1 566.0,76.7 571.4,71.8 576.8,67.3 582.2,63.3 587.6,59.8 593.0,56.9 598.4,54.4 603.8,52.5 609.2,51.1 614.6,50.3 620.0,50.0"/>
+
+  <!-- P↓(t) = sin²(ω₀t/2) curve — red -->
+  <polyline fill="none" stroke="#C8102E" stroke-width="2" stroke-linejoin="round"
+    points="80.0,330.0 85.4,329.7 90.8,328.9 96.2,327.5 101.6,325.6 107.0,323.1 112.4,320.2 117.8,316.7 123.2,312.7 128.6,308.2 134.0,303.3 139.4,297.9 144.8,292.1 150.2,285.8 155.6,279.2 161.0,272.3 166.4,265.0 171.8,257.4 177.2,249.6 182.6,241.5 188.0,233.3 193.4,224.8 198.8,216.2 204.2,207.5 209.6,198.8 215.0,190.0 220.4,181.2 225.8,172.5 231.2,163.8 236.6,155.2 242.0,146.7 247.4,138.5 252.8,130.4 258.2,122.6 263.6,115.0 269.0,107.7 274.4,100.8 279.8,94.2 285.2,87.9 290.6,82.1 296.0,76.7 301.4,71.8 306.8,67.3 312.2,63.3 317.6,59.8 323.0,56.9 328.4,54.4 333.8,52.5 339.2,51.1 344.6,50.3 350.0,50.0 355.4,50.3 360.8,51.1 366.2,52.5 371.6,54.4 377.0,56.9 382.4,59.8 387.8,63.3 393.2,67.3 398.6,71.8 404.0,76.7 409.4,82.1 414.8,87.9 420.2,94.2 425.6,100.8 431.0,107.7 436.4,115.0 441.8,122.6 447.2,130.4 452.6,138.5 458.0,146.7 463.4,155.2 468.8,163.8 474.2,172.5 479.6,181.2 485.0,190.0 490.4,198.8 495.8,207.5 501.2,216.2 506.6,224.8 512.0,233.3 517.4,241.5 522.8,249.6 528.2,257.4 533.6,265.0 539.0,272.3 544.4,279.2 549.8,285.8 555.2,292.1 560.6,297.9 566.0,303.3 571.4,308.2 576.8,312.7 582.2,316.7 587.6,320.2 593.0,323.1 598.4,325.6 603.8,327.5 609.2,328.9 614.6,329.7 620.0,330.0"/>
+
+  <!-- Crossing dot at half-period (x=350, y=190) -->
+  <circle cx="350" cy="190" r="4" fill="#545454"/>
+  <text x="356" y="185" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">P=0.5</text>
+
+  <!-- Legend -->
+  <rect x="450" y="58" width="162" height="58" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="462" y1="76" x2="490" y2="76" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="498" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">P↑(t) = cos²(ω₀t/2)</text>
+  <line x1="462" y1="98" x2="490" y2="98" stroke="#C8102E" stroke-width="2"/>
+  <text x="498" y="102" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">P↓(t) = sin²(ω₀t/2)</text>
+
+  <!-- P↑+P↓=1 annotation -->
+  <text x="160" y="80" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">P↑ + P↓ = 1</text>
+
+  <!-- Caption -->
+  <text x="350" y="400" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Full Rabi cycle for spin-1/2 in transverse field. Probabilities sum to 1 and cross at P = 0.5.</text>
+</svg>

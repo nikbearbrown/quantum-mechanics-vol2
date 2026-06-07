@@ -1,0 +1,167 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 11-capstone-the-atom
+     Figure  : 04 — Hund's Three Rules: Mechanism and Hierarchy
+     Type    : diagram
+     Priority: Important
+     Source  : pantry/11-capstone-the-atom-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Hund's Three Rules: Mechanism and Hierarchy</title>
+  <desc>Three-row flowchart, one row per Hund's rule. Rule 1: maximize total S → antisymmetric spatial wavefunction → electrons avoid each other → lowest Coulomb repulsion → lowest energy. Rule 2: maximize L (given S) → angular avoidance → lower energy. Rule 3: J = |L−S| (less than half-filled) or J = L+S (more than half-filled) → mechanism is spin-orbit coupling, flagged as deferred. Reliability decreases from Rule 1 to Rule 3.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="11-capstone-the-atom"
+      figure-number="04"
+      figure-title="Hund's Three Rules: Mechanism and Hierarchy"
+      figure-slug="hunds-rules-mechanism"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/11-capstone-the-atom-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Hund's Three Rules — Mechanism and Reliability</text>
+
+  <!-- Column headers -->
+  <text x="130" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">Rule</text>
+  <text x="265" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">Microstate (maximize)</text>
+  <text x="445" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">Mechanism</text>
+  <text x="610" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">Energy consequence</text>
+  <line x1="32" y1="54" x2="668" y2="54" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Reliability gradient bar on far left -->
+  <rect x="18" y="68" width="10" height="100" fill="#2a1a0e"/>
+  <rect x="18" y="188" width="10" height="94" fill="#787878"/>
+  <rect x="18" y="300" width="10" height="84" fill="#D4D4D4"/>
+  <text x="13" y="258" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454" text-anchor="middle" transform="rotate(-90,13,258)">reliability ↓</text>
+
+  <!-- ===== ROW 1: Rule 1 — maximize S ===== -->
+  <rect x="32" y="60" width="636" height="110" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Rule label -->
+  <rect x="40" y="70" width="170" height="90" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="125" y="92" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Rule 1</text>
+  <text x="125" y="108" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e" text-anchor="middle">Maximize S</text>
+  <text x="125" y="123" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">(total spin)</text>
+  <!-- Orbital boxes showing parallel spins -->
+  <rect x="64" y="136" width="20" height="16" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="87" y="136" width="20" height="16" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="110" y="136" width="20" height="16" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="133" y="136" width="20" height="16" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="156" y="136" width="20" height="16" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Spin-up arrows in each box -->
+  <line x1="74" y1="149" x2="74" y2="140" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="71,142 74,136 77,142" fill="#2a1a0e"/>
+  <line x1="97" y1="149" x2="97" y2="140" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="94,142 97,136 100,142" fill="#2a1a0e"/>
+  <line x1="120" y1="149" x2="120" y2="140" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="117,142 120,136 123,142" fill="#2a1a0e"/>
+  <line x1="143" y1="149" x2="143" y2="140" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="140,142 143,136 146,142" fill="#2a1a0e"/>
+  <line x1="166" y1="149" x2="166" y2="140" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="163,142 166,136 169,142" fill="#2a1a0e"/>
+
+  <!-- Mechanism arrow -->
+  <line x1="214" y1="115" x2="234" y2="115" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Mechanism box -->
+  <rect x="238" y="70" width="262" height="90" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="369" y="92" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">antisymmetric ψ_spatial</text>
+  <text x="369" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">→ node at r₁=r₂</text>
+  <text x="369" y="122" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">→ electrons avoid each other</text>
+  <text x="369" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">→ lower Coulomb repulsion</text>
+  <text x="369" y="152" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">(same mechanism as para/ortho He)</text>
+
+  <!-- Energy consequence arrow -->
+  <line x1="504" y1="115" x2="524" y2="115" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Energy box -->
+  <rect x="528" y="70" width="134" height="90" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="545" y1="94" x2="655" y2="94" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="600" y="90" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">high S  ↑</text>
+  <line x1="545" y1="134" x2="655" y2="134" stroke="#2a1a0e" stroke-width="2.5"/>
+  <text x="600" y="148" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">max S = ground</text>
+
+  <!-- ===== ROW 2: Rule 2 — maximize L ===== -->
+  <rect x="32" y="180" width="636" height="104" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <rect x="40" y="188" width="170" height="88" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <text x="125" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Rule 2</text>
+  <text x="125" y="224" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e" text-anchor="middle">Maximize L</text>
+  <text x="125" y="239" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">(given Rule 1 S)</text>
+  <!-- Orbital occupancy at maximal m_l separation -->
+  <rect x="64" y="250" width="20" height="16" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
+  <rect x="87" y="250" width="20" height="16" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
+  <rect x="110" y="250" width="20" height="16" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="133" y="250" width="20" height="16" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
+  <rect x="156" y="250" width="20" height="16" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
+  <!-- Fill outermost m_l first (+2, +1, 0, −1, −2 → put in +2, +1 first for p^2 example) -->
+  <line x1="74" y1="263" x2="74" y2="254" stroke="#787878" stroke-width="1.5"/>
+  <polygon points="71,256 74,250 77,256" fill="#787878"/>
+  <line x1="166" y1="263" x2="166" y2="254" stroke="#787878" stroke-width="1.5"/>
+  <polygon points="163,256 166,250 169,256" fill="#787878"/>
+
+  <line x1="214" y1="232" x2="234" y2="232" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="238" y="188" width="262" height="88" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="369" y="210" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">electrons orbit same sense</text>
+  <text x="369" y="225" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">→ angular avoidance</text>
+  <text x="369" y="240" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">→ lower Coulomb repulsion</text>
+  <text x="369" y="258" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">(less crisp than Rule 1 — applies within S manifold)</text>
+
+  <line x1="504" y1="232" x2="524" y2="232" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="528" y="188" width="134" height="88" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="545" y1="210" x2="655" y2="210" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="545" y1="250" x2="655" y2="250" stroke="#787878" stroke-width="2"/>
+  <text x="600" y="264" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">max L = ground</text>
+  <text x="600" y="278" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454" text-anchor="middle">(within same S)</text>
+
+  <!-- ===== ROW 3: Rule 3 — determine J ===== -->
+  <rect x="32" y="292" width="636" height="96" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <rect x="40" y="300" width="170" height="80" fill="#FFFFFF" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="125" y="320" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Rule 3</text>
+  <text x="125" y="336" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e" text-anchor="middle">Determine J</text>
+  <text x="125" y="351" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">&lt; half-filled: J=|L−S|</text>
+  <text x="125" y="365" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">&gt; half-filled: J=L+S</text>
+
+  <line x1="214" y1="340" x2="234" y2="340" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="238" y="300" width="262" height="80" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="369" y="322" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle">Spin-orbit coupling Ĥ_so</text>
+  <text x="369" y="337" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">splits L–S multiplet by MJ</text>
+  <!-- Caution flag -->
+  <polygon points="399,350 415,350 407,337" fill="#C8102E" fill-opacity="0.7"/>
+  <text x="369" y="365" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">Mechanism deferred — requires Vol. 3</text>
+  <text x="369" y="376" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">spin-orbit Hamiltonian detailed treatment</text>
+
+  <line x1="504" y1="340" x2="524" y2="340" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="528" y="300" width="134" height="80" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- J multiplet splitting fan -->
+  <line x1="545" y1="316" x2="655" y2="316" stroke="#D4D4D4" stroke-width="1.5"/>
+  <line x1="545" y1="330" x2="625" y2="330" stroke="#D4D4D4" stroke-width="1.5"/>
+  <line x1="545" y1="344" x2="655" y2="358" stroke="#D4D4D4" stroke-width="1.5"/>
+  <line x1="545" y1="358" x2="625" y2="344" stroke="#D4D4D4" stroke-width="1.5"/>
+  <text x="600" y="375" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454" text-anchor="middle">J multiplet</text>
+
+  <!-- Caption -->
+  <text x="350" y="402" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Reliability: Rule 1 &gt; Rule 2 &gt; Rule 3. Rule 3 fails for heavy atoms where j-j coupling dominates.</text>
+</svg>

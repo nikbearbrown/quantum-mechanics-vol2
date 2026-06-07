@@ -1,0 +1,119 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 04-quantum-dynamics-and-the-pictures · figure: 01
+     title: Time-Evolution Operator: Infinitesimal Step to Finite Unitary
+     type: diagram · priority: Critical · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">Time-Evolution Operator: Infinitesimal Step to Finite Unitary</title>
+  <desc>Three-stage horizontal flowchart deriving the time-evolution operator. Stage 1: infinitesimal step U(dt) with unitarity forcing a Hermitian generator. Stage 2: finite operator U(t) as matrix exponential via N-step composition. Stage 3: Schrödinger equation as the derivative of U(t) acting on a state.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="04-quantum-dynamics-and-the-pictures"
+      figure-number="01"
+      figure-title="Time-Evolution Operator: Infinitesimal Step to Finite Unitary"
+      figure-slug="time-evolution-operator-derivation"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-dynamics-and-the-pictures-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Time-Evolution Operator — Infinitesimal Step to Finite Unitary</text>
+
+  <!-- Three panels on horizontal baseline -->
+  <!-- Panel 1: x=32–218 -->
+  <!-- Panel 2: x=248–452 -->
+  <!-- Panel 3: x=482–668 -->
+
+  <!-- STAGE 1: Infinitesimal step -->
+  <rect x="32" y="70" width="186" height="240" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="32" y="70" width="186" height="28" rx="0" fill="#2a1a0e" fill-opacity="0.12" stroke="none"/>
+  <text x="125" y="89" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Stage 1</text>
+
+  <!-- Infinitesimal operator symbol: Î + H-box * dt -->
+  <text x="125" y="130" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="22" fill="#2a1a0e" text-anchor="middle">U(dt)</text>
+  <!-- Structure: box with I + small box -->
+  <rect x="58" y="145" width="56" height="36" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="86" y="169" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#2a1a0e" text-anchor="middle">Î</text>
+  <text x="120" y="169" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">+</text>
+  <rect x="132" y="148" width="50" height="30" rx="0" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="157" y="169" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">Ĥ·dt</text>
+
+  <!-- Unitarity constraint arrow pointing down -->
+  <line x1="125" y1="185" x2="125" y2="215" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="125" y="206" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">U†U = Î</text>
+
+  <!-- Hermitian result -->
+  <rect x="58" y="218" width="134" height="32" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="125" y="232" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">generator must be</text>
+  <text x="125" y="245" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" text-anchor="middle">Hermitian: Ĥ = Ĥ†</text>
+
+  <text x="125" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">probability conserved</text>
+  <text x="125" y="304" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">⟨ψ|ψ⟩ constant in time</text>
+
+  <!-- Arrow 1→2: compose N steps -->
+  <line x1="220" y1="190" x2="244" y2="190" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="232" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">compose</text>
+  <text x="232" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">N→∞</text>
+  <text x="232" y="204" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">steps</text>
+
+  <!-- STAGE 2: Matrix exponential -->
+  <rect x="248" y="70" width="200" height="240" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="248" y="70" width="200" height="28" rx="0" fill="#787878" fill-opacity="0.15" stroke="none"/>
+  <text x="348" y="89" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Stage 2</text>
+
+  <text x="348" y="130" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="22" fill="#2a1a0e" text-anchor="middle">U(t, 0)</text>
+
+  <!-- Matrix exponential formula -->
+  <rect x="268" y="140" width="160" height="50" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="348" y="160" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">= e^{−iĤt/ħ}</text>
+  <text x="348" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">matrix exponential</text>
+
+  <!-- N-step composition annotation -->
+  <rect x="268" y="200" width="160" height="50" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="348" y="218" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">lim (Î−iĤδt/ħ)^N</text>
+  <text x="348" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">N→∞, δt=t/N</text>
+
+  <text x="348" y="285" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">unitary: U†U = Î</text>
+  <text x="348" y="300" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">for all t ∈ ℝ</text>
+
+  <!-- Arrow 2→3: differentiate -->
+  <line x1="450" y1="190" x2="476" y2="190" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="463" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">d/dt</text>
+  <text x="463" y="200" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">×|ψ⟩</text>
+
+  <!-- STAGE 3: Schrödinger equation -->
+  <rect x="482" y="70" width="186" height="240" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="482" y="70" width="186" height="28" rx="0" fill="#C8860E" fill-opacity="0.12" stroke="none"/>
+  <text x="575" y="89" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Stage 3</text>
+
+  <text x="575" y="130" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">Schrödinger Eq.</text>
+
+  <!-- TDSE -->
+  <rect x="502" y="140" width="146" height="60" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="575" y="162" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">iħ d|ψ⟩/dt</text>
+  <text x="575" y="182" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">= Ĥ |ψ⟩</text>
+
+  <!-- Arrow showing U acts on state -->
+  <line x1="575" y1="202" x2="575" y2="228" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <rect x="502" y="230" width="146" height="44" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="575" y="248" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" text-anchor="middle">|ψ(t)⟩ = U(t)|ψ(0)⟩</text>
+  <text x="575" y="268" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">formal solution</text>
+
+  <text x="575" y="300" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">state at t given</text>
+  <text x="575" y="314" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">initial condition</text>
+
+  <!-- Caption -->
+  <text x="350" y="340" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Unitarity of U(dt) forces Ĥ to be Hermitian; N compositions yield the matrix exponential; differentiation recovers TDSE.</text>
+</svg>

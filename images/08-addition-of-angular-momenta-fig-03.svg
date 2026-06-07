@@ -1,0 +1,119 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 08-addition-of-angular-momenta
+     Figure  : 03 — Ladder Operator Algorithm: Building |1,0⟩ from |1,1⟩
+     Type    : diagram
+     Priority: Important
+     Source  : pantry/08-addition-of-angular-momenta-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Ladder Operator Algorithm: Building |1,0⟩ from |1,1⟩</title>
+  <desc>Four-step flowchart deriving the J=1, M=0 coupled state from the stretched state |1,1⟩=|↑↑⟩ via the lowering operator Ĵ₋ = Ĵ₁₋ + Ĵ₂₋. Each particle's spin is lowered independently to give |↓↑⟩ and |↑↓⟩; after normalization the result |1,0⟩=(|↑↓⟩+|↓↑⟩)/√2 is symmetric under particle exchange.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="08-addition-of-angular-momenta"
+      figure-number="03"
+      figure-title="Ladder Operator Algorithm: Building |1,0⟩ from |1,1⟩"
+      figure-slug="ladder-operator-algorithm"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-addition-of-angular-momenta-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-p1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arrow-p2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Ladder Operator Algorithm: |1,1⟩ → |1,0⟩ via Ĵ₋</text>
+
+  <!-- ==== STEP 1: Stretched state |1,1⟩ = |↑↑⟩ ==== -->
+  <!-- Box at x=250..450, y=44..90 -->
+  <rect x="250" y="44" width="200" height="48" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="64" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e" text-anchor="middle">|J=1, M=1⟩ = |↑↑⟩</text>
+  <text x="350" y="82" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Stretched state — unique, m₁+m₂ = +1</text>
+  <!-- Spin-up icons for two particles -->
+  <line x1="220" y1="68" x2="220" y2="52" stroke="#2a1a0e" stroke-width="2"/>
+  <polygon points="215,55 220,44 225,55" fill="#2a1a0e"/>
+  <line x1="236" y1="68" x2="236" y2="52" stroke="#2a1a0e" stroke-width="2"/>
+  <polygon points="231,55 236,44 241,55" fill="#2a1a0e"/>
+  <text x="228" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">p1  p2</text>
+
+  <!-- STEP 1 → STEP 2 arrow with Ĵ₋ label -->
+  <line x1="350" y1="92" x2="350" y2="115" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="282" y="96" width="136" height="22" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="350" y="112" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">Apply Ĵ₋ = Ĵ₁₋ + Ĵ₂₋</text>
+
+  <!-- Branching: two paths -->
+  <!-- Split at y=138, paths go left (particle 1) and right (particle 2) -->
+  <line x1="350" y1="117" x2="350" y2="138" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Branch left: Ĵ₁₋ lowers particle 1 -->
+  <path d="M 350,138 Q 240,138 200,160" fill="none" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-p1)"/>
+  <!-- Branch right: Ĵ₂₋ lowers particle 2 -->
+  <path d="M 350,138 Q 460,138 500,160" fill="none" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-p2)"/>
+
+  <!-- Labels on branches -->
+  <text x="250" y="133" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">Ĵ₁₋ acts on p₁</text>
+  <text x="385" y="133" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#787878">Ĵ₂₋ acts on p₂</text>
+
+  <!-- ==== Left intermediate state: |↓↑⟩ ==== -->
+  <rect x="120" y="162" width="160" height="44" fill="#F5F5F5" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="200" y="182" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">ℏ · |↓↑⟩</text>
+  <text x="200" y="198" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">particle 1 lowered</text>
+
+  <!-- ==== Right intermediate state: |↑↓⟩ ==== -->
+  <rect x="420" y="162" width="160" height="44" fill="#F5F5F5" stroke="#787878" stroke-width="1.5"/>
+  <text x="500" y="182" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">ℏ · |↑↓⟩</text>
+  <text x="500" y="198" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#787878" text-anchor="middle">particle 2 lowered</text>
+
+  <!-- Converge to summation node -->
+  <path d="M 200,206 Q 200,238 350,248" fill="none" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-p1)"/>
+  <path d="M 500,206 Q 500,238 354,248" fill="none" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-p2)"/>
+
+  <!-- Equation: Ĵ₋|1,1⟩ = ℏ√2|1,0⟩ = ℏ|↓↑⟩ + ℏ|↑↓⟩ -->
+  <text x="350" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">Ĵ₋|1,1⟩ = ℏ√2|1,0⟩ = ℏ|↓↑⟩ + ℏ|↑↓⟩</text>
+
+  <!-- Summation node -->
+  <circle cx="350" cy="253" r="10" fill="#D4D4D4" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="350" y="258" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e" text-anchor="middle">Σ</text>
+
+  <!-- Arrow from sum node to normalized result -->
+  <line x1="350" y1="263" x2="350" y2="286" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="380" y="278" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">÷ √2</text>
+
+  <!-- ==== STEP 3: Final state |1,0⟩ ==== -->
+  <rect x="208" y="288" width="284" height="52" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="350" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e" text-anchor="middle">|1,0⟩ = (|↑↓⟩ + |↓↑⟩) / √2</text>
+  <text x="350" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Triplet M=0 state</text>
+
+  <!-- ==== STEP 4: Symmetry annotation ==== -->
+  <!-- Exchange arrow inside the final box: double-headed between the two terms -->
+  <line x1="350" y1="340" x2="350" y2="362" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <rect x="220" y="364" width="260" height="36" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Exchange symmetry annotation -->
+  <line x1="268" y1="382" x2="382" y2="382" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <polygon points="264,378 254,382 264,386" fill="#D4D4D4"/>
+  <polygon points="386,378 396,382 386,386" fill="#D4D4D4"/>
+  <text x="350" y="378" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Symmetric under 1↔2 exchange</text>
+  <text x="350" y="392" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|↑↓⟩ + |↓↑⟩  →  S=+1</text>
+
+  <!-- Caption -->
+  <text x="350" y="414" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Same method, applied again, gives |1,−1⟩=|↓↓⟩; orthogonalization then gives |0,0⟩=(|↑↓⟩−|↓↑⟩)/√2.</text>
+</svg>

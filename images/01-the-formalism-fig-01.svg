@@ -1,0 +1,87 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 01-the-formalism · figure: 01
+     title: State vs. Its Representations (Three-Basis Fan)
+     type: diagram · priority: Critical · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">State vs. Its Representations (Three-Basis Fan)</title>
+  <desc>A single abstract quantum state vector at center projects onto three peripheral representations: position-space wave function (broad curve), momentum-space wave function (oscillatory curve), and energy-basis probability coefficients (bar chart). Hub-and-spoke layout illustrating basis independence.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="01-the-formalism"
+      figure-number="01"
+      figure-title="State vs. Its Representations (Three-Basis Fan)"
+      figure-slug="state-vs-representations-three-basis-fan"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-the-formalism-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">State vs. Its Representations — Three-Basis Fan</text>
+
+  <!-- Central ket vector (hub) -->
+  <!-- Arrow from (350,210) going up-right ~45deg, length 50 -->
+  <g id="central-ket">
+    <rect x="310" y="178" width="80" height="64" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+    <!-- Abstract vector arrow inside box -->
+    <line x1="325" y1="230" x2="370" y2="192" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Label |ψ⟩ -->
+    <text x="350" y="245" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#2a1a0e" text-anchor="middle">|ψ⟩</text>
+  </g>
+
+  <!-- Projection arrow to top-left (position space) -->
+  <line x1="318" y1="188" x2="168" y2="105" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- Position-space wave function panel (top-left) -->
+  <rect x="50" y="45" width="140" height="80" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Broad smooth wave curve -->
+  <polyline points="60,105 70,95 80,72 95,58 110,62 125,75 140,95 155,108 175,112" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="120" y="42" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">⟨x|ψ⟩ position space</text>
+
+  <!-- Projection arrow to top-right (momentum space) -->
+  <line x1="382" y1="188" x2="533" y2="105" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- Momentum-space wave function panel (top-right) -->
+  <rect x="510" y="45" width="140" height="80" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Narrow oscillatory wave -->
+  <polyline points="518,90 525,75 532,100 539,65 546,98 553,68 560,95 567,72 574,96 581,70 588,94 595,80 610,85 640,88" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <text x="580" y="42" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">⟨p|ψ⟩ momentum space</text>
+
+  <!-- Projection arrow to bottom (energy basis) -->
+  <line x1="350" y1="242" x2="350" y2="305" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- Energy-basis bar chart panel (bottom center) -->
+  <rect x="245" y="305" width="210" height="95" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Bar chart: energy coefficients |c_n|^2, decreasing -->
+  <!-- Bars at n=1,2,3,4,5 -->
+  <rect x="263" y="335" width="22" height="56" fill="#2a1a0e"/>
+  <rect x="295" y="375" width="22" height="16" fill="#2a1a0e"/>
+  <rect x="327" y="385" width="22" height="6" fill="#2a1a0e"/>
+  <rect x="359" y="388" width="22" height="3" fill="#2a1a0e"/>
+  <rect x="391" y="389" width="22" height="2" fill="#2a1a0e"/>
+  <!-- x-axis -->
+  <line x1="255" y1="391" x2="445" y2="391" stroke="#545454" stroke-width="0.75"/>
+  <!-- y-axis -->
+  <line x1="255" y1="391" x2="255" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="350" y="406" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">⟨E_n|ψ⟩ energy basis</text>
+
+  <!-- Inner product labels on projection lines -->
+  <text x="220" y="138" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle" transform="rotate(-28,220,138)">⟨x|ψ⟩</text>
+  <text x="480" y="138" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle" transform="rotate(28,480,138)">⟨p|ψ⟩</text>
+  <text x="362" y="282" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">⟨E_n|ψ⟩</text>
+
+  <!-- Caption -->
+  <text x="350" y="415" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">One state vector; three equivalent representations in different bases.</text>
+</svg>

@@ -1,0 +1,111 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 07-spin-and-the-bloch-sphere
+     Figure  : 04 — Stern–Gerlach Outcome: Two Spots vs. Classical Smear
+     Type    : diagram
+     Priority: Important
+     Source  : pantry/07-spin-and-the-bloch-sphere-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Stern–Gerlach Outcome: Two Discrete Spots vs. Classical Continuous Smear</title>
+  <desc>Side-by-side comparison of the classical prediction (continuous vertical smear from maximum upward to maximum downward deflection) and the observed quantum outcome (two discrete spots symmetrically above and below center) for silver atoms in an inhomogeneous magnetic field. The two spots encode the ±ℏ/2 eigenvalues of Ŝ_z.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="07-spin-and-the-bloch-sphere"
+      figure-number="04"
+      figure-title="Stern–Gerlach Outcome: Two Spots vs. Classical Smear"
+      figure-slug="stern-gerlach-outcome"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-spin-and-the-bloch-sphere-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Stern–Gerlach Outcome: Classical Smear vs. Quantum Two Spots</text>
+
+  <!-- ==== LEFT PANEL — Classical prediction ==== -->
+  <rect x="80" y="50" width="230" height="320" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="195" y="72" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Classical prediction</text>
+  <text x="195" y="88" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">continuous smear</text>
+
+  <!-- Glass plate (isometric slab) -->
+  <rect x="150" y="105" width="90" height="210" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- Isometric top face -->
+  <polygon points="150,105 240,105 255,90 165,90" fill="#EBEBEB" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Classical smear — gradient band (using rect strips to simulate gradient) -->
+  <!-- Center y = 105+105 = 210, smear from y=115 to y=305 -->
+  <!-- Simulate as a series of rects with varying opacity from light to dark at center -->
+  <rect x="158" y="115" width="74" height="24" fill="#2a1a0e" fill-opacity="0.06"/>
+  <rect x="158" y="139" width="74" height="20" fill="#2a1a0e" fill-opacity="0.10"/>
+  <rect x="158" y="159" width="74" height="16" fill="#2a1a0e" fill-opacity="0.16"/>
+  <rect x="158" y="175" width="74" height="12" fill="#2a1a0e" fill-opacity="0.22"/>
+  <rect x="158" y="187" width="74" height="10" fill="#2a1a0e" fill-opacity="0.28"/>
+  <rect x="158" y="197" width="74" height="8" fill="#2a1a0e" fill-opacity="0.34"/>
+  <rect x="158" y="205" width="74" height="8" fill="#2a1a0e" fill-opacity="0.38"/>
+  <rect x="158" y="213" width="74" height="8" fill="#2a1a0e" fill-opacity="0.34"/>
+  <rect x="158" y="221" width="74" height="8" fill="#2a1a0e" fill-opacity="0.28"/>
+  <rect x="158" y="229" width="74" height="10" fill="#2a1a0e" fill-opacity="0.22"/>
+  <rect x="158" y="239" width="74" height="12" fill="#2a1a0e" fill-opacity="0.16"/>
+  <rect x="158" y="251" width="74" height="16" fill="#2a1a0e" fill-opacity="0.10"/>
+  <rect x="158" y="267" width="74" height="20" fill="#2a1a0e" fill-opacity="0.07"/>
+  <rect x="158" y="287" width="74" height="18" fill="#2a1a0e" fill-opacity="0.04"/>
+
+  <!-- Center line on left plate -->
+  <line x1="158" y1="210" x2="232" y2="210" stroke="#C8860E" stroke-width="0.75"/>
+  <text x="242" y="214" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0</text>
+
+  <!-- Label: what the smear represents -->
+  <text x="195" y="342" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Angular momentum takes</text>
+  <text x="195" y="356" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">any orientation → continuous</text>
+  <text x="195" y="370" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">deflection range expected</text>
+
+  <!-- ==== RIGHT PANEL — Quantum outcome ==== -->
+  <rect x="390" y="50" width="230" height="320" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="505" y="72" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Quantum outcome</text>
+  <text x="505" y="88" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">two discrete spots</text>
+
+  <!-- Glass plate -->
+  <rect x="460" y="105" width="90" height="210" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <polygon points="460,105 550,105 565,90 475,90" fill="#EBEBEB" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Two discrete spots -->
+  <!-- Upper spot (spin-up, +ℏ/2) — Bluish Green -->
+  <circle cx="505" cy="152" r="14" fill="#009E73" fill-opacity="0.85"/>
+  <!-- Lower spot (spin-down, −ℏ/2) — Vermillion -->
+  <circle cx="505" cy="268" r="14" fill="#D55E00" fill-opacity="0.85"/>
+
+  <!-- Center line on right plate -->
+  <line x1="460" y1="210" x2="550" y2="210" stroke="#C8860E" stroke-width="0.75"/>
+  <text x="556" y="214" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0</text>
+
+  <!-- Eigenvalue labels -->
+  <text x="570" y="156" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#009E73">+ℏ/2</text>
+  <text x="570" y="272" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#D55E00">−ℏ/2</text>
+
+  <!-- Double-headed arrow showing discrete separation -->
+  <line x1="555" y1="155" x2="555" y2="265" stroke="#D4D4D4" stroke-width="0.75"/>
+  <polygon points="551,158 555,148 559,158" fill="#D4D4D4"/>
+  <polygon points="551,262 555,272 559,262" fill="#D4D4D4"/>
+
+  <!-- Label: quantum explanation -->
+  <text x="505" y="342" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Spin-½ has only 2 eigenvalues</text>
+  <text x="505" y="356" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">of Ŝ_z: ±ℏ/2 → exactly 2</text>
+  <text x="505" y="370" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">spots, nothing between</text>
+
+  <!-- Middle divider with vs. label -->
+  <text x="350" y="222" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#ADADAD" text-anchor="middle">vs.</text>
+  <line x1="348" y1="115" x2="348" y2="355" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Caption -->
+  <text x="350" y="405" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Silver: single 5s valence electron (ℓ=0) → deflection arises purely from spin-½ intrinsic angular momentum.</text>
+</svg>

@@ -1,0 +1,227 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 11-capstone-the-atom
+     Figure  : 05 — Madelung Exceptions: Cr and Cu Exchange Stabilization
+     Type    : diagram
+     Priority: Important
+     Source  : pantry/11-capstone-the-atom-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Madelung Exceptions: Cr and Cu Exchange Stabilization</title>
+  <desc>Two-column comparison showing Madelung-predicted vs. NIST actual electron configurations for chromium (Z=24) and copper (Z=29). Cr: predicted [Ar]3d⁴4s² vs. actual [Ar]3d⁵4s¹ (half-filled 3d). Cu: predicted [Ar]3d⁹4s² vs. actual [Ar]3d¹⁰4s¹ (fully-filled 3d). Exchange stabilization lowers the actual configuration below the Madelung prediction.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="11-capstone-the-atom"
+      figure-number="05"
+      figure-title="Madelung Exceptions: Cr and Cu Exchange Stabilization"
+      figure-slug="madelung-exceptions-cr-cu"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/11-capstone-the-atom-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Madelung Exceptions — Cr (Z=24) and Cu (Z=29)</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Exchange-energy stabilization favors half-filled (Cr) and fully-filled (Cu) 3d subshells.</text>
+
+  <!-- Column headers -->
+  <text x="205" y="62" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Chromium (Z=24)</text>
+  <text x="505" y="62" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Copper (Z=29)</text>
+  <line x1="350" y1="52" x2="350" y2="390" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Helper: orbital box with arrow -->
+  <!-- Box size: 22×22, content: up-arrow or down-arrow or empty -->
+
+  <!-- ===== CHROMIUM column ===== -->
+  <!-- Row label: Madelung prediction -->
+  <text x="45" y="94" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="end">Madelung</text>
+  <text x="45" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="end">prediction</text>
+  <text x="45" y="120" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="end">3d⁴4s²</text>
+
+  <!-- 3d orbital boxes (5 boxes) — Cr Madelung: 3d⁴ (4 up-arrows) -->
+  <text x="90" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">3d</text>
+  <!-- Box 1: ↑↓ (paired) -->
+  <rect x="55" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="66" y1="111" x2="66" y2="100" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="63,102 66,94 69,102" fill="#ADADAD"/>
+  <!-- Box 2: ↑ -->
+  <rect x="81" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="92" y1="111" x2="92" y2="100" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="89,102 92,94 95,102" fill="#ADADAD"/>
+  <!-- Box 3: ↑ -->
+  <rect x="107" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="118" y1="111" x2="118" y2="100" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="115,102 118,94 121,102" fill="#ADADAD"/>
+  <!-- Box 4: ↑ -->
+  <rect x="133" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="144" y1="111" x2="144" y2="100" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="141,102 144,94 147,102" fill="#ADADAD"/>
+  <!-- Box 5: empty -->
+  <rect x="159" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+
+  <!-- 4s box — Cr Madelung: 4s² -->
+  <text x="212" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">4s</text>
+  <rect x="198" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="207" y1="111" x2="207" y2="100" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="204,102 207,94 210,102" fill="#ADADAD"/>
+  <line x1="213" y1="96" x2="213" y2="107" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="210,105 213,113 216,105" fill="#ADADAD"/>
+
+  <!-- Row label: Actual -->
+  <text x="45" y="164" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="end">NIST</text>
+  <text x="45" y="177" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="end">actual</text>
+  <text x="45" y="190" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#009E73" text-anchor="end">3d⁵4s¹</text>
+
+  <!-- 3d boxes: Cr actual 3d⁵ (5 up-arrows, all parallel) -->
+  <text x="90" y="158" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="middle">3d</text>
+  <!-- All 5 boxes with up-arrow, highlighted green border -->
+  <rect x="55" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="66" y1="181" x2="66" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="63,172 66,164 69,172" fill="#2a1a0e"/>
+  <rect x="81" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="92" y1="181" x2="92" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="89,172 92,164 95,172" fill="#2a1a0e"/>
+  <rect x="107" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="118" y1="181" x2="118" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="115,172 118,164 121,172" fill="#2a1a0e"/>
+  <rect x="133" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="144" y1="181" x2="144" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="141,172 144,164 147,172" fill="#2a1a0e"/>
+  <rect x="159" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="170" y1="181" x2="170" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="167,172 170,164 173,172" fill="#2a1a0e"/>
+
+  <!-- 4s box: Cr actual 4s¹ (one up-arrow) — highlighted -->
+  <text x="212" y="158" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="middle">4s</text>
+  <rect x="198" y="162" width="22" height="22" fill="#FFFFFF" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="209" y1="181" x2="209" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="206,172 209,164 212,172" fill="#2a1a0e"/>
+
+  <!-- Half-filled icon -->
+  <text x="128" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">3d⁵ half-filled</text>
+  <text x="128" y="220" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">S = 5/2 (maximum)</text>
+
+  <!-- Energy comparison bar Cr -->
+  <line x1="250" y1="92" x2="250" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="242" y1="103" x2="258" y2="103" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="258" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">predicted</text>
+  <line x1="242" y1="173" x2="258" y2="173" stroke="#009E73" stroke-width="1.5"/>
+  <text x="258" y="177" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#009E73">actual (lower)</text>
+  <polygon points="246,107 250,96 254,107" fill="#2a1a0e"/>
+  <polygon points="246,169 250,178 254,169" fill="#2a1a0e"/>
+  <text x="235" y="140" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="end">ΔE_exch</text>
+
+  <!-- ===== COPPER column ===== -->
+  <!-- Cu Madelung: 3d⁹ 4s² -->
+  <text x="370" y="94" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD">Madelung: 3d⁹4s²</text>
+  <!-- 3d: 4 paired + 1 up (abbreviated as 3 paired in 5 boxes) -->
+  <text x="420" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">3d</text>
+  <!-- Show 5 boxes, 4 paired, 1 unpaired (= 3d⁹) -->
+  <rect x="375" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="384" y1="103" x2="384" y2="99" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="381,101 384,95 387,101" fill="#ADADAD"/>
+  <line x1="390" y1="98" x2="390" y2="104" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="387,102 390,108 393,102" fill="#ADADAD"/>
+  <rect x="401" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="410" y1="103" x2="410" y2="99" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="407,101 410,95 413,101" fill="#ADADAD"/>
+  <line x1="416" y1="98" x2="416" y2="104" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="413,102 416,108 419,102" fill="#ADADAD"/>
+  <rect x="427" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="436" y1="103" x2="436" y2="99" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="433,101 436,95 439,101" fill="#ADADAD"/>
+  <line x1="442" y1="98" x2="442" y2="104" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="439,102 442,108 445,102" fill="#ADADAD"/>
+  <rect x="453" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="462" y1="103" x2="462" y2="99" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="459,101 462,95 465,101" fill="#ADADAD"/>
+  <line x1="468" y1="98" x2="468" y2="104" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="465,102 468,108 471,102" fill="#ADADAD"/>
+  <!-- 5th box: ↑ only (9th electron, missing one) -->
+  <rect x="479" y="92" width="22" height="22" fill="#FFFFFF" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="490" y1="111" x2="490" y2="100" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="487,102 490,94 493,102" fill="#ADADAD"/>
+  <!-- 4s: ↑↓ -->
+  <text x="535" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">4s</text>
+  <rect x="518" y="92" width="22" height="22" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="527" y1="108" x2="527" y2="98" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="524,100 527,94 530,100" fill="#ADADAD"/>
+  <line x1="533" y1="96" x2="533" y2="106" stroke="#ADADAD" stroke-width="1.5"/>
+  <polygon points="530,104 533,112 536,104" fill="#ADADAD"/>
+
+  <!-- Cu actual: 3d¹⁰ 4s¹ -->
+  <text x="370" y="164" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#009E73">NIST actual: 3d¹⁰4s¹</text>
+  <text x="420" y="158" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="middle">3d</text>
+  <!-- All 5 boxes paired (3d¹⁰ = 10 electrons fully paired) -->
+  <rect x="375" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="384" y1="174" x2="384" y2="168" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="381,170 384,164 387,170" fill="#2a1a0e"/>
+  <line x1="390" y1="167" x2="390" y2="174" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="387,172 390,180 393,172" fill="#2a1a0e"/>
+  <rect x="401" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="410" y1="174" x2="410" y2="168" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="407,170 410,164 413,170" fill="#2a1a0e"/>
+  <line x1="416" y1="167" x2="416" y2="174" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="413,172 416,180 419,172" fill="#2a1a0e"/>
+  <rect x="427" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="436" y1="174" x2="436" y2="168" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="433,170 436,164 439,170" fill="#2a1a0e"/>
+  <line x1="442" y1="167" x2="442" y2="174" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="439,172 442,180 445,172" fill="#2a1a0e"/>
+  <rect x="453" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="462" y1="174" x2="462" y2="168" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="459,170 462,164 465,170" fill="#2a1a0e"/>
+  <line x1="468" y1="167" x2="468" y2="174" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="465,172 468,180 471,172" fill="#2a1a0e"/>
+  <rect x="479" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
+  <line x1="488" y1="174" x2="488" y2="168" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="485,170 488,164 491,170" fill="#2a1a0e"/>
+  <line x1="494" y1="167" x2="494" y2="174" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="491,172 494,180 497,172" fill="#2a1a0e"/>
+
+  <!-- 4s¹: one up-arrow -->
+  <text x="535" y="158" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="middle">4s</text>
+  <rect x="518" y="162" width="22" height="22" fill="#FFFFFF" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="529" y1="181" x2="529" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="526,172 529,164 532,172" fill="#2a1a0e"/>
+
+  <!-- 10/10 icon -->
+  <text x="450" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">3d¹⁰ fully-filled</text>
+  <text x="450" y="220" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">maximum exchange energy</text>
+
+  <!-- Energy comparison bar Cu -->
+  <line x1="570" y1="92" x2="570" y2="205" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="562" y1="103" x2="578" y2="103" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="582" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">predicted</text>
+  <line x1="562" y1="173" x2="578" y2="173" stroke="#009E73" stroke-width="1.5"/>
+  <text x="582" y="177" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#009E73">actual (lower)</text>
+  <polygon points="566,107 570,96 574,107" fill="#2a1a0e"/>
+  <polygon points="566,169 570,178 574,169" fill="#2a1a0e"/>
+  <text x="558" y="140" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="end">ΔE_exch</text>
+
+  <!-- Explanation box -->
+  <rect x="32" y="240" width="636" height="80" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="350" y="258" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Exchange stabilization mechanism</text>
+  <text x="350" y="275" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Each additional parallel-spin electron pair contributes −K to the energy (exchange integral K &gt; 0).</text>
+  <text x="350" y="291" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Half-filled 3d⁵ (Cr) and fully-filled 3d¹⁰ (Cu) have maximum exchange-pair counts.</text>
+  <text x="350" y="307" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">The gain ΔE_exch exceeds the cost of promoting one 4s electron to 3d.</text>
+
+  <!-- Caption -->
+  <text x="350" y="338" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Red border on orbital box = position that differs between Madelung prediction and actual NIST configuration.</text>
+  <text x="350" y="356" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">This exception requires the Madelung rule to be understood as approximate, not exact.</text>
+</svg>

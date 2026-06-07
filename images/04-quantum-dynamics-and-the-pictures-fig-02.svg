@@ -1,0 +1,104 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 04-quantum-dynamics-and-the-pictures · figure: 02
+     title: Schrödinger vs. Heisenberg Picture: Parallel Structure Diagram
+     type: diagram · priority: Critical · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Schrödinger vs. Heisenberg Picture: Parallel Structure</title>
+  <desc>Two-column three-row comparison. Left column (Schrödinger picture): state layer is time-varying, operator layer is static, expectation value output is identical to right column. Right column (Heisenberg picture): state layer is static, operator layer is time-varying, expectation value is identical. A dashed arrow between columns marks the unitary connection U(t).</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="04-quantum-dynamics-and-the-pictures"
+      figure-number="02"
+      figure-title="Schrödinger vs. Heisenberg Picture: Parallel Structure Diagram"
+      figure-slug="schrodinger-vs-heisenberg-picture"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-dynamics-and-the-pictures-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-dash" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8860E"/>
+    </marker>
+    <marker id="arrow-dash-rev" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#C8860E"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Schrödinger Picture vs. Heisenberg Picture</text>
+
+  <!-- Column headers -->
+  <text x="175" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="13" fill="#2a1a0e" text-anchor="middle">Schrödinger Picture</text>
+  <text x="525" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="13" fill="#2a1a0e" text-anchor="middle">Heisenberg Picture</text>
+
+  <!-- Row labels on left -->
+  <text x="28" y="115" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" transform="rotate(-90,28,115)">state</text>
+  <text x="28" y="225" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" transform="rotate(-90,28,225)">operator</text>
+  <text x="28" y="340" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" transform="rotate(-90,28,340)">⟨Q⟩</text>
+
+  <!-- ============ ROW 1: STATE ============ -->
+  <!-- Schrödinger state: TIME-VARYING (animated feel with bold border) -->
+  <rect x="50" y="62" width="250" height="100" rx="0" fill="#2a1a0e" fill-opacity="0.08" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="175" y="100" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#2a1a0e" text-anchor="middle">|ψ(t)⟩</text>
+  <text x="175" y="120" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">time-dependent</text>
+  <!-- Clock motif (simple arcs) -->
+  <circle cx="175" cy="145" r="8" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="175" y1="145" x2="175" y2="139" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="175" y1="145" x2="179" y2="145" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="175" y="158" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">evolves</text>
+
+  <!-- Heisenberg state: STATIC (neutral gray) -->
+  <rect x="400" y="62" width="250" height="100" rx="0" fill="#D4D4D4" fill-opacity="0.3" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="525" y="100" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#545454" text-anchor="middle">|ψ(0)⟩</text>
+  <text x="525" y="120" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">fixed (frozen)</text>
+  <text x="525" y="150" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="middle">static</text>
+
+  <!-- ============ ROW 2: OPERATOR ============ -->
+  <!-- Schrödinger operator: STATIC (gray) -->
+  <rect x="50" y="172" width="250" height="100" rx="0" fill="#D4D4D4" fill-opacity="0.3" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="175" y="210" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#545454" text-anchor="middle">Q̂</text>
+  <text x="175" y="230" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">time-independent</text>
+  <text x="175" y="260" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="middle">static</text>
+
+  <!-- Heisenberg operator: TIME-VARYING (bold border) -->
+  <rect x="400" y="172" width="250" height="100" rx="0" fill="#787878" fill-opacity="0.10" stroke="#787878" stroke-width="1.5"/>
+  <text x="525" y="210" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#2a1a0e" text-anchor="middle">Q̂_H(t)</text>
+  <text x="525" y="230" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">time-dependent</text>
+  <!-- Clock motif -->
+  <circle cx="525" cy="255" r="8" fill="none" stroke="#787878" stroke-width="1"/>
+  <line x1="525" y1="255" x2="525" y2="249" stroke="#787878" stroke-width="1"/>
+  <line x1="525" y1="255" x2="529" y2="255" stroke="#787878" stroke-width="1"/>
+  <text x="525" y="268" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">evolves</text>
+
+  <!-- ============ ROW 3: EXPECTATION VALUE (identical in both) ============ -->
+  <rect x="50" y="282" width="250" height="80" rx="0" fill="#C8860E" fill-opacity="0.12" stroke="#C8860E" stroke-width="1"/>
+  <text x="175" y="318" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">⟨Q⟩(t)</text>
+  <text x="175" y="350" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">same output</text>
+
+  <rect x="400" y="282" width="250" height="80" rx="0" fill="#C8860E" fill-opacity="0.12" stroke="#C8860E" stroke-width="1"/>
+  <text x="525" y="318" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">⟨Q⟩(t)</text>
+  <text x="525" y="350" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">same output</text>
+
+  <!-- Equality marker between the two expectation values -->
+  <line x1="302" y1="322" x2="396" y2="322" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="349" y="318" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#C8860E" text-anchor="middle">=</text>
+
+  <!-- Dashed unitary connection between state/operator rows -->
+  <line x1="302" y1="162" x2="396" y2="162" stroke="#C8860E" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrow-dash)" marker-start="url(#arrow-dash-rev)"/>
+  <text x="349" y="155" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E" text-anchor="middle">U(t)</text>
+
+  <line x1="302" y1="272" x2="396" y2="272" stroke="#C8860E" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrow-dash)" marker-start="url(#arrow-dash-rev)"/>
+  <text x="349" y="265" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E" text-anchor="middle">U†(t)</text>
+
+  <!-- Caption -->
+  <text x="350" y="395" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Both pictures yield identical expectation values. U(t) moves the time-dependence between state and operator.</text>
+</svg>

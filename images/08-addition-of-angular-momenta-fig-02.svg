@@ -1,0 +1,135 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 08-addition-of-angular-momenta
+     Figure  : 02 — Triangle Rule and State Counting: Three Representative Combinations
+     Type    : chart
+     Priority: Critical
+     Source  : pantry/08-addition-of-angular-momenta-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Triangle Rule and State Counting: Three Representative j₁ ⊗ j₂ Combinations</title>
+  <desc>Three-row segmented bar chart showing how the triangle rule J = |j₁−j₂|,…,j₁+j₂ decomposes product spaces. Each segment width is proportional to the multiplet dimension 2J+1. Total bar width equals the product (2j₁+1)(2j₂+1). Cases: ½⊗½=4, 1⊗½=6, 1⊗1=9.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="08-addition-of-angular-momenta"
+      figure-number="02"
+      figure-title="Triangle Rule and State Counting: Three Representative Combinations"
+      figure-slug="triangle-rule-state-counting"
+      figure-type="chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-addition-of-angular-momenta-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Triangle Rule — State Counting by Multiplet Dimension</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Segment width ∝ 2J+1 (number of m states).   Total = (2j₁+1)(2j₂+1)</text>
+
+  <!-- Chart layout: x_left=180, x_right=580; bar height=54, gap=18 -->
+  <!-- X scale: 0..9 units maps to 180..580, so 400px for 9 units → 44.4px per unit -->
+  <!-- Row y positions: -->
+  <!-- Row 1 center: y=100, bar y=73..127 -->
+  <!-- Row 2 center: y=200, bar y=173..227 -->
+  <!-- Row 3 center: y=305, bar y=278..332 -->
+
+  <!-- X axis at y=368 -->
+  <line x1="180" y1="368" x2="580" y2="368" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Tick marks at 0,2,4,6,8 -->
+  <line x1="180" y1="368" x2="180" y2="374" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="269" y1="368" x2="269" y2="374" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="358" y1="368" x2="358" y2="374" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="447" y1="368" x2="447" y2="374" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="536" y1="368" x2="536" y2="374" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="180" y="386" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
+  <text x="269" y="386" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">2</text>
+  <text x="358" y="386" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">4</text>
+  <text x="447" y="386" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">6</text>
+  <text x="536" y="386" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">8</text>
+  <text x="580" y="386" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">10</text>
+  <text x="380" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Number of states (dimension)</text>
+
+  <!-- 44.44px per unit -->
+
+  <!-- ===== ROW 1: j₁=½, j₂=½ → J=0 (dim1) + J=1 (dim3) = 4 ===== -->
+  <!-- Row label -->
+  <text x="172" y="96" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">½⊗½</text>
+  <text x="172" y="110" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">→ 2×2=4</text>
+  <!-- j₁, j₂ icons (small circles proportional to 2j+1=2) -->
+  <circle cx="140" cy="103" r="7" fill="#D4D4D4" stroke="#787878" stroke-width="0.75"/>
+  <circle cx="158" cy="103" r="7" fill="#D4D4D4" stroke="#787878" stroke-width="0.75"/>
+  <!-- J=0 segment: width=1*44.44=44.4px, color Reddish Purple #CC79A7 -->
+  <rect x="180" y="80" width="44" height="44" fill="#ADADAD"/>
+  <text x="202" y="106" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=0</text>
+  <text x="202" y="118" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">1</text>
+  <!-- J=1 segment: width=3*44.44=133.3px, color Blue #2a1a0e darker -->
+  <rect x="224" y="80" width="133" height="44" fill="#787878"/>
+  <text x="291" y="106" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=1</text>
+  <text x="291" y="118" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">3</text>
+  <!-- Total marker -->
+  <circle cx="357" cy="102" r="5" fill="#C8860E"/>
+  <text x="366" y="106" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">= 4</text>
+  <!-- Separator line -->
+  <line x1="140" y1="143" x2="620" y2="143" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- ===== ROW 2: j₁=1, j₂=½ → J=½ (dim2) + J=3/2 (dim4) = 6 ===== -->
+  <text x="172" y="193" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">1⊗½</text>
+  <text x="172" y="207" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">→ 3×2=6</text>
+  <circle cx="138" cy="200" r="10" fill="#D4D4D4" stroke="#787878" stroke-width="0.75"/>
+  <circle cx="158" cy="200" r="7" fill="#D4D4D4" stroke="#787878" stroke-width="0.75"/>
+  <!-- J=½ segment: dim=2, width=2*44.44=88.9 -->
+  <rect x="180" y="177" width="89" height="44" fill="#ADADAD"/>
+  <text x="225" y="203" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=½</text>
+  <text x="225" y="215" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">2</text>
+  <!-- J=3/2 segment: dim=4, width=4*44.44=177.8 -->
+  <rect x="269" y="177" width="178" height="44" fill="#787878"/>
+  <text x="358" y="203" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=3/2</text>
+  <text x="358" y="215" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">4</text>
+  <!-- Total marker -->
+  <circle cx="447" cy="199" r="5" fill="#C8860E"/>
+  <text x="456" y="203" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">= 6</text>
+  <line x1="140" y1="240" x2="620" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- ===== ROW 3: j₁=1, j₂=1 → J=0 (1) + J=1 (3) + J=2 (5) = 9 ===== -->
+  <text x="172" y="293" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">1⊗1</text>
+  <text x="172" y="307" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">→ 3×3=9</text>
+  <circle cx="137" cy="300" r="10" fill="#D4D4D4" stroke="#787878" stroke-width="0.75"/>
+  <circle cx="157" cy="300" r="10" fill="#D4D4D4" stroke="#787878" stroke-width="0.75"/>
+  <!-- J=0: dim=1, w=44.4 -->
+  <rect x="180" y="277" width="44" height="44" fill="#ADADAD"/>
+  <text x="202" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=0</text>
+  <text x="202" y="315" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">1</text>
+  <!-- J=1: dim=3, w=133.3 -->
+  <rect x="224" y="277" width="133" height="44" fill="#787878"/>
+  <text x="291" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=1</text>
+  <text x="291" y="315" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">3</text>
+  <!-- J=2: dim=5, w=222.2 -->
+  <rect x="357" y="277" width="222" height="44" fill="#2a1a0e"/>
+  <text x="468" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">J=2</text>
+  <text x="468" y="315" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">5</text>
+  <!-- Total marker -->
+  <circle cx="579" cy="299" r="5" fill="#C8860E"/>
+  <text x="588" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">= 9</text>
+
+  <!-- Legend -->
+  <rect x="610" y="80" width="78" height="120" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="649" y="95" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle" font-weight="600">J values</text>
+  <rect x="618" y="103" width="16" height="10" fill="#ADADAD"/>
+  <text x="641" y="112" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">J=0, ½</text>
+  <rect x="618" y="120" width="16" height="10" fill="#787878"/>
+  <text x="641" y="129" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">J=1, 3/2</text>
+  <rect x="618" y="137" width="16" height="10" fill="#2a1a0e"/>
+  <text x="641" y="146" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">J=2</text>
+  <circle cx="626" cy="160" r="4" fill="#C8860E"/>
+  <text x="641" y="163" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">total</text>
+
+  <!-- Caption -->
+  <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Σ(2J+1) = (2j₁+1)(2j₂+1): state count is conserved under the change of coupling basis.</text>
+</svg>

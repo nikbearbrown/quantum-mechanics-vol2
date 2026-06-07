@@ -1,0 +1,113 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 01-the-formalism · figure: 02
+     title: Completeness Insertion Mechanism (Three-Step Chain)
+     type: diagram · priority: Critical · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Completeness Insertion Mechanism (Three-Step Chain)</title>
+  <desc>Three-stage horizontal process showing the identity completeness insertion: a gap in an inner product is filled by the resolution of the identity as a sum of outer-product projectors, which expands into a chain of paired inner products.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="01-the-formalism"
+      figure-number="02"
+      figure-title="Completeness Insertion Mechanism (Three-Step Chain)"
+      figure-slug="completeness-insertion-mechanism"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-the-formalism-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Completeness Insertion — Three-Step Chain</text>
+
+  <!-- Stage labels -->
+  <text x="115" y="58" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Stage 1</text>
+  <text x="350" y="58" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Stage 2</text>
+  <text x="585" y="58" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Stage 3</text>
+
+  <!-- Stage 1: inner product with gap -->
+  <rect x="40" y="68" width="150" height="200" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Left bra bracket -->
+  <text x="72" y="180" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="52" fill="#2a1a0e" text-anchor="middle">⟨φ|</text>
+  <!-- Gap indicator (dashed line) -->
+  <line x1="98" y1="155" x2="130" y2="155" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="98" y1="175" x2="130" y2="175" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Right ket bracket -->
+  <text x="157" y="180" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="52" fill="#2a1a0e" text-anchor="middle">|ψ⟩</text>
+  <text x="115" y="285" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">inner product</text>
+  <text x="115" y="298" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">with gap</text>
+
+  <!-- Arrow 1→2: "insert Î" -->
+  <line x1="200" y1="168" x2="228" y2="168" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="214" y="160" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">insert</text>
+  <text x="214" y="172" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">Î = Σ|n⟩⟨n|</text>
+
+  <!-- Stage 2: identity stack (taller panel) -->
+  <rect x="235" y="68" width="230" height="250" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Left bra -->
+  <text x="270" y="188" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="40" fill="#2a1a0e" text-anchor="middle">⟨φ|</text>
+  <!-- Stack of outer products in middle -->
+  <g id="identity-stack">
+    <!-- |n⟩⟨n| pairs stacked vertically -->
+    <rect x="292" y="100" width="84" height="24" rx="0" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="0.75"/>
+    <text x="334" y="117" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8102E" text-anchor="middle">|1⟩⟨1|</text>
+    <rect x="292" y="132" width="84" height="24" rx="0" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="0.75"/>
+    <text x="334" y="149" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8102E" text-anchor="middle">|2⟩⟨2|</text>
+    <rect x="292" y="164" width="84" height="24" rx="0" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="0.75"/>
+    <text x="334" y="181" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8102E" text-anchor="middle">|3⟩⟨3|</text>
+    <rect x="292" y="196" width="84" height="24" rx="0" fill="#C8102E" fill-opacity="0.15" stroke="#C8102E" stroke-width="0.75"/>
+    <text x="334" y="213" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#C8102E" text-anchor="middle">|4⟩⟨4|</text>
+    <!-- Plus signs between -->
+    <text x="334" y="130" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+</text>
+    <text x="334" y="162" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+</text>
+    <text x="334" y="194" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+</text>
+    <text x="334" y="228" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+ ···</text>
+  </g>
+  <!-- Right ket -->
+  <text x="430" y="188" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="40" fill="#2a1a0e" text-anchor="middle">|ψ⟩</text>
+  <text x="350" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Î inserted</text>
+  <text x="350" y="343" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">Σ|n⟩⟨n| = Î</text>
+
+  <!-- Arrow 2→3: "expand" -->
+  <line x1="475" y1="168" x2="503" y2="168" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="489" y="160" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">expand</text>
+  <text x="489" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">→ chain</text>
+
+  <!-- Stage 3: chain of paired inner products -->
+  <rect x="510" y="68" width="158" height="250" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Chain: sum of ⟨φ|n⟩⟨n|ψ⟩ pairs -->
+  <text x="589" y="100" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Result chain:</text>
+  <!-- Pair 1 -->
+  <rect x="522" y="108" width="56" height="22" rx="0" fill="#2a1a0e" fill-opacity="0.08" stroke="#2a1a0e" stroke-width="0.5"/>
+  <text x="550" y="124" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#2a1a0e" text-anchor="middle">⟨φ|1⟩</text>
+  <rect x="584" y="108" width="56" height="22" rx="0" fill="#787878" fill-opacity="0.12" stroke="#787878" stroke-width="0.5"/>
+  <text x="612" y="124" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" text-anchor="middle">⟨1|ψ⟩</text>
+  <text x="589" y="145" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+</text>
+  <!-- Pair 2 -->
+  <rect x="522" y="150" width="56" height="22" rx="0" fill="#2a1a0e" fill-opacity="0.08" stroke="#2a1a0e" stroke-width="0.5"/>
+  <text x="550" y="166" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#2a1a0e" text-anchor="middle">⟨φ|2⟩</text>
+  <rect x="584" y="150" width="56" height="22" rx="0" fill="#787878" fill-opacity="0.12" stroke="#787878" stroke-width="0.5"/>
+  <text x="612" y="166" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" text-anchor="middle">⟨2|ψ⟩</text>
+  <text x="589" y="187" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+</text>
+  <!-- Pair 3 -->
+  <rect x="522" y="192" width="56" height="22" rx="0" fill="#2a1a0e" fill-opacity="0.08" stroke="#2a1a0e" stroke-width="0.5"/>
+  <text x="550" y="208" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#2a1a0e" text-anchor="middle">⟨φ|3⟩</text>
+  <rect x="584" y="192" width="56" height="22" rx="0" fill="#787878" fill-opacity="0.12" stroke="#787878" stroke-width="0.5"/>
+  <text x="612" y="208" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454" text-anchor="middle">⟨3|ψ⟩</text>
+  <text x="589" y="228" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">+ ···</text>
+  <text x="589" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">expanded chain</text>
+  <text x="589" y="343" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">Σ⟨φ|n⟩⟨n|ψ⟩</text>
+
+  <!-- Caption -->
+  <text x="350" y="392" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">The identity Î = Σ|n⟩⟨n| fills the gap and expands any inner product into a basis sum.</text>
+</svg>

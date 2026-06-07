@@ -1,0 +1,121 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 04-quantum-dynamics-and-the-pictures · figure: 04
+     title: Heisenberg Equation vs. Hamilton's Equations: Structural Analogy
+     type: diagram · priority: Important · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Heisenberg Equation vs. Hamilton's Equations: Structural Analogy</title>
+  <desc>Two-panel comparison showing the structural parallel between classical Poisson brackets and quantum commutators. Left panel: classical Poisson bracket as bilinear operation on position and momentum-like quantities. Right panel: quantum commutator as bilinear operation on operator boxes. A central correspondence arrow marks the Dirac quantization rule replacing Poisson brackets with commutators divided by iħ.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="04-quantum-dynamics-and-the-pictures"
+      figure-number="04"
+      figure-title="Heisenberg Equation vs. Hamilton's Equations: Structural Analogy"
+      figure-slug="heisenberg-vs-hamilton-structural-analogy"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-dynamics-and-the-pictures-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-ochre" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8860E"/>
+    </marker>
+    <marker id="arrow-ochre-rev" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#C8860E"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Classical Poisson Bracket vs. Quantum Commutator — Structural Analogy</text>
+
+  <!-- Panel dividing rule -->
+  <line x1="350" y1="42" x2="350" y2="390" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- Column headers -->
+  <text x="175" y="54" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Classical Mechanics</text>
+  <text x="525" y="54" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Quantum Mechanics</text>
+
+  <!-- LEFT PANEL: Classical -->
+  <rect x="32" y="60" width="306" height="300" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Two input ellipses at top: A (classical) and H (Hamiltonian) -->
+  <ellipse cx="120" cy="110" rx="52" ry="26" fill="#C8860E" fill-opacity="0.20" stroke="#C8860E" stroke-width="1"/>
+  <text x="120" y="115" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">A(q,p)</text>
+
+  <ellipse cx="218" cy="110" rx="52" ry="26" fill="#C8860E" fill-opacity="0.20" stroke="#C8860E" stroke-width="1"/>
+  <text x="218" y="115" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">H(q,p)</text>
+
+  <!-- Arrows into bracket operation -->
+  <line x1="120" y1="136" x2="165" y2="192" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="218" y1="136" x2="178" y2="192" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Bracket operation box -->
+  <rect x="130" y="195" width="80" height="44" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="170" y="213" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#2a1a0e" text-anchor="middle">{A, H}</text>
+  <text x="170" y="232" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Poisson bracket</text>
+
+  <!-- Output arrow -->
+  <line x1="170" y1="239" x2="170" y2="275" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Output: dA/dt -->
+  <ellipse cx="170" cy="292" rx="52" ry="22" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="170" y="297" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="15" fill="#2a1a0e" text-anchor="middle">dA/dt</text>
+
+  <!-- Conservation null: when {A,H}=0 -->
+  <text x="170" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">if {A,H} = 0 →</text>
+  <text x="170" y="345" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">A conserved</text>
+  <!-- Null circle -->
+  <circle cx="170" cy="355" r="8" fill="none" stroke="#545454" stroke-width="1"/>
+  <line x1="164" y1="355" x2="176" y2="355" stroke="#545454" stroke-width="1"/>
+
+  <!-- RIGHT PANEL: Quantum -->
+  <rect x="362" y="60" width="306" height="300" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Two input boxes at top: Â and Ĥ -->
+  <rect x="396" y="84" width="100" height="52" rx="0" fill="#2a1a0e" fill-opacity="0.10" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="446" y="108" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">Â_H(t)</text>
+  <text x="446" y="126" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">operator</text>
+
+  <rect x="506" y="84" width="100" height="52" rx="0" fill="#2a1a0e" fill-opacity="0.10" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="556" y="108" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">Ĥ</text>
+  <text x="556" y="126" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Hamiltonian</text>
+
+  <!-- Arrows into commutator -->
+  <line x1="446" y1="136" x2="488" y2="192" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="556" y1="136" x2="518" y2="192" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Commutator box -->
+  <rect x="458" y="195" width="88" height="44" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="502" y="213" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="17" fill="#2a1a0e" text-anchor="middle">[Â, Ĥ]</text>
+  <text x="502" y="232" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">commutator</text>
+
+  <!-- Output arrow with iħ factor -->
+  <line x1="502" y1="239" x2="502" y2="268" stroke="#545454" stroke-width="1" marker-end="url(#arrow)"/>
+  <text x="516" y="258" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">÷ iħ</text>
+
+  <!-- Output: dÂ_H/dt -->
+  <rect x="450" y="270" width="104" height="34" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="502" y="292" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">dÂ_H/dt</text>
+
+  <!-- Conservation: when [A,H]=0 -->
+  <text x="502" y="328" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">if [Â, Ĥ] = 0 →</text>
+  <text x="502" y="343" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Â conserved</text>
+  <circle cx="502" cy="353" r="8" fill="none" stroke="#545454" stroke-width="1"/>
+  <line x1="496" y1="353" x2="508" y2="353" stroke="#545454" stroke-width="1"/>
+
+  <!-- Correspondence arrow between panels: {,} → [,]/(iħ) -->
+  <line x1="260" y1="210" x2="340" y2="210" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrow-ochre)" marker-start="url(#arrow-ochre-rev)"/>
+  <text x="300" y="200" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E" text-anchor="middle">{,}→[,]/iħ</text>
+  <text x="300" y="224" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">Dirac quantization</text>
+
+  <!-- Caption -->
+  <text x="350" y="400" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Same bilinear structure: replace Poisson bracket with commutator/iħ to get the Heisenberg equation of motion.</text>
+</svg>

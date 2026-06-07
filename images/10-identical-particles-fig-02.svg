@@ -1,0 +1,157 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 10-identical-particles
+     Figure  : 02 — Slater Determinant: Swapping Rows Flips the Sign
+     Type    : diagram
+     Priority: Critical
+     Source  : pantry/10-identical-particles-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-02">
+  <title id="fig-title-02">Slater Determinant: Swapping Rows Flips the Sign</title>
+  <desc>Three-panel sequence showing antisymmetry of the 2×2 Slater determinant. Panel A: original matrix with row 1 (particle 1) on top, row 2 on bottom. Swap arrow. Panel C: rows swapped, acquiring a −1 prefactor. Below: identical columns force determinant to zero — Pauli exclusion theorem.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="10-identical-particles"
+      figure-number="02"
+      figure-title="Slater Determinant: Swapping Rows Flips the Sign"
+      figure-slug="slater-det-row-swap"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-identical-particles-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-swap" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arrow-swap-rev" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse">
+      <polygon points="8 0, 0 3, 8 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Slater Determinant — Row Swap Flips Sign</text>
+
+  <!-- ===== TOP STRIP: Row swap narrative ===== -->
+
+  <!-- Panel A label -->
+  <text x="155" y="54" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">det(A)</text>
+
+  <!-- 2×2 Matrix Panel A -->
+  <!-- det bracket left -->
+  <path d="M 88,66 L 82,66 L 82,166 L 88,166" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- det bracket right -->
+  <path d="M 222,66 L 228,66 L 228,166 L 222,166" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Row 1 cells (particle 1 → orbital a, b) — Sky Blue -->
+  <rect x="92" y="70" width="60" height="40" fill="#ADADAD" stroke="#FFFFFF" stroke-width="1"/>
+  <rect x="156" y="70" width="60" height="40" fill="#ADADAD" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- Row labels -->
+  <text x="122" y="95" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_a(1)</text>
+  <text x="186" y="95" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_b(1)</text>
+
+  <!-- Row 2 cells (particle 2) — Orange -->
+  <rect x="92" y="114" width="60" height="40" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>
+  <rect x="156" y="114" width="60" height="40" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="122" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_a(2)</text>
+  <text x="186" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_b(2)</text>
+
+  <!-- Row labels on left -->
+  <text x="78" y="93" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₁</text>
+  <text x="78" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₂</text>
+
+  <!-- Sign A -->
+  <text x="155" y="188" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="22" fill="#2a1a0e" text-anchor="middle">+</text>
+
+  <!-- Swap arrow -->
+  <line x1="244" y1="116" x2="278" y2="116" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-swap)"/>
+  <line x1="278" y1="116" x2="244" y2="116" stroke="#C8102E" stroke-width="0" marker-end="url(#arrow-swap-rev)"/>
+  <!-- Double-headed via two separate arrows -->
+  <line x1="262" y1="104" x2="260" y2="126" stroke="#C8102E" stroke-width="0"/>
+  <path d="M 242,108 Q 261,90 280,108" fill="none" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-swap)"/>
+  <path d="M 280,124 Q 261,142 242,124" fill="none" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-swap)"/>
+  <text x="261" y="117" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">1↔2</text>
+
+  <!-- −1 × prefactor -->
+  <text x="314" y="117" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="18" fill="#2a1a0e" text-anchor="middle">−1 ×</text>
+
+  <!-- Panel C label -->
+  <text x="463" y="54" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">det(A) after swap</text>
+
+  <!-- 2×2 Matrix Panel C — rows swapped -->
+  <path d="M 332,66 L 326,66 L 326,166 L 332,166" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M 466,66 L 472,66 L 472,166 L 466,166" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Row 1 now Orange (was particle 2) -->
+  <rect x="336" y="70" width="60" height="40" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>
+  <rect x="400" y="70" width="60" height="40" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="366" y="95" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_a(2)</text>
+  <text x="430" y="95" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_b(2)</text>
+
+  <!-- Row 2 now Gray (was particle 1) -->
+  <rect x="336" y="114" width="60" height="40" fill="#ADADAD" stroke="#FFFFFF" stroke-width="1"/>
+  <rect x="400" y="114" width="60" height="40" fill="#ADADAD" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="366" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_a(1)</text>
+  <text x="430" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_b(1)</text>
+
+  <text x="322" y="93" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₂</text>
+  <text x="322" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₁</text>
+
+  <!-- Sign C -->
+  <text x="463" y="188" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="22" fill="#C8102E" text-anchor="middle">−</text>
+
+  <!-- = sign between -->
+  <text x="262" y="180" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#545454" text-anchor="middle">swap row → sign flip</text>
+
+  <!-- ===== BOTTOM STRIP: Pauli corollary ===== -->
+  <line x1="64" y1="212" x2="636" y2="212" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="350" y="230" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Pauli Exclusion Corollary: two identical orbitals → determinant = 0</text>
+
+  <!-- Identical-column matrix (φ_a = φ_b) -->
+  <path d="M 166,248 L 160,248 L 160,320 L 166,320" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M 292,248 L 298,248 L 298,320 L 292,320" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Both rows Reddish Purple (#C8102E pale variant) -->
+  <rect x="170" y="252" width="58" height="30" fill="#C8102E" fill-opacity="0.20" stroke="#C8102E" stroke-width="1"/>
+  <rect x="232" y="252" width="58" height="30" fill="#C8102E" fill-opacity="0.20" stroke="#C8102E" stroke-width="1"/>
+  <text x="199" y="272" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E" text-anchor="middle">φ_a(1)</text>
+  <text x="261" y="272" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E" text-anchor="middle">φ_a(1)</text>
+  <rect x="170" y="286" width="58" height="30" fill="#C8102E" fill-opacity="0.20" stroke="#C8102E" stroke-width="1"/>
+  <rect x="232" y="286" width="58" height="30" fill="#C8102E" fill-opacity="0.20" stroke="#C8102E" stroke-width="1"/>
+  <text x="199" y="306" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E" text-anchor="middle">φ_a(2)</text>
+  <text x="261" y="306" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E" text-anchor="middle">φ_a(2)</text>
+
+  <!-- Same-orbital label above -->
+  <text x="229" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">identical orbitals (φ_a = φ_b)</text>
+
+  <!-- Arrow to = 0 -->
+  <line x1="305" y1="284" x2="340" y2="284" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- = 0 result -->
+  <text x="420" y="290" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="28" fill="#2a1a0e" text-anchor="middle">= 0</text>
+
+  <!-- Explanation -->
+  <rect x="450" y="248" width="204" height="72" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="552" y="265" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="middle" font-weight="600">Pauli Exclusion Principle</text>
+  <text x="552" y="282" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Two fermions cannot occupy</text>
+  <text x="552" y="297" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">the same quantum state.</text>
+  <text x="552" y="312" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Identical columns → det = 0.</text>
+
+  <!-- Caption -->
+  <text x="350" y="350" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Row ↔ particle index. Column ↔ orbital index. Antisymmetry under row swap is exact antisymmetry under particle exchange.</text>
+
+  <!-- Bottom annotation -->
+  <text x="350" y="390" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">ψ(1,2) = (1/√2)[φ_a(1)φ_b(2) − φ_a(2)φ_b(1)]  →  ψ(2,1) = −ψ(1,2)</text>
+</svg>

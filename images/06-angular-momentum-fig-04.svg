@@ -1,0 +1,157 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 06-angular-momentum · figure: 04
+     title: ℓ=1 Matrix Representations of L_z, L₊, L₋
+     type: diagram · priority: Important · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">ℓ=1 Matrix Representations of L_z, L₊, and L₋</title>
+  <desc>Three 3×3 matrix grids side by side for ℓ=1 in the basis {|1,−1⟩, |1,0⟩, |1,+1⟩}. L_z has colored diagonal cells (eigenvalues −ħ, 0, +ħ). L₊ has two nonzero super-diagonal cells. L₋ has two nonzero sub-diagonal cells. All other cells are light gray. Role schematics below each matrix show diagonal arrow, upward staircase, and downward staircase.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="06-angular-momentum"
+      figure-number="04"
+      figure-title="ℓ=1 Matrix Representations of L_z, L₊, L₋"
+      figure-slug="ell1-matrix-representations-Lz-Lplus-Lminus"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-angular-momentum-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">ℓ = 1 Matrix Representations — L_z, L₊, L₋</text>
+
+  <!-- Basis label -->
+  <text x="350" y="42" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Basis: {|1,−1⟩, |1,0⟩, |1,+1⟩} — rows and columns ordered m = −1, 0, +1</text>
+
+  <!-- Cell size: 60×60. Three 3×3 grids. -->
+  <!-- Grid 1 (L_z): top-left (52, 60) -->
+  <!-- Grid 2 (L₊): top-left (262, 60) -->
+  <!-- Grid 3 (L₋): top-left (472, 60) -->
+
+  <!-- ========= L_z MATRIX ========= -->
+  <text x="182" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L_z</text>
+  <!-- Border -->
+  <rect x="52" y="60" width="180" height="180" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- Grid lines -->
+  <line x1="112" y1="60" x2="112" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="172" y1="60" x2="172" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="52" y1="120" x2="232" y2="120" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="52" y1="180" x2="232" y2="180" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Zero cells (light gray) — off-diagonal positions -->
+  <!-- All off-diagonal: (0,1),(0,2),(1,0),(1,2),(2,0),(2,1) -->
+  <!-- (row0,col1): x=112-172, y=60-120 -->
+  <rect x="112" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="172" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="52" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="172" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="52" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="112" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+
+  <!-- Diagonal cells: (0,0)=−ħ dark, (1,1)=0 white, (2,2)=+ħ medium -->
+  <!-- (0,0): x=52-112, y=60-120 — dark blue (−ħ) -->
+  <rect x="52" y="60" width="60" height="60" fill="#2a1a0e" fill-opacity="0.7"/>
+  <text x="82" y="97" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#FFFFFF" text-anchor="middle">−ħ</text>
+  <!-- (1,1): x=112-172, y=120-180 — white (0) -->
+  <rect x="112" y="120" width="60" height="60" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="142" y="157" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#545454" text-anchor="middle">0</text>
+  <!-- (2,2): x=172-232, y=180-240 — medium blue (+ħ) -->
+  <rect x="172" y="180" width="60" height="60" fill="#2a1a0e" fill-opacity="0.45"/>
+  <text x="202" y="217" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#FFFFFF" text-anchor="middle">+ħ</text>
+
+  <!-- L_z role schematic: diagonal arrow -->
+  <rect x="52" y="252" width="180" height="50" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="182" y="270" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">diagonal — eigenvalue</text>
+  <!-- Diagonal arrow icon -->
+  <line x1="70" y1="256" x2="96" y2="292" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="96,280 100,296 84,292" fill="#2a1a0e"/>
+  <text x="182" y="288" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">m = −1, 0, +1</text>
+
+  <!-- ========= L₊ MATRIX ========= -->
+  <text x="392" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L₊ (raising)</text>
+  <rect x="262" y="60" width="180" height="180" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="322" y1="60" x2="322" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="382" y1="60" x2="382" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="262" y1="120" x2="442" y2="120" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="262" y1="180" x2="442" y2="180" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- All cells zero first -->
+  <!-- Zero cells: light gray, all except super-diagonal -->
+  <!-- Super-diagonal: (row0,col1) and (row1,col2) -->
+  <!-- Zero: all others -->
+  <rect x="262" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="382" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="262" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="382" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="262" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="322" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="382" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <!-- Diagonal: zero -->
+  <rect x="262" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="322" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+
+  <!-- Super-diagonal colored cells: (0,1) and (1,2) — sky blue / dark -->
+  <!-- (row0,col1): x=322-382, y=60-120 -->
+  <rect x="322" y="60" width="60" height="60" fill="#2a1a0e" fill-opacity="0.45"/>
+  <text x="352" y="97" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#FFFFFF" text-anchor="middle">ħ√2</text>
+  <!-- (row1,col2): x=382-442, y=120-180 -->
+  <rect x="382" y="120" width="60" height="60" fill="#2a1a0e" fill-opacity="0.45"/>
+  <text x="412" y="157" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#FFFFFF" text-anchor="middle">ħ√2</text>
+
+  <!-- L₊ role schematic: upward staircase -->
+  <rect x="262" y="252" width="180" height="50" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="392" y="270" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">super-diagonal — raises m</text>
+  <!-- Staircase icon going up -->
+  <polyline points="278,290 278,278 290,278 290,266 302,266" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <polygon points="298,262 306,266 298,270" fill="#2a1a0e"/>
+  <text x="392" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">L₊|1,m⟩ ∝ |1,m+1⟩</text>
+
+  <!-- ========= L₋ MATRIX ========= -->
+  <text x="602" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L₋ (lowering)</text>
+  <rect x="472" y="60" width="180" height="180" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="532" y1="60" x2="532" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="592" y1="60" x2="592" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="472" y1="120" x2="652" y2="120" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="472" y1="180" x2="652" y2="180" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Zero cells (all except sub-diagonal) -->
+  <rect x="472" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="532" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="592" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="532" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="592" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="592" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <!-- Diagonal: zero -->
+  <rect x="472" y="60" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="532" y="120" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+  <rect x="592" y="180" width="60" height="60" fill="#D4D4D4" fill-opacity="0.15"/>
+
+  <!-- Sub-diagonal colored cells: (1,0) and (2,1) — gray/dark -->
+  <!-- (row1,col0): x=472-532, y=120-180 -->
+  <rect x="472" y="120" width="60" height="60" fill="#787878" fill-opacity="0.6"/>
+  <text x="502" y="157" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#FFFFFF" text-anchor="middle">ħ√2</text>
+  <!-- (row2,col1): x=532-592, y=180-240 -->
+  <rect x="532" y="180" width="60" height="60" fill="#787878" fill-opacity="0.6"/>
+  <text x="562" y="217" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#FFFFFF" text-anchor="middle">ħ√2</text>
+
+  <!-- L₋ role schematic: downward staircase -->
+  <rect x="472" y="252" width="180" height="50" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="602" y="270" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">sub-diagonal — lowers m</text>
+  <!-- Staircase icon going down -->
+  <polyline points="488,262 488,278 500,278 500,290 512,290" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <polygon points="508,286 516,290 508,294" fill="#787878"/>
+  <text x="602" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">L₋|1,m⟩ ∝ |1,m−1⟩</text>
+
+  <!-- Column index labels for L_z -->
+  <text x="82" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">m=−1</text>
+  <text x="142" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">m=0</text>
+  <text x="202" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">m=+1</text>
+
+  <!-- Caption -->
+  <text x="350" y="365" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Nonzero elements (ħ√2) confirm ladder coefficients ⟨ℓ,m±1|L±|ℓ,m⟩ = ħ√(ℓ∓m)(ℓ±m+1).</text>
+  <text x="350" y="382" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">L_z is diagonal; L₊ acts one step up; L₋ acts one step down in the m index.</text>
+</svg>

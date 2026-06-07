@@ -1,0 +1,104 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 02-observables-and-the-spectral-theorem · figure: 04
+     title: Real vs. Complex Eigenvalues: Effect of Hermiticity
+     type: chart · priority: Supplementary · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Real vs. Complex Eigenvalues: Effect of Hermiticity</title>
+  <desc>Two side-by-side panels. Left: real number line with three eigenvalue dots on the axis (Hermitian case — all eigenvalues real). Right: complex plane with three eigenvalue dots placed off the real axis (non-Hermitian case — eigenvalues may be complex). The contrast shows why Hermiticity guarantees observable real eigenvalues.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="02-observables-and-the-spectral-theorem"
+      figure-number="04"
+      figure-title="Real vs. Complex Eigenvalues: Effect of Hermiticity"
+      figure-slug="real-vs-complex-eigenvalues"
+      figure-type="chart"
+      priority="Supplementary"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-observables-and-the-spectral-theorem-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Real vs. Complex Eigenvalues — Effect of Hermiticity</text>
+
+  <!-- Dividing rule -->
+  <line x1="350" y1="42" x2="350" y2="390" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- LEFT PANEL: Hermitian — real number line -->
+  <rect x="32" y="42" width="306" height="350" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="185" y="62" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Hermitian operator</text>
+  <text x="185" y="78" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">eigenvalues are real</text>
+
+  <!-- Real number line at y=230, x from 60 to 310 -->
+  <line x1="60" y1="230" x2="318" y2="230" stroke="#545454" stroke-width="0.75"/>
+  <!-- Axis arrow -->
+  <polygon points="316,226 324,230 316,234" fill="#545454"/>
+  <!-- Zero tick -->
+  <line x1="189" y1="224" x2="189" y2="236" stroke="#545454" stroke-width="0.75"/>
+  <text x="189" y="248" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
+  <text x="320" y="234" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">Re</text>
+
+  <!-- Three eigenvalue dots on the real line -->
+  <!-- λ₁ = -1 at x=110, λ₂ = 0.5 at x=214, λ₃ = 2 at x=270 -->
+  <circle cx="110" cy="230" r="7" fill="#2a1a0e"/>
+  <circle cx="214" cy="230" r="7" fill="#2a1a0e"/>
+  <circle cx="270" cy="230" r="7" fill="#2a1a0e"/>
+  <!-- Labels below -->
+  <text x="110" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ₁</text>
+  <text x="214" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ₂</text>
+  <text x="270" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ₃</text>
+
+  <!-- Check annotation -->
+  <text x="185" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">all on real line</text>
+  <text x="185" y="306" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="20" fill="#2a1a0e" text-anchor="middle">✓</text>
+  <text x="185" y="340" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">physically observable</text>
+
+  <!-- RIGHT PANEL: non-Hermitian — complex plane -->
+  <rect x="362" y="42" width="306" height="350" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="515" y="62" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">Non-Hermitian operator</text>
+  <text x="515" y="78" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">eigenvalues may be complex</text>
+
+  <!-- Complex plane: real axis x from 390 to 650, imag axis y from 360 to 90 -->
+  <!-- Center at (520, 230) -->
+  <!-- Real axis -->
+  <line x1="390" y1="230" x2="648" y2="230" stroke="#545454" stroke-width="0.75"/>
+  <polygon points="646,226 654,230 646,234" fill="#545454"/>
+  <text x="656" y="234" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">Re</text>
+  <!-- Imaginary axis -->
+  <line x1="520" y1="90" x2="520" y2="362" stroke="#545454" stroke-width="0.75"/>
+  <polygon points="516,92 520,84 524,92" fill="#545454"/>
+  <text x="524" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">Im</text>
+  <!-- Zero -->
+  <line x1="514" y1="224" x2="526" y2="224" stroke="#545454" stroke-width="0.5"/>
+  <line x1="514" y1="236" x2="526" y2="236" stroke="#545454" stroke-width="0.5"/>
+  <text x="512" y="248" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="end">0</text>
+
+  <!-- Three eigenvalue dots OFF real axis -->
+  <!-- μ₁ = 0.5 + 1.5i: x=520+0.5*60=550, y=230-1.5*50=155 -->
+  <!-- μ₂ = -1 - 0.8i: x=520-1*60=460, y=230+0.8*50=270 -->
+  <!-- μ₃ = 1.5 + 0.3i: x=520+1.5*60=610, y=230-0.3*50=215 -->
+  <circle cx="550" cy="155" r="7" fill="#C8102E"/>
+  <circle cx="460" cy="270" r="7" fill="#C8102E"/>
+  <circle cx="610" cy="215" r="7" fill="#C8102E"/>
+  <!-- Labels -->
+  <text x="560" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ₁</text>
+  <text x="447" y="268" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ₂</text>
+  <text x="618" y="212" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ₃</text>
+
+  <!-- Dashed lines from dots to real axis (imaginary parts) -->
+  <line x1="550" y1="155" x2="550" y2="228" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="460" y1="270" x2="460" y2="232" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <line x1="610" y1="215" x2="610" y2="228" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Not observable annotation -->
+  <text x="515" y="306" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E" text-anchor="middle">off real axis</text>
+  <text x="515" y="340" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">not physical observables</text>
+
+  <!-- Caption -->
+  <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Hermiticity forces all eigenvalues onto the real axis — a necessary condition for observable quantities.</text>
+</svg>

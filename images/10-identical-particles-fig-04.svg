@@ -1,0 +1,117 @@
+<!-- ============================================================
+     CAJAL SVG Generator — quantum-mechanics-vol2
+     Chapter : 10-identical-particles
+     Figure  : 04 — Helium Para/Ortho Energy Splitting: J and K Integrals
+     Type    : diagram
+     Priority: Critical
+     Source  : pantry/10-identical-particles-cajal.md
+     Date    : 2026-06-06
+     ============================================================ -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Helium Para/Ortho Energy Splitting: J and K Integrals</title>
+  <desc>Vertical energy level diagram for helium 1s2s configuration. Unperturbed reference energy E⁽⁰⁾ shown as dashed baseline. Parahelium (singlet, S=0) at E⁽⁰⁾+J+K lies above orthohelium (triplet, S=1) at E⁽⁰⁾+J−K. Right-side brackets label J (direct Coulomb integral) and K (exchange integral). Total splitting 2K ≈ 0.80 eV.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="10-identical-particles"
+      figure-number="04"
+      figure-title="Helium Para/Ortho Energy Splitting: J and K Integrals"
+      figure-slug="helium-para-ortho-splitting"
+      figure-type="diagram"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-identical-particles-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Helium 1s2s: Para/Ortho Energy Splitting</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">J = direct Coulomb integral. K = exchange integral (no classical analog). Splitting = 2K.</text>
+
+  <!-- Energy axis -->
+  <line x1="110" y1="70" x2="110" y2="370" stroke="#D4D4D4" stroke-width="0.75"/>
+  <polygon points="106,74 110,64 114,74" fill="#D4D4D4"/>
+  <text x="102" y="68" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="end">E</text>
+
+  <!-- Unperturbed reference E⁽⁰⁾ dashed baseline at y=270 -->
+  <line x1="110" y1="270" x2="620" y2="270" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="104" y="274" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="end">E⁽⁰⁾</text>
+  <text x="530" y="266" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#D4D4D4">unperturbed 1s2s</text>
+
+  <!-- ==== Parahelium level: E⁽⁰⁾ + J + K at y=145 ==== -->
+  <!-- J+K region: 270−145=125px total. Set J=75px, K=50px (2K=100px, K=50) -->
+  <!-- Para level at y=145: E⁽⁰⁾ + J + K -->
+  <line x1="164" y1="145" x2="390" y2="145" stroke="#C8102E" stroke-width="2.5"/>
+  <!-- Para label + spin icon -->
+  <text x="395" y="141" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E" font-weight="600">Parahelium</text>
+  <text x="395" y="156" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">singlet  S=0</text>
+  <text x="395" y="171" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E⁽⁰⁾ + J + K</text>
+  <!-- Anti-parallel spin arrows icon -->
+  <line x1="136" y1="134" x2="136" y2="122" stroke="#ADADAD" stroke-width="2"/>
+  <polygon points="132,125 136,114 140,125" fill="#ADADAD"/>
+  <line x1="150" y1="120" x2="150" y2="132" stroke="#ADADAD" stroke-width="2"/>
+  <polygon points="146,129 150,140 154,129" fill="#ADADAD"/>
+  <!-- Spatial symmetry: smooth hump below -->
+  <path d="M 126,162 Q 143,155 160,162" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="143" y="175" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4" text-anchor="middle">ψ₊</text>
+
+  <!-- ==== Orthohelium level: E⁽⁰⁾ + J − K at y=245 ==== -->
+  <!-- Ortho level at y=245: J-K region = 270-245=25px, J spans 145 to 220 (y) -->
+  <line x1="164" y1="245" x2="390" y2="245" stroke="#ADADAD" stroke-width="2.5"/>
+  <!-- Ortho label + spin icon -->
+  <text x="395" y="241" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" font-weight="600">Orthohelium</text>
+  <text x="395" y="256" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">triplet  S=1</text>
+  <text x="395" y="271" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E⁽⁰⁾ + J − K</text>
+  <!-- Parallel spin arrows icon -->
+  <line x1="136" y1="233" x2="136" y2="221" stroke="#ADADAD" stroke-width="2"/>
+  <polygon points="132,224 136,213 140,224" fill="#ADADAD"/>
+  <line x1="150" y1="233" x2="150" y2="221" stroke="#ADADAD" stroke-width="2"/>
+  <polygon points="146,224 150,213 154,224" fill="#ADADAD"/>
+  <!-- Spatial symmetry: dip shape below -->
+  <path d="M 126,262 Q 134,275 143,262 Q 152,275 160,262" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="143" y="282" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4" text-anchor="middle">ψ₋</text>
+
+  <!-- ==== J bracket: from E⁽⁰⁾ (y=270) to midpoint between levels (y=195) ==== -->
+  <!-- midpoint = (145+245)/2 = 195 -->
+  <line x1="128" y1="195" x2="128" y2="270" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="124,199 128,190 132,199" fill="#2a1a0e"/>
+  <polygon points="124,266 128,274 132,266" fill="#2a1a0e"/>
+  <text x="118" y="234" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e" text-anchor="end">J</text>
+  <text x="118" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454" text-anchor="end">direct</text>
+
+  <!-- ==== K bracket: from midpoint (y=195) to para level (y=145) ==== -->
+  <line x1="128" y1="148" x2="128" y2="192" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="124,152 128,143 132,152" fill="#2a1a0e"/>
+  <polygon points="124,188 128,196 132,188" fill="#2a1a0e"/>
+  <text x="118" y="172" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e" text-anchor="end">K</text>
+  <text x="118" y="184" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454" text-anchor="end">exchange</text>
+
+  <!-- ==== 2K total splitting arrow (right side) ==== -->
+  <line x1="540" y1="148" x2="540" y2="242" stroke="#2a1a0e" stroke-width="1"/>
+  <polygon points="536,152 540,143 544,152" fill="#2a1a0e"/>
+  <polygon points="536,238 540,246 544,238" fill="#2a1a0e"/>
+  <text x="548" y="197" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2K</text>
+  <text x="548" y="210" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">≈ 0.80 eV</text>
+
+  <!-- Annotation: ortho lower because ψ− keeps electrons apart -->
+  <rect x="116" y="294" width="430" height="46" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="331" y="313" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Why orthohelium is lower</text>
+  <text x="331" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Antisymmetric spatial ψ₋ → node at r₁=r₂ → electrons avoid each other → lower Coulomb repulsion.</text>
+
+  <!-- K annotation -->
+  <text x="331" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Exchange integral K = ∫∫ ψ₁s*(r₁)ψ₂s*(r₂) · e²/|r₁−r₂| · ψ₁s(r₂)ψ₂s(r₁) dr₁dr₂ has no classical analog.</text>
+
+  <!-- Caption -->
+  <text x="350" y="400" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">No spin-spin force involved: the energy difference is purely due to spatial wave-function symmetry class.</text>
+</svg>

@@ -1,0 +1,159 @@
+<!-- CAJAL SVG · book: quantum-mechanics-vol2 · chapter: 02-observables-and-the-spectral-theorem · figure: 03
+     title: Hermitian Matrix Structure: Diagonal Real, Off-Diagonal Conjugate Pairs
+     type: diagram · priority: Important · generated: 2026-06-06 -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Hermitian Matrix Structure: Diagonal Real, Off-Diagonal Conjugate Pairs</title>
+  <desc>Two 3×3 matrix grids side by side showing the Hermitian condition A = A†. Diagonal cells are the same in both grids. Color-matched off-diagonal pairs show that each upper-triangle entry of A corresponds to the complex conjugate of the lower-triangle entry of A†.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Formalism and the Three-Dimensional Atom"
+      book-slug="quantum-mechanics-vol2"
+      chapter="02-observables-and-the-spectral-theorem"
+      figure-number="03"
+      figure-title="Hermitian Matrix Structure: Diagonal Real, Off-Diagonal Conjugate Pairs"
+      figure-slug="hermitian-matrix-conjugate-pairs"
+      figure-type="diagram"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-observables-and-the-spectral-theorem-cajal.md"/>
+  </metadata>
+
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Hermitian Condition A = A† — Conjugate Pair Structure</text>
+
+  <!-- Cell size: 64x64, 3x3 grids -->
+  <!-- Left matrix top-left corner: (62, 80) -->
+  <!-- Right matrix top-left corner: (448, 80) ... wait, let me plan spacing -->
+  <!-- Each matrix: 3*64=192 wide, 3*64=192 tall -->
+  <!-- Left: x=62 to 254; Right: x=446 to 638 -->
+  <!-- "=" sign at x=350, y=176 -->
+
+  <!-- Color scheme:
+       Diagonal: #C8860E (ochre, decorative accent)
+       Pair 1 (1,2)↔(2,1): #2a1a0e / #787878 (dark/gray)
+       Pair 2 (1,3)↔(3,1): #C8102E (red)
+       Pair 3 (2,3)↔(3,2): #545454 (secondary)
+  -->
+
+  <!-- Left matrix: A -->
+  <text x="158" y="72" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">A</text>
+  <!-- Grid border -->
+  <rect x="62" y="80" width="192" height="192" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- Internal grid lines -->
+  <line x1="126" y1="80" x2="126" y2="272" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="190" y1="80" x2="190" y2="272" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="62" y1="144" x2="254" y2="144" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="62" y1="208" x2="254" y2="208" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Left matrix cells: (row, col) 0-indexed
+       Cell center: (62 + col*64 + 32, 80 + row*64 + 32)
+       (0,0)=diagonal: (94,112); (1,1)=diagonal: (158,176); (2,2)=diagonal: (222,240)
+       (0,1): (158,112); (0,2): (222,112)
+       (1,0): (94,176); (1,2): (222,176)
+       (2,0): (94,240); (2,1): (158,240)
+  -->
+
+  <!-- Diagonal cells (ochre) -->
+  <rect x="62" y="80" width="64" height="64" fill="#C8860E" fill-opacity="0.20"/>
+  <rect x="126" y="144" width="64" height="64" fill="#C8860E" fill-opacity="0.20"/>
+  <rect x="190" y="208" width="64" height="64" fill="#C8860E" fill-opacity="0.20"/>
+  <!-- Diagonal stars (real) -->
+  <text x="94" y="118" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="18" fill="#C8860E" text-anchor="middle">★</text>
+  <text x="158" y="182" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="18" fill="#C8860E" text-anchor="middle">★</text>
+  <text x="222" y="246" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="18" fill="#C8860E" text-anchor="middle">★</text>
+
+  <!-- Pair 1: (0,1) in A ↔ (1,0) in A† — ink color -->
+  <rect x="126" y="80" width="64" height="64" fill="#2a1a0e" fill-opacity="0.12"/>
+  <circle cx="158" cy="112" r="12" fill="#2a1a0e" fill-opacity="0.5"/>
+  <!-- (1,0) in A (lower triangle) -->
+  <rect x="62" y="144" width="64" height="64" fill="#2a1a0e" fill-opacity="0.06"/>
+  <circle cx="94" cy="176" r="12" fill="#2a1a0e" fill-opacity="0.2"/>
+  <!-- conjugate star marker on (1,0) -->
+  <text x="94" y="171" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e" text-anchor="middle">*</text>
+
+  <!-- Pair 2: (0,2) in A ↔ (2,0) in A† — red -->
+  <rect x="190" y="80" width="64" height="64" fill="#C8102E" fill-opacity="0.15"/>
+  <circle cx="222" cy="112" r="12" fill="#C8102E" fill-opacity="0.5"/>
+  <rect x="62" y="208" width="64" height="64" fill="#C8102E" fill-opacity="0.08"/>
+  <circle cx="94" cy="240" r="12" fill="#C8102E" fill-opacity="0.2"/>
+  <text x="94" y="235" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">*</text>
+
+  <!-- Pair 3: (1,2) in A ↔ (2,1) in A† — gray -->
+  <rect x="190" y="144" width="64" height="64" fill="#545454" fill-opacity="0.15"/>
+  <circle cx="222" cy="176" r="12" fill="#545454" fill-opacity="0.45"/>
+  <rect x="126" y="208" width="64" height="64" fill="#545454" fill-opacity="0.08"/>
+  <circle cx="158" cy="240" r="12" fill="#545454" fill-opacity="0.2"/>
+  <text x="158" y="235" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">*</text>
+
+  <!-- Equals sign -->
+  <text x="350" y="186" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="28" fill="#2a1a0e" text-anchor="middle">=</text>
+
+  <!-- Right matrix: A† -->
+  <text x="542" y="72" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e" text-anchor="middle">A†</text>
+  <rect x="446" y="80" width="192" height="192" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="510" y1="80" x2="510" y2="272" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="574" y1="80" x2="574" y2="272" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="446" y1="144" x2="638" y2="144" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="446" y1="208" x2="638" y2="208" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Diagonal cells (ochre) — identical in A† -->
+  <rect x="446" y="80" width="64" height="64" fill="#C8860E" fill-opacity="0.20"/>
+  <rect x="510" y="144" width="64" height="64" fill="#C8860E" fill-opacity="0.20"/>
+  <rect x="574" y="208" width="64" height="64" fill="#C8860E" fill-opacity="0.20"/>
+  <text x="478" y="118" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="18" fill="#C8860E" text-anchor="middle">★</text>
+  <text x="542" y="182" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="18" fill="#C8860E" text-anchor="middle">★</text>
+  <text x="606" y="246" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="18" fill="#C8860E" text-anchor="middle">★</text>
+
+  <!-- Pair 1 in A†: (1,0) upper = (0,1) in A after conjugate-transpose
+       In A†: row j, col i = (A_ij)*
+       (0,1) in A → in A†: position (1,0) upper triangle? No:
+       A† means (A†)_ij = (A_ji)*
+       So (A†)_(0,1) = (A_(1,0))* — this swaps and conjugates.
+       So pair (0,1) of A ↔ (1,0) of A†? No, (A†)_(0,1) = (A_(1,0))*.
+       Visually: A's upper-triangle cell (row0,col1) pairs with A†'s lower-triangle cell (row1,col0).
+       In A†: (row1,col0) = (A_(0,1))* — same pair, just shown in mirror position with * marker. -->
+
+  <!-- In A†: (1,0) is lower triangle → same ink color as A's (0,1) upper -->
+  <rect x="446" y="144" width="64" height="64" fill="#2a1a0e" fill-opacity="0.12"/>
+  <circle cx="478" cy="176" r="12" fill="#2a1a0e" fill-opacity="0.5"/>
+  <!-- (0,1) in A† is upper — conjugate of A's lower (1,0) -->
+  <rect x="510" y="80" width="64" height="64" fill="#2a1a0e" fill-opacity="0.06"/>
+  <circle cx="542" cy="112" r="12" fill="#2a1a0e" fill-opacity="0.2"/>
+  <text x="542" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e" text-anchor="middle">*</text>
+
+  <!-- Pair 2 in A†: red — (2,0) and (0,2) -->
+  <rect x="446" y="208" width="64" height="64" fill="#C8102E" fill-opacity="0.15"/>
+  <circle cx="478" cy="240" r="12" fill="#C8102E" fill-opacity="0.5"/>
+  <rect x="574" y="80" width="64" height="64" fill="#C8102E" fill-opacity="0.08"/>
+  <circle cx="606" cy="112" r="12" fill="#C8102E" fill-opacity="0.2"/>
+  <text x="606" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E" text-anchor="middle">*</text>
+
+  <!-- Pair 3 in A†: gray — (2,1) and (1,2) -->
+  <rect x="510" y="208" width="64" height="64" fill="#545454" fill-opacity="0.15"/>
+  <circle cx="542" cy="240" r="12" fill="#545454" fill-opacity="0.45"/>
+  <rect x="574" y="144" width="64" height="64" fill="#545454" fill-opacity="0.08"/>
+  <circle cx="606" cy="176" r="12" fill="#545454" fill-opacity="0.2"/>
+  <text x="606" y="171" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">*</text>
+
+  <!-- Legend -->
+  <rect x="62" y="290" width="576" height="50" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="112" y="308" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Legend:</text>
+  <rect x="140" y="298" width="14" height="14" fill="#C8860E" fill-opacity="0.20"/>
+  <text x="166" y="310" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">diagonal (real)</text>
+  <circle cx="248" cy="305" r="7" fill="#2a1a0e" fill-opacity="0.5"/>
+  <text x="268" y="310" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">pair 1</text>
+  <circle cx="318" cy="305" r="7" fill="#C8102E" fill-opacity="0.5"/>
+  <text x="338" y="310" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">pair 2</text>
+  <circle cx="388" cy="305" r="7" fill="#545454" fill-opacity="0.5"/>
+  <text x="408" y="310" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">pair 3</text>
+  <text x="500" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">* = complex conj.</text>
+  <!-- Second legend row -->
+  <text x="200" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Dark cell: A_mn</text>
+  <text x="420" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Light cell: (A_mn)* — mirror position</text>
+
+  <!-- Caption -->
+  <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Hermitian condition: every off-diagonal entry A_mn equals the complex conjugate of A†_nm.</text>
+</svg>
