@@ -30,12 +30,12 @@
   <rect width="700" height="420" fill="#FFFFFF"/>
 
   <!-- Title -->
-  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Joint Probability Density |ψ(x₁,x₂)|² — Statistics Compared</text>
-  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Particles in orbitals ψ₁, ψ₂ of 1D infinite well. Diagonal line: x₁=x₂.</text>
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Joint Probability Density |ψ(x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>,x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>)|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> — Statistics Compared</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Particles in orbitals ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>, ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> of 1D infinite well. Diagonal line: x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>=x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>.</text>
 
   <!-- Panel labels -->
-  <text x="140" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Boson ψ₊</text>
-  <text x="265" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E" text-anchor="middle" font-weight="600">Fermion ψ₋</text>
+  <text x="140" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Boson ψ<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="265" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E" text-anchor="middle" font-weight="600">Fermion ψ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan></text>
   <text x="390" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="600">Distinguishable</text>
 
   <!-- Panel backgrounds -->
@@ -1255,13 +1255,13 @@
   <line x1="340" y1="178" x2="440" y2="78" stroke="#C8860E" stroke-width="0.75"/>
 
   <!-- Axis labels for panels -->
-  <text x="140" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">x₁</text>
-  <text x="265" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">x₁</text>
-  <text x="390" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">x₁</text>
-  <text x="86" y="128" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="end" transform="rotate(-90,86,128)">x₂</text>
+  <text x="140" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="265" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="390" y="192" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="middle">x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="86" y="128" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" text-anchor="end" transform="rotate(-90,86,128)">x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Diagonal labels -->
-  <text x="180" y="95" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#C8860E" text-anchor="end">x₁=x₂</text>
+  <text x="180" y="95" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#C8860E" text-anchor="end">x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>=x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Annotation: boson enhanced diagonal -->
   <text x="140" y="210" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e" text-anchor="middle">enhanced on diagonal</text>
@@ -1271,7 +1271,7 @@
   <text x="390" y="210" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">no diagonal feature</text>
 
   <!-- Marginal density strip (identical for all three) -->
-  <text x="350" y="234" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Marginal density ρ(x₁) — identical for all three symmetry classes</text>
+  <text x="350" y="234" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Marginal density ρ(x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>) — identical for all three symmetry classes</text>
 
   <!-- Marginal panels (thin strip, height 22) -->
   <rect x="90" y="248" width="100" height="22" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
@@ -1289,6 +1289,6 @@
   <text x="320" y="337" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">fermions, and distinguishable particles. Only the joint (two-particle) correlations differ.</text>
 
   <!-- Caption -->
-  <text x="350" y="372" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">|ψ₊|² = |ψ₁(x₁)|²|ψ₂(x₂)|² + |ψ₂(x₁)|²|ψ₁(x₂)|² + 2Re[ψ₁*(x₁)ψ₂*(x₂)ψ₂(x₁)ψ₁(x₂)]</text>
-  <text x="350" y="388" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Gold diagonal: x₁=x₂ line. |ψ₋|² has a node there; |ψ₊|² has a peak.</text>
+  <text x="350" y="372" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">|ψ<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan>|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> = |ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>(x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>)|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>|ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>(x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>)|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> + |ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>(x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>)|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>|ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>(x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>)|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> + 2Re[ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>*(x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>)ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>*(x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>)ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>(x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>)ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>(x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>)]</text>
+  <text x="350" y="388" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Gold diagonal: x<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>=x<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> line. |ψ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan>|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> has a node there; |ψ<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan>|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> has a peak.</text>
 </svg>

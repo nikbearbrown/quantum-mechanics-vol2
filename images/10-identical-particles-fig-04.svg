@@ -46,7 +46,7 @@
 
   <!-- Unperturbed reference E⁽⁰⁾ dashed baseline at y=270 -->
   <line x1="110" y1="270" x2="620" y2="270" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="104" y="274" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="end">E⁽⁰⁾</text>
+  <text x="104" y="274" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="end">E⁽<tspan dy="-0.5em" font-size="0.75em">0</tspan><tspan dy="0.5em"></tspan>⁾</text>
   <text x="530" y="266" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#D4D4D4">unperturbed 1s2s</text>
 
   <!-- ==== Parahelium level: E⁽⁰⁾ + J + K at y=145 ==== -->
@@ -56,7 +56,7 @@
   <!-- Para label + spin icon -->
   <text x="395" y="141" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E" font-weight="600">Parahelium</text>
   <text x="395" y="156" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">singlet  S=0</text>
-  <text x="395" y="171" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E⁽⁰⁾ + J + K</text>
+  <text x="395" y="171" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E⁽<tspan dy="-0.5em" font-size="0.75em">0</tspan><tspan dy="0.5em"></tspan>⁾ + J + K</text>
   <!-- Anti-parallel spin arrows icon -->
   <line x1="136" y1="134" x2="136" y2="122" stroke="#ADADAD" stroke-width="2"/>
   <polygon points="132,125 136,114 140,125" fill="#ADADAD"/>
@@ -64,7 +64,7 @@
   <polygon points="146,129 150,140 154,129" fill="#ADADAD"/>
   <!-- Spatial symmetry: smooth hump below -->
   <path d="M 126,162 Q 143,155 160,162" fill="none" stroke="#D4D4D4" stroke-width="1"/>
-  <text x="143" y="175" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4" text-anchor="middle">ψ₊</text>
+  <text x="143" y="175" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4" text-anchor="middle">ψ<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- ==== Orthohelium level: E⁽⁰⁾ + J − K at y=245 ==== -->
   <!-- Ortho level at y=245: J-K region = 270-245=25px, J spans 145 to 220 (y) -->
@@ -72,7 +72,7 @@
   <!-- Ortho label + spin icon -->
   <text x="395" y="241" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" font-weight="600">Orthohelium</text>
   <text x="395" y="256" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">triplet  S=1</text>
-  <text x="395" y="271" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E⁽⁰⁾ + J − K</text>
+  <text x="395" y="271" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E⁽<tspan dy="-0.5em" font-size="0.75em">0</tspan><tspan dy="0.5em"></tspan>⁾ + J − K</text>
   <!-- Parallel spin arrows icon -->
   <line x1="136" y1="233" x2="136" y2="221" stroke="#ADADAD" stroke-width="2"/>
   <polygon points="132,224 136,213 140,224" fill="#ADADAD"/>
@@ -80,7 +80,7 @@
   <polygon points="146,224 150,213 154,224" fill="#ADADAD"/>
   <!-- Spatial symmetry: dip shape below -->
   <path d="M 126,262 Q 134,275 143,262 Q 152,275 160,262" fill="none" stroke="#D4D4D4" stroke-width="1"/>
-  <text x="143" y="282" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4" text-anchor="middle">ψ₋</text>
+  <text x="143" y="282" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4" text-anchor="middle">ψ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- ==== J bracket: from E⁽⁰⁾ (y=270) to midpoint between levels (y=195) ==== -->
   <!-- midpoint = (145+245)/2 = 195 -->
@@ -107,10 +107,10 @@
   <!-- Annotation: ortho lower because ψ− keeps electrons apart -->
   <rect x="116" y="294" width="430" height="46" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
   <text x="331" y="313" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Why orthohelium is lower</text>
-  <text x="331" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Antisymmetric spatial ψ₋ → node at r₁=r₂ → electrons avoid each other → lower Coulomb repulsion.</text>
+  <text x="331" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Antisymmetric spatial ψ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan> → node at r<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>=r<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> → electrons avoid each other → lower Coulomb repulsion.</text>
 
   <!-- K annotation -->
-  <text x="331" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Exchange integral K = ∫∫ ψ₁s*(r₁)ψ₂s*(r₂) · e²/|r₁−r₂| · ψ₁s(r₂)ψ₂s(r₁) dr₁dr₂ has no classical analog.</text>
+  <text x="331" y="360" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Exchange integral K = ∫∫ ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>s*(r<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>)ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>s*(r<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>) · e<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>/|r<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>−r<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>| · ψ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>s(r<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>)ψ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>s(r<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>) dr<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>dr<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> has no classical analog.</text>
 
   <!-- Caption -->
   <text x="350" y="400" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">No spin-spin force involved: the energy difference is purely due to spatial wave-function symmetry class.</text>

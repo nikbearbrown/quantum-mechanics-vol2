@@ -1,0 +1,38 @@
+<svg role="img" aria-labelledby="t-ident" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-ident">Symmetric versus antisymmetric two-particle states</title>
+  <desc>Under particle exchange the two-particle wavefunction must be symmetric for bosons or antisymmetric for fermions; the antisymmetric state vanishes when both particles occupy the same state.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Exchange symmetry of identical particles</text>
+
+  <rect x="40" y="48" width="480" height="40" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="74" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">P̂₁₂ ψ(1,2) = ± ψ(2,1)</text>
+
+  <!-- symmetric / bosons -->
+  <rect x="40" y="100" width="225" height="250" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="152" y="124" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Symmetric — Bosons</text>
+  <text x="152" y="160" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">ψ_S = (φₐ(1)φ_b(2)</text>
+  <text x="152" y="180" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">   + φ_b(1)φₐ(2))/√2</text>
+  <text x="152" y="206" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">+ sign on exchange</text>
+  <!-- two particles, same state allowed -->
+  <circle cx="120" cy="270" r="14" fill="#ADADAD" stroke="#2a1a0e"/>
+  <circle cx="184" cy="270" r="14" fill="#ADADAD" stroke="#2a1a0e"/>
+  <path d="M134,260 A20,12 0 0,1 170,260" fill="none" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="152" y="318" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">may share a state (integer spin)</text>
+
+  <!-- antisymmetric / fermions -->
+  <rect x="295" y="100" width="225" height="250" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="407" y="124" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Antisymmetric — Fermions</text>
+  <text x="407" y="160" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">ψ_A = (φₐ(1)φ_b(2)</text>
+  <text x="407" y="180" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">   − φ_b(1)φₐ(2))/√2</text>
+  <text x="407" y="206" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">− sign on exchange</text>
+  <circle cx="375" cy="270" r="14" fill="#ADADAD" stroke="#2a1a0e"/>
+  <circle cx="439" cy="270" r="14" fill="#ADADAD" stroke="#2a1a0e"/>
+  <line x1="361" y1="284" x2="453" y2="256" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="407" y="318" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">a = b ⇒ ψ_A = 0</text>
+
+  
+</svg>

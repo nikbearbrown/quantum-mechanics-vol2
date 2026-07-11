@@ -1,0 +1,39 @@
+<svg role="img" aria-labelledby="t-orb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-orb">Hydrogen orbital shapes</title>
+  <desc>Probability-density shapes of hydrogen orbitals: a spherical s orbital, a dumbbell p orbital, and a four-lobed d orbital, with lobe count rising with the orbital quantum number.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Hydrogen orbital shapes: s, p, d</text>
+
+  <!-- s orbital -->
+  <rect x="30" y="55" width="160" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="110" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">s  (ℓ = 0)</text>
+  <circle cx="110" cy="195" r="58" fill="#ADADAD" fill-opacity="0.4" stroke="#2a1a0e" stroke-width="1"/>
+  <circle cx="110" cy="195" r="2" fill="#2a1a0e"/>
+  <text x="110" y="305" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">spherical, mₗ = 0</text>
+
+  <!-- p orbital -->
+  <rect x="200" y="55" width="160" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">p  (ℓ = 1)</text>
+  <path d="M280,195 C246,150 246,100 280,98 C314,100 314,150 280,195 Z" fill="#ADADAD" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M280,195 C246,240 246,290 280,292 C314,290 314,240 280,195 Z" fill="#ADADAD" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="225" y1="195" x2="335" y2="195" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="280" y="305" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">dumbbell, mₗ = 0,±1</text>
+
+  <!-- d orbital -->
+  <rect x="370" y="55" width="160" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="450" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">d  (ℓ = 2)</text>
+  <!-- four lobes (clover) -->
+  <g stroke="#2a1a0e" stroke-width="1">
+    <path d="M450,195 C420,165 420,135 450,135 C455,135 455,135 450,135 C480,135 480,165 450,195 Z" fill="#ADADAD" fill-opacity="0.45"/>
+    <path d="M450,195 C420,225 420,255 450,255 C480,255 480,225 450,195 Z" fill="#ADADAD" fill-opacity="0.45"/>
+    <path d="M450,195 C420,165 390,165 390,195 C390,225 420,225 450,195 Z" fill="#ADADAD" fill-opacity="0.25"/>
+    <path d="M450,195 C480,165 510,165 510,195 C510,225 480,225 450,195 Z" fill="#ADADAD" fill-opacity="0.25"/>
+  </g>
+  <line x1="395" y1="195" x2="505" y2="195" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="450" y1="140" x2="450" y2="250" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="450" y="305" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">four lobes, mₗ = 0…±2</text>
+
+  <text x="280" y="350" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|ψₙₗₘ(r,θ,φ)|² ; radial nodes = n−ℓ−1</text>
+  
+</svg>

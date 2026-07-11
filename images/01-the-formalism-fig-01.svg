@@ -37,7 +37,7 @@
   <!-- Central ket vector (hub) -->
   <!-- Arrow from (350,210) going up-right ~45deg, length 50 -->
   <g id="central-ket">
-    <rect x="310" y="178" width="80" height="64" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
+    <rect x="310" y="178" width="80" height="77.86000000000001" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
     <!-- Abstract vector arrow inside box -->
     <line x1="325" y1="230" x2="370" y2="192" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow)"/>
     <!-- Label |ψ⟩ -->

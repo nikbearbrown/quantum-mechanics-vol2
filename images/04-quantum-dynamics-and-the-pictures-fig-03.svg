@@ -51,9 +51,9 @@
   <line x1="80" y1="330" x2="80" y2="334" stroke="#545454" stroke-width="0.75"/>
   <text x="80" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
   <line x1="350" y1="330" x2="350" y2="334" stroke="#545454" stroke-width="0.75"/>
-  <text x="350" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">π/ω₀</text>
+  <text x="350" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">π/ω<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan></text>
   <line x1="620" y1="330" x2="620" y2="334" stroke="#545454" stroke-width="0.75"/>
-  <text x="620" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">2π/ω₀</text>
+  <text x="620" y="346" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">2π/ω<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- x-axis title -->
   <text x="350" y="368" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">time t</text>
@@ -73,9 +73,9 @@
   <!-- Legend -->
   <rect x="450" y="58" width="162" height="58" rx="0" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
   <line x1="462" y1="76" x2="490" y2="76" stroke="#2a1a0e" stroke-width="2"/>
-  <text x="498" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">P↑(t) = cos²(ω₀t/2)</text>
+  <text x="498" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">P↑(t) = cos<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>(ω<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan>t/2)</text>
   <line x1="462" y1="98" x2="490" y2="98" stroke="#C8102E" stroke-width="2"/>
-  <text x="498" y="102" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">P↓(t) = sin²(ω₀t/2)</text>
+  <text x="498" y="102" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">P↓(t) = sin<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>(ω<tspan dy="0.3em" font-size="0.75em">0</tspan><tspan dy="-0.3em"></tspan>t/2)</text>
 
   <!-- P↑+P↓=1 annotation -->
   <text x="160" y="80" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">P↑ + P↓ = 1</text>

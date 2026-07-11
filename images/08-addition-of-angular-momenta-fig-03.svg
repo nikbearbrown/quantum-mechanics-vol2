@@ -42,13 +42,13 @@
   <rect width="700" height="420" fill="#FFFFFF"/>
 
   <!-- Title -->
-  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Ladder Operator Algorithm: |1,1⟩ → |1,0⟩ via Ĵ₋</text>
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Ladder Operator Algorithm: |1,1⟩ → |1,0⟩ via Ĵ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- ==== STEP 1: Stretched state |1,1⟩ = |↑↑⟩ ==== -->
   <!-- Box at x=250..450, y=44..90 -->
   <rect x="250" y="44" width="200" height="48" fill="#F5F5F5" stroke="#2a1a0e" stroke-width="1.5"/>
   <text x="350" y="64" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e" text-anchor="middle">|J=1, M=1⟩ = |↑↑⟩</text>
-  <text x="350" y="82" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Stretched state — unique, m₁+m₂ = +1</text>
+  <text x="350" y="82" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Stretched state — unique, m<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>+m<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> = +1</text>
   <!-- Spin-up icons for two particles -->
   <line x1="220" y1="68" x2="220" y2="52" stroke="#2a1a0e" stroke-width="2"/>
   <polygon points="215,55 220,44 225,55" fill="#2a1a0e"/>
@@ -59,7 +59,7 @@
   <!-- STEP 1 → STEP 2 arrow with Ĵ₋ label -->
   <line x1="350" y1="92" x2="350" y2="115" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow)"/>
   <rect x="282" y="96" width="136" height="22" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
-  <text x="350" y="112" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">Apply Ĵ₋ = Ĵ₁₋ + Ĵ₂₋</text>
+  <text x="350" y="112" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">Apply Ĵ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan> = Ĵ<tspan dy="0.3em" font-size="0.75em">1-</tspan><tspan dy="-0.3em"></tspan> + Ĵ<tspan dy="0.3em" font-size="0.75em">2-</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Branching: two paths -->
   <!-- Split at y=138, paths go left (particle 1) and right (particle 2) -->
@@ -70,8 +70,8 @@
   <path d="M 350,138 Q 460,138 500,160" fill="none" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-p2)"/>
 
   <!-- Labels on branches -->
-  <text x="250" y="133" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">Ĵ₁₋ acts on p₁</text>
-  <text x="385" y="133" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#787878">Ĵ₂₋ acts on p₂</text>
+  <text x="250" y="133" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">Ĵ<tspan dy="0.3em" font-size="0.75em">1-</tspan><tspan dy="-0.3em"></tspan> acts on p<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="385" y="133" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#787878">Ĵ<tspan dy="0.3em" font-size="0.75em">2-</tspan><tspan dy="-0.3em"></tspan> acts on p<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- ==== Left intermediate state: |↓↑⟩ ==== -->
   <rect x="120" y="162" width="160" height="44" fill="#F5F5F5" stroke="#C8102E" stroke-width="1.5"/>
@@ -88,7 +88,7 @@
   <path d="M 500,206 Q 500,238 354,248" fill="none" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-p2)"/>
 
   <!-- Equation: Ĵ₋|1,1⟩ = ℏ√2|1,0⟩ = ℏ|↓↑⟩ + ℏ|↑↓⟩ -->
-  <text x="350" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">Ĵ₋|1,1⟩ = ℏ√2|1,0⟩ = ℏ|↓↑⟩ + ℏ|↑↓⟩</text>
+  <text x="350" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">Ĵ<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan>|1,1⟩ = ℏ√2|1,0⟩ = ℏ|↓↑⟩ + ℏ|↑↓⟩</text>
 
   <!-- Summation node -->
   <circle cx="350" cy="253" r="10" fill="#D4D4D4" stroke="#2a1a0e" stroke-width="1"/>

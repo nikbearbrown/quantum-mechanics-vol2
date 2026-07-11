@@ -22,7 +22,7 @@
   <rect width="700" height="420" fill="#FFFFFF"/>
 
   <!-- Title -->
-  <text x="350" y="22" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">ℓ = 1 Matrix Representations — L_z, L₊, L₋</text>
+  <text x="350" y="22" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">ℓ = 1 Matrix Representations — L_z, L<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan>, L<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Basis label -->
   <text x="350" y="42" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Basis: {|1,−1⟩, |1,0⟩, |1,+1⟩} — rows and columns ordered m = −1, 0, +1</text>
@@ -72,7 +72,7 @@
   <text x="182" y="288" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">m = −1, 0, +1</text>
 
   <!-- ========= L₊ MATRIX ========= -->
-  <text x="392" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L₊ (raising)</text>
+  <text x="392" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan> (raising)</text>
   <rect x="262" y="60" width="180" height="180" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
   <line x1="322" y1="60" x2="322" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
   <line x1="382" y1="60" x2="382" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
@@ -108,10 +108,10 @@
   <!-- Staircase icon going up -->
   <polyline points="278,290 278,278 290,278 290,266 302,266" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
   <polygon points="298,262 306,266 298,270" fill="#2a1a0e"/>
-  <text x="392" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">L₊|1,m⟩ ∝ |1,m+1⟩</text>
+  <text x="392" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">L<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan>|1,m⟩ ∝ |1,m+1⟩</text>
 
   <!-- ========= L₋ MATRIX ========= -->
-  <text x="602" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L₋ (lowering)</text>
+  <text x="602" y="57" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" fill="#2a1a0e" text-anchor="middle">L<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan> (lowering)</text>
   <rect x="472" y="60" width="180" height="180" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="1"/>
   <line x1="532" y1="60" x2="532" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
   <line x1="592" y1="60" x2="592" y2="240" stroke="#D4D4D4" stroke-width="0.5"/>
@@ -144,7 +144,7 @@
   <!-- Staircase icon going down -->
   <polyline points="488,262 488,278 500,278 500,290 512,290" fill="none" stroke="#787878" stroke-width="1.5"/>
   <polygon points="508,286 516,290 508,294" fill="#787878"/>
-  <text x="602" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">L₋|1,m⟩ ∝ |1,m−1⟩</text>
+  <text x="602" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">L<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan>|1,m⟩ ∝ |1,m−1⟩</text>
 
   <!-- Column index labels for L_z -->
   <text x="82" y="310" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">m=−1</text>
@@ -153,5 +153,5 @@
 
   <!-- Caption -->
   <text x="350" y="365" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Nonzero elements (ħ√2) confirm ladder coefficients ⟨ℓ,m±1|L±|ℓ,m⟩ = ħ√(ℓ∓m)(ℓ±m+1).</text>
-  <text x="350" y="382" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">L_z is diagonal; L₊ acts one step up; L₋ acts one step down in the m index.</text>
+  <text x="350" y="382" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">L_z is diagonal; L<tspan dy="0.3em" font-size="0.75em">+</tspan><tspan dy="-0.3em"></tspan> acts one step up; L<tspan dy="0.3em" font-size="0.75em">-</tspan><tspan dy="-0.3em"></tspan> acts one step down in the m index.</text>
 </svg>

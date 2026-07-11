@@ -1,0 +1,44 @@
+<svg role="img" aria-labelledby="t-cg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-cg">Addition of angular momenta and Clebsch-Gordan coupling</title>
+  <desc>Coupling two spin-one-half particles: the product of two doublets decomposes into a triplet of total spin one and a singlet of total spin zero.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Coupling two spins: ½ ⊗ ½ = 1 ⊕ 0</text>
+
+  <rect x="40" y="48" width="480" height="40" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="74" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">|s₁ s₂; m₁ m₂⟩  →  |S, M⟩     |ℓ₁−ℓ₂| ≤ S ≤ ℓ₁+ℓ₂</text>
+
+  <!-- uncoupled basis -->
+  <rect x="40" y="100" width="200" height="250" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="140" y="124" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Uncoupled (4 states)</text>
+  <g font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">
+    <text x="140" y="170" text-anchor="middle">|↑↑⟩</text>
+    <text x="140" y="205" text-anchor="middle">|↑↓⟩</text>
+    <text x="140" y="240" text-anchor="middle">|↓↑⟩</text>
+    <text x="140" y="275" text-anchor="middle">|↓↓⟩</text>
+  </g>
+  <text x="140" y="320" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">eigenstates of S₁_z, S₂_z</text>
+
+  <!-- coupling arrow -->
+  <line x1="245" y1="225" x2="315" y2="225" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="280" y="217" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">C-G</text>
+
+  <!-- coupled basis -->
+  <rect x="320" y="100" width="200" height="250" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="420" y="124" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Coupled |S,M⟩</text>
+  <text x="335" y="152" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Triplet (S = 1):</text>
+  <g font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">
+    <text x="345" y="174">|1,+1⟩ = |↑↑⟩</text>
+    <text x="345" y="196">|1, 0⟩ = (|↑↓⟩+|↓↑⟩)/√2</text>
+    <text x="345" y="218">|1,−1⟩ = |↓↓⟩</text>
+  </g>
+  <line x1="335" y1="232" x2="505" y2="232" stroke="#D4D4D4" stroke-width="1"/>
+  <text x="335" y="256" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Singlet (S = 0):</text>
+  <text x="345" y="280" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|0,0⟩ = (|↑↓⟩−|↓↑⟩)/√2</text>
+  <text x="420" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">3 + 1 = 4 states</text>
+
+  
+</svg>

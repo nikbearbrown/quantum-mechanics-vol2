@@ -1,0 +1,49 @@
+<svg role="img" aria-labelledby="t-spectral" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-spectral">Spectral theorem for a Hermitian observable</title>
+  <desc>A Hermitian operator A-hat decomposes into a sum of real eigenvalues times projectors onto orthogonal eigenspaces, shown as a diagonal matrix and an eigenvalue ladder.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Spectral theorem: observables are diagonalizable</text>
+
+  <!-- operator -->
+  <text x="120" y="90" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">Â = Â†</text>
+  <text x="120" y="110" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Hermitian</text>
+
+  <line x1="180" y1="92" x2="250" y2="92" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="215" y="84" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">diagonalize</text>
+
+  <!-- diagonal matrix -->
+  <g font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">
+    <rect x="270" y="60" width="160" height="80" fill="#F5F5F5" stroke="#D4D4D4"/>
+    <text x="290" y="86">a₁  0   0</text>
+    <text x="290" y="106">0   a₂  0</text>
+    <text x="290" y="126">0   0   a₃</text>
+  </g>
+  <text x="350" y="158" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">eigenbasis</text>
+
+  <!-- spectral decomposition formula -->
+  <rect x="40" y="180" width="480" height="46" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="209" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="14" fill="#2a1a0e">Â = Σₙ aₙ |aₙ⟩⟨aₙ|     (Â = Σ aₙ P̂ₙ)</text>
+
+  <!-- eigenvalue ladder + eigenstates -->
+  <rect x="40" y="245" width="480" height="115" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="60" y="266" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Real eigenvalues, orthonormal eigenstates</text>
+  <!-- levels -->
+  <g font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">
+    <line x1="120" y1="340" x2="220" y2="340" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="225" y="344" fill="#2a1a0e">a₁  →  |a₁⟩</text>
+    <line x1="120" y1="315" x2="220" y2="315" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="225" y="319" fill="#2a1a0e">a₂  →  |a₂⟩</text>
+    <line x1="120" y1="290" x2="220" y2="290" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="225" y="294" fill="#2a1a0e">a₃  →  |a₃⟩</text>
+  </g>
+  <line x1="100" y1="350" x2="100" y2="282" stroke="#787878" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="92" y="278" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">aₙ ∈ ℝ</text>
+  <text x="380" y="300" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">⟨aₘ|aₙ⟩ = δₘₙ</text>
+  <text x="380" y="324" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">Σ P̂ₙ = Î</text>
+
+  
+</svg>

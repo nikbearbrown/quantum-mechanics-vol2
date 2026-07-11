@@ -1,0 +1,37 @@
+<svg role="img" aria-labelledby="t-ylm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-ylm">Spherical harmonics lobe schematic</title>
+  <desc>Angular probability patterns of the spherical harmonics for l equals zero, one, and two, showing the number of angular nodes increasing with l.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Spherical harmonics Yₗᵐ(θ,φ)</text>
+
+  <!-- l = 0 -->
+  <rect x="30" y="55" width="160" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="110" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">ℓ = 0, m = 0</text>
+  <circle cx="110" cy="200" r="55" fill="#ADADAD" fill-opacity="0.4" stroke="#2a1a0e" stroke-width="1"/>
+  <circle cx="110" cy="200" r="2" fill="#2a1a0e"/>
+  <text x="110" y="305" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">0 angular nodes</text>
+
+  <!-- l = 1 -->
+  <rect x="200" y="55" width="160" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">ℓ = 1, m = 0</text>
+  <!-- two vertical lobes -->
+  <path d="M280,200 C250,150 250,100 280,98 C310,100 310,150 280,200 Z" fill="#ADADAD" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M280,200 C250,250 250,300 280,302 C310,300 310,250 280,200 Z" fill="#ADADAD" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="225" y1="200" x2="335" y2="200" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="280" y="318" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">1 nodal plane</text>
+
+  <!-- l = 2 -->
+  <rect x="370" y="55" width="160" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="450" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">ℓ = 2, m = 0</text>
+  <!-- four-lobe clover-ish (dz2 style: two big vertical + torus) -->
+  <path d="M450,200 C428,160 428,108 450,106 C472,108 472,160 450,200 Z" fill="#ADADAD" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M450,200 C428,240 428,292 450,294 C472,292 472,240 450,200 Z" fill="#ADADAD" fill-opacity="0.5" stroke="#2a1a0e" stroke-width="1"/>
+  <ellipse cx="450" cy="200" rx="50" ry="16" fill="#ADADAD" fill-opacity="0.25" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="395" y1="172" x2="505" y2="172" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="395" y1="228" x2="505" y2="228" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="450" y="318" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">2 nodal planes</text>
+
+  <text x="280" y="350" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">ℓ angular nodes; 2ℓ+1 values of m</text>
+  
+</svg>

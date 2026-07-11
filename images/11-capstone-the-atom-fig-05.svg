@@ -51,7 +51,7 @@
   <!-- Row label: Madelung prediction -->
   <text x="45" y="94" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="end">Madelung</text>
   <text x="45" y="107" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD" text-anchor="end">prediction</text>
-  <text x="45" y="120" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="end">3d⁴4s²</text>
+  <text x="45" y="120" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="end">3d<tspan dy="-0.5em" font-size="0.75em">4</tspan><tspan dy="0.5em"></tspan>4s<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan></text>
 
   <!-- 3d orbital boxes (5 boxes) — Cr Madelung: 3d⁴ (4 up-arrows) -->
   <text x="90" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">3d</text>
@@ -85,7 +85,7 @@
   <!-- Row label: Actual -->
   <text x="45" y="164" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="end">NIST</text>
   <text x="45" y="177" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e" text-anchor="end">actual</text>
-  <text x="45" y="190" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#009E73" text-anchor="end">3d⁵4s¹</text>
+  <text x="45" y="190" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#009E73" text-anchor="end">3d<tspan dy="-0.5em" font-size="0.75em">5</tspan><tspan dy="0.5em"></tspan>4s<tspan dy="-0.5em" font-size="0.75em">1</tspan><tspan dy="0.5em"></tspan></text>
 
   <!-- 3d boxes: Cr actual 3d⁵ (5 up-arrows, all parallel) -->
   <text x="90" y="158" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="middle">3d</text>
@@ -113,7 +113,7 @@
   <polygon points="206,172 209,164 212,172" fill="#2a1a0e"/>
 
   <!-- Half-filled icon -->
-  <text x="128" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">3d⁵ half-filled</text>
+  <text x="128" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">3d<tspan dy="-0.5em" font-size="0.75em">5</tspan><tspan dy="0.5em"></tspan> half-filled</text>
   <text x="128" y="220" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">S = 5/2 (maximum)</text>
 
   <!-- Energy comparison bar Cr -->
@@ -128,7 +128,7 @@
 
   <!-- ===== COPPER column ===== -->
   <!-- Cu Madelung: 3d⁹ 4s² -->
-  <text x="370" y="94" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD">Madelung: 3d⁹4s²</text>
+  <text x="370" y="94" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD">Madelung: 3d<tspan dy="-0.5em" font-size="0.75em">9</tspan><tspan dy="0.5em"></tspan>4s<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan></text>
   <!-- 3d: 4 paired + 1 up (abbreviated as 3 paired in 5 boxes) -->
   <text x="420" y="88" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD" text-anchor="middle">3d</text>
   <!-- Show 5 boxes, 4 paired, 1 unpaired (= 3d⁹) -->
@@ -165,7 +165,7 @@
   <polygon points="530,104 533,112 536,104" fill="#ADADAD"/>
 
   <!-- Cu actual: 3d¹⁰ 4s¹ -->
-  <text x="370" y="164" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#009E73">NIST actual: 3d¹⁰4s¹</text>
+  <text x="370" y="164" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#009E73">NIST actual: 3d<tspan dy="-0.5em" font-size="0.75em">10</tspan><tspan dy="0.5em"></tspan>4s<tspan dy="-0.5em" font-size="0.75em">1</tspan><tspan dy="0.5em"></tspan></text>
   <text x="420" y="158" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#2a1a0e" text-anchor="middle">3d</text>
   <!-- All 5 boxes paired (3d¹⁰ = 10 electrons fully paired) -->
   <rect x="375" y="162" width="22" height="22" fill="#FFFFFF" stroke="#009E73" stroke-width="1.5"/>
@@ -201,7 +201,7 @@
   <polygon points="526,172 529,164 532,172" fill="#2a1a0e"/>
 
   <!-- 10/10 icon -->
-  <text x="450" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">3d¹⁰ fully-filled</text>
+  <text x="450" y="208" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">3d<tspan dy="-0.5em" font-size="0.75em">10</tspan><tspan dy="0.5em"></tspan> fully-filled</text>
   <text x="450" y="220" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">maximum exchange energy</text>
 
   <!-- Energy comparison bar Cu -->
@@ -218,7 +218,7 @@
   <rect x="32" y="240" width="636" height="80" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
   <text x="350" y="258" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="600">Exchange stabilization mechanism</text>
   <text x="350" y="275" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Each additional parallel-spin electron pair contributes −K to the energy (exchange integral K &gt; 0).</text>
-  <text x="350" y="291" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Half-filled 3d⁵ (Cr) and fully-filled 3d¹⁰ (Cu) have maximum exchange-pair counts.</text>
+  <text x="350" y="291" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">Half-filled 3d<tspan dy="-0.5em" font-size="0.75em">5</tspan><tspan dy="0.5em"></tspan> (Cr) and fully-filled 3d<tspan dy="-0.5em" font-size="0.75em">10</tspan><tspan dy="0.5em"></tspan> (Cu) have maximum exchange-pair counts.</text>
   <text x="350" y="307" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">The gain ΔE_exch exceeds the cost of promoting one 4s electron to 3d.</text>
 
   <!-- Caption -->

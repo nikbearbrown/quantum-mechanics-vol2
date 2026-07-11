@@ -1,0 +1,42 @@
+<svg role="img" aria-labelledby="t-hlevels" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-hlevels">Hydrogen energy levels and degeneracy</title>
+  <desc>Bound-state energies of hydrogen scale as minus 13.6 electron volts over n squared, converging to the ionization threshold; each level n has n-squared-fold degeneracy.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Hydrogen: Eₙ = −13.6 eV / n²</text>
+
+  <rect x="40" y="50" width="480" height="300" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- energy axis -->
+  <line x1="80" y1="330" x2="80" y2="70" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="68" y="74" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E</text>
+  <text x="60" y="86" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">0</text>
+
+  <!-- ionization threshold -->
+  <line x1="80" y1="85" x2="470" y2="85" stroke="#787878" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="475" y="89" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">ionization (E=0)</text>
+
+  <!-- levels: n=1 lowest. y positions reflect -1/n^2 -->
+  <!-- n=4 E=-0.85 -->
+  <line x1="120" y1="105" x2="380" y2="105" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="390" y="109" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">n=4  −0.85 eV  (16×)</text>
+  <!-- n=3 E=-1.51 -->
+  <line x1="120" y1="120" x2="380" y2="120" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="390" y="124" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">n=3  −1.51 eV  (9×)</text>
+  <!-- n=2 E=-3.4 -->
+  <line x1="120" y1="155" x2="380" y2="155" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="390" y="159" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">n=2  −3.40 eV  (4×)</text>
+  <!-- n=1 E=-13.6 (ground) -->
+  <line x1="120" y1="310" x2="380" y2="310" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="390" y="314" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">n=1  −13.6 eV  (1×)</text>
+
+  <!-- a transition (Lyman-alpha) in red as must-look -->
+  <line x1="250" y1="155" x2="250" y2="305" stroke="#C8102E" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="256" y="240" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">Lyman-α</text>
+
+  <text x="100" y="345" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">degeneracy = n²  (ℓ = 0…n−1, mₗ, ignoring spin)</text>
+
+  
+</svg>

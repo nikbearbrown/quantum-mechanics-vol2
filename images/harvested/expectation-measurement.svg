@@ -1,0 +1,47 @@
+<svg role="img" aria-labelledby="t-exp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-exp">Expectation value and measurement statistics</title>
+  <desc>Measuring an observable yields eigenvalues with Born-rule probabilities; the histogram of outcomes has the expectation value as its mean, marked on the axis.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Measurement outcomes and the mean</text>
+
+  <rect x="40" y="48" width="480" height="40" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="68" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">P(aₙ) = |⟨aₙ|ψ⟩|²     ⟨Â⟩ = Σ aₙ P(aₙ)</text>
+  <text x="280" y="83" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Born rule and expectation value</text>
+
+  <rect x="40" y="100" width="480" height="250" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- axes -->
+  <line x1="90" y1="310" x2="490" y2="310" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <line x1="90" y1="310" x2="90" y2="125" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="514" y="300" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">outcome</text>
+  <text x="80" y="128" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">P(aₙ)</text>
+
+  <!-- bars -->
+  <g fill="#ADADAD" stroke="#2a1a0e" stroke-width="1">
+    <rect x="130" y="250" width="44" height="60"/>
+    <rect x="200" y="180" width="44" height="130"/>
+    <rect x="270" y="210" width="44" height="100"/>
+    <rect x="340" y="270" width="44" height="40"/>
+    <rect x="410" y="290" width="44" height="20"/>
+  </g>
+  <g font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="middle">
+    <text x="152" y="326">a₁</text>
+    <text x="222" y="326">a₂</text>
+    <text x="292" y="326">a₃</text>
+    <text x="362" y="326">a₄</text>
+    <text x="432" y="326">a₅</text>
+  </g>
+
+  <!-- expectation value line (red) -->
+  <line x1="262" y1="310" x2="262" y2="140" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arR)"/>
+  <text x="266" y="150" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#C8102E">⟨Â⟩</text>
+  <text x="266" y="166" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">mean of outcomes</text>
+
+  <text x="100" y="345" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">⟨Â⟩ need not be an eigenvalue; spread σ_A = √(⟨Â²⟩−⟨Â⟩²)</text>
+
+  
+</svg>

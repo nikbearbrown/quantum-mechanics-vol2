@@ -33,7 +33,7 @@
   <text x="350" y="28" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Stern–Gerlach Outcome: Classical Smear vs. Quantum Two Spots</text>
 
   <!-- ==== LEFT PANEL — Classical prediction ==== -->
-  <rect x="80" y="50" width="230" height="320" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <rect x="80" y="50" width="230" height="330.2" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
   <text x="195" y="72" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Classical prediction</text>
   <text x="195" y="88" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">continuous smear</text>
 
@@ -70,7 +70,7 @@
   <text x="195" y="370" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">deflection range expected</text>
 
   <!-- ==== RIGHT PANEL — Quantum outcome ==== -->
-  <rect x="390" y="50" width="230" height="320" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <rect x="390" y="50" width="230" height="330.2" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
   <text x="505" y="72" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="600">Quantum outcome</text>
   <text x="505" y="88" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" text-anchor="middle">two discrete spots</text>
 

@@ -1,0 +1,46 @@
+<svg role="img" aria-labelledby="t-ladder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-ladder">Angular momentum ladder operators</title>
+  <desc>For fixed l the raising and lowering operators step between the 2l+1 magnetic sublevels m from minus l to plus l, terminating at the top and bottom rungs.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Ladder operators step through m</text>
+
+  <rect x="40" y="48" width="480" height="44" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="76" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">L̂± = L̂_x ± iL̂_y     L̂±|ℓ,m⟩ = ℏ√(ℓ(ℓ+1)−m(m±1)) |ℓ,m±1⟩</text>
+
+  <rect x="40" y="105" width="480" height="245" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- rungs for l=2: m = -2..2 -->
+  <g font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">
+    <line x1="180" y1="320" x2="380" y2="320" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="392" y="324">m = −2</text>
+    <line x1="180" y1="270" x2="380" y2="270" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="392" y="274">m = −1</text>
+    <line x1="180" y1="220" x2="380" y2="220" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="392" y="224">m = 0</text>
+    <line x1="180" y1="170" x2="380" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="392" y="174">m = +1</text>
+    <line x1="180" y1="135" x2="380" y2="135" stroke="#2a1a0e" stroke-width="1.5"/>
+    <text x="392" y="139">m = +2</text>
+  </g>
+  <!-- raising arrows (left side, red = the action) -->
+  <line x1="200" y1="316" x2="200" y2="274" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="200" y1="266" x2="200" y2="224" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="200" y1="216" x2="200" y2="174" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="200" y1="166" x2="200" y2="139" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="150" y="225" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">L̂₊</text>
+  <!-- lowering arrows -->
+  <line x1="360" y1="139" x2="360" y2="166" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="360" y1="174" x2="360" y2="216" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="360" y1="224" x2="360" y2="266" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="360" y1="274" x2="360" y2="316" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="395" y="200" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">L̂₋</text>
+  <!-- termination -->
+  <text x="60" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">L̂₊|ℓ,ℓ⟩=0</text>
+  <text x="60" y="324" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">L̂₋|ℓ,−ℓ⟩=0</text>
+  <text x="280" y="345" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">2ℓ+1 rungs at fixed ℓ = 2</text>
+
+  
+</svg>

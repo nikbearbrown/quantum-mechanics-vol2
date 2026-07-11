@@ -48,9 +48,9 @@
   <circle cx="214" cy="230" r="7" fill="#2a1a0e"/>
   <circle cx="270" cy="230" r="7" fill="#2a1a0e"/>
   <!-- Labels below -->
-  <text x="110" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ₁</text>
-  <text x="214" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ₂</text>
-  <text x="270" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ₃</text>
+  <text x="110" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="214" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="270" y="252" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">λ<tspan dy="0.3em" font-size="0.75em">3</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Check annotation -->
   <text x="185" y="290" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">all on real line</text>
@@ -86,9 +86,9 @@
   <circle cx="460" cy="270" r="7" fill="#C8102E"/>
   <circle cx="610" cy="215" r="7" fill="#C8102E"/>
   <!-- Labels -->
-  <text x="560" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ₁</text>
-  <text x="447" y="268" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ₂</text>
-  <text x="618" y="212" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ₃</text>
+  <text x="560" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="447" y="268" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="618" y="212" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">μ<tspan dy="0.3em" font-size="0.75em">3</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Dashed lines from dots to real axis (imaginary parts) -->
   <line x1="550" y1="155" x2="550" y2="228" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>

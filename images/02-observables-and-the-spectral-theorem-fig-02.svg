@@ -45,12 +45,12 @@
   <!-- Eigenstate a1 along horizontal axis (right) -->
   <!-- |a1⟩ at angle 0°: (300+150, 220) = (450, 220) -->
   <line x1="300" y1="220" x2="448" y2="220" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
-  <text x="458" y="224" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">|a₁⟩</text>
+  <text x="458" y="224" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">|a<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>⟩</text>
 
   <!-- Eigenstate a2 along vertical axis (up) -->
   <!-- |a2⟩ at angle 90°: (300, 220-150) = (300, 70) -->
   <line x1="300" y1="220" x2="300" y2="72" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
-  <text x="308" y="66" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">|a₂⟩</text>
+  <text x="308" y="66" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">|a<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>⟩</text>
 
   <!-- State vector |ψ⟩ at 35° from horizontal -->
   <!-- 35° in SVG: x = cos(35°)*130 = 0.819*130=106.5, y = -sin(35°)*130 = -0.574*130=-74.6 -->
@@ -75,19 +75,19 @@
   <!-- Probability square for a1: area proportional to (105/150)^2 = 0.49 -->
   <!-- Place beside a1 axis tip, size 44x44 (representing 0.49) -->
   <rect x="415" y="220" width="44" height="44" fill="#2a1a0e" fill-opacity="0.35" stroke="#2a1a0e" stroke-width="0.75"/>
-  <text x="437" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">P₁</text>
-  <text x="437" y="278" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|⟨a₁|ψ⟩|²</text>
+  <text x="437" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">P<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="437" y="278" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|⟨a<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>|ψ⟩|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan></text>
 
   <!-- Probability square for a2: 1-0.49=0.51, size 47x47 -->
   <rect x="248" y="96" width="47" height="47" fill="#787878" fill-opacity="0.25" stroke="#787878" stroke-width="0.75"/>
-  <text x="271" y="124" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">P₂</text>
-  <text x="220" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|⟨a₂|ψ⟩|²</text>
+  <text x="271" y="124" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">P<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="220" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454" text-anchor="middle">|⟨a<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>|ψ⟩|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan></text>
 
   <!-- Origin dot -->
   <circle cx="300" cy="220" r="3" fill="#2a1a0e"/>
 
   <!-- Complementarity note -->
-  <text x="300" y="385" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">P₁ + P₂ = 1 (areas complement — Pythagorean theorem)</text>
+  <text x="300" y="385" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">P<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan> + P<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan> = 1 (areas complement — Pythagorean theorem)</text>
 
   <!-- Right panel: legend -->
   <rect x="530" y="140" width="148" height="140" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
@@ -103,9 +103,9 @@
   <text x="572" y="216" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">projection</text>
   <!-- P squares -->
   <rect x="544" y="226" width="12" height="12" fill="#2a1a0e" fill-opacity="0.35" stroke="#2a1a0e" stroke-width="0.75"/>
-  <text x="572" y="236" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">prob. P₁</text>
+  <text x="572" y="236" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">prob. P<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
   <rect x="544" y="246" width="12" height="12" fill="#787878" fill-opacity="0.25" stroke="#787878" stroke-width="0.75"/>
-  <text x="572" y="256" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">prob. P₂</text>
+  <text x="572" y="256" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">prob. P<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Caption -->
   <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Probability = squared projection length onto eigenstate axis.</text>

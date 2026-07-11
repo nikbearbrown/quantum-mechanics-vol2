@@ -1,0 +1,41 @@
+<svg role="img" aria-labelledby="t-sep3d" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-sep3d">Separation of variables in three dimensions</title>
+  <desc>For a central potential the wavefunction factorizes into a radial part times an angular part, the spherical harmonic, reducing the 3D Schrodinger equation to a radial equation.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Central potential: radial × angular</text>
+
+  <!-- factorization box -->
+  <rect x="40" y="50" width="480" height="56" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="76" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">ψ(r,θ,φ) = R(r) · Yₗᵐ(θ,φ)</text>
+  <text x="280" y="96" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">valid when V = V(r)</text>
+
+  <!-- radial side -->
+  <rect x="40" y="125" width="225" height="225" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="152" y="148" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Radial part R(r)</text>
+  <!-- radial axes -->
+  <line x1="70" y1="320" x2="245" y2="320" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <line x1="70" y1="320" x2="70" y2="170" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="246" y="335" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">r</text>
+  <text x="58" y="172" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">u(r)</text>
+  <!-- radial function with a node -->
+  <path d="M70,320 C95,210 120,185 150,210 C185,240 200,300 240,310" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="152" y="350" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">effective V_eff + ℏ²ℓ(ℓ+1)/2mr²</text>
+
+  <!-- angular side -->
+  <rect x="285" y="125" width="235" height="225" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="402" y="148" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Angular part Yₗᵐ(θ,φ)</text>
+  <!-- sphere with angular nodes (l=1 type) -->
+  <circle cx="402" cy="245" r="70" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+  <ellipse cx="402" cy="245" rx="70" ry="22" fill="none" stroke="#787878" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="402" y1="175" x2="402" y2="315" stroke="#787878" stroke-width="1"/>
+  <!-- two lobes -->
+  <path d="M402,245 C380,210 380,180 402,178 C424,180 424,210 402,245 Z" fill="#ADADAD" fill-opacity="0.45" stroke="#2a1a0e" stroke-width="1"/>
+  <path d="M402,245 C380,280 380,310 402,312 C424,310 424,280 402,245 Z" fill="#ADADAD" fill-opacity="0.2" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="402" y="338" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">eigenstate of L̂², L̂_z</text>
+
+  
+</svg>

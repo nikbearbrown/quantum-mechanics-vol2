@@ -58,12 +58,12 @@
 
   <!-- ⁴He: 6 fermions (2p+2n+2e) -->
   <rect x="110" y="166" width="170" height="34" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1.5"/>
-  <text x="195" y="183" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">⁴He atom  (6)</text>
+  <text x="195" y="183" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle"><tspan dy="-0.5em" font-size="0.75em">4</tspan><tspan dy="0.5em"></tspan>He atom  (6)</text>
   <text x="195" y="195" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">2p+2n+2e = 6 fermions</text>
 
   <!-- ⁸⁷Rb: 87 fermions (37p+50n+37e) -->
   <rect x="110" y="206" width="170" height="34" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1.5"/>
-  <text x="195" y="223" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">⁸⁷Rb atom  (87)</text>
+  <text x="195" y="223" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle"><tspan dy="-0.5em" font-size="0.75em">87</tspan><tspan dy="0.5em"></tspan>Rb atom  (87)</text>
   <text x="195" y="235" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">even total → integer spin</text>
 
   <!-- Arrow to Boson terminus -->
@@ -102,7 +102,7 @@
 
   <!-- ³He: 5 fermions (2p+1n+2e) -->
   <rect x="420" y="206" width="170" height="34" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
-  <text x="505" y="223" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle">³He atom  (5)</text>
+  <text x="505" y="223" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e" text-anchor="middle"><tspan dy="-0.5em" font-size="0.75em">3</tspan><tspan dy="0.5em"></tspan>He atom  (5)</text>
   <text x="505" y="235" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="middle">odd total → half-integer spin</text>
 
   <!-- Arrow to Fermion terminus -->

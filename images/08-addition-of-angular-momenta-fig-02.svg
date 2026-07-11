@@ -31,7 +31,7 @@
 
   <!-- Title -->
   <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Triangle Rule — State Counting by Multiplet Dimension</text>
-  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Segment width ∝ 2J+1 (number of m states).   Total = (2j₁+1)(2j₂+1)</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Segment width ∝ 2J+1 (number of m states).   Total = (2j<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>+1)(2j<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>+1)</text>
 
   <!-- Chart layout: x_left=180, x_right=580; bar height=54, gap=18 -->
   <!-- X scale: 0..9 units maps to 180..580, so 400px for 9 units → 44.4px per unit -->
@@ -131,5 +131,5 @@
   <text x="641" y="163" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">total</text>
 
   <!-- Caption -->
-  <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Σ(2J+1) = (2j₁+1)(2j₂+1): state count is conserved under the change of coupling basis.</text>
+  <text x="350" y="408" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Σ(2J+1) = (2j<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>+1)(2j<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>+1): state count is conserved under the change of coupling basis.</text>
 </svg>

@@ -69,8 +69,8 @@
   <text x="186" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_b(2)</text>
 
   <!-- Row labels on left -->
-  <text x="78" y="93" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₁</text>
-  <text x="78" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₂</text>
+  <text x="78" y="93" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="78" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Sign A -->
   <text x="155" y="188" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="22" fill="#2a1a0e" text-anchor="middle">+</text>
@@ -106,8 +106,8 @@
   <text x="366" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_a(1)</text>
   <text x="430" y="139" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#FFFFFF" text-anchor="middle">φ_b(1)</text>
 
-  <text x="322" y="93" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₂</text>
-  <text x="322" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p₁</text>
+  <text x="322" y="93" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan></text>
+  <text x="322" y="137" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454" text-anchor="end">p<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan></text>
 
   <!-- Sign C -->
   <text x="463" y="188" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="22" fill="#C8102E" text-anchor="middle">−</text>

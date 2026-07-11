@@ -30,8 +30,8 @@
   <rect width="700" height="420" fill="#FFFFFF"/>
 
   <!-- Title -->
-  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Shell State Counting — 2n² Degeneracy</text>
-  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Each shell n contains 2n² spin-orbital states. Segments: s(2), p(6), d(10), f(14).</text>
+  <text x="350" y="26" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Shell State Counting — 2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> Degeneracy</text>
+  <text x="350" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Each shell n contains 2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> spin-orbital states. Segments: s(2), p(6), d(10), f(14).</text>
 
   <!-- Chart area: x_left=110, x_right=590, y_top=62, y_bottom=340 -->
   <!-- X scale: 0..34 maps to 110..590, dx = 480/34 = 14.12 per state -->
@@ -76,7 +76,7 @@
   <text x="124" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">s</text>
   <!-- Total marker -->
   <circle cx="138" cy="95" r="5" fill="#2a1a0e"/>
-  <text x="148" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=2</text>
+  <text x="148" y="99" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>=2</text>
 
   <!-- ===== n=2, L shell: s(2)+p(6) = 8 total ===== -->
   <text x="102" y="163" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=2 (L)</text>
@@ -88,7 +88,7 @@
   <text x="181" y="167" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">p</text>
   <!-- Total -->
   <circle cx="223" cy="163" r="5" fill="#2a1a0e"/>
-  <text x="233" y="167" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=8</text>
+  <text x="233" y="167" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>=8</text>
 
   <!-- ===== n=3, M shell: s(2)+p(6)+d(10) = 18 ===== -->
   <text x="102" y="231" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=3 (M)</text>
@@ -103,7 +103,7 @@
   <text x="294" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">d</text>
   <!-- Total -->
   <circle cx="364" cy="231" r="5" fill="#2a1a0e"/>
-  <text x="374" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=18</text>
+  <text x="374" y="235" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>=18</text>
 
   <!-- ===== n=4, N shell: s(2)+p(6)+d(10)+f(14) = 32 ===== -->
   <text x="102" y="299" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454" text-anchor="end">n=4 (N)</text>
@@ -121,7 +121,7 @@
   <text x="463" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF" text-anchor="middle">f</text>
   <!-- Total -->
   <circle cx="562" cy="299" r="5" fill="#2a1a0e"/>
-  <text x="572" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n²=32</text>
+  <text x="572" y="303" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>=32</text>
 
   <!-- Legend -->
   <rect x="34" y="250" width="64" height="82" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
@@ -141,5 +141,5 @@
   <text x="181" y="58" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" text-anchor="middle">Periods 2,3</text>
 
   <!-- Caption -->
-  <text x="350" y="406" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Shell capacity 2n²; period lengths 2 and 8 (gold dashes) arise from s and s+p subshells only.</text>
+  <text x="350" y="406" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454" text-anchor="middle">Shell capacity 2n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>; period lengths 2 and 8 (gold dashes) arise from s and s+p subshells only.</text>
 </svg>

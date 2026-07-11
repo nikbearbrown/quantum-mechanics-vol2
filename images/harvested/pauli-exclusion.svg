@@ -1,0 +1,46 @@
+<svg role="img" aria-labelledby="t-pauli" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title id="t-pauli">Pauli exclusion and fermion filling</title>
+  <desc>Fermions fill energy levels two per level with opposite spins; a third electron is forbidden from doubly occupying a filled spin-orbital, shown by a blocked arrow.</desc>
+  <metadata><provenance>CANDIDATE · CAJAL PALETTE · QM VOL 2</provenance></metadata>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="280" y="30" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Pauli exclusion: one fermion per state</text>
+
+  <rect x="40" y="48" width="480" height="36" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="280" y="72" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">No two identical fermions share all quantum numbers (n,ℓ,mₗ,mₛ)</text>
+
+  <rect x="40" y="100" width="480" height="250" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- energy axis -->
+  <line x1="80" y1="330" x2="80" y2="120" stroke="#2a1a0e" stroke-width="1" marker-end="url(#ar)"/>
+  <text x="68" y="124" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E</text>
+
+  <!-- levels with electrons (up/down arrows) -->
+  <!-- level 1 (filled, 2) -->
+  <line x1="140" y1="300" x2="240" y2="300" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="100" y="304" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">1s</text>
+  <line x1="170" y1="312" x2="170" y2="288" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="210" y1="288" x2="210" y2="312" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <!-- level 2 (filled, 2) -->
+  <line x1="140" y1="250" x2="240" y2="250" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="100" y="254" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">2s</text>
+  <line x1="170" y1="262" x2="170" y2="238" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="210" y1="238" x2="210" y2="262" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <!-- level 3 (half filled, 1) -->
+  <line x1="140" y1="190" x2="240" y2="190" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="100" y="194" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">2p</text>
+  <line x1="170" y1="202" x2="170" y2="178" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- forbidden third electron into 1s (red) -->
+  <text x="300" y="296" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">A third electron into a</text>
+  <text x="300" y="312" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">full spin-orbital is</text>
+  <text x="300" y="328" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#C8102E">forbidden</text>
+  <line x1="280" y1="300" x2="250" y2="300" stroke="#C8102E" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="258" y1="290" x2="272" y2="310" stroke="#C8102E" stroke-width="2"/>
+
+  <text x="300" y="180" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">↑ and ↓ : opposite mₛ = ±½</text>
+  <text x="300" y="200" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">two per spatial orbital</text>
+
+  
+</svg>
