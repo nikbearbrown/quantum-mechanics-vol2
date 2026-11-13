@@ -41,13 +41,14 @@
         "source": "ai",
         "motion": "kenburns",
         "remotion": {
-          "pattern": "SlateCard",
-          "provenance": "proven-core/SlateCard",
+          "pattern": "FormACard",
+          "provenance": "proven-core/FormACard",
           "version": "1",
           "props": {
-            "headline": "Pour liquid helium-4 into a cryostat at 2 Kelvin. Watch a…",
-            "eyebrow": "COLD OPEN",
-            "topic": "QUANTUM MECHANICS"
+            "lines": [
+              "Pour liquid helium-4 into a cryostat at 2 Kelvin. Watch a…"
+            ],
+            "dark": false
           },
           "rendered": {
             "out": "media/B02.mp4",
